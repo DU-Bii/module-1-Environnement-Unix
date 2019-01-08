@@ -1,6 +1,3 @@
-# DUBii module 1 : Environnement Unix
-
-
 ## Synopsis
 
 L'objectif de ce module est de vous familiariser avec l'environnement Unix et ses principales commandes.
