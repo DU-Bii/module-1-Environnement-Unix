@@ -22,7 +22,7 @@ Attention, en Unix, on distingue le chemin absolu et le chemin relatif.
 
 Affiche le répertoire courant, celui dans lequel l'utilisateur se trouve actuellement.
 
-`pwd` est l'acronyme pour *print workind directory*.
+`pwd` est l'acronyme pour *print working directory*.
 
 Exemple :
 ```
