@@ -1,6 +1,11 @@
 # DUBii module 1 : Environnement Unix
 
 
+## Synopsis
+
+L'objectif de ce module est de vous familiariser avec l'environnement Unix et ses principales commandes.
+
+
 ## Intervenants
 
 - Hélène Chiapello
@@ -10,7 +15,11 @@
 - Jacques van Helden
 
 
-## Synopsis
+## Prérequis
+
+Sur le site [DataCamp](https://www.datacamp.com/), créez-vous un compte et connectez-vous au cours [Introduction to Shell for Data Science](https://www.datacamp.com/courses/introduction-to-shell-for-data-science).
+
+Comme prérequis à ce module, vous devez faire la première rubrique [1 Manipulating files and directories](https://campus.datacamp.com/courses/introduction-to-shell-for-data-science/manipulating-files-and-directories?ex=1). Vous pouvez bien sur avancer les rubriques suivantes.
 
 
 ## Séance 1 : premiers pas 
