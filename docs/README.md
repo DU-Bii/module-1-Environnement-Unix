@@ -52,4 +52,7 @@ Comme prérequis à ce module, vous devez faire la première rubrique [1 Manipul
 - helper : Pierre Poulain
 
 
+## Bibliographie / webographie
+
+[Bioinformatics Data Skills](http://shop.oreilly.com/product/0636920030157.do), Vince Buffalo, O'Reilly Media, 2015.
 
