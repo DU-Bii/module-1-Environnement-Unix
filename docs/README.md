@@ -6,6 +6,8 @@
 - Hélène Chiapello
 - Pierre Poulain
 - Benoist Laurent
+- Julien Seiler
+- Jacques van Helden
 
 
 ## Synopsis
