@@ -25,7 +25,7 @@ Comme prérequis à ce module, vous devez faire la première rubrique [1 Manipul
 - instructeurs : Hélène Chiapello & Pierre Poulain
 - helper : Benoist Laurent
 
-Test : [lien](../seance1/README.md)
+Test : [lien](seance1/README.md)
 
 
 ## Séance 2 : gestion et utilisation des ressources IFB
