@@ -23,7 +23,7 @@ Comme prérequis à ce module, vous devez faire la première rubrique [1 Manipul
 
 - lundi 28/01/2019 10:30 - 13:00
 - instructeurs : Hélène Chiapello & Pierre Poulain
-- helper : Benoist Laurent
+- helpers : Benoist Laurent, Sandra Dérozier
 
 Test : [lien](seance1/README.md)
 
@@ -40,7 +40,7 @@ Test : [lien](seance1/README.md)
 
 - lundi 04/02/2019 10:00 - 13:00
 - instructeurs : Benoist Laurent & Hélène Chiapello
-- helper : Pierre Poulain
+- helpers : Pierre Poulain, Sandra Dérozier
 
 
 ## Séance 4 : automatisation
