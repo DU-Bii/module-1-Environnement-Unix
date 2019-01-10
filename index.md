@@ -7,7 +7,7 @@ L'objectif de ce module est de vous familiariser avec l'environnement Unix et se
 
 - Hélène Chiapello
 - Pierre Poulain
-- Benoist Laurent
+- Benoist Laurent, CNRS, `<benoist.laurent@ibpc.fr>`
 - Julien Seiler
 - Jacques van Helden
 
