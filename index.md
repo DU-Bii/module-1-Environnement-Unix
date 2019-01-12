@@ -17,7 +17,7 @@ L'objectif de ce module est de vous familiariser avec l'environnement Unix et se
 Les prérequis à ce module : [ici](prerequis/README.md)
 
 
-## Séance 1 : premiers pas
+## Séance 1 - Premiers pas
 
 - lundi 28/01/2019 10:30 - 13:00
 - instructeurs : Hélène Chiapello & Pierre Poulain
@@ -26,7 +26,7 @@ Les prérequis à ce module : [ici](prerequis/README.md)
 Test : [lien](seance1/README.md)
 
 
-## Séance 2 : gestion et utilisation des ressources IFB
+## Séance 2 - Gestion et utilisation des ressources IFB
 
 - mercredi 30/01/2019 10:00 - 13:00
 - instructeurs : Julien Seiler & Jacques van Helden
@@ -34,14 +34,14 @@ Test : [lien](seance1/README.md)
 
 
 
-## Séance 3 : gestion de flux et extraction de données
+## Séance 3 - Gestion de flux et extraction de données
 
 - lundi 04/02/2019 10:00 - 13:00
 - instructeurs : Benoist Laurent & Hélène Chiapello
 - helpers : Pierre Poulain, Sandra Dérozier
 
 
-## Séance 4 : automatisation
+## Séance 4 - Automatisation
 
 - mercredi 06/02/2019 10:00 - 13:00
 - instructeurs : Benoist Laurent & Hélène Chiapello
