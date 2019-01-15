@@ -16,6 +16,9 @@ L'objectif de ce module est de vous familiariser avec l'environnement Unix et se
 
 Les prérequis à ce module : [ici](prerequis/README.md)
 
+## Planning DU-Bii 2019
+
+<https://tinyurl.com/dubii19-planning>
 
 ## Séance 1 - Premiers pas
 
