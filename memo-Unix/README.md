@@ -87,51 +87,71 @@ Affiche le contenu du ou des fichiers en arguments ou de l'entrée standart
 
 Lire le contenu du ou des fichiers en arguments en se déplacant écran par écran dans le (les fichiers)
 Commandes utiles associées à less :
+
 - 'barre d'espace' : faire défiler le contenu page par page
+
 - ':n' : passe au fichier suivant ('next file', si plusieurs fichiers en arguments)
+
 - ':p' : passe au fichier précédent ('previous file', si plusieurs fichiers en arguments)
+
 - ':q' : quitte less
 
 ## head 
 
 Affiche la première partie (10 lignes par défaut) de chacun des fichiers en arguments.
+
 'head -n nom_fichier' : affiche les n premières lignes d'un fichier
 
 ## tail
 
 Affiche la dernière partie (10 lignes par défaut) de chacun des fichiers en arguments.
+
 'tail -n nom_fichier' : affiche les n dernières lignes d'un fichier
 
 ## grep
 
 Affiche les lignes du ou des fichiers en argument correspondant à un 'motif' (ou contenu) donné en argument
 (Abréviation de Get Regular Expression Print)
+
 grep 'motif' fichier1 fichier2
+
 Option utiles :
+
 '-c' : signifie 'count'. Affiche uniquement le nombre de lignes contenant le motif
+
 '-n' : affiche aussi le numéro de la ligne contenant le motif
+
 '-v' : affiche les lignes qui ne contiennent pas le motif
 
 ## wc
 
 Compte le nombre de lignes, mots et caractères du ou des fichiers donnés en arguments
+
 '-l' : uniquement le nombre de lignes
+
 '-w' : uniquement le nombre de mots
+
 '-c' : uniquement le nombre de caractères
 
 ## sort
 
 Trie les lignes du ou des fichiers donnés en argument
-Attention : trie par défaut selon le code ASCII
+Attention : tri par défaut selon le code ASCII
+
 '-n' : tri numérique
+
 '-k num_colonne' : tri selon la colonne k du fichier
 
 ## cut
 
 Extrait les colonnes de chacun des fichiers en argument
+
 Par défaut une colonne est un caractère
+
 '-d separateur' : spécifie le caractère 'separateur' qui sépare les colonnes à extraire
+
 '-c liste de caracteres' : spécifie les caractères à extraire
+
 '-f liste de champs' : spécifie les champs à extraire
 
 
