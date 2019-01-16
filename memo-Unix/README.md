@@ -41,3 +41,16 @@ $ pwd
 /home/pierre
 ```
 Ici le répertoire courant est `/home/pierre`, c'est-à-dire le répertoire personnel de l'utilisateur `pierre`.
+
+## ls
+
+Liste le contenu d'un répertoire
+Sans argument liste les fichiers et répertoires du répertoire courant
+
+Exemple :
+```
+$ ls
+seq1.fsa  seq2.fsa
+```
+Le répertoire courant contient 2 séquenecs seq1.fsa et seq2.fsa
+
