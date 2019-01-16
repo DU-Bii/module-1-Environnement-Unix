@@ -52,5 +52,5 @@ Exemple :
 $ ls
 seq1.fsa  seq2.fsa
 ```
-Le répertoire courant contient 2 séquenecs seq1.fsa et seq2.fsa
+Le répertoire courant contient 2 séquences seq1.fsa et seq2.fsa
 
