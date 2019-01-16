@@ -105,6 +105,7 @@ Affiche la dernière partie (10 lignes par défaut) de chacun des fichiers en ar
 ## grep
 
 Affiche les lignes du ou des fichiers en argument correspondant à un 'motif' (ou contenu) donné en argument
+(Abréviation de Get Regular Expression Print)
 grep 'motif' fichier1 fichier2
 Option utiles :
 '-c' : signifie 'count'. Affiche uniquement le nombre de lignes contenant le motif
@@ -120,7 +121,25 @@ Compte le nombre de lignes, mots et caractères du ou des fichiers donnés en ar
 
 ## sort
 
-Trie les lignes du ou des fichiers donnés en argument.
+Trie les lignes du ou des fichiers donnés en argument
+Attention : trie par défaut selon le code ASCII
+'-n' : tri numérique
+'-k num_colonne' : tri selon la colonne k du fichier
+
+## cut
+
+Extrait les colonnes de chacun des fichiers en argument
+Par défaut une colonne est un caractère
+'-d separateur' : spécifie le caractère 'separateur' qui sépare les colonnes à extraire
+'-c liste de caracteres' : spécifie les caractères à extraire
+'-f liste de champs' : spécifie les champs à extraire
+
+
+
+
+
+
+
 
 
 
