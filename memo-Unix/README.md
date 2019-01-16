@@ -77,4 +77,54 @@ Signfie 'remove directory'. Supprime un répertoire : rmdir chemin
 Signifie 'remove'. Supprime un fichier : rmdir fichier
 
 
+# Partie 2 : accéder et manipuler le contenu des fichiers
+
+## cat
+
+Affiche le contenu du ou des fichiers en arguments ou de l'entrée standart
+
+## less
+
+Lire le contenu du ou des fichiers en arguments en se déplacant écran par écran dans le (les fichiers)
+Commandes utiles associées à less :
+- 'barre d'espace' : faire défiler le contenu page par page
+- ':n' : passe au fichier suivant ('next file', si plusieurs fichiers en arguments)
+- ':p' : passe au fichier précédent ('previous file', si plusieurs fichiers en arguments)
+- ':q' : quitte less
+
+## head 
+
+Affiche la première partie (10 lignes par défaut) de chacun des fichiers en arguments.
+'head -n nom_fichier' : affiche les n premières lignes d'un fichier
+
+## tail
+
+Affiche la dernière partie (10 lignes par défaut) de chacun des fichiers en arguments.
+'tail -n nom_fichier' : affiche les n dernières lignes d'un fichier
+
+## grep
+
+Affiche les lignes du ou des fichiers en argument correspondant à un 'motif' (ou contenu) donné en argument
+grep 'motif' fichier1 fichier2
+Option utiles :
+'-c' : signifie 'count'. Affiche uniquement le nombre de lignes contenant le motif
+'-n' : affiche aussi le numéro de la ligne contenant le motif
+'-v' : affiche les lignes qui ne contiennent pas le motif
+
+## wc
+
+Compte le nombre de lignes, mots et caractères du ou des fichiers donnés en arguments
+'-l' : uniquement le nombre de lignes
+'-w' : uniquement le nombre de mots
+'-c' : uniquement le nombre de caractères
+
+## sort
+
+Trie les lignes du ou des fichiers donnés en argument.
+
+
+
+
+
+
 
