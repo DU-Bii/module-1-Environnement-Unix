@@ -2,6 +2,7 @@
 
 Principales commandes Unix
 
+# Partie 1 : les fichiers et les répertoires
 
 ## cd
 
@@ -44,8 +45,9 @@ Ici le répertoire courant est `/home/pierre`, c'est-à-dire le répertoire pers
 
 ## ls
 
-Liste le contenu d'un répertoire
-Sans argument liste les fichiers et répertoires du répertoire courant
+Affiche le contenu d'un répertoire
+Sans argument affiche les fichiers et répertoires du répertoire courant
+(Avec argument affiche les les fichiers et répertoires du chemin du répertoire donné en argument)
 
 Exemple :
 ```
@@ -53,4 +55,26 @@ $ ls
 seq1.fsa  seq2.fsa
 ```
 Le répertoire courant contient 2 fichiers : seq1.fsa et seq2.fsa
+
+## cp 
+
+Signifie 'copy'. Copie un fichier : cp fichier_source fichier_copie
+
+## mv
+
+Signifie 'move'. Déplace (et éventuellement renomme) un fichier ou répertoire  : mv source destination
+
+## mkdir
+
+Signifie 'make directory'. Crée un nouveau répertoire : mkdir chemin
+
+## rmdir
+
+Signfie 'remove directory'. Supprime un répertoire : rmdir chemin
+
+## rm
+
+Signifie 'remove'. Supprime un fichier : rmdir fichier
+
+
 
