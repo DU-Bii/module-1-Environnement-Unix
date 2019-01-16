@@ -4,8 +4,8 @@ class: center, middle
 
 ## DU Bii 2019
 
-Jacques van Helden (jacques.van-helden@univ-amu.fr)<br/>
-Julien Seiler (julien.seiler@igbmc.fr)
+Julien Seiler (julien.seiler@igbmc.fr)<br/>
+Jacques van Helden (jacques.van-helden@univ-amu.fr)
 
 .footer[
 https://github.com/DU-Bii/module-1-Environnement-Unix
@@ -100,8 +100,8 @@ Quelques exemples de fermes de calcul :
 .pure-table.pure-table-bordered.smaller-font[
 Ferme de calcul | Processeurs (coeurs physiques) | Mémoire vive (en Go) | Espace de stockage (en To) | Modalité d'accès
 --- | --- | --- | --- | ---
-IFB Core (Orsay - IDRIS) | 2 000 | 20 008 | 400 | Ouvert à tous les biologistes académiques
-GENOTOUL (Toulouse) | 3 064 | 34 304 | 3 000 | ???
+IFB Core (Orsay - IDRIS) | 2 000 | 20 008 | 400 | Ouvert à tous les biologistes et bioinformaticiens académiques
+GENOTOUL (Toulouse) | 3 064 | 34 304 | 3 000 | Ouvert à tous les biologistes et bioinformaticiens académiques
 CINES OCCIGEN | 85 824 | 202 000 | 8 000 | Sur appel à projet
 ]
 
