@@ -59,6 +59,12 @@ Le répertoire courant contient 2 fichiers : seq1.fsa et seq2.fsa
 ## cp 
 
 Signifie 'copy'. Copie un fichier : cp fichier_source fichier_copie
+Chaque fichier peut être précédé du chemin d'accès absolu ou relatif
+Exemple :
+```
+$ cp
+seq1.fsa  backup/seq1-copy.fsa
+```
 
 ## mv
 
