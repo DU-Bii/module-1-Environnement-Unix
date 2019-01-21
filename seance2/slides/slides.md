@@ -187,3 +187,154 @@ CINES OCCIGEN | Montpellier | 85 824 | 202 000 | 8 000 | On call for project
 Only the engineers in charge of maintenance of the cluster are authorized to enter the datacenter. Thus, **it is not possible to use these computers directly using a keyboard and a screen**. It is necessary to connect to it through a **computer network** such as the Internet.
 
 To ensure that resources (nodes, cores, memory) are properly distributed among their users according to their needs, a software called a **Batch system** allows users to **book and access resources**. It is through this software that you can access one or more computers on the HPC cluster.
+
+---
+
+# What do I need to know to use a HPC cluster ?
+
+## Basic Unix
+
+There is no graphical user interface on a HPC cluster
+
+## How to connect to a remote host through the network
+
+Your personnal computer need to get connected to the cluster !
+
+## How to use a Batch system
+
+One connected to the cluster, you need to learn how to submit compute job
+
+---
+
+template: title
+
+# Connect to a remote host through the network
+
+---
+
+template: content
+
+# What is a shell?
+
+A shell is a **software interface** that allows a user to interact with a computer or server by executing different commands that will return information.
+
+```bash
+$ pwd
+/shared/home/jseiler
+$ ls
+projets     toto.txt     script.sh
+$ cd projets
+$ ls
+mission-to-mars      rama-II       time-travel
+```
+
+The shell allows dialogue with a local workstation: one is physically present in the same room as the machine.
+
+---
+
+# SSH : the remote shell
+
+To interact with a remote computer you need :
+* A communication support : computer **network** like Internet
+* A communication protocol : **SSH**
+
+SSH (for Secure SHell) is the most commonly used protocol for establishing dialogue and launching commands on a remote machine.
+
+---
+
+# SSH : the remote shell
+
+SSH need two parameters to run :
+* The name or IP of the remote computer
+* A user credential (username + password)
+
+Under Linux or Mac, you can use SSH from the Terminal/Console application :
+
+```bash
+$ ssh <username>@<remote-host-name>
+```
+
+.callout.callout-info[
+Under Windows, you can use a Terminal applications like PuTTY or MobaXterm.
+]
+
+.callout.callout-warning[
+Attention, it is not possible to communicate with **any** computer through the SSH protocol. The remote computer **must have** a running SSH service.
+]
+
+---
+
+# SSH : the remote shell
+
+## Connect to the IFB HPC cluster
+
+Remote computer : core.cluster.france-bioinformatique.fr
+User credential : *you received it by email*
+
+Connect with your Terminal application :
+```
+$ ssh <username>@core.cluster.france-bioinformatique.fr
+```
+*Replace `<username>` with your username.*
+
+You will then be asked for your password (no character are printed while on type in your password).
+
+You are now connected to the IFB cluster submission node.
+
+Type `exit` to close the connection.
+
+---
+
+# SSH : the remote shell
+
+## Copy data remotely
+
+SSH allows you to copy data to or from a remote computer with the `scp` command.
+
+The syntax to copy data from your personal computer to a remote host is :
+```bash
+$ scp /path/to/local/file <username>@<remote-host>:/remote/destination/path
+```
+*Replace `<username>` with your username.*
+
+You can also copy data from a remote host to your personal computer :
+```bash
+$ scp <username>@<remote-host>:/remote/path /local/path
+```
+*Replace `<username>` with your username.*
+
+---
+
+# SSH : the remote shell
+
+## Exercise
+
+1. Connect to `core.cluster.france-bioinformatique.fr` and retrieve the full name of the pdf document located in `/shared/space2/du-bii/data/cluster/`
+2. Copy this PDF document to your local computer
+
+---
+
+# SSH : the remote shell
+
+## Exercise
+
+1. Connect to `core.cluster.france-bioinformatique.fr` and retrieve the full name of the pdf document located in `/shared/space2/du-bii/data/cluster/`
+
+--
+
+```bash
+local $ ssh seiler@core.cluster.france-bioinformatique.fr
+cluster $ ls /shared/space2/du-bii/data/cluster/
+slides.pdf
+```
+*Replace `seilerj` with your own username (I'm not sharing my password)*
+
+--
+
+2. Copy this PDF document to your local computer
+
+```bash
+cluster $ exit
+local $ scp seilerj@core.cluster.france-bioinformatique.fr:/shared/space2/du-bii/data/cluster/slides.pdf .
+```
+*Replace `seilerj` with your own username (still not sharing my password)*
