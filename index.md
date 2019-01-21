@@ -35,7 +35,7 @@ Test : [lien](seance1/README.md)
 - instructeurs : Julien Seiler & Jacques van Helden
 - helpers : Benoist Laurent, Hélène Chiapello & Pierre Poulain
 
-
+[Diapositives](seance2/slides/index.html)
 
 ## Séance 3 - Gestion de flux et extraction de données
 
