@@ -1,6 +1,6 @@
 class: center, middle
 
-# Utilisation de la ferme de calcul de l'IFB
+# IFB High Performance computing usage
 
 ## DU Bii 2019
 
@@ -34,101 +34,156 @@ DU Bii 2019
 
 template: content
 
-# De quoi allons-nous parler aujourd'hui ?
+# What are we going to talk about today?
 
-* Qu'est-ce qu'une ferme de calcul et à quoi cela sert-il ?
-* Se connecter à distance
-* Le gestionnaire de ressources SLURM
-* Utiliser "module" pour charger des outils
-* Utiliser "conda" pour charger des bouquets thématiques d'outils
+* What is HPC cluster and what is it used for ?
+* How to connect to the IFB cluster
+* The SLURM Batch system
+* Use "module" to load tools
+* Use "conda" to install more software
 
 ---
 
 template: title
 
-# Qu'est-ce qu'une ferme de calcul et à quoi cela sert-il ?
+# What is HPC cluster and what is it used for ?
 
 ---
 
 template: content
 
-# Comment fonctionne un ordinateur ?
+# How does a computer work ?
 
-## un ou plusieurs processeurs .fas.fa-microchip[]
+## one or more chips .fas.fa-microchip[]
 
-Il s'agit de puces électroniques qui exécutent les instructions élémentaires des différents programmes
-
---
-
-## de la mémoire vive .fas.fa-memory[]
-
-La mémoire est utilisée par le processeur pour traiter les données (un ordinateur classique dispose généralement de 4 ou 8 Go de mémoire)
+A chip (or microprecessor) is responsible for executing elementary instructions requested by the software
 
 --
 
-## de l'espace de stockage .fas.fa-hdd[]
+## RAM (Random access memory) .fas.fa-memory[]
 
-Cet espace permet de conserver des grandes quantités de données de façon permanente (un ordinateur individuel dispose en moyenne d'un To d'espace de stockage)
+RAM is used by the chip to process data (a personal computer has between 4 to 8 GB of RAM)
+
+--
+
+## storage space .fas.fa-hdd[]
+
+The storage space is used to keep huge amount of data in a more permanent way (a personal computer has an average of one TB of storage space)
 
 ---
 
-# Comment fonctionne un ordinateur ?
+# Bit or Byte ?
+
+A bit is **a single** binary data : 0 or 1
+
+A byte is made of **8 bits** : 1 byte (B) = 8 bits (b)
+
+1 Terabyte (T**B**) = 1000 Gigabytes (G**B**) = 1e+6 Megabytes (MB) = 8 000 000 Mégabits (M**b**)
+
+---
+
+# How does a computer work ?
 
 ## .fas.fa-microchip[] .fas.fa-memory[] .fas.fa-hdd[]
 
-Ces ressources permettent d'effectuer un grand nombre de tâches comme **surfer sur Internet**, **utiliser un tableur** ou **un logiciel de traitement de texte**. Certains ordinateurs suffisamment puissants peuvent même être utilisés pour effectuer des **traitements vidéos** ou **jouer à des jeux en 3D**.
+A personnal computer has enough resources to let you run a lot of tasks like **browsing the Internet**, **work with spreadsheet** or **textprocessing software**. Some personnal computers have even enough resources to let **process videos** or **play 3D videogames**.
 
 --
 
 ## .fas.fa-microchip[] .fas.fa-microchip[] .fas.fa-microchip[] .fas.fa-microchip[]  .fas.fa-memory[] .fas.fa-memory[] .fas.fa-memory[]  .fas.fa-hdd[] .fas.fa-hdd[]
 
-Cependant, les ordinateurs individuels ne sont généralement pas assez puissant pour lancer des **programmes d'analyses de données massives**. En effet, ces programmes ont besoin d'un grand nombre de processeurs (parfois plusieurs dizaines ou centaines), d'énormément de mémoire vive (une centaine de Go pour certains programmes) et de gros espaces de stockage de données (plusieurs To).<br/><br/>
+However, personal computer are not powerful enough to run **massive data analysis programs**. Indeed, these programs need a huge number of processing unit (10 to 100), huge amount of RAM (100 GB for some programs) and large storage space for data (several TB).<br/><br/>
 
 --
 
-.callout.callout-success[L'analyse de données massives nécessite l'utilisation d'une ferme de calcul]
+.callout.callout-success[Massive data analysis requires a High Performance Computing (HPC) cluster]
 
 ---
 
-# Comment fonctionne une ferme de calcul ?
+# What is a HPC cluster?
 
-Une ferme de calcul est **un ensemble d'ordinateurs très puissants** appelés supercalculateurs mis **en réseau** afin d'être accessible aux scientifiques pour lancer des programmes d'analyse de données.
+A set of big computers connected together that can be consider as a single system.
 
-Cet ensemble d'ordinateurs constitue une réserve de processeurs et de mémoire vive.
-
-Quelques exemples de fermes de calcul :
-.pure-table.pure-table-bordered.smaller-font[
-Ferme de calcul | Processeurs (coeurs physiques) | Mémoire vive (en Go) | Espace de stockage (en To) | Modalité d'accès
---- | --- | --- | --- | ---
-IFB Core (Orsay - IDRIS) | 2 000 | 20 008 | 400 | Ouvert à tous les biologistes et bioinformaticiens académiques
-GENOTOUL (Toulouse) | 3 064 | 34 304 | 3 000 | Ouvert à tous les biologistes et bioinformaticiens académiques
-CINES OCCIGEN | 85 824 | 202 000 | 8 000 | Sur appel à projet
-]
-
----
-
-# A quoi ressemble une ferme de calcul ?
-
-Une ferme de calcul est généralement installée dans un “datacenter”. C'est une salle spéciale permettant de faire fonctionner les ordinateurs dans des conditions optimales de température, d'humidité et de sécurité.
+A HPC cluster is usually located in a "datacenter". It a dedicated room providing all conditions required by HPC in terms of temperature, humidity, power supply and physical security.
 
 .center[![Bluegene](images/bluegene.jpg)]
 
 ---
 
-# Le datacenter de l'IGBMC
+# A datacenter is composed of racks
 
-.center[![Face avant IGBMC](images/avant.png)]
-
----
-
-# Le datacenter de l'IGBMC
-
-.center[![Face arrière IGBMC](images/arriere.png)]
+.center[![Racks](images/racks.jpg)]
 
 ---
 
-# Comment accéder à une ferme de calcul ?
+# Each rack can hold several computers
 
-Seuls les ingénieurs en charge de la maintenance de la ferme de calcul sont habilités à entrer dans le datacenter. Ainsi, **il n'est pas possible d'utiliser directement ces ordinateurs à l'aide d'un clavier et d'un écran**. Il est nécessaire de s'y connecter au travers d'un **réseau informatique** comme Internet par exemple.
+.center[![Computers](images/computers.jpg)]
 
-Afin de s'assurer que les ressources (ordinateurs, processeurs, mémoire) soient convenablement réparties entre leurs utilisateurs en fonction de leurs besoins, un logiciel permet aux utilisateurs de **réserver et d'accéder aux ressources**. C'est au travers de ce logiciel que l'on peut accéder à un ou plusieurs ordinateurs de la ferme de calcul.
+---
+
+# Rear view
+
+.center[![Rear](images/rear.jpg)]
+
+---
+
+# More hardware concerns
+
+.center[
+## A node = a physical machine
+
+Each physical machine has one **motherboard**
+
+.center[![Motherboard](images/motherboard.jpg)]
+
+This motherboard has 2 **sockets** to plug **microprocessors**.<br/>
+A microprocessor is a **multicore** technology.
+]
+---
+
+class: center
+
+# Do not confuse Microprocessor and Core
+
+A microprocessor is a **physical chip**.
+
+![Microprocessor](images/microprocessor.jpg)
+
+Core = CPU = Central Processing **Unit**
+
+15 to 20 years ago = 1 microprocessor = 1 core<br/><br/>
+
+.callout.callout-danger[THI IS NOT TRUE ANYMORE]
+
+---
+
+class: center
+
+# Do not confuse Microprocessor and Core
+
+On the IFB HPC Cluster :
+
+1 node = 2 sockets = 2 microprocessors = 2 x 14 cores = 28 CPU<br/><br/>
+
+.callout.callout-info[A HPC cluster can be seen has a pool of cores.]
+
+---
+
+# Some HPC clusters in France
+
+.pure-table.pure-table-bordered.smaller-font[
+Cluster | Datacenter location | Cores | RAM (in GB) | Storage space (en TB) | Access modality
+--- | --- | --- | --- | --- | ---
+IFB Core | IDRIS - Orsay | 2 000 | 20 008 | 400 | Open to all academic biologists and bioinformaticians
+GENOTOUL | Toulouse | 3 064 | 34 304 | 3 000 | Open to all academic biologists and bioinformaticians
+CINES OCCIGEN | Montpellier | 85 824 | 202 000 | 8 000 | On call for project
+]
+
+---
+
+# How to access a HPC cluster?
+
+Only the engineers in charge of maintenance of the cluster are authorized to enter the datacenter. Thus, **it is not possible to use these computers directly using a keyboard and a screen**. It is necessary to connect to it through a **computer network** such as the Internet.
+
+To ensure that resources (nodes, cores, memory) are properly distributed among their users according to their needs, a software called a **Batch system** allows users to **book and access resources**. It is through this software that you can access one or more computers on the HPC cluster.
