@@ -7,7 +7,8 @@
 
 **Question**: this is a test question.
 
-> **Solution**: this is the test solution to the test question
+> **Solution**:
+> > This is the test solution to the test question
 > > ```bash
 > > $ echo "so much information here"
 > > ```
