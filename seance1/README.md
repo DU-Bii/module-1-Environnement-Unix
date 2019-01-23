@@ -3,7 +3,19 @@
 - **Répertoires** : savoir afficher le répertoire courant, afficher le contenu d'un répertoire, changer de répertoire, créer un répertoire
 - **Aborescence Linux** : maitriser la notion de chemin absolu et relatif, connaitre les répertoires particuliers de l'arborescence Linux, savoir afficher l'arborescence Linux
 - **Fichiers** : savoir copier, supprimer, déplacer un fichier. Savoir nommer un fichier avec une extension adéquate. Connaitre les caractères spéciaux (* et ?)
-  
+
+
+**Question**: this is a test question.
+
+> **Solution**: this is the test solution to the test question
+> > ```bash
+> > $ echo "so much information here"
+> > ```
+> Interesting, isn't it?
+{:.answer}
+
+
+
 **Question 1** : préparer les données pour les exercices
 ### Connexion sur le cluster NNCR en ssh avec vos comptes personnels
 %commande à venir  
