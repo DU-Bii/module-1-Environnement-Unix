@@ -1,9 +1,12 @@
 # Partie 1 : les fichiers et les répertoires
-# Révisions du prérequis module1 du Datacamp
+
+## Révisions du prérequis module1 du Datacamp
 - **Répertoires** : savoir afficher le répertoire courant, afficher le contenu d'un répertoire, changer de répertoire, créer un répertoire
 - **Aborescence Linux** : maitriser la notion de chemin absolu et relatif, connaitre les répertoires particuliers de l'arborescence Linux, savoir afficher l'arborescence Linux
 - **Fichiers** : savoir copier, supprimer, déplacer un fichier. Savoir nommer un fichier avec une extension adéquate. Connaitre les caractères spéciaux (* et ?)
 
+
+---
 
 **Question**: this is a test question.
 
@@ -15,37 +18,104 @@
 > Interesting, isn't it?
 {:.answer}
 
+---
 
 
 **Question 1** : préparer les données pour les exercices
+
+
 ### Connexion sur le cluster NNCR en ssh avec vos comptes personnels
 %commande à venir  
 %sinon travail en local sur les postes de la salle  
-### Créer un réeprtoire DUBii et se positionner dans ce répertoire
-`$ mkdir DUBii`  
-`$ cd DUBii`  
+
+### Créer un répertoire DUBii et se positionner dans ce répertoire
+
+```bash
+$ mkdir DUBii
+$ cd DUBii
+```
+
+
 ### Télécharger les fichiers des jeux de données du DUBii 
-Utiliser la commande suivante : 
-`$ git clone https://github.com/DU-Bii/study-cases.git`  
-Se positionner dans le répertoire study-cases  
-`$ cd study-cases`  
-Utiliser la commande `tree` pour visualiser l'arborescence  
-`$ tree`  
-Se positionner dans le répertoire Escherichia_coli/bacterial-regulons_myers_2013/data
-`$ cd Escherichia_coli/bacterial-regulons_myers_2013/data`
+
+```bash
+$ # Récupération du répertoire avec git
+$ git clone https://github.com/DU-Bii/study-cases.git
+$ # Se positionner dans le répertoire study-cases
+$ cd study-cases
+$ # Utiliser la commande `tree` pour visualiser l'arborescence
+$ tree
+[...]
+$ # Se positionner dans le répertoire Escherichia_coli/bacterial-regulons_myers_2013
+$ cd Escherichia_coli/bacterial-regulons_myers_2013
+```
+
   
 # Partie 2 : Afficher le contenu d'un fichier
-Sous Linux on dispose de plusieurs commandes permettant d'afficher le contenu de fichiers texte de différentes manières
+
+Sous Linux on dispose de plusieurs commandes permettant d'afficher le contenu de fichiers texte de différentes manières.
+
 ## cat
-Affiche et concaténe le contenu du ou des fichiers donnés en arguments (ou de l'entrée standart) sur la sortie standart  
-Exemple 1 : affichier le contenu du fichier cutadapt_bwa_featureCounts_all.tsv dans le répertoire data/RNA-seq  
-`$ cat data/RNA-seq/cutadapt_bwa_featureCounts_all.tsv`  
-Exemple 2 : concaténer le contenu des fichiers FNR1_vs_input1_cutadapt_bowtie2_homer.bed et FNR1_vs_input1_cutadapt_bowtie2_macs2.bed dans le répertoire data/ChIP-seq  
-`$ cat data/ChIP-seq/FNR1_vs_input1_cutadapt_bowtie2_homer.bed data/ChIP-seq/FNR1_vs_input1_cutadapt_bowtie2_macs2.bed` 
+
+Affiche et concatène le contenu du ou des fichiers donnés en arguments (ou de l'entrée standard) sur la sortie standard
+**Exemple 1**: afficher le contenu du fichier `cutadapt_bwa_featureCounts_all.tsv` dans le `répertoire data/RNA-seq`
+
+> Solution:
+> > ```bash
+> > $ cat data/RNA-seq/cutadapt_bwa_featureCounts_all.tsv
+> > Geneid  WT1 WT2 dFNR1   dFNR2
+> > b0001   70  98  72  63
+> > b0002   23421   33092   32156   20749
+> > b0003   7538    10350   9596    6490
+> > b0004   8263    11927   11042   7145
+> > b0005   121 156 104 62
+> > b0006   177 224 287 209
+> > b0007   138 116 68  50
+> > b0008   2964    3971    4211    2823
+> > b0009   213 205 196 128
+> > [...]
+> > b4400   82  42  37  35
+> > b4401   3349    4692    2619    1609
+> > b4402   201 318 224 128
+> > b4403   82  116 87  68
+> > ```
+{:.answer}
+
+
+**Exemple 2** : concaténer le contenu des fichiers `FNR1_vs_input1_cutadapt_bowtie2_homer.bed`
+et `FNR1_vs_input1_cutadapt_bowtie2_macs2.bed` dans le répertoire `data/ChIP-seq`.
+
+> Solution:
+> > ```bash
+> > $ cat data/ChIP-seq/FNR1_vs_input1_cutadapt_bowtie2_homer.bed data/ChIP-seq/FNR1_vs_input1_cutadapt_bowtie2_macs2.bed
+> > # HOMER Peaks
+> > # Peak finding parameters:
+> > # tag directory = ChIP-seq/results/peaks/FNR1_vs_input1/homer/FNR1_tag
+> > #
+> > # total peaks = 161
+> > # peak size = 177
+> > # peaks found using tags on both strands
+> > # minimum distance between peaks = 354
+> > # fragment length = 176
+> > # genome size = 4639221
+> > [...]
+> > Chromosome  4628694 4628894 FNR1_vs_input1_cutadapt_bowtie2_macs2_peak_409  255 .   1.64016 27.14359    25.51793    45
+> > Chromosome  4633063 4633362 FNR1_vs_input1_cutadapt_bowtie2_macs2_peak_410  374 .   1.87671 39.12086    37.41762    131
+> > Chromosome  4640075 4640748 FNR1_vs_input1_cutadapt_bowtie2_macs2_peak_411  6432    .   4.90760 645.83362   643.22699   454
+> > ```
+{:.answer}
+
   
 **Question 2** : quel inconvénient majeur voyez-vous à la commande `cat`?  
-  
-## more and less
+
+> **Réponse**: 
+> > La commande `cat` affiche la totalité des fichiers ce qui rend la sortie
+> > de la commande souvent illisible.
+{:.answer}
+
+
+## more & less
+
 Les deux commandes `more` et `less` vous permettent d'afficher le contenu d'un ou plusieurs fichiers page par page, ce qui est très utile lorsqu'on manipule des fichiers de taille importante  
 La commande `less` est une évolution récente de `more` avec plus de fonctionnalités  
 Options utiles  
@@ -119,17 +189,17 @@ La commande `!grep` permet de relancer la dernière commande utilisée comemnça
 **Question 9** : que fait la commande `!n -3` ?  
   
 ## Sauver le résultat d'une commande Linux dans un fichier : notion de redirection
-La possibilité de redirection de l'entrée ou de la sortie standart est une notion fondamentale du système d'exploitation Linux.  
+La possibilité de redirection de l'entrée ou de la sortie standard est une notion fondamentale du système d'exploitation Linux.  
 Par défaut tout programme Linux a trois flots de direction   
-- une **entrée standart**, appelée 'stdin', par défaut associée au **clavier**  
-- une **sortie standart**, appelée 'stdout', par défaut associée à **l'écran**  
-- une **erreur standart** appelée 'stderr', par défaut associée à **l'écran**  
+- une **entrée standard**, appelée 'stdin', par défaut associée au **clavier**  
+- une **sortie standard**, appelée 'stdout', par défaut associée à **l'écran**  
+- une **erreur standard** appelée 'stderr', par défaut associée à **l'écran**  
 Une redirection est une modification de l’une de ces associations. Elle est valable uniquement le temps de la commande sur laquelle elle porte.  
-Pour modifier l'entrée standart d'une commande en lisant les données d'un fichier 'infile' on utilise : 
+Pour modifier l'entrée standard d'une commande en lisant les données d'un fichier 'infile' on utilise : 
 `< infile`  
-Pour modifier la sortie standart d'une commande et écrire les résultats dans un fichier 'outfile' on utilise : 
+Pour modifier la sortie standard d'une commande et écrire les résultats dans un fichier 'outfile' on utilise : 
 `> outfile` ou `>> outfile`  
-Pour modifier l'erreur standart d'une commande et écrire les messages d'erreurs dans un fichier 'errfile' on utilise :
+Pour modifier l'erreur standard d'une commande et écrire les messages d'erreurs dans un fichier 'errfile' on utilise :
 `2> errfile`  
 En résumé tout programme Linux peut s'écrire  
 `$program < infile > outfile 2> errfile`  
