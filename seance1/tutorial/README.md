@@ -136,7 +136,7 @@ Utiliser l'option `-n <N>` pour afficher les `N` premières lignes d'un fichier.
 
 > **Réponse**:
 > > ```bash
-> > $ head -n 20 ChIP-seq/FNR1_vs_input1_cutadapt_bowtie2_homer.bed                                                                                      [11:08:39]
+> > $ head -n 20 ChIP-seq/FNR1_vs_input1_cutadapt_bowtie2_homer.bed
 > > # HOMER Peaks
 > > # Peak finding parameters:
 > > # tag directory = ChIP-seq/results/peaks/FNR1_vs_input1/homer/FNR1_tag
@@ -171,7 +171,7 @@ Utiliser l'option `-n N` pour afficher les `N` dernières lignes d'un fichier.
 
 > **Réponse**:
 > > ```bash
-> > $ tail -n 20 ChIP-seq/FNR1_vs_input1_cutadapt_bowtie2_homer.bed                                                                                      [11:09:24]
+> > $ tail -n 20 ChIP-seq/FNR1_vs_input1_cutadapt_bowtie2_homer.bed
 > > Chromosome  3741528 3741705 Chromosome-194  1   +
 > > Chromosome  2755648 2755825 Chromosome-198  1   +
 > > Chromosome  3219112 3219289 Chromosome-201  1   +
