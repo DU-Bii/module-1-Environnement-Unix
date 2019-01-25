@@ -10,12 +10,15 @@
     <link rel="stylesheet" type="text/css" href="{{ '/assets/css/bootstrap-theme.css' | relative_url }}" />
     <!-- modif BL - END -->
 
-
 {% seo %}
     <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
     <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
+
+    <!-- modif PP -->
+    <link rel="stylesheet" type="text/css" href="{{ '/assets/css/custom.css' | relative_url }}" />
+    <!-- modif PP - END -->
 
     <style>
       blockquote {border-left: none; padding: 0 0 0 0px; margin-bottom: 20px;}
@@ -26,7 +29,7 @@
     <div class="wrapper">
       <header>
         <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
-        
+
         {% if site.logo %}
           <img src="{{site.logo | relative_url}}" alt="Logo" />
         {% endif %}
