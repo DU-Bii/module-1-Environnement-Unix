@@ -10,10 +10,6 @@
 **Question 1** : préparer les données pour les exercices
 
 
-### Connexion sur le cluster NNCR en ssh avec vos comptes personnels
-%commande à venir  
-%sinon travail en local sur les postes de la salle  
-
 ### Créer un répertoire DUBii et se positionner dans ce répertoire
 
 ```bash
