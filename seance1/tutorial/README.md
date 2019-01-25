@@ -297,7 +297,7 @@ notion fondamentale du système d'exploitation Linux.
 
 Par défaut tout programme Linux a trois flots de direction :
 
-- une **entrée standard**, appelée `stdin'` par défaut associée au **clavier**
+- une **entrée standard**, appelée `stdin` par défaut associée au **clavier**
 - une **sortie standard**, appelée `stdout`, par défaut associée à **l'écran**
 - une **erreur standard** appelée `stderr`, par défaut associée à **l'écran**
 
