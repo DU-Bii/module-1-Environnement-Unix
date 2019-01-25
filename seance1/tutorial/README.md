@@ -7,21 +7,6 @@
 - **Fichiers** : savoir copier, supprimer, déplacer un fichier. Savoir nommer un fichier avec une extension adéquate. Connaitre les caractères spéciaux (* et ?)
 
 
----
-
-**Question**: this is a test question.
-
-> **Solution**:
-> > This is the test solution to the test question
-> > ```bash
-> > $ echo "so much information here"
-> > ```
-> Interesting, isn't it?
-{:.answer}
-
----
-
-
 **Question 1** : préparer les données pour les exercices
 
 
@@ -64,7 +49,7 @@ Affiche et concatène le contenu du ou des fichiers donnés en arguments
 **Exemple 1**: afficher le contenu du fichier `cutadapt_bwa_featureCounts_all.tsv` 
 dans le répertoire `RNA-seq`
 
-> Solution:
+> **Solution**:
 > > ```bash
 > > $ cat RNA-seq/cutadapt_bwa_featureCounts_all.tsv
 > > Geneid  WT1 WT2 dFNR1   dFNR2
@@ -89,7 +74,7 @@ dans le répertoire `RNA-seq`
 **Exemple 2** : concaténer le contenu des fichiers `FNR1_vs_input1_cutadapt_bowtie2_homer.bed`
 et `FNR1_vs_input1_cutadapt_bowtie2_macs2.bed` dans le répertoire `ChIP-seq`.
 
-> Solution:
+> **Solution**:
 > > ```bash
 > > $ cat ChIP-seq/FNR1_vs_input1_cutadapt_bowtie2_homer.bed ChIP-seq/FNR1_vs_input1_cutadapt_bowtie2_macs2.bed
 > > # HOMER Peaks
