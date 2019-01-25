@@ -22,11 +22,11 @@ Les prérequis à ce module : [ici](prerequis/README.md)
 
 ## Séance 1 - Premiers pas
 
-- lundi 28/01/2019 10:30 - 13:00
+- lundi 28/01/2019 10:15 - 12:45
 - instructeurs : Hélène Chiapello & Pierre Poulain
 - helpers : Benoist Laurent, Sandra Dérozier
 
-Test : [lien](seance1/README.md)
+diapo - [tutoriel](seance1/tutorial/README.md)
 
 
 ## Séance 2 - Gestion et utilisation des ressources IFB
