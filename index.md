@@ -26,7 +26,7 @@ Les prérequis à ce module : [ici](prerequis/README.md)
 - instructeurs : Hélène Chiapello & Pierre Poulain
 - helpers : Benoist Laurent, Sandra Dérozier
 
-diapo - [tutoriel](seance1/tutorial/README.md)
+[présentation](seance1/slides/index.html) - [tutoriel](seance1/tutorial/README.md)
 
 
 ## Séance 2 - Gestion et utilisation des ressources IFB
@@ -35,7 +35,8 @@ diapo - [tutoriel](seance1/tutorial/README.md)
 - instructeurs : Julien Seiler & Jacques van Helden
 - helpers : Benoist Laurent, Hélène Chiapello & Pierre Poulain
 
-[Diapositives](seance2/slides/index.html)
+[présentation](seance2/slides/index.html)
+
 
 ## Séance 3 - Gestion de flux et extraction de données
 
