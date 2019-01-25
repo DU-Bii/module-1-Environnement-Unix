@@ -5,11 +5,7 @@ class: center, middle
 ## DU Bii 2019
 
 
-Hélène Chiapello,
-Pierre Poulain,
-Benoist Laurent,
-Julien Seiler,
-Jacques van Helden
+Hélène Chiapello, Pierre Poulain
 
 
 .footer[
@@ -43,11 +39,11 @@ template: title
 
 ---
 
-template: content
+template: title
 
-## Le shell
+# Le shell
 
-Une interface de commandes
+## Une interface de commandes
 
 ---
 
