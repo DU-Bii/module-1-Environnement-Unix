@@ -118,40 +118,42 @@ Quelques fonctionnalités utiles :
 - `:q` : quitte less  
   
 **Question 3** : afficher le contenu du fichier 
-`Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3` avec `less`
-Le fichier est à télécharger depuis le site https://du-bii.github.io/study-cases/Escherichia_coli/bacterial-regulons_myers_2013/
-
+`cutadapt_bwa_featureCounts_all.tsv` avec `less`
+> > ```bash
+> > less RNA-seq/cutadapt_bwa_featureCounts_all.tsv
+> > ```
+{:.answer}
 ## head
 La commande `head` permet d'afficher uniquement le début du ou des fichier(s)
 passé(s) en argument.
 Par défaut, `head` affiche les 10 premières lignes d'un fichier.  
 Utiliser l'option `-n <N>` pour afficher les `N` premières lignes d'un fichier. 
   
-**Question 4** : afficher les 20 premières lignes du fichier `Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3`.
+**Question 4** : afficher les 20 premières lignes du fichier `RNA-seq/cutadapt_bwa_featureCounts_all.tsv`.
 
 > **Réponse**:
 > > ```bash
-> > $ head -n 20 Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3
-> > # HOMER Peaks
-> > # Peak finding parameters:
-> > # tag directory = ChIP-seq/results/peaks/FNR1_vs_input1/homer/FNR1_tag
-> > #
-> > # total peaks = 161
-> > # peak size = 177
-> > # peaks found using tags on both strands
-> > # minimum distance between peaks = 354
-> > # fragment length = 176
-> > # genome size = 4639221
-> > # Total tags = 9390402.0
-> > # Total tags in peaks = 528346.0
-> > # Approximate IP efficiency = 5.63%
-> > # tags per bp = 2.020942
-> > # expected tags per peak = 357.707
-> > # maximum tags considered per bp = 202.0
-> > # effective number of tags used for normalization = 10000000.0
-> > # Peaks have been centered at maximum tag pile-up
-> > # FDR rate threshold = 0.010000000
-> > # FDR effective poisson threshold = 4.218043e-04
+> > $ head -n 20 RNA-seq/cutadapt_bwa_featureCounts_all.tsv
+> > Geneid	WT1	WT2	dFNR1	dFNR2
+> > b0001	70	98	72	63
+> > b0002	23421	33092	32156	20749
+> > b0003	7538	10350	9596	6490
+> > b0004	8263	11927	11042	7145
+> > b0005	121	156	104	62
+> > b0006	177	224	287	209
+> > b0007	138	116	68	50
+> > b0008	2964	3971	4211	2823
+> > b0009	213	205	196	128
+> > b0010	184	193	130	74
+> > b0011	44	13	13	10
+> > b0013	18	6	7	3
+> > b0014	10758	14747	15432	10243
+> > b0015	1343	1667	1549	1045
+> > b0016	261	326	252	141
+> > b4412	0	0	0	0
+> > b0018	7	0	2	1
+> > b4413	1	0	1	1
+> > b0019	714	944	1093	704
 > > ```
 {:.answer}
 
@@ -162,51 +164,32 @@ passé(s) en argument.
 Par défaut `tail` affiche les 10 dernières lignes d'un fichier.
 Utiliser l'option `-n N` pour afficher les `N` dernières lignes d'un fichier.
   
-**Question 5** : afficher les 20 dernières lignes du fichier `Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3`.
+**Question 5** : afficher les 20 dernières lignes du fichier `RNA-seq/cutadapt_bwa_featureCounts_all.tsv`.
 
 > **Réponse**:
 > > ```bash
-> > $ tail -n 20 Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3
-> > Chromosome	ena	gene	4638178	4639530	.	+	.	ID=gene:b4400;Name=creD;biotype=protein_coding;description=inner membrane protein;gene_id=b4400;logic_name=ena
-> > Chromosome	ena	mRNA	4638178	4639530	.	+	.	ID=transcript:AAC77353;Parent=gene:b4400;Name=creD-1;biotype=protein_coding;transcript_id=AAC77353
-> > Chromosome	ena	exon	4638178	4639530	.	+	.	Parent=transcript:AAC77353;Name=AAC77353-1;constitutive=1;ensembl_end_phase=0;ensembl_phase=0;exon_id=AAC77353-1;rank=1
-Chromosome	ena	CDS	4638178	4639530	.	+	0	ID=CDS:AAC77353;Parent=transcript:AAC77353;protein_id=AAC77353
-> > ###
-> > Chromosome	ena	gene	4639590	4640306	.	-	.	ID=gene:b4401;Name=arcA;biotype=protein_coding;description=response regulator in two-component regulatory system with ArcB or CpxA;gene_id=b4401;logic_name=ena
-> > Chromosome	ena	mRNA	4639590	4640306	.	-	.	ID=transcript:AAC77354;Parent=gene:b4401;Name=arcA-1;biotype=protein_coding;transcript_id=AAC77354
-> > Chromosome	ena	exon	4639590	4640306	.	-	.	Parent=transcript:AAC77354;Name=AAC77354-1;constitutive=1;ensembl_end_phase=0;ensembl_phase=0;exon_id=AAC77354-1;rank=1
-> > Chromosome	ena	CDS	4639590	4640306	.	-	0	ID=CDS:AAC77354;Parent=transcript:AAC77354;protein_id=AAC77354
-> > ###
-> > Chromosome	ena	gene	4640402	4640542	.	+	.	ID=gene:b4402;Name=yjjY;biotype=protein_coding;description=uncharacterized protein;gene_id=b4402;logic_name=ena
-> > Chromosome	ena	mRNA	4640402	4640542	.	+	.	ID=transcript:AAC77355;Parent=gene:b4402;Name=yjjY-1;biotype=protein_coding;transcript_id=AAC77355
-> > Chromosome	ena	exon	4640402	4640542	.	+	.	Parent=transcript:AAC77355;Name=AAC77355-1;constitutive=1;ensembl_end_phase=0;ensembl_phase=0;exon_id=AAC77355-1;rank=1
-> > Chromosome	ena	CDS	4640402	4640542	.	+	0	ID=CDS:AAC77355;Parent=transcript:AAC77355;protein_id=AAC77355
-> > ###
-> > Chromosome	ena	gene	4640942	4641628	.	+	.	ID=gene:b4403;Name=yjtD;biotype=protein_coding;description=putative methyltransferase;gene_id=b4403;logic_name=ena
-> > Chromosome	ena	mRNA	4640942	4641628	.	+	.	ID=transcript:AAC77356;Parent=gene:b4403;Name=yjtD-1;biotype=protein_coding;transcript_id=AAC77356
-> > Chromosome	ena	exon	4640942	4641628	.	+	.	Parent=transcript:AAC77356;Name=AAC77356-1;constitutive=1;ensembl_end_phase=0;ensembl_phase=0;exon_id=AAC77356-1;rank=1
-> > Chromosome	ena	CDS	4640942	4641628	.	+	0	ID=CDS:AAC77356;Parent=transcript:AAC77356;protein_id=AAC77356
+> > $ tail -n 20 RNA-seq/cutadapt_bwa_featureCounts_all.tsv
+> > b4384	846	1241	1173	751
+> > b4385	205	224	145	84
+> > b4386	243	233	192	106
+> > b4387	164	197	142	98
+> > b4388	409	489	404	264
+> > b4389	712	785	615	350
+> > b4390	421	535	471	316
+> > b4391	2341	2740	2888	1913
+> > b4392	538	601	717	464
+> > b4393	203	258	202	137
+> > b4394	256	292	243	167
+> > b4395	404	591	422	309
+> > b4396	903	1161	1055	709
+> > b4397	235	280	242	143
+> > b4398	210	251	178	122
+> > b4399	166	115	122	101
+> > b4400	82	42	37	35
+> > b4401	3349	4692	2619	1609
+> > b4402	201	318	224	128
+> > b4403	82	116	87	68
 > > 
-> > Chromosome  3741528 3741705 Chromosome-194  1   +
-> > Chromosome  2755648 2755825 Chromosome-198  1   +
-> > Chromosome  3219112 3219289 Chromosome-201  1   +
-> > Chromosome  401004  401181  Chromosome-206  1   +
-> > Chromosome  1185734 1185911 Chromosome-203  1   +
-> > Chromosome  1032051 1032228 Chromosome-185  1   +
-> > Chromosome  916117  916294  Chromosome-215  1   +
-> > Chromosome  2746096 2746273 Chromosome-213  1   +
-> > Chromosome  4376835 4377012 Chromosome-220  1   +
-> > Chromosome  4617026 4617203 Chromosome-227  1   +
-> > Chromosome  1746418 1746595 Chromosome-225  1   +
-> > Chromosome  2765470 2765647 Chromosome-238  1   +
-> > Chromosome  1019945 1020122 Chromosome-239  1   +
-> > Chromosome  939275  939452  Chromosome-245  1   +
-> > Chromosome  2266050 2266227 Chromosome-266  1   +
-> > Chromosome  2850656 2850833 Chromosome-255  1   +
-> > Chromosome  1779066 1779243 Chromosome-305  1   +
-> > Chromosome  3194626 3194803 Chromosome-315  1   +
-> > Chromosome  961753  961930  Chromosome-340  1   +
-> > Chromosome  1250865 1251042 Chromosome-399  1   +
 > > 
 {:.answer}
 
@@ -231,7 +214,7 @@ Toutes les commandes sont résumées dans le bandeau en bas de l'écran
 Le symbole `^` signifie <kbd>CTRL</kbd> (la touche Contrôle de votre clavier).
 
 Voici les raccourcis les plus importants :
-- <kdb>Ctrl-G</kbd> : afficher l'aide
+- Ctrl-G : afficher l'aide
 - <kdb>Ctrl-K</kbd> : couper la ligne de texte (et la mettre dans le presse-papier)
 - <kdb>Ctrl-U</kbd> : coller la ligne de texte que vous venez de couper
 - <kdb>Ctrl-C</kbd> : afficher à quel endroit du fichier votre curseur est positionné (numéro de ligne)
@@ -243,16 +226,18 @@ Vous pouvez vous déplacer dans le fichier avec les flèches du clavier ainsi
 qu'avec les touches <kbd>PageUp</kbd> et <kbd>PageDown</kbd> pour avancer 
 de page en page (les raccourcis <kbd>CTRL-Y</kbd> et <kbd>CTRL-V</kbd> fonctionnent aussi).
 
-**Question 7** : ouvrir avec l'éditeur `nano` le fichier `xxx.gff`
+**Question 7** : ouvrir avec l'éditeur `nano` le fichier `Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3`
+Créer un répertoire /projet/toulouse/save/hchiapello/DUBii/study-cases/Escherichia_coli/bacterial-regulons_myers_2013/data/Annotations
+Télécharger depuis le site https://du-bii.github.io/study-cases/Escherichia_coli/bacterial-regulons_myers_2013/ le fichier Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3
 
-- Recherche les lignes contenant le mot x
+- Recherche les lignes contenant le mot 23S
 - Supprimer ces lignes
-- Enregistrer le fichier sous le nom xxx_v2.gff`
+- Enregistrer le fichier sous le nom Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome_wo23S.gff`
 
 
 Remarques :
 
-- pour rechercher un mot plusieurs fois sans le réécrire, tapez juste <kbd>ENTER</kbd>
+- pour rechercher un mot plusieurs fois sans le réécrire, tapez juste Ctrl-W<kbd>ENTER</kbd>
 - si vous voulez sortir du mode recherche, tapez <kbd>CTRL-C</kbd>
 
 
