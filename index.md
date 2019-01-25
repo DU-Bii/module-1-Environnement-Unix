@@ -71,7 +71,7 @@ Si vous travaillez avec Windows :
     + https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/
     + https://www.howtogeek.com/265900/everything-you-can-do-with-windows-10s-new-bash-shell/
 
-Ces recommandations sont tirées sur site de [Software Carpentry](https://carpentries.org/) dédié au [*Shell*](http://swcarpentry.github.io/shell-novice/setup.html).
+Ces recommandations sont tirées du site de [Software Carpentry](https://carpentries.org/) dédié au [*Shell*](http://swcarpentry.github.io/shell-novice/setup.html).
 
 
 ## Bibliographie / webographie
