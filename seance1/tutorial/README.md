@@ -134,7 +134,7 @@ Utiliser l'option `-n <N>` pour afficher les `N` premières lignes d'un fichier.
   
 **Question 4** : afficher les 20 premières lignes du fichier `ChIP-seq/FNR1_vs_input1_cutadapt_bowtie2_homer.bed`.
 
-> Réponse:
+> **Réponse**:
 > > ```bash
 > > $ head -n 20 ChIP-seq/FNR1_vs_input1_cutadapt_bowtie2_homer.bed                                                                                      [11:08:39]
 > > # HOMER Peaks
