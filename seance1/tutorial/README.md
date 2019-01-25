@@ -118,9 +118,8 @@ Quelques fonctionnalités utiles :
 - `:q` : quitte less  
   
 **Question 3** : afficher le contenu du fichier 
-`ChIP-seq/FNR1_vs_input1_cutadapt_bowtie2_homer.bed` avec `less`
-
-... **note** : serait plus intéressant d'avoir un fichier gff
+`Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3` avec `less`
+Le fichier est à télécharger depuis le site https://du-bii.github.io/study-cases/Escherichia_coli/bacterial-regulons_myers_2013/
 
 ## head
 La commande `head` permet d'afficher uniquement le début du ou des fichier(s)
@@ -128,11 +127,11 @@ passé(s) en argument.
 Par défaut, `head` affiche les 10 premières lignes d'un fichier.  
 Utiliser l'option `-n <N>` pour afficher les `N` premières lignes d'un fichier. 
   
-**Question 4** : afficher les 20 premières lignes du fichier `ChIP-seq/FNR1_vs_input1_cutadapt_bowtie2_homer.bed`.
+**Question 4** : afficher les 20 premières lignes du fichier `Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3`.
 
 > **Réponse**:
 > > ```bash
-> > $ head -n 20 ChIP-seq/FNR1_vs_input1_cutadapt_bowtie2_homer.bed
+> > $ head -n 20 Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3
 > > # HOMER Peaks
 > > # Peak finding parameters:
 > > # tag directory = ChIP-seq/results/peaks/FNR1_vs_input1/homer/FNR1_tag
@@ -163,11 +162,31 @@ passé(s) en argument.
 Par défaut `tail` affiche les 10 dernières lignes d'un fichier.
 Utiliser l'option `-n N` pour afficher les `N` dernières lignes d'un fichier.
   
-**Question 5** : afficher les 20 dernières lignes du fichier `ChIP-seq/FNR1_vs_input1_cutadapt_bowtie2_homer.bed`.
+**Question 5** : afficher les 20 dernières lignes du fichier `Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3`.
 
 > **Réponse**:
 > > ```bash
-> > $ tail -n 20 ChIP-seq/FNR1_vs_input1_cutadapt_bowtie2_homer.bed
+> > $ tail -n 20 Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3
+> > Chromosome	ena	gene	4638178	4639530	.	+	.	ID=gene:b4400;Name=creD;biotype=protein_coding;description=inner membrane protein;gene_id=b4400;logic_name=ena
+> > Chromosome	ena	mRNA	4638178	4639530	.	+	.	ID=transcript:AAC77353;Parent=gene:b4400;Name=creD-1;biotype=protein_coding;transcript_id=AAC77353
+> > Chromosome	ena	exon	4638178	4639530	.	+	.	Parent=transcript:AAC77353;Name=AAC77353-1;constitutive=1;ensembl_end_phase=0;ensembl_phase=0;exon_id=AAC77353-1;rank=1
+Chromosome	ena	CDS	4638178	4639530	.	+	0	ID=CDS:AAC77353;Parent=transcript:AAC77353;protein_id=AAC77353
+> > ###
+> > Chromosome	ena	gene	4639590	4640306	.	-	.	ID=gene:b4401;Name=arcA;biotype=protein_coding;description=response regulator in two-component regulatory system with ArcB or CpxA;gene_id=b4401;logic_name=ena
+> > Chromosome	ena	mRNA	4639590	4640306	.	-	.	ID=transcript:AAC77354;Parent=gene:b4401;Name=arcA-1;biotype=protein_coding;transcript_id=AAC77354
+> > Chromosome	ena	exon	4639590	4640306	.	-	.	Parent=transcript:AAC77354;Name=AAC77354-1;constitutive=1;ensembl_end_phase=0;ensembl_phase=0;exon_id=AAC77354-1;rank=1
+> > Chromosome	ena	CDS	4639590	4640306	.	-	0	ID=CDS:AAC77354;Parent=transcript:AAC77354;protein_id=AAC77354
+> > ###
+> > Chromosome	ena	gene	4640402	4640542	.	+	.	ID=gene:b4402;Name=yjjY;biotype=protein_coding;description=uncharacterized protein;gene_id=b4402;logic_name=ena
+> > Chromosome	ena	mRNA	4640402	4640542	.	+	.	ID=transcript:AAC77355;Parent=gene:b4402;Name=yjjY-1;biotype=protein_coding;transcript_id=AAC77355
+> > Chromosome	ena	exon	4640402	4640542	.	+	.	Parent=transcript:AAC77355;Name=AAC77355-1;constitutive=1;ensembl_end_phase=0;ensembl_phase=0;exon_id=AAC77355-1;rank=1
+> > Chromosome	ena	CDS	4640402	4640542	.	+	0	ID=CDS:AAC77355;Parent=transcript:AAC77355;protein_id=AAC77355
+> > ###
+> > Chromosome	ena	gene	4640942	4641628	.	+	.	ID=gene:b4403;Name=yjtD;biotype=protein_coding;description=putative methyltransferase;gene_id=b4403;logic_name=ena
+> > Chromosome	ena	mRNA	4640942	4641628	.	+	.	ID=transcript:AAC77356;Parent=gene:b4403;Name=yjtD-1;biotype=protein_coding;transcript_id=AAC77356
+> > Chromosome	ena	exon	4640942	4641628	.	+	.	Parent=transcript:AAC77356;Name=AAC77356-1;constitutive=1;ensembl_end_phase=0;ensembl_phase=0;exon_id=AAC77356-1;rank=1
+> > Chromosome	ena	CDS	4640942	4641628	.	+	0	ID=CDS:AAC77356;Parent=transcript:AAC77356;protein_id=AAC77356
+> > 
 > > Chromosome  3741528 3741705 Chromosome-194  1   +
 > > Chromosome  2755648 2755825 Chromosome-198  1   +
 > > Chromosome  3219112 3219289 Chromosome-201  1   +
@@ -188,7 +207,7 @@ Utiliser l'option `-n N` pour afficher les `N` dernières lignes d'un fichier.
 > > Chromosome  3194626 3194803 Chromosome-315  1   +
 > > Chromosome  961753  961930  Chromosome-340  1   +
 > > Chromosome  1250865 1251042 Chromosome-399  1   +
-> > ```
+> > 
 {:.answer}
 
   
