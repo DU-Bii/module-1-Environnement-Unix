@@ -158,7 +158,7 @@ Utiliser l'option `-n <N>` pour afficher les `N` premières lignes d'un fichier.
 > > # FDR rate threshold = 0.010000000
 > > # FDR effective poisson threshold = 4.218043e-04
 > > ```
-{:answer}
+{:.answer}
 
 ## tail
 
