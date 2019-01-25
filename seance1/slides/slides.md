@@ -9,7 +9,7 @@ Hélène Chiapello, Pierre Poulain
 
 
 .footer[
-https://github.com/DU-Bii/module-1-Environnement-Unix
+https://du-bii.github.io/module-1-Environnement-Unix/
 ]
 
 ---
@@ -39,19 +39,15 @@ template: title
 
 ---
 
-template: title
+class: center
 
 # Le shell
 
+--
+
 ## Une interface de commandes
 
----
-
-template: content
-
-##  Une **interface** de commandes
-
-screenshots
+# .fas.fa-user[] / .fas.fa-desktop[]
 
 ---
 
@@ -59,7 +55,34 @@ template: content
 
 ##  Une **interface** de commandes
 
-Première connexion sur les machines
+--
+
+<img height="200px" src="img/shell1.png">
+<img height="200px" src="img/shell2.png">
+<img height="200px" src="img/shell6.png">
+
+<img height="200px" src="img/shell4.png">
+<img height="200px" src="img/shell5.png">
+<img height="200px" src="img/shell3.png">
+
+---
+
+template: content
+
+##  Une **interface** de commandes
+
+<img height="200px" src="img/shell1.png">
+<img height="200px" src="img/shell2.png">
+<img height="200px" src="img/shell6.png">
+
+##  à vous !
+.callout.callout-success[
+Prises de contact avec les machines de l'université :
+- distribution des comptes
+- ouverture de la session
+- lancement d'un *shell* via un terminal
+- changement du mot de passe avec la commande `yppaswd`
+]
 
 ---
 
@@ -72,3 +95,9 @@ DataCamp
 Activité WooClap
 
 ---
+template: title
+
+# Bonnes pratiques pour organiser vos projets (bioinfo)
+
+---
+template: content
