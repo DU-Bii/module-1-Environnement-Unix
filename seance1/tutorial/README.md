@@ -193,7 +193,7 @@ Utiliser l'option `-n N` pour afficher les `N` dernières lignes d'un fichier.
 > > Chromosome  961753  961930  Chromosome-340  1   +
 > > Chromosome  1250865 1251042 Chromosome-399  1   +
 > > ```
-{:answer}
+{:.answer}
 
   
 ## L'éditeur de texte nano
