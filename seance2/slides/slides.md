@@ -66,7 +66,6 @@ template: content
 * How to connect to the IFB cluster
 * The SLURM Batch system
 * Use "module" to load tools
-* Use "conda" to install more software
 
 ---
 
