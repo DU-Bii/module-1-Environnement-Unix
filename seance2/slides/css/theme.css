@@ -36,8 +36,7 @@ h1, h2, h3 {
 
 /* Two-column layout */
 .left-column {
-  width: 20%;
-  height: 92%;
+  width: 45%;
   float: left;
 }
 
@@ -49,7 +48,6 @@ h1, h2, h3 {
   color: #000;
 }
 .right-column {
-  width: 75%;
+  width: 45%;
   float: right;
-  padding-top: 1em;
 }
