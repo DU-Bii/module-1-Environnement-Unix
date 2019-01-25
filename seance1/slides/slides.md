@@ -5,10 +5,10 @@ class: center, middle
 ## DU Bii 2019
 
 
-Hélène Chiapello
-Pierre Poulain
-Benoist Laurent
-Julien Seiler
+Hélène Chiapello,
+Pierre Poulain,
+Benoist Laurent,
+Julien Seiler,
 Jacques van Helden
 
 
@@ -20,7 +20,7 @@ https://github.com/DU-Bii/module-1-Environnement-Unix
 
 layout: true
 name: title
-class: middle
+class: center, middle
 
 .footer[
 DU Bii 2019
@@ -39,7 +39,7 @@ DU Bii 2019
 
 template: title
 
-## Premiers Unix
+# Premiers pas Unix
 
 ---
 
@@ -55,7 +55,7 @@ template: content
 
 ##  Une **interface** de commandes
 
-screeshot
+screenshots
 
 ---
 
@@ -70,6 +70,8 @@ Première connexion sur les machines
 template: content
 
 ##  Une interface de **commandes**
+
+DataCamp
 
 Activité WooClap
 
