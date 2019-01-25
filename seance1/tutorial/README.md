@@ -249,20 +249,10 @@ Sous Linux toutes les commandes sont documentées de manières standardisée.
 
 Il y a deux moyens d'accèder à l'aide d'une commande :
 
----
-
-**BENOIST**:
-
-`help` n'est pas une commande linux standard.
-
-J'ai changé la description de `<nom_commande> --help` car ça n'affiche pas
-l'ensemble de la doc mais seulement un résumé
-
----
-
-- via la commande `help <nom_commande>` qui permet d'accéder au manuel
+- via la commande `man <nom_commande>` qui permet d'accéder au manuel
 (description complète) de la commande page par page avec les facilités de
 recherche d'un éditeur de texte,
+
 - via l'option `<nom_commande> --help`: on affiche un résumé de la
 documentation et des options à l'écran.
 
@@ -270,7 +260,7 @@ documentation et des options à l'écran.
 
 > **Réponse**:
 > > ```bash
-> > $ less --help
+> > $ man less
 > > [...]
 > >   -n  -N  ....  --line-numbers  --LINE-NUMBERS
 > >                   Don't use line numbers.
@@ -293,7 +283,7 @@ La commande `!grep` permet de relancer la dernière commande utilisée comemnça
 **Question 9** : que fait la commande `!n -3` ?
 
 > **Réponse**:
-> Cette commande permet d'exécuter la 3° dernière commande exécutée.
+> > Cette commande permet d'exécuter la 3° dernière commande exécutée.
 {:.answer}
 
 On peut également retrouver les commandes déjà exécutée en naviguant dans
@@ -301,14 +291,6 @@ l'historique avec les flèches du clavier.
 
 
 ## Sauver le résultat d'une commande Linux dans un fichier : notion de redirection
-
-
---- 
-
-**BENOIST** : en principe les pipes c'est séance 2, non ? 
-
----
-
 
 La possibilité de redirection de l'entrée ou de la sortie standard est une
 notion fondamentale du système d'exploitation Linux.
