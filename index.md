@@ -54,6 +54,8 @@ Les prérequis à ce module : [ici](prerequis/README.md)
 - instructeurs : Benoist Laurent & Hélène Chiapello
 - helper : Pierre Poulain
 
+[tutoriel](seance4/tutorial/README.md)
+
 
 ## Installer un *shell* Linux sur sa machine
 
