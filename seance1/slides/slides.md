@@ -78,10 +78,13 @@ template: content
 ##  à vous !
 .callout.callout-success[
 Prises de contact avec les machines de l'université :
-- distribution des comptes
-- ouverture de la session
-- lancement d'un *shell* via un terminal
-- changement du mot de passe avec la commande `yppaswd`
+
+1. Distribution des comptes.
+1. Ouverture de la session.
+1. Découverte de l'interface graphique. 
+1. Lancement d'un *shell* via un terminal.
+1. Changement du mot de passe avec la commande `yppaswd`.
+1. Déconnexion et reconnexion.
 ]
 
 ---
