@@ -220,7 +220,7 @@ Voici les raccourcis les plus importants :
 - `Ctrl-C` : afficher à quel endroit du fichier votre curseur est positionné (numéro de ligne)
 - `Ctrl-W` : rechercher une chaine de caractères dans le fichier
 - `Ctrl-O` : enregistrer le fichier (écrire)
-- `Ctrl-X`> : quitter Nano.
+- `Ctrl-X` : quitter Nano.
 
 Vous pouvez vous déplacer dans le fichier avec les flèches du clavier ainsi
 qu'avec les touches <kbd>PageUp</kbd> et <kbd>PageDown</kbd> pour avancer 
