@@ -1,48 +1,79 @@
+# Objectifs
+
+- **Répertoires** : Afficher le répertoire courant. Afficher le contenu d'un répertoire. Changer de répertoire. Créer, déplacer et supprimer un répertoire.
+- **Aborescence Linux** : Distinguer la notion de chemin absolu et relatif. Utiliser les raccourcis de l'arborescence Linux (`.`, `..`, `~`). Afficher l'arborescence Linux.
+- **Fichiers** : Copier, supprimer et déplacer un fichier. Nommer un fichier avec une extension adéquate. Utiliser les caractères spéciaux (`*`, `?`). Afficher le contenu d'un fichier (complet, le début, la fin). Modifier un fichier avec un éditeur de texte.
+
+
 # Partie 1 : les fichiers et les répertoires
 
-## Révisions du prérequis module1 du Datacamp
+Sur votre station de travail, dans un *shell* :
 
-- **Répertoires** : savoir afficher le répertoire courant, afficher le contenu d'un répertoire, changer de répertoire, créer un répertoire
-- **Aborescence Linux** : maitriser la notion de chemin absolu et relatif, connaitre les répertoires particuliers de l'arborescence Linux, savoir afficher l'arborescence Linux
-- **Fichiers** : savoir copier, supprimer, déplacer un fichier. Savoir nommer un fichier avec une extension adéquate. Connaitre les caractères spéciaux (* et ?)
+- déplacez-vous dans votre répertoire personnel,
+- créez le répertoire `dubii`,
+- déplacez-vous dans ce répertoire.
 
-
-**Question 1** : préparer les données pour les exercices
-
-
-### Créer un répertoire DUBii et se positionner dans ce répertoire
-
-```bash
-$ mkdir DUBii
-$ cd DUBii
-```
+> **Aide :**:
+> > ```bash
+> > $ cd ~
+> > $ mkdir dubii
+> > $ cd dubii
+> > ```
+{:.answer}
 
 
-### Télécharger les fichiers des jeux de données du DUBii 
+Téléchargez les fichiers des jeux de données du DUBii avec la commande :
 
 ```bash
-$ # Récupération du répertoire avec git
 $ git clone https://github.com/DU-Bii/study-cases.git
-$ # Se positionner dans le répertoire study-cases
-$ cd study-cases
-$ # Utiliser la commande `tree` pour visualiser l'arborescence
-$ tree
-[...]
-$ # Se positionner dans le répertoire Escherichia_coli/bacterial-regulons_myers_2013/data
-$ cd Escherichia_coli/bacterial-regulons_myers_2013/data
 ```
 
-  
+*Remarque :* la commande `git` vous sera expliquée un peu plus tard.
+
+Déplacez-vous ensuite dans le répertoire `study-cases` nouvellement créé.
+
+> **Aide :**:
+> > ```bash
+> > $ cd study-cases
+> > ```
+{:.answer}
+
+Utilisez la commande `tree` pour visualiser l'arborescence qui représente l'organisation des répertoires, sous-répertoires et fichiers.
+
+```bash
+$ tree
+```
+
+Déplacez-vous maintenant dans le répertoire `Escherichia_coli/bacterial-regulons_myers_2013/data`
+
+> **Aide :**:
+> > ```bash
+> > $ cd Escherichia_coli/bacterial-regulons_myers_2013/data
+> > ```
+{:.answer}
+
+Combien de fichiers `.bed` y a t-il dans le répertoire `ChIP-seq` ?
+
+> **Réponse :**:
+> > ```bash
+> > $ ls ChIP-seq/
+> > FNR1_vs_input1_cutadapt_bowtie2_homer.bed  FNR_200bp.wig
+> > FNR1_vs_input1_cutadapt_bowtie2_macs2.bed  input_200bp.wig
+> > ```
+> > Il y a deux fichiers `.bed`
+{:.answer}
+
+
 # Partie 2 : Afficher le contenu d'un fichier
 
 Sous Linux on dispose de plusieurs commandes permettant d'afficher le contenu de fichiers texte de différentes manières.
 
 ## cat
 
-Affiche et concatène le contenu du ou des fichiers donnés en arguments 
+Affiche et concatène le contenu du ou des fichiers donnés en arguments
 (ou de l'entrée standard) sur la sortie standard.
 
-**Exemple 1**: afficher le contenu du fichier `cutadapt_bwa_featureCounts_all.tsv` 
+**Exemple 1**: afficher le contenu du fichier `cutadapt_bwa_featureCounts_all.tsv`
 dans le répertoire `RNA-seq`
 
 > **Solution**:
@@ -90,10 +121,10 @@ et `FNR1_vs_input1_cutadapt_bowtie2_macs2.bed` dans le répertoire `ChIP-seq`.
 > > ```
 {:.answer}
 
-  
+
 **Question 2** : quel inconvénient majeur voyez-vous à la commande `cat`?  
 
-> **Réponse**: 
+> **Réponse**:
 > > La commande `cat` affiche la totalité des fichiers ce qui rend la sortie
 > > de la commande souvent illisible.
 {:.answer}
@@ -114,10 +145,10 @@ Quelques fonctionnalités utiles :
 - `n`: passe à l'occurence suivante du motif recherché
 - `N`: passe à l'occurence précédente du motif recherché
 - `:n` : passe au fichier suivant ('next file', si plusieurs fichiers en arguments)  
-- `:p` : passe au fichier précédent ('previous file', si plusieurs fichiers en arguments) 
+- `:p` : passe au fichier précédent ('previous file', si plusieurs fichiers en arguments)
 - `:q` : quitte less  
-  
-**Question 3** : afficher le contenu du fichier 
+
+**Question 3** : afficher le contenu du fichier
 `cutadapt_bwa_featureCounts_all.tsv` avec `less`
 > > ```bash
 > > less RNA-seq/cutadapt_bwa_featureCounts_all.tsv
@@ -127,8 +158,8 @@ Quelques fonctionnalités utiles :
 La commande `head` permet d'afficher uniquement le début du ou des fichier(s)
 passé(s) en argument.
 Par défaut, `head` affiche les 10 premières lignes d'un fichier.  
-Utiliser l'option `-n <N>` pour afficher les `N` premières lignes d'un fichier. 
-  
+Utiliser l'option `-n <N>` pour afficher les `N` premières lignes d'un fichier.
+
 **Question 4** : afficher les 20 premières lignes du fichier `RNA-seq/cutadapt_bwa_featureCounts_all.tsv`.
 
 > **Réponse**:
@@ -163,7 +194,7 @@ La commande `tail` permet d'afficher uniquement la fin du ou des fichier(s)
 passé(s) en argument.
 Par défaut `tail` affiche les 10 dernières lignes d'un fichier.
 Utiliser l'option `-n N` pour afficher les `N` dernières lignes d'un fichier.
-  
+
 **Question 5** : afficher les 20 dernières lignes du fichier `RNA-seq/cutadapt_bwa_featureCounts_all.tsv`.
 
 > **Réponse**:
@@ -189,17 +220,17 @@ Utiliser l'option `-n N` pour afficher les `N` dernières lignes d'un fichier.
 > > b4401	3349	4692	2619	1609
 > > b4402	201	318	224	128
 > > b4403	82	116	87	68
-> > 
-> > 
+> >
+> >
 {:.answer}
 
-  
+
 ## L'éditeur de texte nano
 
 Il existe beaucoup d'éditeurs de fichiers textes sour Linux.
 Parmi les plus connus on trouve : `vi`, `emacs` et `nano`.  
 Nano est l'éditeur le plus simple à utiliser.
-  
+
 **Question 6** : qu'est-ce qu'un un éditeur de texte ? Quelle différence avec un traitement de texte ?
 
 > **Réponse**
@@ -223,7 +254,7 @@ Voici les raccourcis les plus importants :
 - `Ctrl-X` : quitter Nano.
 
 Vous pouvez vous déplacer dans le fichier avec les flèches du clavier ainsi
-qu'avec les touches <kbd>PageUp</kbd> et <kbd>PageDown</kbd> pour avancer 
+qu'avec les touches <kbd>PageUp</kbd> et <kbd>PageDown</kbd> pour avancer
 de page en page (les raccourcis <kbd>CTRL-Y</kbd> et <kbd>CTRL-V</kbd> fonctionnent aussi).
 
 **Question 7** : ouvrir avec l'éditeur `nano` le fichier `Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3`
@@ -243,7 +274,7 @@ Remarques :
 
 # Partie 3 : les commandes Linux : aide, répétition, redirection
 
-## Avoir de l'aide sur une commande 
+## Avoir de l'aide sur une commande
 
 Sous Linux toutes les commandes sont documentées de manières standardisée.
 
@@ -274,11 +305,11 @@ documentation et des options à l'écran.
 Le système d'exploitation Linux garde en mémoire les commandes lancées par un
 utilisateur dans un terminal.
 La liste des commandes lancées par un utilisatur est accessible via la commande
-`history`. 
+`history`.
 Il est aussi possible de retrouver une commande en utilisant la commande `!`
 Par exemple la commande `!?expression?` permet de relancer la dernière commande
 utilisée contenant le mot '`expression`.
-La commande `!grep` permet de relancer la dernière commande utilisée comemnçant par 'grep' 
+La commande `!grep` permet de relancer la dernière commande utilisée comemnçant par 'grep'
 
 **Question 9** : que fait la commande `!n -3` ?
 
@@ -301,10 +332,10 @@ Par défaut tout programme Linux a trois flots de direction :
 - une **sortie standard**, appelée `stdout`, par défaut associée à **l'écran**
 - une **erreur standard** appelée `stderr`, par défaut associée à **l'écran**
 
-Une redirection est une modification de l’une de ces associations. 
+Une redirection est une modification de l’une de ces associations.
 Elle est valable uniquement le temps de la commande sur laquelle elle porte.
 
-Pour modifier l'entrée standard d'une commande en lisant les données d'un 
+Pour modifier l'entrée standard d'une commande en lisant les données d'un
 fichier `infile` on utilise `< infile`.
 
 Pour modifier la sortie standard d'une commande et écrire les résultats dans un
@@ -315,8 +346,8 @@ dans un fichier `errfile` on utilise : `2> errfile`.
 
 En résumé tout programme Linux peut s'écrire
 `$program < infile > outfile 2> errfile`
-  
-**Question 10**: rediriger le résultat de la commande `cat` sur le fichier 
+
+**Question 10**: rediriger le résultat de la commande `cat` sur le fichier
 `ChIP-seq/FNR1_vs_input1_cutadapt_bowtie2_homer.bed` dans le fichier `test.txt`.
 Que contient le fichier `test.txt` ?
 
@@ -328,4 +359,3 @@ Que contient le fichier `test.txt` ?
 > `>` redirige la sortie de la commande vers le fichier `test.txt`.
 > Finalement, le fichier `test.txt` contient le contenu du fichier `ChIP-seq/FNR1_vs_input1_cutadapt_bowtie2_homer.bed`.
 {:.answer}
-
