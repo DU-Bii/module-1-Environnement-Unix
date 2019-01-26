@@ -36,6 +36,7 @@ Remarques :
     2. Sélectionnez la commande en la surlignant avec le clic gache de votre souris. Appuyez ensuite sur les touches `Ctrl` + `C` (c'est-à-dire les touches *Control* et *C* pressées en même temps). Dans votre shell, appuyez sur les touches `Ctrl` + `Maj` + `V` (c'est-à-dire les touches *Control*, *Majuscule* et *V* pressées en même temps).
 
 
+Patientez quelques instants que les données soient téléchargées.
 
 Déplacez-vous ensuite dans le répertoire `study-cases` nouvellement créé.
 
