@@ -28,7 +28,14 @@ Téléchargez les fichiers des jeux de données du DUBii avec la commande :
 $ git clone https://github.com/DU-Bii/study-cases.git
 ```
 
-*Remarque :* la commande `git` vous sera expliquée un peu plus tard.
+Remarques :
+
+- La commande `git` vous sera expliquée un peu plus tard.
+- Cette commande est assez longue et complexe. Pour éviter de faire des erreurs et aller plus vite, utilisez le copier/coller. Voici deux méthodes :
+    1. Sélectionnez la commande en la surlignant avec le clic gauche de votre souris. Puis dans votre shell, cliquez sur le bouton du milieu de votre souris.
+    2. Sélectionnez la commande en la surlignant avec le clic gache de votre souris. Appuyez ensuite sur les touches `Ctrl` + `C` (c'est-à-dire les touches *Control* et *C* pressées en même temps). Dans votre shell, appuyez sur les touches `Ctrl` + `Maj` + `V` (c'est-à-dire les touches *Control*, *Majuscule* et *V* pressées en même temps).
+
+
 
 Déplacez-vous ensuite dans le répertoire `study-cases` nouvellement créé.
 
@@ -44,23 +51,33 @@ Utilisez la commande `tree` pour visualiser l'arborescence qui représente l'org
 $ tree
 ```
 
-Déplacez-vous maintenant dans le répertoire `Escherichia_coli/bacterial-regulons_myers_2013/data`
+Déplacez-vous maintenant dans le répertoire `Escherichia_coli/bacterial-regulons_myers_2013/data/ChIP-seq`
 
 > **Aide :**:
 > > ```bash
-> > $ cd Escherichia_coli/bacterial-regulons_myers_2013/data
+> > $ cd Escherichia_coli/bacterial-regulons_myers_2013/data/ChIP-seq
 > > ```
 {:.answer}
 
-Combien de fichiers `.bed` y a t-il dans le répertoire `ChIP-seq` ?
+Combien de fichiers `.bed` y a t-il dans ce répertoire ?
 
 > **Réponse :**:
 > > ```bash
-> > $ ls ChIP-seq/
+> > $ ls
 > > FNR1_vs_input1_cutadapt_bowtie2_homer.bed  FNR_200bp.wig
 > > FNR1_vs_input1_cutadapt_bowtie2_macs2.bed  input_200bp.wig
 > > ```
 > > Il y a deux fichiers `.bed`
+{:.answer}
+
+En restant dans le même répertoire, déterminez le nombre de fichiers présents dans le répertoire `RNA-seq` qui est au même niveau que le répertoire `ChIP-seq` ?
+
+> **Réponse :**:
+> > ```bash
+> > $ ls ../RNA-seq
+> > cutadapt_bwa_featureCounts_all.tsv
+> > ```
+> > Il y a un seul fichier.
 {:.answer}
 
 
