@@ -214,13 +214,13 @@ Toutes les commandes sont résumées dans le bandeau en bas de l'écran
 Le symbole `^` signifie <kbd>CTRL</kbd> (la touche Contrôle de votre clavier).
 
 Voici les raccourcis les plus importants :
-- Ctrl-G : afficher l'aide
-- <kdb>Ctrl-K</kbd> : couper la ligne de texte (et la mettre dans le presse-papier)
-- <kdb>Ctrl-U</kbd> : coller la ligne de texte que vous venez de couper
-- <kdb>Ctrl-C</kbd> : afficher à quel endroit du fichier votre curseur est positionné (numéro de ligne)
-- <kdb>Ctrl-W</kbd> : rechercher une chaine de caractères dans le fichier
-- <kdb>Ctrl-O</kbd> : enregistrer le fichier (écrire)
-- <kdb>Ctrl-X</kbd> : quitter Nano.
+- `Ctrl-G` : afficher l'aide
+- `Ctrl-K` : couper la ligne de texte (et la mettre dans le presse-papier)
+- `Ctrl-U` : coller la ligne de texte que vous venez de couper
+- `Ctrl-C` : afficher à quel endroit du fichier votre curseur est positionné (numéro de ligne)
+- `Ctrl-W` : rechercher une chaine de caractères dans le fichier
+- `Ctrl-O` : enregistrer le fichier (écrire)
+- `Ctrl-X`> : quitter Nano.
 
 Vous pouvez vous déplacer dans le fichier avec les flèches du clavier ainsi
 qu'avec les touches <kbd>PageUp</kbd> et <kbd>PageDown</kbd> pour avancer 
@@ -237,8 +237,8 @@ Télécharger depuis le site https://du-bii.github.io/study-cases/Escherichia_co
 
 Remarques :
 
-- pour rechercher un mot plusieurs fois sans le réécrire, tapez juste Ctrl-W<kbd>ENTER</kbd>
-- si vous voulez sortir du mode recherche, tapez <kbd>CTRL-C</kbd>
+- pour rechercher un mot plusieurs fois sans le réécrire, tapez juste `Ctrl-W ENTER`
+- si vous voulez sortir du mode recherche, tapez `CTRL-C
 
 
 # Partie 3 : les commandes Linux : aide, répétition, redirection
