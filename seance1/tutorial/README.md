@@ -74,7 +74,7 @@ Combien de fichiers `.bed` y a t-il dans ce répertoire ?
 {:.answer}
 
 
-Utilisez la commande `ls` avec les options `l` et `h` pour afficher le contenu du répertoire et déterminez la taille du fichier `FNR_200bp.wig`.
+Utilisez la commande `ls` avec les options `l` et `h` pour afficher le contenu du répertoire courant, puis déterminez la taille du fichier `FNR_200bp.wig`.
 
 > **Réponse :**:
 > > ```bash
