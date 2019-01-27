@@ -2,6 +2,7 @@
 
 L'objectif de ce module est de vous familiariser avec l'environnement Unix et ses principales commandes.
 
+Lien court vers cette page : <https://huit.re/dubii-m1>
 
 ## Intervenants
 
