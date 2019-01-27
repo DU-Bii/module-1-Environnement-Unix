@@ -26,7 +26,7 @@ Les prérequis à ce module : [ici](prerequis/README.md)
 
 ## Séance 1 - Premiers pas
 
-- lundi 28/01/2019 10:15 - 12:45
+- lundi 28/01/2019 10:30 - 12:30
 - instructeurs : Hélène Chiapello & Pierre Poulain
 - helpers : Benoist Laurent, Sandra Dérozier
 
