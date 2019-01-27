@@ -82,15 +82,16 @@ template: content
 <img height="200px" src="img/shell6.png">
 
 ## À vous !
+
 .callout.callout-success[
-Prises de contact avec les machines de l'université :
+Prise de contact avec les machines de l'université :
 
 1. Obtenez votre *login* et votre mot de passe.
 1. Ouvrez votre session.
-1. Explorez l'interface graphique.
 1. Lancez un *shell* via l'application terminal.
 1. Changez votre mot de passe avec la commande `yppasswd` (avec 2 `p` et 2 `s`).
 1. Fermez votre session puis reconnectez-vous.
+1. Lancez un navigateur internet et ouvrez la page <https://huit.re/dubii-m1>
 ]
 
 ---
@@ -109,7 +110,7 @@ Activité préparatoire sur [DataCamp](https://www.datacamp.com/courses/introduc
 
 .right[
 .fas.fa-comments[]
-Activité [WooClap](www.wooclap.com/DUBII)
+Activité [WooClap](https://www.wooclap.com/DUBII)
 ]
 
 ---
@@ -181,9 +182,32 @@ Wilson, PLoS Comput Biol, 2017, DOI [10.1371/journal.pcbi.1005510](https://journ
 ]
 
 ---
+template: content
+
+## Bonnes pratiques pour organiser vos projets
+
+.left[
+<img height="300px" src="img/Noble_2009_PLOS_CB_citation.png">
+]
+
+.right.ref[
+Noble, PLoS Comput Biol, 2009, DOI [10.1371/journal.pcbi.1000424](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000424)
+]
+
+<br />
+
+.left[
+<img height="150px" src="img/Wilson_2017_PLOS_CB_citation.png">
+]
+
+.right.ref[
+Wilson, PLoS Comput Biol, 2017, DOI [10.1371/journal.pcbi.1005510](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510)
+]
+
+---
 template: title
 
-# Retour à la pratique
+# Retour au *shell* et à la pratique
 
 .callout.callout-success[
 [Tutoriel](https://du-bii.github.io/module-1-Environnement-Unix/seance1/tutorial/)
