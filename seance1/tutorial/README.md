@@ -275,20 +275,30 @@ Vous pouvez vous déplacer dans le fichier avec les flèches du clavier ainsi
 qu'avec les touches <kbd>PageUp</kbd> et <kbd>PageDown</kbd> pour avancer
 de page en page (les raccourcis <kbd>CTRL-Y</kbd> et <kbd>CTRL-V</kbd> fonctionnent aussi).
 
-**Question 7** : ouvrir avec l'éditeur `nano` le fichier `Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3`
-Créer un répertoire /projet/toulouse/save/hchiapello/DUBii/study-cases/Escherichia_coli/bacterial-regulons_myers_2013/data/Annotations
-Télécharger depuis le site https://du-bii.github.io/study-cases/Escherichia_coli/bacterial-regulons_myers_2013/ le fichier Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3
+**Question 7** : ouvrir avec l'éditeur `nano` le fichier `Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3`  
+Recommandations :  
+- Créer un répertoire /projet/toulouse/save/hchiapello/DUBii/study-cases/Escherichia_coli/bacterial-regulons_myers_2013/data/Annotations  
+- Télécharger depuis le site https://du-bii.github.io/study-cases/Escherichia_coli/bacterial-regulons_myers_2013/ le fichier Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3  
 
-- Recherche les lignes contenant le mot 23S
+- Rechercher les lignes contenant le nom de gène `oriC` et afficher le numéro de ces lignes
 - Supprimer ces lignes
-- Enregistrer le fichier sous le nom Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome_wo23S.gff`
-
+- Enregistrer le fichier sous le nom Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome_wo_oriC.gff`
 
 Remarques :
 
 - pour rechercher un mot plusieurs fois sans le réécrire, tapez juste `Ctrl-W ENTER`
 - si vous voulez sortir du mode recherche, tapez `CTRL-C
 
+> **Réponse**
+> > Utiliser suuccesiovement les commandes 
+> > - `Ctrl-W` pour rechercher `oriC` 
+> > - `Ctrl-C` pour connaitre le numéro de ligne
+> > - `Ctrl-K` pour supprimer la ligne courante
+> > Au moment de sauvergarder le fichier avec la commande `Ctrl-O` penser à changer le nom du fichier  
+> > Les 4 occurences de `oriC` sont aux lignes 4859, 8256, 18950 et 22228 dans le fichier original (4859, 8255, 18948 et 22225 > > si vous supprimez les lignes au fur et à mesure
+> > 
+> >
+{:.answer}
 
 # Partie 3 : les commandes Linux : aide, répétition, redirection
 
