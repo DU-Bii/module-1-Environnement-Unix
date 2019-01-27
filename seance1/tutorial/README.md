@@ -30,8 +30,8 @@ $ git clone https://github.com/DU-Bii/study-cases.git
 
 Remarques :
 
-- La commande `git` vous sera expliquée un peu plus tard.
-- Cette commande est assez longue et complexe. Pour éviter de faire des erreurs et aller plus vite, utilisez le copier/coller. Voici deux méthodes :
+- L'instruction `git` vous sera expliquée un peu plus tard.
+- La commande à exécuter est assez longue et complexe. Pour éviter de faire des erreurs et aller plus vite, utilisez le copier/coller. Voici deux méthodes :
     1. Sélectionnez la commande en la surlignant avec le clic gauche de votre souris. Puis dans votre shell, cliquez sur le bouton du milieu de votre souris.
     2. Sélectionnez la commande en la surlignant avec le clic gache de votre souris. Appuyez ensuite sur les touches `Ctrl` + `C` (c'est-à-dire les touches *Control* et *C* pressées en même temps). Dans votre shell, appuyez sur les touches `Ctrl` + `Maj` + `V` (c'est-à-dire les touches *Control*, *Majuscule* et *V* pressées en même temps).
 
@@ -278,7 +278,7 @@ de page en page (les raccourcis <kbd>CTRL-Y</kbd> et <kbd>CTRL-V</kbd> fonctionn
 **Question 7** : ouvrir avec l'éditeur `nano` le fichier `Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3`  
 **Recommandations :**  
 - Créer un répertoire /projet/toulouse/save/hchiapello/DUBii/study-cases/Escherichia_coli/bacterial-regulons_myers_2013/data/Annotations  
-- Télécharger depuis le site https://du-bii.github.io/study-cases/Escherichia_coli/bacterial-regulons_myers_2013/ le fichier `Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3` 
+- Télécharger depuis le site https://du-bii.github.io/study-cases/Escherichia_coli/bacterial-regulons_myers_2013/ le fichier `Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3`
 
 - Rechercher les lignes contenant le nom de gène `oriC` et afficher le numéro de ces lignes
 - Supprimer ces lignes
@@ -291,12 +291,12 @@ Remarques :
 
 > **Réponse**  
 > > Utiliser successivement les commandes :  
-> > - `Ctrl-W` pour rechercher `oriC` 
+> > - `Ctrl-W` pour rechercher `oriC`
 > > - `Ctrl-C` pour connaitre le numéro de ligne courante  
 > > - `Ctrl-K` pour supprimer la ligne courante  
 > > Au moment de sauvergarder le fichier avec la commande `Ctrl-O` penser à modifier le nom du fichier  
 > > Les 4 occurences de `oriC` sont aux lignes 4859, 8256, 18950 et 22228 dans le fichier original (4859, 8255, 18948 et 22225 si vous supprimez les lignes au fur et à mesure)
-> > 
+> >
 > >
 {:.answer}
 
