@@ -41,7 +41,7 @@ template: title
 
 class: center
 
-# Le shell
+# Le *shell*
 
 --
 
@@ -157,7 +157,7 @@ template: content
 
 ## Bonnes pratiques pour organiser vos projets
 
-Nom de fichiers et répertoires & format de date :
+Noms de fichiers et répertoires & format de date :
 
 .center[
 <img height="500px" src="img/XKCD_iso_8601.png">
