@@ -164,7 +164,7 @@ Quelques fonctionnalités utiles :
 - `N`: passe à l'occurence précédente du motif recherché
 - `:n` : passe au fichier suivant ('next file', si plusieurs fichiers en arguments)  
 - `:p` : passe au fichier précédent ('previous file', si plusieurs fichiers en arguments)
-- `:q` : quitte less  
+- `q` : quitte less  
 
 **Question 3** : afficher le contenu du fichier
 `cutadapt_bwa_featureCounts_all.tsv` avec `less`
