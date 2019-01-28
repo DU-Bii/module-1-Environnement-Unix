@@ -328,7 +328,7 @@ Remarques :
 
 ## Avoir de l'aide sur une commande
 
-Sous Linux toutes les commandes sont documentées de manières standardisée.
+Sous Linux toutes les commandes sont documentées de manière standardisée.
 
 Il y a deux moyens d'accèder à l'aide d'une commande :
 
@@ -356,11 +356,11 @@ documentation et des options à l'écran.
 
 Le système d'exploitation Linux garde en mémoire les commandes lancées par un
 utilisateur dans un terminal.
-La liste des commandes lancées par un utilisatur est accessible via la commande
+La liste des commandes lancées par un utilisateur est accessible via la commande
 `history`.
 Il est aussi possible de retrouver une commande en utilisant la commande `!`
 Par exemple la commande `!?expression?` permet de relancer la dernière commande
-utilisée contenant le mot '`expression`.
+utilisée contenant le mot `expression`.
 La commande `!grep` permet de relancer la dernière commande utilisée comemnçant par 'grep'
 
 **Question 9** : que fait la commande `!n -3` ?
@@ -369,7 +369,7 @@ La commande `!grep` permet de relancer la dernière commande utilisée comemnça
 > > Cette commande permet d'exécuter la 3° dernière commande exécutée.
 {:.answer}
 
-On peut également retrouver les commandes déjà exécutée en naviguant dans
+On peut également retrouver les commandes déjà exécutées en naviguant dans
 l'historique avec les flèches du clavier.
 
 
