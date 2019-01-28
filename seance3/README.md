@@ -1,8 +1,8 @@
 # Partie 1 : Révision et consolidation des deux séances précédentes 
 - **Arborescence Linux** : fichiers, répertoires,etc...
 - **Contenu d'un fichier** : savoir affichier le contenu d'un fichier et travailler avec l'éditeur **nano**
-- **Commandes Linux** : aide sur une commande, historique et répétitoon des commandes. Redirection des entrées et sorties standarts.
-- **Accès aux ressources de cluster NNCR** : savoir accéder et utiliser les ressources du cluster NNCR
+- **Commandes Linux** : aide sur une commande, historique et répétiton des commandes. Redirection des entrées, sorties et erreurs standarts.
+- **Accès aux ressources de cluster NNCR** : savoir accéder et utiliser les ressources du cluster NNCR. Savoir transférer ses données dans un répertoire ad-hoc, savoir organiser ses fichiers et répertoires (bonnes pratiques en bioinfo)
 # Partie 2  : Extraction des données d'un fichier et gestion de flux
 ## grep  
 ## cut  
@@ -19,4 +19,4 @@
 ## Archiver avec tar
 ## gzip, gunzip
 ## Application des mêmes commandes sur des gros fichiers compressés (zless, zgrep, zcat)
-## Notion de lien symbolique ?
+
