@@ -266,10 +266,12 @@ Utiliser l'option `-n N` pour afficher les `N` dernières lignes d'un fichier.
 ## L'éditeur de texte nano
 
 Il existe beaucoup d'éditeurs de fichiers textes sour Linux.
-Parmi les plus connus on trouve : `vi`, `emacs` et `nano`.  
-Nano est l'éditeur le plus simple à utiliser.
+
 
 [![Un bon éditeur](img/un-bon-editeur.png)](img/un-bon-editeur.png)
+
+Parmi les plus connus on trouve : `vi`, `emacs` et `nano`.  
+___Nano___ est l'éditeur le plus simple à utiliser.
 
 **Question 6** : qu'est-ce qu'un un éditeur de texte ? Quelle différence avec un traitement de texte ?
 
