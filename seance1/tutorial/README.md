@@ -168,6 +168,8 @@ et `FNR1_vs_input1_cutadapt_bowtie2_macs2.bed` dans le répertoire `ChIP-seq`.
 
 ## less
 
+_less does more or less the same as more, but less does more than more_
+
 La commande `less` permet d'afficher le contenu d'un ou plusieurs fichiers
 page par page, ce qui est très utile lorsqu'on manipule des fichiers de taille
 importante.
@@ -266,6 +268,8 @@ Utiliser l'option `-n N` pour afficher les `N` dernières lignes d'un fichier.
 Il existe beaucoup d'éditeurs de fichiers textes sour Linux.
 Parmi les plus connus on trouve : `vi`, `emacs` et `nano`.  
 Nano est l'éditeur le plus simple à utiliser.
+
+[![Un bon éditeur](img/un-bon-editeur.png)](img/un-bon-editeur.png)
 
 **Question 6** : qu'est-ce qu'un un éditeur de texte ? Quelle différence avec un traitement de texte ?
 
