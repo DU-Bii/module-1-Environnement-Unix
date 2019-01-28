@@ -10,7 +10,7 @@
 ## uniq  
 ## wc  
 ## Enchainement de commandes avec |
-# Partie 3 : Notions sur les expressiopns régulières
+# Partie 3 : Notions sur les expressions régulières
 ## les expressions de bases
 ## quelques sites de vérification des expressions régulières
 ## utilisation basique de sed
