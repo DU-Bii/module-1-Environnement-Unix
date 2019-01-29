@@ -8,7 +8,7 @@
 
 ## find  
 
-Rechercher des fichiers de manière récursive dans un chemin à partir d'un motif  
+La commande `find` permet de rechercher des fichiers de manière récursive dans un chemin à partir d'un motif  
 Un motif est ici une expression ou une chaine de caractères correspondant au nom ou une partie du nom du fichier recherché  
 **Syntaxe : find [chemin] -name "motif"**  
 
@@ -24,7 +24,7 @@ Un motif est ici une expression ou une chaine de caractères correspondant au no
 
 ## grep  
 
-Rechercher et affiche les lignes contenant un motif donné en argument dans un ou des fichiers donnés en argument  
+La commande `grep` permet de rechercher et afficher les lignes contenant un motif donné en argument dans un ou des fichiers donnés en argument  
 Un motif est ici une expression ou une chaine de caractères correspondant à l'élément recherché (un nom de gène, de protéine,...etc)  
 **Syntaxe : grep [options] motif FICHIERS**  
 La commande grep a beaucoup d'options très utiles, par exemple :  
@@ -70,7 +70,22 @@ Exemple : `cut -d "," -f 2 toto.csv`
 {:.answer}
 
 ## sort  
+
+La commande `sort` permet de trier les lignes du ou des fichiers donnés en argument  
+Attention le tri par défaut est selon le code ASCII et pas selon l'ordre numérique. Pour faire un tri numérique utiliser l'option `-n` 
+
+**Question 4 : Extraire la 2ème colonne 'WT1' du fichier cutadapt_bwa_featureCounts_all.tsv rediriger le résultat dans un fichier de sortie 'cutadapt_bwa_featureCounts_WT1.tsv'. Trier ensuite les valeurs de ce fichier par ordre croissant.  
+> **Solution :**: 
+> > ```bash  
+> > cut -f 2  cutadapt_bwa_featureCounts_all.tsv  > cutadapt_bwa_featureCounts_WT1.tsv
+> > sort -n cutadapt_bwa_featureCounts_WT1.tsv
+> >  
+> > ```
+{:.answer}
+
 ## uniq  
+
+
 ## wc  
 ## Enchainement de commandes avec |
 
