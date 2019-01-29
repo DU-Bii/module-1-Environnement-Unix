@@ -46,7 +46,7 @@ La commande grep a beaucoup d'options très utiles, par exemple :
 > > ```
 {:.answer}
 
-# Partie 2  : Extraction des données d'un fichier et gestion de flux
+# Partie 3  : Extraction des données d'un fichier et gestion de flux
 
 ## cut  
 
@@ -201,3 +201,4 @@ Pour cela on utilise la fonction de suppression *d*
 ## Archiver avec tar
 ## gzip, gunzip
 ## Application des mêmes commandes sur des gros fichiers compressés (zless, zgrep, zcat)
+## 2 exos max
