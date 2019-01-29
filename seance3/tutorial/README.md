@@ -49,10 +49,32 @@ La commande grep a beaucoup d'options très utiles, par exemple :
 # Partie 2  : Extraction des données d'un fichier et gestion de flux
 
 ## cut  
+
+La commande `cut` permet d'extraire une ou plusieurs colonnes d'un fichier de différentes manières  
+La commande peut prendre en argument
+- soit *les positions des caractères* dans le fichier (cad dire les numéro colonnes)  
+Dans ce cas on spécifiera les positions des colonnes à extraire avec l'option `-c`  
+Exemple : `cut -c 1-10 toto.csv`  
+
+- soit *les positions des champs (fields)* dans le fichier (cad dire les numéro des champs). Le délimitateur par défaut est la tabulation, on peut le changer avec l'option `-d`
+Exemple : `cut -d "," -f 2 toto.csv`  
+
+**Question 3 : Extraire de deux manières différentes la colonne Geneid du fichier cutadapt_bwa_featureCounts_all.tsv*
+
+> **Solution :**: 
+> > ```bash
+> > $ cut -f 1 cutadapt_bwa_featureCounts_all.tsv 
+> > $ cut -c 1-6 cutadapt_bwa_featureCounts_all.tsv
+> >  
+> > ```
+{:.answer}
+
 ## sort  
 ## uniq  
 ## wc  
 ## Enchainement de commandes avec |
+
+
 # Partie 3 : Notions sur les expressions régulières
 ## les expressions de bases
 ## quelques sites de vérification des expressions régulières
