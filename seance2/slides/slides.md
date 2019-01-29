@@ -2,7 +2,7 @@ class: center, middle
 
 # IFB High Performance computing usage
 
-## DU Bii 2019
+## DU-Bii 2019
 
 Julien Seiler (julien.seiler@igbmc.fr)<br/>
 Jacques van Helden (jacques.van-helden@univ-amu.fr)
@@ -18,7 +18,7 @@ name: title
 class: middle
 
 .footer[
-DU Bii 2019
+[DU-Bii 2019](https://du-bii.github.io/accueil/)
 ]
 
 ---
@@ -53,7 +53,7 @@ layout: true
 name: content
 
 .footer[
-DU Bii 2019
+[DU-Bii 2019](https://du-bii.github.io/accueil/)
 ]
 
 ---
@@ -62,10 +62,16 @@ template: content
 
 # What are we going to talk about today?
 
-* What is HPC cluster and what is it used for ?
-* How to connect to the IFB cluster
+* What is an __HPC cluster__* and what is it used for ?
+* How to connect to the __IFB__** cluster
 * The SLURM Batch system
 * Use "module" to load tools
+
+.footnote[\* HPC: High-Performance Computing 
+
+** IFB: Institut Français de Bioinformatique
+]
+
 
 ---
 
@@ -127,7 +133,7 @@ However, personal computer are not powerful enough to run **massive data analysi
 
 # What is a HPC cluster?
 
-A set of big computers connected together that can be consider as a single system.
+A set of big computers connected together that can be considered as a single system.
 
 A HPC cluster is usually located in a "datacenter". It a dedicated room providing all conditions required by HPC in terms of temperature, humidity, power supply and physical security.
 
