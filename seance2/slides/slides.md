@@ -67,7 +67,7 @@ template: content
 * The SLURM Batch system
 * Use "module" to load tools
 
-.footnote[\* HPC: High-Performance Computing 
+.footnote[\* HPC: High-Performance Computing
 
 ** IFB: Institut Français de Bioinformatique
 ]
@@ -109,11 +109,7 @@ A bit is **a single** binary data: 0 or 1
 
 A byte is made of **8 bits**: 1 byte (B) = 8 bits (b)
 
-<<<<<<< HEAD
-1 Terabyte (T**B**) = 1000 Gigabytes (G**B**) = 1e+6 Megabytes (M**B**) = 8 000 000 Mégabits (M**b**)
-=======
-1 Terabyte (T**B**) = 1000 Gigabytes (G**B**) = 1e+6 Megabytes (MB) = 8 000 000 Megabits (M**b**)
->>>>>>> 128ed80387601947d7c0404d54c9eb2d9437081e
+1 Terabyte (T**B**) = 1000 Gigabytes (G**B**) = 1e+6 Megabytes (M**B**) = 8 000 000 Megabits (M**b**)
 
 ---
 
@@ -121,11 +117,7 @@ A byte is made of **8 bits**: 1 byte (B) = 8 bits (b)
 
 ## .fas.fa-microchip[] .fas.fa-memory[] .fas.fa-hdd[]
 
-<<<<<<< HEAD
 A personal computer has enough resources to let you run a lot of tasks like **browsing the Internet**, **work with spreadsheet** or **text processing software**. Some personal computers have even enough resources to let **process videos** or **play 3D video games**.
-=======
-A personal computer has enough resources to let you run a lot of tasks like **browsing the Internet**, **work with spreadsheet** or **text processing software**. Some personal computers have even enough resources to let **process videos** or **play 3D videogames**.
->>>>>>> 128ed80387601947d7c0404d54c9eb2d9437081e
 
 --
 
