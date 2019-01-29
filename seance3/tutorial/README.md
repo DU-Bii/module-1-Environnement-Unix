@@ -5,9 +5,9 @@
 - **Accès aux ressources de cluster NNCR** : savoir accéder et utiliser les ressources du cluster NNCR. Savoir transférer ses données dans un répertoire ad-hoc, savoir organiser ses fichiers et répertoires (bonnes pratiques en bioinfo)
 # Partie 2 : Recherche de fichiers ou de contenus  
 ## find  
-Rechercher des fichiers dans une chemin à partir d'un motif 
-Un motif est une expression ou une chaine de caractères correspondant au nom ou une partie du nom du fichier recherché  
-**Syntaxe :** find [chemin] -name "motif" 
+Rechercher des fichiers de manière récursive dans un chemin à partir d'un motif 
+Un motif est ici une expression ou une chaine de caractères correspondant au nom ou une partie du nom du fichier recherché  
+**Syntaxe : find [chemin] -name "motif"**  
 **Question 1 : Rechercher dans votre répertoire study-cases tous les fichiers au format bed (i.e. dont l'extension est ".bed")**      
 > **Solution**: 
 > > ```bash
