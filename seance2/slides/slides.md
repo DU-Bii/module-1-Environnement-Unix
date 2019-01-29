@@ -33,7 +33,7 @@ name: submit-options
 ---
 
 layout: true
-name: exercice-dependency
+name: exercise-dependency
 
 # Job control
 
@@ -87,7 +87,7 @@ template: content
 
 ## one or more chips .fas.fa-microchip[]
 
-A chip (or microprecessor) is responsible for executing elementary instructions requested by the software
+A chip (or microprocessor) is responsible for executing elementary instructions requested by the software
 
 --
 
@@ -109,7 +109,7 @@ A bit is **a single** binary data : 0 or 1
 
 A byte is made of **8 bits** : 1 byte (B) = 8 bits (b)
 
-1 Terabyte (T**B**) = 1000 Gigabytes (G**B**) = 1e+6 Megabytes (MB) = 8 000 000 Mégabits (M**b**)
+1 Terabyte (T**B**) = 1000 Gigabytes (G**B**) = 1e+6 Megabytes (MB) = 8 000 000 Megabits (M**b**)
 
 ---
 
@@ -117,7 +117,7 @@ A byte is made of **8 bits** : 1 byte (B) = 8 bits (b)
 
 ## .fas.fa-microchip[] .fas.fa-memory[] .fas.fa-hdd[]
 
-A personnal computer has enough resources to let you run a lot of tasks like **browsing the Internet**, **work with spreadsheet** or **textprocessing software**. Some personnal computers have even enough resources to let **process videos** or **play 3D videogames**.
+A personal computer has enough resources to let you run a lot of tasks like **browsing the Internet**, **work with spreadsheet** or **text processing software**. Some personal computers have even enough resources to let **process videos** or **play 3D videogames**.
 
 --
 
@@ -135,7 +135,7 @@ However, personal computer are not powerful enough to run **massive data analysi
 
 A set of big computers connected together that can be considered as a single system.
 
-A HPC cluster is usually located in a "datacenter". It a dedicated room providing all conditions required by HPC in terms of temperature, humidity, power supply and physical security.
+A HPC cluster is usually located in a "data center". It a dedicated room providing all conditions required by HPC in terms of temperature, humidity, power supply and physical security.
 
 .center[![Bluegene](images/bluegene.jpg)]
 
@@ -204,7 +204,7 @@ On the IFB HPC Cluster :
 # Some HPC clusters in France
 
 .pure-table.pure-table-bordered.smaller-font[
-Cluster | Datacenter location | Cores | RAM (in GB) | Storage space (en TB) | Access modality
+Cluster | Data center location | Cores | RAM (in GB) | Storage space (en TB) | Access modality
 --- | --- | --- | --- | --- | ---
 IFB Core | IDRIS - Orsay | 2 000 | 20 008 | 400 | Open to all academic biologists and bioinformaticians
 GENOTOUL | Toulouse | 3 064 | 34 304 | 3 000 | Open to INRA/Occitane region (overloaded currently)
@@ -215,7 +215,7 @@ CINES OCCIGEN | Montpellier | 85 824 | 202 000 | 8 000 | On call for projects
 
 # How to access a HPC cluster?
 
-Only the engineers in charge of maintenance of the cluster are authorized to enter the datacenter. Thus, **it is not possible to use these computers directly using a keyboard and a screen**. It is necessary to connect to it through a **computer network** such as the Internet.
+Only the engineers in charge of maintenance of the cluster are authorized to enter the data center. Thus, **it is not possible to use these computers directly using a keyboard and a screen**. It is necessary to connect to it through a **computer network** such as the Internet.
 
 To ensure that resources (nodes, cores, memory) are properly distributed among their users according to their needs, a software called a **Batch system** allows users to **book and access resources**. It is through this software that you can access one or more computers on the HPC cluster.
 
@@ -229,7 +229,7 @@ There is no graphical user interface on a HPC cluster
 
 ## How to connect to a remote host through the network
 
-Your personnal computer need to get connected to the cluster !
+Your personal computer need to get connected to the cluster !
 
 ## How to use a Batch system
 
@@ -477,7 +477,7 @@ They are two commands to let you submit a job to the cluster :
 ## `srun`
 **Run job interactively**
 
-* Starts immediatelly after you execute the `srun` command
+* Starts immediately after you execute the `srun` command
 * Outputs are returned to the terminal
 * You have to wait until the job has terminated before starting a new job
 * Works with **ANY command**
@@ -696,7 +696,7 @@ Slurm lets you define dependencies between jobs in order to manage task ordering
 
 ---
 
-template: exercice-dependency
+template: exercise-dependency
 
 **Q1 : After job `1` has started, what will be the status of job `2` ?**
 
@@ -717,7 +717,7 @@ JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
 ```
 ---
 
-template: exercice-dependency
+template: exercise-dependency
 
 We realize that we target the wrong data in the first job.
 
@@ -745,7 +745,7 @@ JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
 
 ---
 
-template: exercice-dependency
+template: exercise-dependency
 
 We have fixed the `data_download.sh` script.
 
@@ -774,9 +774,9 @@ template: title
 
 # Why do we need to "load" tools ?
 
-* Each tools need it environment (binaries, librairies, documentation, special variables)
+* Each tools need it environment (binaries, libraries, documentation, special variables)
 * Each tools has its own dependencies. It is not possible to coexist all tools in the same environment.
-* Reproducibility matters : some user might need different versions of the same tool
+* Reproducibility does matter : some user might need different versions of the same tool
 
 At the IFB, the cluster administrators are installing all tools required by the users.<br/>
 To get access to a tool, you need to **load it into your environment** using a special tool called `module`.
@@ -863,9 +863,9 @@ Named collection list:
 module restore ngs
 ```
 
-## Other list commands
+## Other collection commands
 
-`module saveshow <collection>` : Consulter le contenu d'une collection
+`module saveshow <collection>` : consult the content of a collection
 
 `module saverm <collection>`: Supprimer une collection
 ]
