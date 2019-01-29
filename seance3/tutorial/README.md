@@ -172,9 +172,9 @@ Les expressions régulières vont se baser sur des caractères spéciaux ou mét
 {:.answer}
 
 
-## quelques sites de vérification des expressions régulières
+*Donner ici quelques sites de vérification des expressions régulières et des pointeurs de tutoriaux pour aller plus loin*
 
-to do  
+**to do**  
 
 ## sed  
 
