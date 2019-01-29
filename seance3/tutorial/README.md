@@ -61,7 +61,7 @@ Exemple : `cut -d "," -f 2 toto.csv`
 
 **Question 3 : Extraire de deux manières différentes la colonne Geneid du fichier cutadapt_bwa_featureCounts_all.tsv*
 
-> **Solution :**: 
+> **Solution :**   
 > > ```bash
 > > $ cut -f 1 cutadapt_bwa_featureCounts_all.tsv 
 > > $ cut -c 1-6 cutadapt_bwa_featureCounts_all.tsv
@@ -74,26 +74,85 @@ Exemple : `cut -d "," -f 2 toto.csv`
 La commande `sort` permet de trier les lignes du ou des fichiers donnés en argument  
 Attention le tri par défaut est selon le code ASCII et pas selon l'ordre numérique. Pour faire un tri numérique utiliser l'option `-n` 
 
-**Question 4 : Extraire la 2ème colonne 'WT1' du fichier cutadapt_bwa_featureCounts_all.tsv rediriger le résultat dans un fichier de sortie 'cutadapt_bwa_featureCounts_WT1.tsv'. Trier ensuite les valeurs de ce fichier par ordre croissant.  
-> **Solution :**: 
+**Question 4 : Extraire la 2ème colonne 'WT1' du fichier cutadapt_bwa_featureCounts_all.tsv rediriger le résultat dans un fichier de sortie 'cutadapt_bwa_featureCounts_WT1.tsv'. Trier ensuite les valeurs de ce fichier par ordre croissant et écrire le résultat dans le fichier `cutadapt_bwa_featureCounts_WT1_sorted.tsv`  
+> **Solution :**  
 > > ```bash  
 > > cut -f 2  cutadapt_bwa_featureCounts_all.tsv  > cutadapt_bwa_featureCounts_WT1.tsv
-> > sort -n cutadapt_bwa_featureCounts_WT1.tsv
+> > sort -n cutadapt_bwa_featureCounts_WT1.tsv > cutadapt_bwa_featureCounts_WT1_sorted.tsv
 > >  
 > > ```
 {:.answer}
 
 ## uniq  
 
+La commande `uniq` permet d'éliminer les lignes identiques (dupliquées) d'un fichier trié  
+Cette commande est très simple mais très utile, en particulier en complément de la commande sort 
+Les options utiles de uniq sont :  
+- `-c` pour afficher le nombre d'occurences de chque ligne  
+- `-d` pour afficher les lignes dupliquées
+- `-u` pour afficher les lignes uniques (défaut)
 
-## wc  
-## Enchainement de commandes avec |
+**Question 5 : Eliminer les lignes dupliquées du fichier 'cutadapt_bwa_featureCounts_WT1_sorted.tsv' et écrire le résultat dans le fichier `cutadapt_bwa_featureCounts_WT1_sorted_uniq.tsv`    
+>
+> **Solution :**  
+> > ```bash  
+> > uniq cutadapt_bwa_featureCounts_WT1_sorted.tsv > cutadapt_bwa_featureCounts_WT1_sorted_uniq.tsv
+> >  
+> > ```
+{:.answer}
+
+
+## wc
+
+La commande `wc` (*word count*) permet de compter le nombre de lignes, de mots et de caractères du fichier ou des fichiers donnés en argument
+
+**Question 6 : Comment afficher uniquement le nombre de lignes d'un fichier ? Combien de lignes y-a-t-il dans les fichiers `cutadapt_bwa_featureCounts_WT1_sorted.tsv` et `cutadapt_bwa_featureCounts_WT1_sorted_uniq.tsv` ?
+>
+> **Solution :** 
+> > ```bash  
+> > $ wc -l cutadapt_bwa_featureCounts_WT1_sorted.tsv
+> > 4498 cutadapt_bwa_featureCounts_WT1_sorted.tsv
+> > 
+> >  $ wc -l cutadapt_bwa_featureCounts_WT1_sorted_uniq.tsv
+1357 cutadapt_bwa_featureCounts_WT1_sorted_uniq.tsv
+> >
+> > ```
+{:.answer}
+
+## Le pipe `|`
+
+Le | est une manière simple et élégante d'enchainer des commandes sous Unix
+Nous avons déjà vu qu'il est possible de rediriger l'entrée, ou la sortie ou l'erreur d'une commande vers un fichier de son choix.  
+Le `|`est un moyen de faire 2 choses à la fois : rediriger la sortie d'une commande vers l'entrée d'une autre commande  
+On peut enchainer plusieurs `|` d'affilée
+
+*Exemple : Comment afficher page par page le nombre d'occurences de chaque valeur de la colonne `WT1` du fichier `cutadapt_bwa_featureCounts_all.tsv` en 1 seule commande  ?
+
+> **Solution :** 
+> > ```bash 
+cut -f 2 cutadapt_bwa_featureCounts_all.tsv | sort | uniq -c | less
+> >
+> > ```
+{:.answer}
+
+
+**Question 7 : Utiliser le `|` et les commandes précédentes pour déterminer le nombre de gènes uniques dans le fichier `Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3`    
+>
+> **Solution :**  
+>
+> > ```bash  
+> >  cut -f 9 Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3 | cut -d';' -f 1 | grep 'gene' | sort -u | wc -l  
+> >  
+> > ```
+{:.answer}
 
 
 # Partie 3 : Notions sur les expressions régulières
 ## les expressions de bases
 ## quelques sites de vérification des expressions régulières
 ## utilisation basique de sed
+
+
 # Partie 4 : Espace de stockage, compression et archivage de données
 ## Gérer son espace disque : les commandes du et df
 ## Archiver avec tar
