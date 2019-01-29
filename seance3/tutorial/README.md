@@ -154,12 +154,12 @@ Ces expressions régulières sont utilisables avec plusieurs commandes Unix comm
 Le design d'expressions régulières peut s'avérer rapidement complexe et nécessite un savoir-faire certain. Cette possibilité illustre cependant la puissance de l'environnement Unix pour spécifier des recherches et actions complexes en utilisant des lignes de commande concises.  
 Un motif (ou pattern) s'écrit souvent entre / / dans une expression régulière. Un exemple de motif simple est le mot /Chromosome/
 Les expressions régulières vont se baser sur des caractères spéciaux ou métacaractères :
-- **le metacaractère .** correspond à n'importe quel caractère  
-- **le metacaractère \*** correspond à une répétition de 0 à n occurences (déconseillé) 
-- **le metacaractère +** correspond à une répétition de 1 à n occurences 
-- **les metacaractères entre [ ] correspondent à un ensemble de valeurs possibles (intervale ou explicites** par exemple [A-D] est équivalent à [A,B,C,D]
--**le métacaractères ^** indique une recherche d'un motif en début de ligne  
--**le métacaractères $** indique une recherche d'un motif en fin de ligne  
+- **le metacaractère `.`** correspond à n'importe quel caractère  
+- **le metacaractère `*`** correspond à une répétition de 0 à n occurences (déconseillé) 
+- **le metacaractère `+`** correspond à une répétition de 1 à n occurences 
+- **les metacaractères entre `[ ]` correspondent à un ensemble de valeurs possibles (intervale ou explicites** par exemple [A-D] est équivalent à [A,B,C,D]
+-**le métacaractères `^`** indique une recherche d'un motif en début de ligne  
+-**le métacaractères `$`** indique une recherche d'un motif en fin de ligne  
 
 **Question 8 :** Rechercher tous les noms de gènes du fichier `Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3` correspondant à oriA, oriB, oriC et oriD avec la commande `grep` et en utilisant une expression régulière     
 >
