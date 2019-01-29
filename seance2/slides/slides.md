@@ -103,7 +103,7 @@ A bit is **a single** binary data : 0 or 1
 
 A byte is made of **8 bits** : 1 byte (B) = 8 bits (b)
 
-1 Terabyte (T**B**) = 1000 Gigabytes (G**B**) = 1e+6 Megabytes (MB) = 8 000 000 Mégabits (M**b**)
+1 Terabyte (T**B**) = 1000 Gigabytes (G**B**) = 1e+6 Megabytes (M**B**) = 8 000 000 Mégabits (M**b**)
 
 ---
 
@@ -111,7 +111,7 @@ A byte is made of **8 bits** : 1 byte (B) = 8 bits (b)
 
 ## .fas.fa-microchip[] .fas.fa-memory[] .fas.fa-hdd[]
 
-A personnal computer has enough resources to let you run a lot of tasks like **browsing the Internet**, **work with spreadsheet** or **textprocessing software**. Some personnal computers have even enough resources to let **process videos** or **play 3D videogames**.
+A personal computer has enough resources to let you run a lot of tasks like **browsing the Internet**, **work with spreadsheet** or **text processing software**. Some personal computers have even enough resources to let **process videos** or **play 3D video games**.
 
 --
 
@@ -677,16 +677,16 @@ $ squeue -u <username> -s
 Slurm lets you define dependencies between jobs in order to manage task ordering.
 
 `sbatch --dependency=afterok:<other_jobid> <script>`<br/>
-*Start this job only after <other_jobid> has finished successfully.*
+*Start this job only after `<other_jobid>` has finished successfully.*
 
 `sbatch --dependency=afternotok:<other_jobid> <script>`<br/>
-*Start this job only after <other_jobid> has failed.*
+*Start this job only after `<other_jobid>` has failed.*
 
 `sbatch --dependency=after:<other_jobid> <script>`<br/>
-*Start this job only after <other_jobid> has started (control starting order)*
+*Start this job only after `<other_jobid>` has started (control starting order)*
 
 `sbatch --dependency=afterany:<other_jobid> <script>`<br/>
-*Start this job only after <other_jobid> has finished (what ever exit code)*
+*Start this job only after `<other_jobid>` has finished (what ever exit code)*
 
 ---
 
