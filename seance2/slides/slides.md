@@ -37,7 +37,7 @@ name: exercise-dependency
 
 # Job control
 
-## Exercice
+## Exercise
 
 Imagine we start the following pipeline:
 ```
@@ -517,7 +517,7 @@ template: submit-options
 
 --
 
-**Exercices**<br/>
+**Exercises**<br/>
 ```
 $ srun hostname
 cpu-node-1
@@ -719,7 +719,7 @@ JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
 
 template: exercise-dependency
 
-We realize that we target the wrong data in the first job.
+We realize that we targetted the wrong data in the first job.
 
 **Q3: How can you cancel job `1` ?**
 
@@ -829,16 +829,16 @@ eba_chipseq/2018                                            2019/01/23 11:37:12
 
 # Creating a tool collection
 
-Load and unload a collection of tool at once.
+Load and unload a collection of tools at once.
 
 .left-column[
 ## Create a collection
 
-Load the tools requested:
+Load the requested tools:
 
 ```
-module load samtools
-module load star
+module load blast  # The most popular tool for sequence similarity searches
+module load hmmer  # Hidden Markov Models-baset motif search
 ```
 
 Save the current tools in a collection
