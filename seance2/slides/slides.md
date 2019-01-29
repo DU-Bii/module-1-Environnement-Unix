@@ -201,8 +201,8 @@ On the IFB HPC Cluster :
 Cluster | Datacenter location | Cores | RAM (in GB) | Storage space (en TB) | Access modality
 --- | --- | --- | --- | --- | ---
 IFB Core | IDRIS - Orsay | 2 000 | 20 008 | 400 | Open to all academic biologists and bioinformaticians
-GENOTOUL | Toulouse | 3 064 | 34 304 | 3 000 | Open to all academic biologists and bioinformaticians
-CINES OCCIGEN | Montpellier | 85 824 | 202 000 | 8 000 | On call for project
+GENOTOUL | Toulouse | 3 064 | 34 304 | 3 000 | Open to INRA/Occitane region (overloaded currently)
+CINES OCCIGEN | Montpellier | 85 824 | 202 000 | 8 000 | On call for projects
 ]
 
 ---
@@ -382,7 +382,7 @@ The IFB cluster uses a Batch system software for managing and allocating resourc
 
 They are different batch systems like :
 
-* Grid Engine
+* Sun Grid Engine (SGE)
 * Load Sharing Facility (LSF)
 * TORQue
 * SLURM
