@@ -2,7 +2,7 @@ class: center, middle
 
 # IFB High Performance computing usage
 
-## DU Bii 2019
+## DU-Bii 2019
 
 Julien Seiler (julien.seiler@igbmc.fr)<br/>
 Jacques van Helden (jacques.van-helden@univ-amu.fr)
@@ -18,7 +18,7 @@ name: title
 class: middle
 
 .footer[
-DU Bii 2019
+[DU-Bii 2019](https://du-bii.github.io/accueil/)
 ]
 
 ---
@@ -33,13 +33,13 @@ name: submit-options
 ---
 
 layout: true
-name: exercice-dependency
+name: exercise-dependency
 
 # Job control
 
-## Exercice
+## Exercise
 
-Imagine we start the following pipeline :
+Imagine we start the following pipeline:
 ```
 $ sbatch data_download.sh
 Submitted batch job 1
@@ -53,7 +53,7 @@ layout: true
 name: content
 
 .footer[
-DU Bii 2019
+[DU-Bii 2019](https://du-bii.github.io/accueil/)
 ]
 
 ---
@@ -62,10 +62,16 @@ template: content
 
 # What are we going to talk about today?
 
-* What is HPC cluster and what is it used for ?
-* How to connect to the IFB cluster
+* What is an __HPC cluster__* and what is it used for ?
+* How to connect to the __IFB__** cluster
 * The SLURM Batch system
 * Use "module" to load tools
+
+.footnote[\* HPC: High-Performance Computing 
+
+** IFB: Institut Français de Bioinformatique
+]
+
 
 ---
 
@@ -81,7 +87,7 @@ template: content
 
 ## one or more chips .fas.fa-microchip[]
 
-A chip (or microprecessor) is responsible for executing elementary instructions requested by the software
+A chip (or microprocessor) is responsible for executing elementary instructions requested by the software
 
 --
 
@@ -99,11 +105,15 @@ The storage space is used to keep huge amount of data in a more permanent way (a
 
 # Bit or Byte ?
 
-A bit is **a single** binary data : 0 or 1
+A bit is **a single** binary data: 0 or 1
 
-A byte is made of **8 bits** : 1 byte (B) = 8 bits (b)
+A byte is made of **8 bits**: 1 byte (B) = 8 bits (b)
 
+<<<<<<< HEAD
 1 Terabyte (T**B**) = 1000 Gigabytes (G**B**) = 1e+6 Megabytes (M**B**) = 8 000 000 Mégabits (M**b**)
+=======
+1 Terabyte (T**B**) = 1000 Gigabytes (G**B**) = 1e+6 Megabytes (MB) = 8 000 000 Megabits (M**b**)
+>>>>>>> 128ed80387601947d7c0404d54c9eb2d9437081e
 
 ---
 
@@ -111,7 +121,11 @@ A byte is made of **8 bits** : 1 byte (B) = 8 bits (b)
 
 ## .fas.fa-microchip[] .fas.fa-memory[] .fas.fa-hdd[]
 
+<<<<<<< HEAD
 A personal computer has enough resources to let you run a lot of tasks like **browsing the Internet**, **work with spreadsheet** or **text processing software**. Some personal computers have even enough resources to let **process videos** or **play 3D video games**.
+=======
+A personal computer has enough resources to let you run a lot of tasks like **browsing the Internet**, **work with spreadsheet** or **text processing software**. Some personal computers have even enough resources to let **process videos** or **play 3D videogames**.
+>>>>>>> 128ed80387601947d7c0404d54c9eb2d9437081e
 
 --
 
@@ -127,9 +141,9 @@ However, personal computer are not powerful enough to run **massive data analysi
 
 # What is a HPC cluster?
 
-A set of big computers connected together that can be consider as a single system.
+A set of big computers connected together that can be considered as a single system.
 
-A HPC cluster is usually located in a "datacenter". It a dedicated room providing all conditions required by HPC in terms of temperature, humidity, power supply and physical security.
+A HPC cluster is usually located in a "data center". It a dedicated room providing all conditions required by HPC in terms of temperature, humidity, power supply and physical security.
 
 .center[![Bluegene](images/bluegene.jpg)]
 
@@ -187,7 +201,7 @@ class: center
 
 # Do not confuse Microprocessor and Core
 
-On the IFB HPC Cluster :
+On the IFB HPC Cluster:
 
 1 node = 2 sockets = 2 microprocessors = 2 x 14 cores = 28 CPU<br/><br/>
 
@@ -198,7 +212,7 @@ On the IFB HPC Cluster :
 # Some HPC clusters in France
 
 .pure-table.pure-table-bordered.smaller-font[
-Cluster | Datacenter location | Cores | RAM (in GB) | Storage space (en TB) | Access modality
+Cluster | Data center location | Cores | RAM (in GB) | Storage space (en TB) | Access modality
 --- | --- | --- | --- | --- | ---
 IFB Core | IDRIS - Orsay | 2 000 | 20 008 | 400 | Open to all academic biologists and bioinformaticians
 GENOTOUL | Toulouse | 3 064 | 34 304 | 3 000 | Open to INRA/Occitane region (overloaded currently)
@@ -209,7 +223,7 @@ CINES OCCIGEN | Montpellier | 85 824 | 202 000 | 8 000 | On call for projects
 
 # How to access a HPC cluster?
 
-Only the engineers in charge of maintenance of the cluster are authorized to enter the datacenter. Thus, **it is not possible to use these computers directly using a keyboard and a screen**. It is necessary to connect to it through a **computer network** such as the Internet.
+Only the engineers in charge of maintenance of the cluster are authorized to enter the data center. Thus, **it is not possible to use these computers directly using a keyboard and a screen**. It is necessary to connect to it through a **computer network** such as the Internet.
 
 To ensure that resources (nodes, cores, memory) are properly distributed among their users according to their needs, a software called a **Batch system** allows users to **book and access resources**. It is through this software that you can access one or more computers on the HPC cluster.
 
@@ -223,7 +237,7 @@ There is no graphical user interface on a HPC cluster
 
 ## How to connect to a remote host through the network
 
-Your personnal computer need to get connected to the cluster !
+Your personal computer need to get connected to the cluster !
 
 ## How to use a Batch system
 
@@ -244,36 +258,36 @@ template: content
 A shell is a **software interface** that allows a user to interact with a computer or server by executing different commands that will return information.
 
 ```bash
-$ pwd
+$ pwd          # print working directory
 /shared/home/jseiler
-$ ls
+$ ls           # list the files found in the current directory
 projets     toto.txt     script.sh
-$ cd projets
-$ ls
+$ cd projets   # change the working directory to the folder named "projets"
+$ ls           # list files present in the new working directory
 mission-to-mars      rama-II       time-travel
 ```
 
-The shell allows dialogue with a local workstation: one is physically present in the same room as the machine.
+The shell allows you to dialog with a local workstation: this assumes that you are physically present in the same room as the machine.
 
 ---
 
-# SSH : the remote shell
+# SSH: the remote shell
 
-To interact with a remote computer you need :
-* A communication support : computer **network** like Internet
-* A communication protocol : **SSH**
+To interact with a remote computer you need:
+* A communication support: computer **network** like Internet
+* A communication protocol: **SSH**
 
 SSH (for Secure SHell) is the most commonly used protocol for establishing dialogue and launching commands on a remote machine.
 
 ---
 
-# SSH : the remote shell
+# SSH: the remote shell
 
-SSH need two parameters to run :
+SSH needs two parameters to run:
 * The name or IP of the remote computer
 * A user credential (username + password)
 
-Under Linux or Mac, you can use SSH from the Terminal/Console application :
+Under Linux or Mac, you can use SSH from the Terminal/Console application:
 
 ```bash
 $ ssh <username>@<remote-host-name>
@@ -284,19 +298,19 @@ Under Windows, you can use a Terminal applications like PuTTY or MobaXterm.
 ]
 
 .callout.callout-warning[
-Attention, it is not possible to communicate with **any** computer through the SSH protocol. The remote computer **must have** a running SSH service.
+Attention, it is not possible to communicate with **each and every** computer through the SSH protocol. The remote computer **must have** a running SSH service.
 ]
 
 ---
 
-# SSH : the remote shell
+# SSH: the remote shell
 
 ## Connect to the IFB HPC cluster
 
-Remote computer : core.cluster.france-bioinformatique.fr
-User credential : *you received it by email*
+* Remote computer: core.cluster.france-bioinformatique.fr
+* User credential: *you received it by email*
 
-Connect with your Terminal application :
+Use your Terminal application to connect the cluster:
 ```
 $ ssh <username>@core.cluster.france-bioinformatique.fr
 ```
@@ -304,25 +318,25 @@ $ ssh <username>@core.cluster.france-bioinformatique.fr
 
 You will then be asked for your password (no character are printed while on type in your password).
 
-You are now connected to the IFB cluster submission node.
+You are now connected to the IFB cluster ***submission node***.
 
 Type `exit` to close the connection.
 
 ---
 
-# SSH : the remote shell
+# SSH: the remote shell
 
 ## Copy data remotely
 
 SSH allows you to copy data to or from a remote computer with the `scp` command.
 
-The syntax to copy data from your personal computer to a remote host is :
+The syntax to copy data from your personal computer to a remote host is:
 ```bash
 $ scp /path/to/local/file <username>@<remote-host>:/remote/destination/path
 ```
 *Replace `<username>` with your username.*
 
-You can also copy data from a remote host to your personal computer :
+You can also copy data from a remote host to your personal computer:
 ```bash
 $ scp <username>@<remote-host>:/remote/path /local/path
 ```
@@ -330,7 +344,7 @@ $ scp <username>@<remote-host>:/remote/path /local/path
 
 ---
 
-# SSH : the remote shell
+# SSH: the remote shell
 
 ## Exercise
 
@@ -339,7 +353,7 @@ $ scp <username>@<remote-host>:/remote/path /local/path
 
 ---
 
-# SSH : the remote shell
+# SSH: the remote shell
 
 ## Exercise
 
@@ -359,7 +373,7 @@ slides.pdf
 2. Copy this PDF document to your local computer
 
 ```bash
-cluster $ exit
+cluster $ exit  # quit the cluster and get back to your local shell
 local $ scp seilerj@core.cluster.france-bioinformatique.fr:/shared/space2/du-bii/data/cluster/slides.pdf .
 ```
 *Replace `seilerj` with your own username (still not sharing my password)*
@@ -380,7 +394,7 @@ The IFB cluster uses a Batch system software for managing and allocating resourc
 
 --
 
-They are different batch systems like :
+There are different batch systems, e.g.:
 
 * Sun Grid Engine (SGE)
 * Load Sharing Facility (LSF)
@@ -395,25 +409,25 @@ They are different batch systems like :
 
 # SLURM components
 
-A cluster based on SLURM is composed of several type of nodes :
+A cluster based on SLURM is composed of several type of nodes:
 
 --
 
-* **Submission node** : this is the node where user connect to use the cluster (core.cluster.france-bioinformatique)
+* **Submission node**: this is the node where user connect to use the cluster (core.cluster.france-bioinformatique)
 
 .center.callout.callout-warning[You should NEVER run programs on the submission node]
 
 --
 
-* **Compute nodes** : these are the nodes where you jobs get executed (lots of CPU and RAM)
+* **Compute nodes**: these are the nodes where you jobs get executed (lots of CPU and RAM)
 
 --
 
-* **Administrative node** : this is the node dedicated to the cluster management (you should not care about them)
+* **Administrative node**: this is the node dedicated to the cluster management (you should not care about them)
 
 --
 
-* **Storage nodes** : these nodes are used to made your data available all over the cluster
+* **Storage nodes**: these nodes are used to made your data available all over the cluster
 
 ---
 
@@ -425,21 +439,21 @@ A cluster based on SLURM is composed of several type of nodes :
 
 # Basic SLURM concepts
 
-**Account** : A logical group of users
+**Account**: A logical group of users
 
 Your default account is `du_bii_2019`
 
 --
 
-**Ressources** : nodes, CPUs, memory
+**Ressources**: nodes, CPUs, memory
 
 --
 
-**Partition** : logical group of nodes
+**Partition**: logical group of nodes
 
-They are two partitions on the IFB cluster :
-* `fast` : limited to 1 day - 68 nodes available
-* `long` : limited to 10 days - 31 nodes available
+They are two partitions on the IFB cluster:
+* `fast`: limited to 1 day - 68 nodes available
+* `long`: limited to 10 days - 31 nodes available
 
 The default partition is `fast`.
 
@@ -449,11 +463,11 @@ The default partition is `fast`.
 
 ## Job
 
-**User's point of view** : a calculation or data analysis
+**User's point of view**: a calculation or data analysis
 
 It could be a single program or a full pipeline (a succession of programs).
 
-**Slurm's point of view** : an allocation of resources
+**Slurm's point of view**: an allocation of resources
 
 --
 
@@ -465,13 +479,13 @@ The processes that actually do the real work
 
 # Submitting a job
 
-They are two commands to let you submit a job to the cluster :
+They are two commands to let you submit a job to the cluster:
 
 .left-column[
 ## `srun`
 **Run job interactively**
 
-* Starts immediatelly after you execute the `srun` command
+* Starts immediately after you execute the `srun` command
 * Outputs are returned to the terminal
 * You have to wait until the job has terminated before starting a new job
 * Works with **ANY command**
@@ -503,15 +517,15 @@ template: submit-options
 
 ### CPUs  *(1 CPU = 1 core)*
 
-`--nodes/-N` : number of nodes (default is 1)
+`--nodes/-N`: number of nodes (default is 1)
 
-`--ntasks/-n` : number of tasks (default is 1)
+`--ntasks/-n`: number of tasks (default is 1)
 
-`—cpus-per-task/-c` : number of CPU per task (default is 1)
+`—cpus-per-task/-c`: number of CPU per task (default is 1)
 
 --
 
-**Exercices**<br/>
+**Exercises**<br/>
 ```
 $ srun hostname
 cpu-node-1
@@ -527,9 +541,9 @@ cpu-node-2
 
 ### Memory
 
-`--mem` : memory for the whole job
+`--mem`: memory for the whole job
 
-`--mem-per-cpu` : memory per CPU
+`--mem-per-cpu`: memory per CPU
 
 ---
 
@@ -565,11 +579,11 @@ Each `srun` is a job step
 .right-column[
 ## Some `sbatch` options
 
-`-o -e` : redirect job output/error in different file
+`-o -e`: redirect job output/error in different file
 
-`--mail-type BEGIN, END, FAIL` : activate email notification
+`--mail-type BEGIN, END, FAIL`: activate email notification
 
-`--mail-user` : who you want to notify
+`--mail-user`: who you want to notify
 ]
 
 ---
@@ -609,22 +623,22 @@ exit 0
 
 # In brief
 
-Submit (not start) the job :
+Submit (not start) the job:
 ```
 $ sbatch myscript.sh
 ```
 
-View jobs in the cluster queue :
+View jobs in the cluster queue:
 ```
 $ squeue
 ```
 
-View only my jobs in the cluster queue :
+View only my jobs in the cluster queue:
 ```
 $ squeue -u <username>
 ```
 
-View only my running jobs steps :
+View only my running jobs steps:
 ```
 $ squeue -u <username> -s
 ```
@@ -635,13 +649,13 @@ $ squeue -u <username> -s
 
 ## Cancel a job
 
-`scancel <jobid>` : Cancel job with id `<jobid>`
+`scancel <jobid>`: Cancel job with id `<jobid>`
 
-`scancel -u <user>` : Cancel all jobs from user `<user>`
+`scancel -u <user>`: Cancel all jobs from user `<user>`
 
-`scancel -n <jobname>` : Cancel all jobs with name `<jobname>`
+`scancel -n <jobname>`: Cancel all jobs with name `<jobname>`
 
-`scancel -u <user> -p <partition> -t <state>` : Cancel all jobs from user `<user>`, in partition `<partition>`, in state `<state>`
+`scancel -u <user> -p <partition> -t <state>`: Cancel all jobs from user `<user>`, in partition `<partition>`, in state `<state>`
 
 ---
 
@@ -690,9 +704,9 @@ Slurm lets you define dependencies between jobs in order to manage task ordering
 
 ---
 
-template: exercice-dependency
+template: exercise-dependency
 
-**Q1 : After job `1` has started, what will be the status of job `2` ?**
+**Q1: After job `1` has started, what will be the status of job `2` ?**
 
 --
 
@@ -700,7 +714,7 @@ Job `2` will be in `pending` status because it is waiting for job `1` to finish 
 
 --
 
-**Q2 : How can you check the status of job `2` ?**
+**Q2: How can you check the status of job `2` ?**
 
 --
 
@@ -711,11 +725,11 @@ JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
 ```
 ---
 
-template: exercice-dependency
+template: exercise-dependency
 
-We realize that we target the wrong data in the first job.
+We realize that we targetted the wrong data in the first job.
 
-**Q3 : How can you cancel job `1` ?**
+**Q3: How can you cancel job `1` ?**
 
 --
 
@@ -725,7 +739,7 @@ $ scancel 1
 
 --
 
-**Q4 : What will be the status of job `2` ?**
+**Q4: What will be the status of job `2` ?**
 
 Job `2` is still `pending`.
 
@@ -739,11 +753,11 @@ JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
 
 ---
 
-template: exercice-dependency
+template: exercise-dependency
 
 We have fixed the `data_download.sh` script.
 
-**Q5 : How can we restart the script and update the dependency on job `2` ?**
+**Q5: How can we restart the script and update the dependency on job `2` ?**
 
 --
 
@@ -768,9 +782,9 @@ template: title
 
 # Why do we need to "load" tools ?
 
-* Each tools need it environment (binaries, librairies, documentation, special variables)
+* Each tools need it environment (binaries, libraries, documentation, special variables)
 * Each tools has its own dependencies. It is not possible to coexist all tools in the same environment.
-* Reproducibility matters : some user might need different versions of the same tool
+* Reproducibility does matter: some user might need different versions of the same tool
 
 At the IFB, the cluster administrators are installing all tools required by the users.<br/>
 To get access to a tool, you need to **load it into your environment** using a special tool called `module`.
@@ -779,7 +793,7 @@ To get access to a tool, you need to **load it into your environment** using a s
 
 # What are availables tools ?
 
-List all available tools :
+List all available tools:
 
 ```
 $ module avail -l
@@ -797,42 +811,42 @@ eba_chipseq/2018                                            2019/01/23 11:37:12
 
 # Loading, listing, switching, unloading
 
-`module load blast` : Load latest version of blast available on the cluster
+`module load blast`: Load latest version of blast available on the cluster
 
 --
 
-`module load blast/2.6.3` : Load version 2.6.3 of blast
+`module load blast/2.6.3`: Load version 2.6.3 of blast
 
 --
 
-`module list` : List tools currently loaded in your environment
+`module list`: List tools currently loaded in your environment
 
 --
 
-`module switch blast/2.7.1` : Replace blast currently loaded by blast version 2.7.1
+`module switch blast/2.7.1`: Replace blast currently loaded by blast version 2.7.1
 
 --
 
-`module unload blast` : Unload blast from your environment
+`module unload blast`: Unload blast from your environment
 
 --
 
-`module purge` : Unload all tools
+`module purge`: Unload all tools
 
 ---
 
 # Creating a tool collection
 
-Load and unload a collection of tool at once.
+Load and unload a collection of tools at once.
 
 .left-column[
 ## Create a collection
 
-Load the tools requested :
+Load the requested tools:
 
 ```
-module load samtools
-module load star
+module load blast  # The most popular tool for sequence similarity searches
+module load hmmer  # Hidden Markov Models-baset motif search
 ```
 
 Save the current tools in a collection
@@ -857,9 +871,9 @@ Named collection list:
 module restore ngs
 ```
 
-## Other list commands
+## Other collection commands
 
-`module saveshow <collection>` : Consulter le contenu d'une collection
+`module saveshow <collection>`: consult the content of a collection
 
-`module saverm <collection>`: Supprimer une collection
+`module saverm <collection>`: suppress a collection
 ]

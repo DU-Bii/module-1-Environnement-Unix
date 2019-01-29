@@ -46,7 +46,7 @@ La commande grep a beaucoup d'options très utiles, par exemple :
 > > ```
 {:.answer}
 
-# Partie 2  : Extraction des données d'un fichier et gestion de flux
+# Partie 3  : Extraction des données d'un fichier et gestion de flux
 
 ## cut  
 
@@ -61,7 +61,7 @@ Exemple : `cut -d "," -f 2 toto.csv`
 
 **Question 3 : Extraire de deux manières différentes la colonne Geneid du fichier cutadapt_bwa_featureCounts_all.tsv*
 
-> **Solution :**: 
+> **Solution :**   
 > > ```bash
 > > $ cut -f 1 cutadapt_bwa_featureCounts_all.tsv 
 > > $ cut -c 1-6 cutadapt_bwa_featureCounts_all.tsv
@@ -74,29 +74,131 @@ Exemple : `cut -d "," -f 2 toto.csv`
 La commande `sort` permet de trier les lignes du ou des fichiers donnés en argument  
 Attention le tri par défaut est selon le code ASCII et pas selon l'ordre numérique. Pour faire un tri numérique utiliser l'option `-n` 
 
-**Question 4 : Extraire la 2ème colonne 'WT1' du fichier cutadapt_bwa_featureCounts_all.tsv rediriger le résultat dans un fichier de sortie 'cutadapt_bwa_featureCounts_WT1.tsv'. Trier ensuite les valeurs de ce fichier par ordre croissant.  
-> **Solution :**: 
+**Question 4 : Extraire la 2ème colonne 'WT1' du fichier cutadapt_bwa_featureCounts_all.tsv rediriger le résultat dans un fichier de sortie 'cutadapt_bwa_featureCounts_WT1.tsv'. Trier ensuite les valeurs de ce fichier par ordre croissant et écrire le résultat dans le fichier `cutadapt_bwa_featureCounts_WT1_sorted.tsv`  
+> **Solution :**  
 > > ```bash  
 > > cut -f 2  cutadapt_bwa_featureCounts_all.tsv  > cutadapt_bwa_featureCounts_WT1.tsv
-> > sort -n cutadapt_bwa_featureCounts_WT1.tsv
+> > sort -n cutadapt_bwa_featureCounts_WT1.tsv > cutadapt_bwa_featureCounts_WT1_sorted.tsv
 > >  
 > > ```
 {:.answer}
 
 ## uniq  
 
+La commande `uniq` permet d'éliminer les lignes identiques (dupliquées) d'un fichier trié  
+Cette commande est très simple mais très utile, en particulier en complément de la commande sort 
+Les options utiles de uniq sont :  
+- `-c` pour afficher le nombre d'occurences de chque ligne  
+- `-d` pour afficher les lignes dupliquées
+- `-u` pour afficher les lignes uniques (défaut)
 
-## wc  
-## Enchainement de commandes avec |
+**Question 5 : Eliminer les lignes dupliquées du fichier 'cutadapt_bwa_featureCounts_WT1_sorted.tsv' et écrire le résultat dans le fichier `cutadapt_bwa_featureCounts_WT1_sorted_uniq.tsv`    
+>
+> **Solution :**  
+> > ```bash  
+> > uniq cutadapt_bwa_featureCounts_WT1_sorted.tsv > cutadapt_bwa_featureCounts_WT1_sorted_uniq.tsv
+> >  
+> > ```
+{:.answer}
 
 
-# Partie 3 : Notions sur les expressions régulières
-## les expressions de bases
-## quelques sites de vérification des expressions régulières
-## utilisation basique de sed
+## wc
+
+La commande `wc` (*word count*) permet de compter le nombre de lignes, de mots et de caractères du fichier ou des fichiers donnés en argument
+
+**Question 6 : Comment afficher uniquement le nombre de lignes d'un fichier ? Combien de lignes y-a-t-il dans les fichiers `cutadapt_bwa_featureCounts_WT1_sorted.tsv` et `cutadapt_bwa_featureCounts_WT1_sorted_uniq.tsv` ?
+>
+> **Solution :** 
+> > ```bash  
+> > $ wc -l cutadapt_bwa_featureCounts_WT1_sorted.tsv
+> > 4498 cutadapt_bwa_featureCounts_WT1_sorted.tsv
+> > 
+> >  $ wc -l cutadapt_bwa_featureCounts_WT1_sorted_uniq.tsv
+1357 cutadapt_bwa_featureCounts_WT1_sorted_uniq.tsv
+> >
+> > ```
+{:.answer}
+
+## Le pipe `|`
+
+Le | est une manière simple et élégante d'enchainer des commandes sous Unix
+Nous avons déjà vu qu'il est possible de rediriger l'entrée, ou la sortie ou l'erreur d'une commande vers un fichier de son choix.  
+Le `|`est un moyen de faire 2 choses à la fois : rediriger la sortie d'une commande vers l'entrée d'une autre commande  
+On peut enchainer plusieurs `|` d'affilée
+
+*Exemple : Comment afficher page par page le nombre d'occurences de chaque valeur de la colonne `WT1` du fichier `cutadapt_bwa_featureCounts_all.tsv` en 1 seule commande  ?
+
+> **Solution :** 
+> > ```bash 
+cut -f 2 cutadapt_bwa_featureCounts_all.tsv | sort | uniq -c | less
+> >
+> > ```
+{:.answer}
+
+
+**Question 7 : Utiliser le `|` et les commandes précédentes pour déterminer le nombre de gènes uniques dans le fichier `Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3`    
+>
+> **Solution :**  
+>
+> > ```bash  
+> >  cut -f 9 Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3 | cut -d';' -f 1 | grep 'gene' | sort -u | wc -l  
+> >  
+> > ```
+{:.answer}
+
+
+# Partie 3 : Notions sur les expressions régulières  
+## Les expressions de bases  
+Une expression régulière (en anglais Regular Expression) sert à identifier une chaîne de caractère répondant à un certain critère (par exemple chaîne contenant un *motif* donné, c'est à dire un enchainement de certains types de caractères).  
+Ces expressions régulières sont utilisables avec plusieurs commandes Unix comme `grep` ou `sed` (voir suite) et certains éditeurs de texte (vi, emacs ?).  
+Le design d'expressions régulières peut s'avérer rapidement complexe et nécessite un savoir-faire certain. Cette possibilité illustre cependant la puissance de l'environnement Unix pour spécifier des recherches et actions complexes en utilisant des lignes de commande concises.  
+Un motif (ou pattern) s'écrit souvent entre / / dans une expression régulière. Un exemple de motif simple est le mot /Chromosome/
+Les expressions régulières vont se baser sur des caractères spéciaux ou métacaractères :
+- **le metacaractère `.`** correspond à n'importe quel caractère  
+- **le metacaractère `*`** correspond à une répétition de 0 à n occurences (déconseillé) 
+- **le metacaractère `+`** correspond à une répétition de 1 à n occurences 
+- **les metacaractères entre `[ ]` correspondent à un ensemble de valeurs possibles (intervale ou explicites** par exemple [A-D] est équivalent à [A,B,C,D]
+-**le métacaractères `^`** indique une recherche d'un motif en début de ligne  
+-**le métacaractères `$`** indique une recherche d'un motif en fin de ligne  
+
+**Question 8 :** Rechercher tous les noms de gènes du fichier `Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3` correspondant à oriA, oriB, oriC et oriD avec la commande `grep` et en utilisant une expression régulière     
+>
+> **Solution :**  
+>
+> > ```bash 
+> > $ grep -e "dna[A-D]" Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3 
+> >
+> > ```
+{:.answer}
+
+
+*Donner ici quelques sites de vérification des expressions régulières et des pointeurs de tutoriaux pour aller plus loin*
+
+**to do**  
+
+## sed  
+
+`sed` (stream editor) est éditeur de texte non interactif permettant de filtrer et transformer les lignes du ou des fichier donnés en argument. La commande ne modifie pas le(s) fichier(s) traité(s)et écrit le résultat sur la sortie standard.  
+La commande `sed` est très utile car elle permet de réaliser des commandes complexes sur des gros fichiers en utilisant des expressions régulières.  
+**Syntaxe : `sed -e [expression] fichier-a-traiter`**  
+La partie `expression` peut contenir des fonctions de filtrage ou de transformation des lignes du fichier-a-traiter  
+Nous ne verrons ici que quelques cas d'utilisation très courants en bioinformatique.  
+
+### Exemple 1 : Remplacer toutes les occurences d'une chaine de caractères dans un fichier  
+Remplaçons toutes les occurences de `Chromosome` par `chr` dans le fichier Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3   
+Pour cela on utilise la fonction de subsitution *s*  
+`sed 's/Chromosome/chr/g' Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3 > Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chr.gff3`
+
+### Exemple 2 : Remplacer toutes les occurences d'une chaine de caractères dans un fichier  
+Supprimons toutes les lignes contenant le nom `oriC` dans le fichier Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3  
+Pour cela on utilise la fonction de suppression *d*  
+`sed '/oriC/d' Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3  > Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome_wo_oriC.gff`
+
 # Partie 4 : Espace de stockage, compression et archivage de données
+
+
 ## Gérer son espace disque : les commandes du et df
 ## Archiver avec tar
 ## gzip, gunzip
 ## Application des mêmes commandes sur des gros fichiers compressés (zless, zgrep, zcat)
-
+## 2 exos max
