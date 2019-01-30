@@ -56,7 +56,6 @@ name: content
 [DU-Bii 2019](https://du-bii.github.io/accueil/)
 ]
 
-
 ---
 
 template: content
@@ -64,7 +63,7 @@ template: content
 # What are we going to talk about today?
 
 * What is an ___HPC cluster___ and what is it used for ?
-* How to connect to the [___IFB___](http://www.france-bioinformatique.fr) 
+* How to connect to the [___IFB___](http://www.france-bioinformatique.fr)
 * The ___SLURM___ Batch system
 * Use "module" to load tools
 
@@ -79,7 +78,7 @@ template: content
 * Use "module" to load tools
 
 .footnote[
-1. High-Performance Computing 
+1. High-Performance Computing
 2. Institut Français de Bioinformatique (<http://www.france-bioinformatique.fr>)
 3. Simple Linux Utility for Resource Management
 ]
@@ -120,7 +119,7 @@ A bit is **a single** binary data: 0 or 1
 
 A byte is made of **8 bits**: 1 byte (B) = 8 bits (b)
 
-1 Terabyte (T**B**) = 1000 Gigabytes (G**B**) = 1e+6 Megabytes (**MB**) = 8 000 000 Megabits (M**b**)
+1 Terabyte (T**B**) = 1000 Gigabytes (G**B**) = 1e+6 Megabytes (M**B**) = 8 000 000 Megabits (M**b**)
 
 ---
 
@@ -128,7 +127,7 @@ A byte is made of **8 bits**: 1 byte (B) = 8 bits (b)
 
 ## .fas.fa-microchip[] .fas.fa-memory[] .fas.fa-hdd[]
 
-A personal computer has enough resources to let you run a lot of tasks like **browsing the Internet**, **work with spreadsheet** or **text processing software**. Some personal computers have even enough resources to enable **video processing** or **playing 3D videogames**.
+A personal computer has enough resources to let you run a lot of tasks like **browsing the Internet**, **work with spreadsheet** or **text processing software**. Some personal computers have even enough resources to let **process videos** or **play 3D video games**.
 
 --
 
@@ -215,8 +214,8 @@ On the [IFB](http://www.france-bioinformatique.fr) HPC Cluster:
 # Some HPC clusters in France
 
 .pure-table.pure-table-bordered.smaller-font[
-Cluster | Data center location | Cores | RAM (GB) | Storage (TB) | Access modality 
---- | --- | --- | --- | --- | --- 
+Cluster | Data center location | Cores | RAM (GB) | Storage (TB) | Access modality
+--- | --- | --- | --- | --- | ---
 IFB Core | IDRIS - Orsay | 2 000 | 20 008 | 400 | Open to all academic biologists and bioinformaticians
 GENOTOUL | Toulouse | 3 064 | 34 304 | 3 000 | Open to all academics with priority to INRA/Occitane region (currently overloaded)
 CINES OCCIGEN | Montpellier | 85&nbsp;824 | 202&nbsp;000 | 8 000 | Periodic calls for projects (~2 calls / year)
@@ -226,7 +225,7 @@ CINES OCCIGEN | Montpellier | 85&nbsp;824 | 202&nbsp;000 | 8 000 | Periodic cal
 
 # How to access an HPC cluster?
 
-Only the engineers in charge of maintenance of the cluster are authorized to enter the data center. 
+Only the engineers in charge of maintenance of the cluster are authorized to enter the data center.
 
 **It is thus not possible for users to access these computers with a directly connected keyboard and a local screen**. The connection has to be managed through a **computer network** such as the Internet.
 
@@ -357,7 +356,7 @@ Type `exit` to close the connection.
 
 SSH allows you to copy data to or from a remote computer with the `scp` command.
 
-General syntax 
+General syntax
 
 ```bash
 scp [source_location] [target_location]
@@ -382,7 +381,7 @@ $ scp <username>@<remote-host>:/remote/path /local/path
 
 ## Exercise
 
-1. Open an ssh connection to `core.cluster.france-bioinformatique.fr` 
+1. Open an ssh connection to `core.cluster.france-bioinformatique.fr`
 2. List the pdf document(s) located in `/shared/projects/du_bii_2019/data/cluster/`
 3. Get the full path of the pdf file(s) located there.
 4. Copy the PDF document(s) to your local computer
@@ -393,7 +392,7 @@ $ scp <username>@<remote-host>:/remote/path /local/path
 
 ## Solution to the exercise
 
-1. Connect to `core.cluster.france-bioinformatique.fr` 
+1. Connect to `core.cluster.france-bioinformatique.fr`
 
 ```bash
 local $ ssh seiler@core.cluster.france-bioinformatique.fr
@@ -407,13 +406,13 @@ local $ ssh seiler@core.cluster.france-bioinformatique.fr
 ## Solution to the exercise
 
 
-1. Connect to `core.cluster.france-bioinformatique.fr` 
+1. Connect to `core.cluster.france-bioinformatique.fr`
 2. List all files located in `/shared/projects/du_bii_2019/data/cluster/`
 
 ```bash
 cluster $ ls /shared/projects/du_bii_2019/data/cluster/
 ```
-The result should look like this. 
+The result should look like this.
 *Do not type this in your terminal, it is not a command ;-)*
 
 ```sh
@@ -427,9 +426,9 @@ slides.pdf
 ## Solution to the exercise
 
 
-1. Connect to `core.cluster.france-bioinformatique.fr` 
+1. Connect to `core.cluster.france-bioinformatique.fr`
 2. List all files located in `/shared/projects/du_bii_2019/data/cluster/`
-3. List only the pdf files in this folder, and get the full path. 
+3. List only the pdf files in this folder, and get the full path.
 
 ```bash
 cluster $ ls /shared/projects/du_bii_2019/data/cluster/*.pdf
@@ -441,7 +440,7 @@ cluster $ ls /shared/projects/du_bii_2019/data/cluster/*.pdf
 
 ## Solution to the exercise
 
-1. Open an ssh connection to `core.cluster.france-bioinformatique.fr` 
+1. Open an ssh connection to `core.cluster.france-bioinformatique.fr`
 2. List the pdf document(s) located in `/shared/projects/du_bii_2019/data/cluster/`
 3. Get the full path of the pdf file(s) located there.
 4. Copy the PDF document(s) to your local computer
@@ -622,13 +621,6 @@ cpu-node-2
 
 template: content
 
-# Interactive job
-
-`srun`
-
----
-template: content
-
 # Batch job
 
 ## What is a batch job ?
@@ -764,16 +756,16 @@ $ squeue -u <username> -s
 Slurm lets you define dependencies between jobs in order to manage task ordering.
 
 `sbatch --dependency=afterok:<other_jobid> <script>`<br/>
-*Start this job only after <other_jobid> has finished successfully.*
+*Start this job only after `<other_jobid>` has finished successfully.*
 
 `sbatch --dependency=afternotok:<other_jobid> <script>`<br/>
-*Start this job only after <other_jobid> has failed.*
+*Start this job only after `<other_jobid>` has failed.*
 
 `sbatch --dependency=after:<other_jobid> <script>`<br/>
-*Start this job only after <other_jobid> has started (control starting order)*
+*Start this job only after `<other_jobid>` has started (control starting order)*
 
 `sbatch --dependency=afterany:<other_jobid> <script>`<br/>
-*Start this job only after <other_jobid> has finished (what ever exit code)*
+*Start this job only after `<other_jobid>` has finished (what ever exit code)*
 
 ---
 
@@ -843,6 +835,44 @@ $ squeue
 JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
     2      fast data_ana  jseiler PD       0:00      1 cpu-node1(Dependency)
     3      fast data_dow  jseiler  R       0:33      1 cpu-node1
+```
+
+---
+
+template: content
+
+# Embarrassingly parallel workload
+
+Using `--ntasks`
+
+Example :
+
+```
+#! /bin/bash
+#SBATCH --nstaks=3
+
+data=('data1' 'data2' 'data3')
+for d in "${data[@]}"; do
+     srun -n1 my_command $d &
+done
+```
+---
+
+# Embarrassingly parallel workload
+
+Using `--array`
+
+Example :
+
+```
+#! /bin/bash
+#SBATCH --array=1-20%5  # 20 jobs with max 5 jobs in parallel
+#SBATCH --ntasks=1
+
+FILES=(/path/to/data/*)
+
+srun my_command ${FILES[$SLURM_ARRAY_TASK_ID]}
+
 ```
 
 ---
