@@ -1,7 +1,3 @@
-# TODO
-# Fichiers slides sur cluster
-# Test scripts + préparer démo dependencies
-
 class: center, middle
 
 # IFB High Performance computing usage
@@ -66,18 +62,28 @@ template: content
 
 # What are we going to talk about today?
 
-* What is an __HPC cluster__* and what is it used for ?
-* How to connect to the __IFB__** cluster
-* The SLURM Batch system
+* What is an ___HPC cluster___ and what is it used for ?
+* How to connect to the [___IFB___](http://www.france-bioinformatique.fr)
+* The ___SLURM___ Batch system
 * Use "module" to load tools
 
-.footnote[\* HPC: High-Performance Computing
-
-** IFB: Institut Français de Bioinformatique
-]
-
-
 ---
+template: content
+
+# What are we going to talk about today?
+
+* What is an ___HPC cluster___ (1) and what is it used for ?
+* How to connect to the ___IFB___ (2) core cluster
+* The ___SLURM___ (3) Batch system
+* Use "module" to load tools
+
+.footnote[
+1. High-Performance Computing
+2. Institut Français de Bioinformatique (<http://www.france-bioinformatique.fr>)
+3. Simple Linux Utility for Resource Management
+]
+---
+
 
 template: title
 
@@ -127,11 +133,11 @@ A personal computer has enough resources to let you run a lot of tasks like **br
 
 ## .fas.fa-microchip[] .fas.fa-microchip[] .fas.fa-microchip[] .fas.fa-microchip[]  .fas.fa-memory[] .fas.fa-memory[] .fas.fa-memory[]  .fas.fa-hdd[] .fas.fa-hdd[]
 
-However, personal computer are not powerful enough to run **massive data analysis programs**. Indeed, these programs need a huge number of processing unit (10 to 100), huge amount of RAM (100 GB for some programs) and large storage space for data (several TB).<br/><br/>
+However, personal computer are not powerful enough to run **massive data analysis programs**. Indeed, these programs need a huge number of processing units (10 to 100 CPUs), huge amounts of RAM (100 GB for some programs) and large data storage capabilities  (several TB for a single research project).<br/><br/>
 
 --
 
-.callout.callout-success[Massive data analysis requires a High Performance Computing (HPC) cluster]
+.callout.callout-success[Massive data analysis requires a *High Performance Computing (HPC) cluster*.]
 
 ---
 
@@ -139,13 +145,13 @@ However, personal computer are not powerful enough to run **massive data analysi
 
 A set of big computers connected together that can be considered as a single system.
 
-A HPC cluster is usually located in a "data center". It a dedicated room providing all conditions required by HPC in terms of temperature, humidity, power supply and physical security.
+A HPC cluster is usually located in a **data center**, *i.e.* a dedicated room providing all conditions required by HPC in terms of temperature, humidity, power supply and physical security.
 
 .center[![Bluegene](images/bluegene.jpg)]
 
 ---
 
-# A datacenter is composed of racks
+# A data center contains racks
 
 .center[![Racks](images/racks.jpg)]
 
@@ -187,9 +193,9 @@ A microprocessor is a **physical chip**.
 
 Core = CPU = Central Processing **Unit**
 
-15 to 20 years ago = 1 microprocessor = 1 core<br/><br/>
+15 to 20 years ago: 1 microprocessor = 1 core<br/><br/>
 
-.callout.callout-danger[THI IS NOT TRUE ANYMORE]
+.callout.callout-danger[THIS IS NOT TRUE ANYMORE]
 
 ---
 
@@ -197,29 +203,31 @@ class: center
 
 # Do not confuse Microprocessor and Core
 
-On the IFB HPC Cluster:
+On the [IFB](http://www.france-bioinformatique.fr) HPC Cluster:
 
 1 node = 2 sockets = 2 microprocessors = 2 x 14 cores = 28 CPU<br/><br/>
 
-.callout.callout-info[A HPC cluster can be seen has a pool of cores.]
+.callout.callout-info[A HPC cluster can be seen as a pool of cores.]
 
 ---
 
 # Some HPC clusters in France
 
 .pure-table.pure-table-bordered.smaller-font[
-Cluster | Data center location | Cores | RAM (in GB) | Storage space (en TB) | Access modality
+Cluster | Data center location | Cores | RAM (GB) | Storage (TB) | Access modality
 --- | --- | --- | --- | --- | ---
-IFB Core | IDRIS - Orsay | 2 000 | 20 008 | 400 | Open to all academic biologists and bioinformaticians
-GENOTOUL | Toulouse | 3 064 | 34 304 | 3 000 | Open to INRA/Occitane region (overloaded currently)
-CINES OCCIGEN | Montpellier | 85 824 | 202 000 | 8 000 | On call for projects
+IFB Core | IDRIS - Orsay | 2 000 | 20 008 | 400 | Open to all academic biologists and bioinformaticians
+GENOTOUL | Toulouse | 3 064 | 34 304 | 3 000 | Open to all academics with priority to INRA/Occitane region (currently overloaded)
+CINES OCCIGEN | Montpellier | 85&nbsp;824 | 202&nbsp;000 | 8 000 | Periodic calls for projects (~2 calls / year)
 ]
 
 ---
 
-# How to access a HPC cluster?
+# How to access an HPC cluster?
 
-Only the engineers in charge of maintenance of the cluster are authorized to enter the data center. Thus, **it is not possible to use these computers directly using a keyboard and a screen**. It is necessary to connect to it through a **computer network** such as the Internet.
+Only the engineers in charge of maintenance of the cluster are authorized to enter the data center.
+
+**It is thus not possible for users to access these computers with a directly connected keyboard and a local screen**. The connection has to be managed through a **computer network** such as the Internet.
 
 To ensure that resources (nodes, cores, memory) are properly distributed among their users according to their needs, a software called a **Batch system** allows users to **book and access resources**. It is through this software that you can access one or more computers on the HPC cluster.
 
@@ -229,21 +237,21 @@ To ensure that resources (nodes, cores, memory) are properly distributed among t
 
 ## Basic Unix
 
-There is no graphical user interface on a HPC cluster
+There is no graphical user interface on a HPC cluster.
 
-## How to connect to a remote host through the network
+## How to connect to a remote host through the network?
 
-Your personal computer need to get connected to the cluster !
+Your local computer needs to get connected to the cluster!
 
-## How to use a Batch system
+## How to use a Batch system?
 
-One connected to the cluster, you need to learn how to submit compute job
+Once connected to the cluster, you need to know how to submit computing jobs.
 
 ---
 
 template: title
 
-# Connect to a remote host through the network
+# Connecting to a remote host through the network
 
 ---
 
@@ -265,6 +273,8 @@ mission-to-mars      rama-II       time-travel
 
 The shell allows you to dialog with a local workstation: this assumes that you are physically present in the same room as the machine.
 
+You can also run a shell on a remote computer.
+
 ---
 
 # SSH: the remote shell
@@ -273,7 +283,7 @@ To interact with a remote computer you need:
 * A communication support: computer **network** like Internet
 * A communication protocol: **SSH**
 
-SSH (for Secure SHell) is the most commonly used protocol for establishing dialogue and launching commands on a remote machine.
+***SSH*** (for ***Secure SHell***) is the most commonly used protocol for establishing dialogue and launching commands on a remote machine.
 
 ---
 
@@ -283,14 +293,14 @@ SSH needs two parameters to run:
 * The name or IP of the remote computer
 * A user credential (username + password)
 
-Under Linux or Mac, you can use SSH from the Terminal/Console application:
+Under Linux or Mac, you can run ***SSH*** from the Terminal/Console application:
 
 ```bash
 $ ssh <username>@<remote-host-name>
 ```
 
 .callout.callout-info[
-Under Windows, you can use a Terminal applications like PuTTY or MobaXterm.
+Under Windows, you can use a Terminal application like ***PuTTY*** or ***MobaXterm***.
 ]
 
 .callout.callout-warning[
@@ -312,7 +322,7 @@ $ ssh <username>@core.cluster.france-bioinformatique.fr
 ```
 *Replace `<username>` with your username.*
 
-You will then be asked for your password (no character are printed while on type in your password).
+You will then be prompted to enter your password (**beware**: at the password prompt, the characters you type are not printed on the screen, for obvious security reasons).
 
 You are now connected to the IFB cluster ***submission node***.
 
@@ -322,21 +332,44 @@ Type `exit` to close the connection.
 
 # SSH: the remote shell
 
-## Copy data remotely
+## Exercise
+
+1. Open an SSH connection to `core.cluster.france-bioinformatique.fr`
+
+2. Print the current working directory.
+
+3. List the files in the working directory.
+
+4. Print the manual of the `df`command;
+
+5. Get the total and the available space (in MB) on the disk holding your home directory.
+
+---
+
+# SSH: the remote shell
+
+## Copying data between distant computers
 
 SSH allows you to copy data to or from a remote computer with the `scp` command.
 
-The syntax to copy data from your personal computer to a remote host is:
+General syntax
+
+```bash
+scp [source_location] [target_location]
+```
+
+* From the local computer to a remote host (Note: *Replace `<username>` with your username.*)
+
+
 ```bash
 $ scp /path/to/local/file <username>@<remote-host>:/remote/destination/path
 ```
-*Replace `<username>` with your username.*
 
-You can also copy data from a remote host to your personal computer:
+* From a remote host to the local computer
+
 ```bash
 $ scp <username>@<remote-host>:/remote/path /local/path
 ```
-*Replace `<username>` with your username.*
 
 ---
 
@@ -344,33 +377,72 @@ $ scp <username>@<remote-host>:/remote/path /local/path
 
 ## Exercise
 
-1. Connect to `core.cluster.france-bioinformatique.fr` and retrieve the full name of the pdf document located in `/shared/space2/du-bii/data/cluster/`
-2. Copy this PDF document to your local computer
+1. Open an ssh connection to `core.cluster.france-bioinformatique.fr`
+2. List the pdf document(s) located in `/shared/projects/du_bii_2019/data/cluster/`
+3. Get the full path of the pdf file(s) located there.
+4. Copy the PDF document(s) to your local computer
 
 ---
 
 # SSH: the remote shell
 
-## Exercise
+## Solution to the exercise
 
-1. Connect to `core.cluster.france-bioinformatique.fr` and retrieve the full name of the pdf document located in `/shared/space2/du-bii/data/cluster/`
-
---
+1. Connect to `core.cluster.france-bioinformatique.fr`
 
 ```bash
 local $ ssh seiler@core.cluster.france-bioinformatique.fr
-cluster $ ls /shared/space2/du-bii/data/cluster/
-slides.pdf
 ```
 *Replace `seilerj` with your own username (I'm not sharing my password)*
 
---
+---
 
-2. Copy this PDF document to your local computer
+# SSH: the remote shell
+
+## Solution to the exercise
+
+
+1. Connect to `core.cluster.france-bioinformatique.fr`
+2. List all files located in `/shared/projects/du_bii_2019/data/cluster/`
 
 ```bash
-cluster $ exit  # quit the cluster and get back to your local shell
-local $ scp seilerj@core.cluster.france-bioinformatique.fr:/shared/space2/du-bii/data/cluster/slides.pdf .
+cluster $ ls /shared/projects/du_bii_2019/data/cluster/
+```
+The result should look like this.
+*Do not type this in your terminal, it is not a command ;-)*
+
+```sh
+slides.pdf
+```
+
+---
+
+# SSH: the remote shell
+
+## Solution to the exercise
+
+
+1. Connect to `core.cluster.france-bioinformatique.fr`
+2. List all files located in `/shared/projects/du_bii_2019/data/cluster/`
+3. List only the pdf files in this folder, and get the full path.
+
+```bash
+cluster $ ls /shared/projects/du_bii_2019/data/cluster/*.pdf
+```
+
+---
+
+# SSH: the remote shell
+
+## Solution to the exercise
+
+1. Open an ssh connection to `core.cluster.france-bioinformatique.fr`
+2. List the pdf document(s) located in `/shared/projects/du_bii_2019/data/cluster/`
+3. Get the full path of the pdf file(s) located there.
+4. Copy the PDF document(s) to your local computer
+
+```bash
+local $ scp seilerj@core.cluster.france-bioinformatique.fr:/shared/projects/du_bii_2019/data/cluster/slides.pdf .
 ```
 *Replace `seilerj` with your own username (still not sharing my password)*
 
@@ -759,6 +831,44 @@ $ squeue
 JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
     2      fast data_ana  jseiler PD       0:00      1 cpu-node1(Dependency)
     3      fast data_dow  jseiler  R       0:33      1 cpu-node1
+```
+
+---
+
+template: content
+
+# Embarrassingly parallel workload
+
+Using `--ntasks`
+
+Example :
+
+```
+#! /bin/bash
+#SBATCH --nstaks=3
+
+data=('data1' 'data2' 'data3')
+for d in "${data[@]}"; do
+     srun -n1 my_command $d &
+done
+```
+---
+
+# Embarrassingly parallel workload
+
+Using `--array`
+
+Example :
+
+```
+#! /bin/bash
+#SBATCH --array=1-20%5  # 20 jobs with max 5 jobs in parallel
+#SBATCH --ntasks=1
+
+FILES=(/path/to/data/*)
+
+srun my_command ${FILES[$SLURM_ARRAY_TASK_ID]}
+
 ```
 
 ---
