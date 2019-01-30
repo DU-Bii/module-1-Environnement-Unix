@@ -349,21 +349,28 @@ Type `exit` to close the connection.
 
 # SSH: the remote shell
 
-## Copy data remotely
+## Copying data between distant computers
 
 SSH allows you to copy data to or from a remote computer with the `scp` command.
 
-The syntax to copy data from your personal computer to a remote host is:
+General syntax 
+
+```bash
+scp [source_location] [target_location]
+```
+
+* From the local computer to a remote host (Note: *Replace `<username>` with your username.*)
+
+
 ```bash
 $ scp /path/to/local/file <username>@<remote-host>:/remote/destination/path
 ```
-*Replace `<username>` with your username.*
 
-You can also copy data from a remote host to your personal computer:
+* From a remote host to the local computer
+
 ```bash
 $ scp <username>@<remote-host>:/remote/path /local/path
 ```
-*Replace `<username>` with your username.*
 
 ---
 
