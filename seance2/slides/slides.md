@@ -56,24 +56,35 @@ name: content
 [DU-Bii 2019](https://du-bii.github.io/accueil/)
 ]
 
+
 ---
 
 template: content
 
 # What are we going to talk about today?
 
-* What is an __HPC cluster__* and what is it used for ?
-* How to connect to the __IFB__** cluster
-* The SLURM Batch system
+* What is an ___HPC cluster___ and what is it used for ?
+* How to connect to the ___IFB___ core cluster
+* The ___SLURM___ Batch system
 * Use "module" to load tools
 
-.footnote[\* HPC: High-Performance Computing 
-
-** IFB: Institut Français de Bioinformatique
-]
-
-
 ---
+template: content
+
+# What are we going to talk about today?
+
+* What is an ___HPC cluster___ (1) and what is it used for ?
+* How to connect to the ___IFB___ (2) core cluster
+* The ___SLURM___ (3) Batch system
+* Use "module" to load tools
+
+.footnote[
+1. High-Performance Computing 
+2. Institut Français de Bioinformatique
+3. Simple Linux Utility for Resource Management
+]
+---
+
 
 template: title
 
@@ -109,7 +120,7 @@ A bit is **a single** binary data: 0 or 1
 
 A byte is made of **8 bits**: 1 byte (B) = 8 bits (b)
 
-1 Terabyte (T**B**) = 1000 Gigabytes (G**B**) = 1e+6 Megabytes (MB) = 8 000 000 Megabits (M**b**)
+1 Terabyte (T**B**) = 1000 Gigabytes (G**B**) = 1e+6 Megabytes (**MB**) = 8 000 000 Megabits (M**b**)
 
 ---
 
@@ -117,17 +128,17 @@ A byte is made of **8 bits**: 1 byte (B) = 8 bits (b)
 
 ## .fas.fa-microchip[] .fas.fa-memory[] .fas.fa-hdd[]
 
-A personal computer has enough resources to let you run a lot of tasks like **browsing the Internet**, **work with spreadsheet** or **text processing software**. Some personal computers have even enough resources to let **process videos** or **play 3D videogames**.
+A personal computer has enough resources to let you run a lot of tasks like **browsing the Internet**, **work with spreadsheet** or **text processing software**. Some personal computers have even enough resources to enable **video processing** or **playing 3D videogames**.
 
 --
 
 ## .fas.fa-microchip[] .fas.fa-microchip[] .fas.fa-microchip[] .fas.fa-microchip[]  .fas.fa-memory[] .fas.fa-memory[] .fas.fa-memory[]  .fas.fa-hdd[] .fas.fa-hdd[]
 
-However, personal computer are not powerful enough to run **massive data analysis programs**. Indeed, these programs need a huge number of processing unit (10 to 100), huge amount of RAM (100 GB for some programs) and large storage space for data (several TB).<br/><br/>
+However, personal computer are not powerful enough to run **massive data analysis programs**. Indeed, these programs need a huge number of processing units (10 to 100 CPUs), huge amounts of RAM (100 GB for some programs) and large data storage capabilities  (several TB for a single research project).<br/><br/>
 
 --
 
-.callout.callout-success[Massive data analysis requires a High Performance Computing (HPC) cluster]
+.callout.callout-success[Massive data analysis requires a *High Performance Computing (HPC) cluster*.]
 
 ---
 
@@ -135,13 +146,13 @@ However, personal computer are not powerful enough to run **massive data analysi
 
 A set of big computers connected together that can be considered as a single system.
 
-A HPC cluster is usually located in a "data center". It a dedicated room providing all conditions required by HPC in terms of temperature, humidity, power supply and physical security.
+A HPC cluster is usually located in a **data center**, *i.e.* a dedicated room providing all conditions required by HPC in terms of temperature, humidity, power supply and physical security.
 
 .center[![Bluegene](images/bluegene.jpg)]
 
 ---
 
-# A datacenter is composed of racks
+# A data center contains racks
 
 .center[![Racks](images/racks.jpg)]
 
@@ -183,9 +194,9 @@ A microprocessor is a **physical chip**.
 
 Core = CPU = Central Processing **Unit**
 
-15 to 20 years ago = 1 microprocessor = 1 core<br/><br/>
+15 to 20 years ago: 1 microprocessor = 1 core<br/><br/>
 
-.callout.callout-danger[THI IS NOT TRUE ANYMORE]
+.callout.callout-danger[THIS IS NOT TRUE ANYMORE]
 
 ---
 
