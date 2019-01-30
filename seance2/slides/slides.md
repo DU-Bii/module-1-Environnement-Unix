@@ -64,7 +64,7 @@ template: content
 # What are we going to talk about today?
 
 * What is an ___HPC cluster___ and what is it used for ?
-* How to connect to the [___IFB___](http://www.france-bioinformatique.fr) core cluster
+* How to connect to the [___IFB___](http://www.france-bioinformatique.fr) 
 * The ___SLURM___ Batch system
 * Use "module" to load tools
 
