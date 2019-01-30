@@ -1,3 +1,7 @@
+# TODO
+# Fichiers slides sur cluster
+# Test scripts + préparer démo dependencies
+
 class: center, middle
 
 # IFB High Performance computing usage
@@ -539,13 +543,6 @@ cpu-node-2
 
 ---
 
-template: content
-
-# Interactive job
-
-`srun`
-
----
 template: content
 
 # Batch job
