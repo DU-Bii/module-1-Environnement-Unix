@@ -379,7 +379,7 @@ $ scp <username>@<remote-host>:/remote/path /local/path
 ## Exercise
 
 1. Open an ssh connection to `core.cluster.france-bioinformatique.fr` 
-2. List the pdf document(s) located in `/shared/space2/du-bii/data/cluster/`
+2. List the pdf document(s) located in `/shared/projects/du_bii_2019/data/cluster/`
 3. Get the full path of the pdf file(s) located there.
 4. Copy the PDF document(s) to your local computer
 
@@ -404,10 +404,10 @@ local $ ssh seiler@core.cluster.france-bioinformatique.fr
 
 
 1. Connect to `core.cluster.france-bioinformatique.fr` 
-2. List all files located in `/shared/space2/du-bii/data/cluster/`
+2. List all files located in `/shared/projects/du_bii_2019/data/cluster/`
 
 ```bash
-cluster $ ls /shared/space2/du-bii/data/cluster/
+cluster $ ls /shared/projects/du_bii_2019/data/cluster/
 ```
 The result should look like this. 
 *Do not type this in your terminal, it is not a command ;-)*
@@ -424,11 +424,11 @@ slides.pdf
 
 
 1. Connect to `core.cluster.france-bioinformatique.fr` 
-2. List all files located in `/shared/space2/du-bii/data/cluster/`
+2. List all files located in `/shared/projects/du_bii_2019/data/cluster/`
 3. List only the pdf files in this folder, and get the full path. 
 
 ```bash
-cluster $ ls /shared/space2/du-bii/data/cluster/*.pdf
+cluster $ ls /shared/projects/du_bii_2019/data/cluster/*.pdf
 ```
 
 ---
@@ -438,12 +438,12 @@ cluster $ ls /shared/space2/du-bii/data/cluster/*.pdf
 ## Solution to the exercise
 
 1. Open an ssh connection to `core.cluster.france-bioinformatique.fr` 
-2. List the pdf document(s) located in `/shared/space2/du-bii/data/cluster/`
+2. List the pdf document(s) located in `/shared/projects/du_bii_2019/data/cluster/`
 3. Get the full path of the pdf file(s) located there.
 4. Copy the PDF document(s) to your local computer
 
 ```bash
-local $ scp seilerj@core.cluster.france-bioinformatique.fr:/shared/space2/du-bii/data/cluster/slides.pdf .
+local $ scp seilerj@core.cluster.france-bioinformatique.fr:/shared/projects/du_bii_2019/data/cluster/slides.pdf .
 ```
 *Replace `seilerj` with your own username (still not sharing my password)*
 
