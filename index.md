@@ -47,7 +47,7 @@ Les prérequis à ce module : [ici](prerequis/README.md)
 - Lundi 04/02/2019 10:00 - 13:00
 - Instructeurs : Benoist Laurent & Hélène Chiapello
 - Helpers : Pierre Poulain, Sandra Dérozier
-[Tutoriel](seance3/tutorial/README.md)
+[Tutoriel]  (seance3/tutorial/README.md)
 
 ## Séance 4 - Automatisation
 
