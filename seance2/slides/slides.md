@@ -333,6 +333,22 @@ Type `exit` to close the connection.
 
 # SSH: the remote shell
 
+## Exercise
+
+1. Open an SSH connection to `core.cluster.france-bioinformatique.fr`
+
+2. Print the current working directory. 
+
+3. List the files in the working directory. 
+
+4. Print the manual of the `df`command;
+
+5. Get the total and the available space (in MB) on the disk holding your home directory.
+
+---
+
+# SSH: the remote shell
+
 ## Copy data remotely
 
 SSH allows you to copy data to or from a remote computer with the `scp` command.
