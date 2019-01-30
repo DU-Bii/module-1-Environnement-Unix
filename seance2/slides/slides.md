@@ -56,24 +56,35 @@ name: content
 [DU-Bii 2019](https://du-bii.github.io/accueil/)
 ]
 
+
 ---
 
 template: content
 
 # What are we going to talk about today?
 
-* What is an __HPC cluster__* and what is it used for ?
-* How to connect to the __IFB__** cluster
-* The SLURM Batch system
+* What is an ___HPC cluster___ and what is it used for ?
+* How to connect to the [___IFB___](http://www.france-bioinformatique.fr) core cluster
+* The ___SLURM___ Batch system
 * Use "module" to load tools
 
-.footnote[\* HPC: High-Performance Computing 
-
-** IFB: Institut Français de Bioinformatique
-]
-
-
 ---
+template: content
+
+# What are we going to talk about today?
+
+* What is an ___HPC cluster___ (1) and what is it used for ?
+* How to connect to the ___IFB___ (2) core cluster
+* The ___SLURM___ (3) Batch system
+* Use "module" to load tools
+
+.footnote[
+1. High-Performance Computing 
+2. Institut Français de Bioinformatique (<http://www.france-bioinformatique.fr>)
+3. Simple Linux Utility for Resource Management
+]
+---
+
 
 template: title
 
@@ -109,7 +120,7 @@ A bit is **a single** binary data: 0 or 1
 
 A byte is made of **8 bits**: 1 byte (B) = 8 bits (b)
 
-1 Terabyte (T**B**) = 1000 Gigabytes (G**B**) = 1e+6 Megabytes (MB) = 8 000 000 Megabits (M**b**)
+1 Terabyte (T**B**) = 1000 Gigabytes (G**B**) = 1e+6 Megabytes (**MB**) = 8 000 000 Megabits (M**b**)
 
 ---
 
@@ -117,17 +128,17 @@ A byte is made of **8 bits**: 1 byte (B) = 8 bits (b)
 
 ## .fas.fa-microchip[] .fas.fa-memory[] .fas.fa-hdd[]
 
-A personal computer has enough resources to let you run a lot of tasks like **browsing the Internet**, **work with spreadsheet** or **text processing software**. Some personal computers have even enough resources to let **process videos** or **play 3D videogames**.
+A personal computer has enough resources to let you run a lot of tasks like **browsing the Internet**, **work with spreadsheet** or **text processing software**. Some personal computers have even enough resources to enable **video processing** or **playing 3D videogames**.
 
 --
 
 ## .fas.fa-microchip[] .fas.fa-microchip[] .fas.fa-microchip[] .fas.fa-microchip[]  .fas.fa-memory[] .fas.fa-memory[] .fas.fa-memory[]  .fas.fa-hdd[] .fas.fa-hdd[]
 
-However, personal computer are not powerful enough to run **massive data analysis programs**. Indeed, these programs need a huge number of processing unit (10 to 100), huge amount of RAM (100 GB for some programs) and large storage space for data (several TB).<br/><br/>
+However, personal computer are not powerful enough to run **massive data analysis programs**. Indeed, these programs need a huge number of processing units (10 to 100 CPUs), huge amounts of RAM (100 GB for some programs) and large data storage capabilities  (several TB for a single research project).<br/><br/>
 
 --
 
-.callout.callout-success[Massive data analysis requires a High Performance Computing (HPC) cluster]
+.callout.callout-success[Massive data analysis requires a *High Performance Computing (HPC) cluster*.]
 
 ---
 
@@ -135,13 +146,13 @@ However, personal computer are not powerful enough to run **massive data analysi
 
 A set of big computers connected together that can be considered as a single system.
 
-A HPC cluster is usually located in a "data center". It a dedicated room providing all conditions required by HPC in terms of temperature, humidity, power supply and physical security.
+A HPC cluster is usually located in a **data center**, *i.e.* a dedicated room providing all conditions required by HPC in terms of temperature, humidity, power supply and physical security.
 
 .center[![Bluegene](images/bluegene.jpg)]
 
 ---
 
-# A datacenter is composed of racks
+# A data center contains racks
 
 .center[![Racks](images/racks.jpg)]
 
@@ -183,9 +194,9 @@ A microprocessor is a **physical chip**.
 
 Core = CPU = Central Processing **Unit**
 
-15 to 20 years ago = 1 microprocessor = 1 core<br/><br/>
+15 to 20 years ago: 1 microprocessor = 1 core<br/><br/>
 
-.callout.callout-danger[THI IS NOT TRUE ANYMORE]
+.callout.callout-danger[THIS IS NOT TRUE ANYMORE]
 
 ---
 
@@ -193,29 +204,31 @@ class: center
 
 # Do not confuse Microprocessor and Core
 
-On the IFB HPC Cluster:
+On the [IFB](http://www.france-bioinformatique.fr) HPC Cluster:
 
 1 node = 2 sockets = 2 microprocessors = 2 x 14 cores = 28 CPU<br/><br/>
 
-.callout.callout-info[A HPC cluster can be seen has a pool of cores.]
+.callout.callout-info[A HPC cluster can be seen as a pool of cores.]
 
 ---
 
 # Some HPC clusters in France
 
 .pure-table.pure-table-bordered.smaller-font[
-Cluster | Data center location | Cores | RAM (in GB) | Storage space (en TB) | Access modality
---- | --- | --- | --- | --- | ---
-IFB Core | IDRIS - Orsay | 2 000 | 20 008 | 400 | Open to all academic biologists and bioinformaticians
-GENOTOUL | Toulouse | 3 064 | 34 304 | 3 000 | Open to INRA/Occitane region (overloaded currently)
-CINES OCCIGEN | Montpellier | 85 824 | 202 000 | 8 000 | On call for projects
+Cluster | Data center location | Cores | RAM (GB) | Storage (TB) | Access modality 
+--- | --- | --- | --- | --- | --- 
+IFB Core | IDRIS - Orsay | 2 000 | 20 008 | 400 | Open to all academic biologists and bioinformaticians
+GENOTOUL | Toulouse | 3 064 | 34 304 | 3 000 | Open to all academics with priority to INRA/Occitane region (currently overloaded)
+CINES OCCIGEN | Montpellier | 85&nbsp;824 | 202&nbsp;000 | 8 000 | Periodic calls for projects (~2 calls / year)
 ]
 
 ---
 
-# How to access a HPC cluster?
+# How to access an HPC cluster?
 
-Only the engineers in charge of maintenance of the cluster are authorized to enter the data center. Thus, **it is not possible to use these computers directly using a keyboard and a screen**. It is necessary to connect to it through a **computer network** such as the Internet.
+Only the engineers in charge of maintenance of the cluster are authorized to enter the data center. 
+
+**It is thus not possible for users to access these computers with a directly connected keyboard and a local screen**. The connection has to be managed through a **computer network** such as the Internet.
 
 To ensure that resources (nodes, cores, memory) are properly distributed among their users according to their needs, a software called a **Batch system** allows users to **book and access resources**. It is through this software that you can access one or more computers on the HPC cluster.
 
@@ -225,21 +238,21 @@ To ensure that resources (nodes, cores, memory) are properly distributed among t
 
 ## Basic Unix
 
-There is no graphical user interface on a HPC cluster
+There is no graphical user interface on a HPC cluster.
 
-## How to connect to a remote host through the network
+## How to connect to a remote host through the network?
 
-Your personal computer need to get connected to the cluster !
+Your local computer needs to get connected to the cluster!
 
-## How to use a Batch system
+## How to use a Batch system?
 
-One connected to the cluster, you need to learn how to submit compute job
+Once connected to the cluster, you need to know how to submit computing jobs.
 
 ---
 
 template: title
 
-# Connect to a remote host through the network
+# Connecting to a remote host through the network
 
 ---
 
@@ -260,6 +273,8 @@ mission-to-mars      rama-II       time-travel
 ```
 
 The shell allows you to dialog with a local workstation: this assumes that you are physically present in the same room as the machine.
+
+You can also run a shell on a remote computer.
 
 ---
 
