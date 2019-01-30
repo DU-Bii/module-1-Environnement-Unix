@@ -378,32 +378,71 @@ $ scp <username>@<remote-host>:/remote/path /local/path
 
 ## Exercise
 
-1. Connect to `core.cluster.france-bioinformatique.fr` and retrieve the full name of the pdf document located in `/shared/space2/du-bii/data/cluster/`
-2. Copy this PDF document to your local computer
+1. Open an ssh connection to `core.cluster.france-bioinformatique.fr` 
+2. List the pdf document(s) located in `/shared/space2/du-bii/data/cluster/`
+3. Get the full path of the pdf file(s) located there.
+4. Copy the PDF document(s) to your local computer
 
 ---
 
 # SSH: the remote shell
 
-## Exercise
+## Solution to the exercise
 
-1. Connect to `core.cluster.france-bioinformatique.fr` and retrieve the full name of the pdf document located in `/shared/space2/du-bii/data/cluster/`
-
---
+1. Connect to `core.cluster.france-bioinformatique.fr` 
 
 ```bash
 local $ ssh seiler@core.cluster.france-bioinformatique.fr
-cluster $ ls /shared/space2/du-bii/data/cluster/
-slides.pdf
 ```
 *Replace `seilerj` with your own username (I'm not sharing my password)*
 
---
+---
 
-2. Copy this PDF document to your local computer
+# SSH: the remote shell
+
+## Solution to the exercise
+
+
+1. Connect to `core.cluster.france-bioinformatique.fr` 
+2. List all files located in `/shared/space2/du-bii/data/cluster/`
 
 ```bash
-cluster $ exit  # quit the cluster and get back to your local shell
+cluster $ ls /shared/space2/du-bii/data/cluster/
+```
+The result should look like this. 
+*Do not type this in your terminal, it is not a command ;-)*
+
+```sh
+slides.pdf
+```
+
+---
+
+# SSH: the remote shell
+
+## Solution to the exercise
+
+
+1. Connect to `core.cluster.france-bioinformatique.fr` 
+2. List all files located in `/shared/space2/du-bii/data/cluster/`
+3. List only the pdf files in this folder, and get the full path. 
+
+```bash
+cluster $ ls /shared/space2/du-bii/data/cluster/*.pdf
+```
+
+---
+
+# SSH: the remote shell
+
+## Solution to the exercise
+
+1. Open an ssh connection to `core.cluster.france-bioinformatique.fr` 
+2. List the pdf document(s) located in `/shared/space2/du-bii/data/cluster/`
+3. Get the full path of the pdf file(s) located there.
+4. Copy the PDF document(s) to your local computer
+
+```bash
 local $ scp seilerj@core.cluster.france-bioinformatique.fr:/shared/space2/du-bii/data/cluster/slides.pdf .
 ```
 *Replace `seilerj` with your own username (still not sharing my password)*
