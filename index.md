@@ -10,7 +10,7 @@ Lien court vers cette page : <https://huit.re/dubii-m1>
 - Pierre Poulain, Univ. Paris Diderot, `<pierre.poulain@univ-paris-diderot.fr>`, [@pierrepo](https://twitter.com/pierrepo)
 - Benoist Laurent, CNRS, `<benoist.laurent@ibpc.fr>`
 - Julien Seiler, IGBMC, `<seilerj@igbmc.fr>`
-- Jacques van Helden, Univ. Aix-Marseille, `<Jacques.van-Helden@univ-amu.fr>`
+- Jacques van Helden, Institut Français de Bioinformatique + Univ. Aix-Marseille, `<Jacques.van-Helden@univ-amu.fr>`
 - Sandra Dérozier, INRA, `<sandra.derozier@inra.fr>`
 
 
@@ -26,36 +26,36 @@ Les prérequis à ce module : [ici](prerequis/README.md)
 
 ## Séance 1 - Premiers pas
 
-- lundi 28/01/2019 10:30 - 12:30
-- instructeurs : Hélène Chiapello & Pierre Poulain
+- Lundi 28/01/2019 10:30 - 12:30
+- Instructeurs : Hélène Chiapello & Pierre Poulain
 - helpers : Benoist Laurent, Sandra Dérozier
 
-[présentation](seance1/slides/index.html) - [tutoriel](seance1/tutorial/README.md)
+[Présentation](seance1/slides/index.html) - [Tutoriel](seance1/tutorial/README.md)
 
 
 ## Séance 2 - Gestion et utilisation des ressources IFB
 
-- mercredi 30/01/2019 10:00 - 13:00
-- instructeurs : Julien Seiler & Jacques van Helden
-- helpers : Benoist Laurent, Hélène Chiapello & Pierre Poulain
+- Mercredi 30/01/2019 10:00 - 13:00
+- Instructeurs : Julien Seiler & Jacques van Helden
+- Helpers : Benoist Laurent, Hélène Chiapello & Pierre Poulain
 
-[présentation](seance2/slides/index.html)
+[Présentation + TP](seance2/slides/index.html)
 
 
 ## Séance 3 - Gestion de flux et extraction de données
 
-- lundi 04/02/2019 10:00 - 13:00
-- instructeurs : Benoist Laurent & Hélène Chiapello
-- helpers : Pierre Poulain, Sandra Dérozier
+- Lundi 04/02/2019 10:00 - 13:00
+- Instructeurs : Benoist Laurent & Hélène Chiapello
+- Helpers : Pierre Poulain, Sandra Dérozier
 
 
 ## Séance 4 - Automatisation
 
-- mercredi 06/02/2019 10:00 - 13:00
-- instructeurs : Benoist Laurent & Hélène Chiapello
-- helper : Pierre Poulain
+- Mercredi 06/02/2019 10:00 - 13:00
+- Instructeurs : Benoist Laurent & Hélène Chiapello
+- Helper : Pierre Poulain
 
-[tutoriel](seance4/tutorial/README.md)
+[Tutoriel](seance4/tutorial/README.md)
 
 
 ## Installer un *shell* Linux sur sa machine
