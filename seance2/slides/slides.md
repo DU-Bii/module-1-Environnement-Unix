@@ -284,7 +284,7 @@ To interact with a remote computer you need:
 * A communication support: computer **network** like Internet
 * A communication protocol: **SSH**
 
-SSH (for Secure SHell) is the most commonly used protocol for establishing dialogue and launching commands on a remote machine.
+***SSH*** (for ***Secure SHell***) is the most commonly used protocol for establishing dialogue and launching commands on a remote machine.
 
 ---
 
@@ -294,14 +294,14 @@ SSH needs two parameters to run:
 * The name or IP of the remote computer
 * A user credential (username + password)
 
-Under Linux or Mac, you can use SSH from the Terminal/Console application:
+Under Linux or Mac, you can run ***SSH*** from the Terminal/Console application:
 
 ```bash
 $ ssh <username>@<remote-host-name>
 ```
 
 .callout.callout-info[
-Under Windows, you can use a Terminal applications like PuTTY or MobaXterm.
+Under Windows, you can use a Terminal application like ***PuTTY*** or ***MobaXterm***.
 ]
 
 .callout.callout-warning[
@@ -323,7 +323,7 @@ $ ssh <username>@core.cluster.france-bioinformatique.fr
 ```
 *Replace `<username>` with your username.*
 
-You will then be asked for your password (no character are printed while on type in your password).
+You will then be prompted to enter your password (**beware**: at the password prompt, the characters you type are not printed on the screen, for obvious security reasons).
 
 You are now connected to the IFB cluster ***submission node***.
 
