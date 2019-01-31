@@ -1165,7 +1165,15 @@ template: title
 
 # Homework: transfer your data files to your project folder
 
-* For this exercise, you can  use either filezilla or `rsync`.
+
+* In your project folder, create a sub-directory named `data`
+
+* Create one sub-directory per data type (e.g. RNA-seq, )
+
+
+## Tips
+    
+- for this exercise, you can  use either filezilla or `rsync`.
 
 
 
