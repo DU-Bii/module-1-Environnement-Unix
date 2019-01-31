@@ -54,7 +54,7 @@ It is then necessary to put the command between ` characters.
 
 ```bash
 # Store file names into a variable
-FILENAMES=`ls -1 molecules`
+FILENAMES=$(ls -1 molecules)
 
 # Display the file names
 echo "the filenames:"
@@ -71,7 +71,7 @@ Let's create `first_line.bash` with a text editor and write those lines:
 
 ```bash
 FILE=molecules/cubane.pdb
-HEAD=`head -1 $FILE`
+HEAD=$(head -1 $FILE)
 echo "$FILE: $HEAD"
 ```
 
@@ -118,7 +118,7 @@ the command-line.
 > **Solution**:
 > > ```bash
 > > FILE=$1
-> > HEAD=`head -1 $FILE`
+> > HEAD=$(head -1 $FILE)
 > > echo "$FILE: $HEAD"
 > > ```
 {:.answer}
@@ -140,7 +140,7 @@ FILENAMES=$*
 
 for FILE in $FILENAMES
 do
-    HEAD=`head -1 $FILE`
+    HEAD=$(head -1 $FILE)
     echo "$FILE: $HEAD"    
 done
 ```
@@ -176,7 +176,7 @@ The script will display an error message if no input file is provided.
 > >     FILENAMES=$*    
 > >     for FILE in $FILENAMES
 > >     do
-> >         HEAD=`head -1 $FILE`
+> >         HEAD=$(head -1 $FILE)
 > >         echo "$FILE: $HEAD"    
 > >     done
 > > else
@@ -184,3 +184,49 @@ The script will display an error message if no input file is provided.
 > > fi
 > > ```
 {:.answer}
+
+
+## Do reinvent the wheel
+
+Everybody has been told numerous times that he shouldn't reinvent the wheel.
+**This statement is true: do not reinvent the wheel.**
+
+However, this is what could happen when you decide not to reinvent the wheel
+and use a pipeline made of existing tools to complete a analysis.
+
+This piece of code is extracted from an actual script:
+
+```tcsh
+seqret -sequence ${readfile}:\*_s1_p0_${read_id}_\* -outseq p0.1_${read_id}.fasta
+union -sequence p0.1_${read_id}.fasta -outseq p0.1_${read_id}_concat.fasta
+infoseq -noheading -only -length -sequence p0.1_${read_id}.fasta | sed -e 's/ .*$//' > p0.1_${read_id}_lengths.txt
+infoseq -noheading -only -name -length -sequence p0.1_${read_id}.fasta | awk -F ' +' '{c+=$2;print c}' > p0.1_${read_id}_positions.txt
+
+set numseqs = `egrep -c '>' p0.1_${read_id}.fasta`
+set length = `infoseq -noheading -only -length p0.1_${read_id}_concat.fasta -stdout -auto`
+
+# create a HDF5 file with all metrics for a given read
+cp $datadir/$nozmwmetricsfile p0.1_${read_id}_nozmwmetrics.bax.dump
+sed -i -e 's/HDF5.*/HDF5 \"p0.1_'${read_id}'.bax.h5\" {/' p0.1_${read_id}_nozmwmetrics.bax.dump
+rm -f p0.1_${read_id}.bax.dump; touch p0.1_${read_id}.bax.dump
+awk -v 'num='$numseqs -v 'RS=XXX' 'BEGIN {printf "         ATTRIBUTE \"CountStored\" {\n               DATATYPE  H5T_STD_I32LE\n               DATASPACE  SCALAR
+/usr/bin/perl -ne '$attribute=`cat extractpacbiodata_'${read_id}'_CountStored_attribute.txt`;$_=~s/ATTRIBUTE \"CountStored\".*/$attribute/;print $_;' p0.1_${rea
+mv -f p0.1_${read_id}.bax.dump p0.1_${read_id}_nozmwmetrics.bax.dump
+```
+
+To me, this piece of code has several important disadvantages.
+
+First, it is very difficult to read.
+To understand what it does step-by-step, one would have to read the manual of
+every single third-party tool that is used: `seqret`, `infoseq`, etc, as well
+has being skilled in classic unix such as `sed` and `awk`, and programming
+languages (`perl`).
+
+Second, some tools may not have been written in a unix traditional way, i.e.
+writting the output on the standard output but whether in an output file.
+This means that several output temporary files are written as the script is
+executed, drastically reducing the performances.
+
+So, sometimes, it may be critical to reinvent the wheel and code e.g. a Python
+script that will not use already written tools allowing it to deal with data
+on-the-fly (meaning in memory).

@@ -395,7 +395,7 @@ $ scp <username>@<remote-host>:/remote/path /local/path
 1. Connect to `core.cluster.france-bioinformatique.fr`
 
 ```bash
-local $ ssh seiler@core.cluster.france-bioinformatique.fr
+local $ ssh seilerj@core.cluster.france-bioinformatique.fr
 ```
 *Replace `seilerj` with your own username (I'm not sharing my password)*
 
