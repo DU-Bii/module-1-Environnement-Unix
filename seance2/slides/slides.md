@@ -185,7 +185,7 @@ A microprocessor is a **multicore** technology.
 
 class: center
 
-# Do not confuse Microprocessor and Core
+# Do not get confused between Microprocessor and Core
 
 A microprocessor is a **physical chip**.
 
@@ -299,6 +299,8 @@ Under Linux or Mac, you can run ***SSH*** from the Terminal/Console application:
 $ ssh <username>@<remote-host-name>
 ```
 
+**Convention:** in the following slides, text between `<` and `>` indicates that the corresponding piece of command should be replaced by a specific content.  
+
 .callout.callout-info[
 Under Windows, you can use a Terminal application like ***PuTTY*** or ***MobaXterm***.
 ]
@@ -330,19 +332,21 @@ Type `exit` to close the connection.
 
 ---
 
-# SSH: the remote shell
+# SSH: the remote shell 2
 
 ## Exercise
 
 1. Open an SSH connection to `core.cluster.france-bioinformatique.fr`
 
-2. Print the current working directory.
+2. **Optional:** if this is your first connection, we recommand to change your password with the command `passwd`
 
-3. List the files in the working directory.
+3. Print the current working directory. 
 
-4. Print the manual of the `df`command;
+4. List the files in the working directory. 
 
-5. Get the total and the available space (in MB) on the disk holding your home directory.
+5. Print the manual of the `df`command;
+
+6. Get the total and the available space (in MB) on the disk where your home directory is located.
 
 ---
 
@@ -673,7 +677,7 @@ template: content
 ```bash
 #! /bin/bash
 #SBATCH -p fast
-#SABTCH -o myscript.out -e myscript.err
+#SBATCH -o myscript.out -e myscript.err
 srun sleep 30 || exit 1
 echo -n "Job id is ${SLURM_JOB_ID}"
 srun hostname || exit 2
@@ -976,3 +980,192 @@ module restore ngs
 
 `module saverm <collection>`: suppress a collection
 ]
+
+---
+
+template: title
+
+# Facilitating file transfer
+
+
+---
+
+# Exercise: transferring files with filezilla
+
+* On your own machine, create a directory named `DU-Bii_files` and open this directory with Filezilla. 
+
+* With Filezilla, open a connection to the IFB core cluster, based on the parameters of the `ssh` commands seen in the previous slides. 
+
+* Transfer the full content of the folder `/shared/mfs/data/projects/du_bii_2019/data/cluster` from the remote host to your computer. 
+
+* At this stage, the teacher will do a small change in one file of this directory.
+
+* Re-do the transfer, and choose appropriate options to only import files that are newer on the server than on your local copy.
+
+
+
+---
+
+# Solution: transferring files with Filezilla
+
+* Open the [Filezilla](https://filezilla-project.org/) application
+
+* Enter the parameters (Host, Username, Password) to establish a connection to IFB core cluster. 
+
+* The Port should be set to 22 for (this is the classical port for ***SFTP***, ***Secure File Transfer Protocol***).
+
+* Click `Quickconnect`. At your first connection, Filezilla will ask you to confirm that you trust this host. Check *"Always trust this host"* and click **OK**. 
+
+* On the remote host, find the path to the shared data (`/shared/mfs/data/projects/du_bii_2019/data/cluster`).
+
+* ***The rest will be shown as a demo during the course. ***
+
+
+---
+
+
+template: title
+
+# Advanced file transfer with `rsync`
+
+---
+
+# Tutorial: rsync
+
+The command `rsync` us used to synchronize files and directories between two locations. Both the source and target locations can be either local or remote. 
+
+* On your local computer, run the command `man rsync` and count the number of pages of the manual. 
+
+    - **Tip:** when the `man` command has started, press `space bar` to display the next page. If you are bored, you can press `q` to quit. 
+
+* A quick approach: instead of reading the `rsync` manual (which is generally recommanded before using a program) we will provide some hints for the usual parameters. 
+
+---
+
+# Tutorial: using rsync to get file lists
+
+When `rsync` is used with a single location (remote or local), it list the files found at that location. 
+
+
+* Get the list of files in your account on the IFB core cluster. 
+
+```bash
+rsync <username>@core.cluster.france-bioinformatique.fr:
+```
+*Replace `<username>` with your own username*
+
+**Important:** the column symbol `:` is necessary to tell `rsync` that you are referring to a remote server. It you forget it, rsync will consider that you refer to a (non-existing) local file or folder named <username>@core.cluster.france-bioinformatique.fr
+
+---
+
+# Exercise: using rsync to transfer one file
+
+1. Use rsync to list the files in the directory `/shared/projects/du_bii_2019/data/cluster/` of IFB core cluster. 
+
+2. Use rsync to transfer the file `slides.pdf` from IFB core cluster to your working directory (**Note:** the current working directory is denoted by a simple dot `.`). Add some relevant options to `rsync`. 
+
+    - `-v` to get some verbosity (the program informs you about the progress of the task)
+    - `-u` for **update**, i.e. transfer files only of they are more recent on the source (in this case the file on thecore cluster) than on the target (in this case your local copy of this file). 
+
+
+
+---
+
+# Solution: using rsync to transfer one file
+
+1. Use rsync to list the files in the directory `/shared/projects/du_bii_2019/data/cluster/` of IFB core cluster. 
+
+```bash
+rsync jvanhelden@core.cluster.france-bioinformatique.fr:/shared/projects/du_bii_2019/data/cluster/
+```
+
+2. Use rsync to transfer the file `slides.pdf` from IFB core cluster to your working directory (**Note:** the current working directory is denoted by a simple dot `.`). 
+
+```bash
+rsync -v -u jvanhelden@core.cluster.france-bioinformatique.fr:/shared/projects/du_bii_2019/data/cluster/slides.pdf .
+
+## check that the file is well on the local working directory
+ls -l .
+```
+
+---
+
+# Exercise: transferring a full directory with rsync
+
+
+* Use rsync to transfer the directory `/shared/projects/du_bii_2019/data/cluster/` from IFB core cluster to the local directory.  Adapt the following options: 
+
+    - `-r` to transfer recursively all the sub-directories of the source directory
+    - `-u` to only transfer files 
+    - `-p` to preserve file ownership
+    - `-t` to preserve file "time" (last modification date)
+    - `-v` to get some verbosity
+
+
+---
+
+# Solution: transferring a full directory with rsync
+
+
+* Use rsync to copy the directory `/shared/projects/du_bii_2019/data/cluster/` from IFB core cluster to the local directory.  
+
+```bash
+rsync -ruptv jvanhelden@core.cluster.france-bioinformatique.fr:/shared/projects/du_bii_2019/data/cluster .
+
+## check that the file is well on the local working directory
+ls -l .
+ls -l cluster
+```
+
+* Re-run the same command and check if new files are transferred. 
+
+```bash
+rsync -ruptv jvanhelden@core.cluster.france-bioinformatique.fr:/shared/projects/du_bii_2019/data/cluster .
+```
+
+---
+
+# Project folders on the IFB core cloud
+
+On the IFB cloud, big data files should not be stored in your home folder  but in a specific project folder. Project folders can bne either individua , or shared by a team (they can be configured on demand). 
+
+For this training (2019 session of the DU-Bii), we prepared an individual project folder for each trainee, which can only be read and written by the trainee and his/her tutor. 
+
+`/shared/projects/du_bii_2019/<username>/`
+
+---
+
+# Exercise: transferring files to your project folder
+
+
+1. Open an `ssh` connection to the cluster.
+
+2. Go to your project folder, check its contents and the disk space it occupies. Also check the total and available space on the disk that holds your project folder. 
+
+    **Tips: **
+
+    - `cd` : change directory
+    - `ls` : list
+    - `du` : disk usage
+    - `df` : disk free
+  
+3. Open a separate terminal window to run commands on your local machine. . 
+4. In the previous exercise, we transferred the folder `cluster` from the shared data folder of the cluster to your local folder.  In your local terminal, use `rsync` to transfer this fodler to your personal project folder on the cluster.
+
+5. In the terminal with your ssh session to the cluster, check that the files were correctly transferred. Also check the disk space used by the newly transferred folder (`cluster`). 
+
+
+---
+
+template: title
+
+# Homework for friday
+
+---
+
+# Homework: transfer your data files to your project folder
+
+* For this exercise, you can  use either filezilla or `rsync`.
+
+
+
