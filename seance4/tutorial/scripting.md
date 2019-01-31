@@ -54,7 +54,7 @@ It is then necessary to put the command between ` characters.
 
 ```bash
 # Store file names into a variable
-FILENAMES=`ls -1 molecules`
+FILENAMES=$(ls -1 molecules)
 
 # Display the file names
 echo "the filenames:"
@@ -71,7 +71,7 @@ Let's create `first_line.bash` with a text editor and write those lines:
 
 ```bash
 FILE=molecules/cubane.pdb
-HEAD=`head -1 $FILE`
+HEAD=$(head -1 $FILE)
 echo "$FILE: $HEAD"
 ```
 
@@ -118,7 +118,7 @@ the command-line.
 > **Solution**:
 > > ```bash
 > > FILE=$1
-> > HEAD=`head -1 $FILE`
+> > HEAD=$(head -1 $FILE)
 > > echo "$FILE: $HEAD"
 > > ```
 {:.answer}
@@ -140,7 +140,7 @@ FILENAMES=$*
 
 for FILE in $FILENAMES
 do
-    HEAD=`head -1 $FILE`
+    HEAD=$(head -1 $FILE)
     echo "$FILE: $HEAD"    
 done
 ```
@@ -176,7 +176,7 @@ The script will display an error message if no input file is provided.
 > >     FILENAMES=$*    
 > >     for FILE in $FILENAMES
 > >     do
-> >         HEAD=`head -1 $FILE`
+> >         HEAD=$(head -1 $FILE)
 > >         echo "$FILE: $HEAD"    
 > >     done
 > > else
