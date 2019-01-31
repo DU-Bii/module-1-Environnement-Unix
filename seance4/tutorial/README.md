@@ -3,6 +3,6 @@
 
 This module will be separated in 3 parts:
 
-- [environment variables](environment.md)
-- [shell programming](scripting.md)
-- [distributed computing](distributed_computing.md)
+- [Environment Variables](environment.md)
+- [Shell Programming](scripting.md)
+- [Distributed Computing](distributed_computing.md)
