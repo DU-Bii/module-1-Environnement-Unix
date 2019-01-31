@@ -1165,15 +1165,22 @@ template: title
 
 # Homework: transfer your data files to your project folder
 
+* Open an ssh connection to IFB-core-cluster
+
+* Go to your project directory (`cd`), which should be located in `/shared/projects/du_bii_2019/<username>`. 
 
 * In your project folder, create a sub-directory named `data`
 
-* Create one sub-directory per data type (e.g. RNA-seq, )
+* If you are going to treat different data types (e.g. RNA-seq, ChIP-seq, metabolome, proteome, metagenomics, ...), create one subdirectory for each one. 
+
+* The exercise consists in transferring to this folder at least 2 data files. 
 
 
 ## Tips
-    
-- for this exercise, you can  use either filezilla or `rsync`.
+
+- For this exercise, you can  use either filezilla or `rsync`.
+- At this stage, no need to transfer your full datasets (this will be required later)
+- If you are working with sensitive data (e.g. Human genome sequences, patient data, ...) you should keep them inside your institute. In this case, we suggest to find a dataset of the same type (but maybe belonging to a model organism) that you  will upload on the IFB-core-cluster. 
 
 
 
