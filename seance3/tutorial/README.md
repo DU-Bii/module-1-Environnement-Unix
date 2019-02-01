@@ -207,10 +207,11 @@ chaîne de caractères répondant à un certain critère (par exemple chaîne
 contenant un *motif* donné, c'est à dire un enchainement de certains types
 de caractères).
 
-Ces expressions régulières sont utilisables avec plusieurs commandes Unix
-comme `grep` ou `sed` (voir suite) et certains éditeurs de texte (vi, emacs ?).
+De nombreux programmes utilisent les expressions régulières (par exemple `sed`,
+`grep`, `vi`, ...) mais il est important de noter que leur syntaxe peut varier
+d'un programme à l'autre.
 
-Le design d'expressions régulières peut s'avérer rapidement complexe et nécessite
+Le design d'expressions régulières peut rapidement s'avérer complexe et nécessite
 un savoir-faire certain.
 
 Cette possibilité illustre cependant la puissance de l'environnement Unix 
@@ -218,20 +219,22 @@ pour spécifier des recherches et actions complexes en utilisant des lignes
 de commande concises.  
 
 Les expressions régulières vont se baser sur des caractères spéciaux ou métacaractères :
-- **le metacaractère `.`** correspond à n'importe quel caractère  
-- **le metacaractère `*`** correspond à une répétition de 0 à n occurences (déconseillé) 
-- **le metacaractère `+`** correspond à une répétition de 1 à n occurences 
-- **les metacaractères entre `[ ]` correspondent à un ensemble de valeurs possibles (intervale ou explicites** par exemple [A-D] est équivalent à [A,B,C,D]
--**le métacaractères `^`** indique une recherche d'un motif en début de ligne  
--**le métacaractères `$`** indique une recherche d'un motif en fin de ligne  
 
-**Question 8 :** Rechercher tous les noms de gènes du fichier `Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3` correspondant à oriA, oriB, oriC et oriD avec la commande `grep` et en utilisant une expression régulière     
->
+- `.` correspond à n'importe quel caractère  
+- `*` correspond à une répétition de 0 à n occurences (déconseillé) 
+- `+` correspond à une répétition de 1 à n occurences 
+- les caractères entre crochets (`[ ]`) correspondent à un ensemble de valeurs possibles (intervale ou explicites par exemple `[A-D]` est équivalent à [A,B,C,D]
+- `^` indique une recherche d'un motif en début de ligne  
+- `$` indique une recherche d'un motif en fin de ligne  
+
+**Question 8 :** Rechercher tous les noms de gènes du fichier
+`Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3`
+correspondant à oriA, oriB, oriC et oriD avec la commande `grep` et en
+utilisant une expression régulière.
+
 > **Solution :**  
->
 > > ```bash 
 > > $ grep -e "dna[A-D]" Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3 
-> >
 > > ```
 {:.answer}
 
