@@ -80,7 +80,7 @@ et écrire le résultat dans le fichier `cutadapt_bwa_featureCounts_WT1_sorted_u
 
 > **Solution :**  
 > > ```bash  
-> > uniq cutadapt_bwa_featureCounts_WT1_sorted.tsv > cutadapt_bwa_featureCounts_WT1_sorted_uniq.tsv
+> > $ uniq cutadapt_bwa_featureCounts_WT1_sorted.tsv > cutadapt_bwa_featureCounts_WT1_sorted_uniq.tsv
 > > ```
 {:.answer}
 
@@ -129,8 +129,7 @@ valeur de la colonne `WT1` du fichier `cutadapt_bwa_featureCounts_all.tsv` en 1 
 > **Solution :**  
 >
 > > ```bash  
-> >  cut -f 9 Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3 | cut -d';' -f 1 | grep 'gene' | sort -u | wc -l  
-> >  
+> > $ cut -f 9 Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3 | cut -d';' -f 1 | grep 'gene' | sort -u | wc -l  
 > > ```
 {:.answer}
 

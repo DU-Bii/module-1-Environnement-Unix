@@ -48,7 +48,7 @@ utilisant une expression régulière.
 `sed` (stream editor) est éditeur de texte non interactif permettant de filtrer et transformer les lignes du ou des fichier donnés en argument. La commande ne modifie pas le(s) fichier(s) traité(s)et écrit le résultat sur la sortie standard.  
 La commande `sed` est très utile car elle permet de réaliser des commandes complexes sur des gros fichiers en utilisant des expressions régulières.  
 
-**Syntaxe** : `sed -e [expression] fichier-a-traiter`
+**Syntaxe** : `sed -e [expression] <fichier-a-traiter>`
 
 La partie `expression` peut contenir des fonctions de filtrage ou de transformation des lignes du fichier-a-traiter  
 Nous ne verrons ici que quelques cas d'utilisation très courants en bioinformatique.  
