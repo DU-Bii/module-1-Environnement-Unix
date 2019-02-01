@@ -77,6 +77,8 @@ Si vous travaillez avec Windows :
 
 Ces recommandations sont tirées du site de [Software Carpentry](https://carpentries.org/) dédié au [*Shell*](http://swcarpentry.github.io/shell-novice/setup.html).
 
+Si vous souhaitez simplement un logiciel sous Windows pour vous connecter au cluster du NNCR en SSH. Nous vous conseillons [MobaXterm](https://mobaxterm.mobatek.net/). La version [*Free*](https://mobaxterm.mobatek.net/download.html) est suffisante. Vous trouverez quelques vidéos de démo [ici](https://mobaxterm.mobatek.net/demo.html).
+
 
 ## Bibliographie / webographie
 
