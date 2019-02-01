@@ -133,3 +133,5 @@ valeur de la colonne `WT1` du fichier `cutadapt_bwa_featureCounts_all.tsv` en 1 
 > >  
 > > ```
 {:.answer}
+
+Suite : [Notions sur les expressions régulières](04_regex.md)

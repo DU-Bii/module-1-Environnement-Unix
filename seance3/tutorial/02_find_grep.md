@@ -52,3 +52,5 @@ Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3**
 > >  
 > > ```
 {:.answer}
+
+Suite : [Extraction des données d'un fichier et gestion de flux](03_extraction_donnees_et_pipes.md)
