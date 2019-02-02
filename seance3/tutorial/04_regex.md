@@ -39,9 +39,9 @@ utilisant une expression régulière.
 {:.answer}
 
 
-*Donner ici quelques sites de vérification des expressions régulières et des pointeurs de tutoriaux pour aller plus loin*
-
-**to do**  
+Pour aller plus loin :
+- Tutorial sur les expressions régulières :  https://librarycarpentry.org/lc-data-intro/04-regular-expressions/  
+- Site pour tester une expression régulère : https://regex101.com  
 
 ## sed  
 
@@ -58,7 +58,7 @@ Remplaçons toutes les occurences de `Chromosome` par `chr` dans le fichier Esch
 Pour cela on utilise la fonction de subsitution *s*  
 `sed 's/Chromosome/chr/g' Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3 > Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chr.gff3`
 
-### Exemple 2 : Remplacer toutes les occurences d'une chaine de caractères dans un fichier  
+### Exemple 2 : Supprimer toutes les occurences d'une chaine de caractères dans un fichier  
 Supprimons toutes les lignes contenant le nom `oriC` dans le fichier Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3  
 Pour cela on utilise la fonction de suppression *d*  
 `sed '/oriC/d' Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3  > Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome_wo_oriC.gff`
