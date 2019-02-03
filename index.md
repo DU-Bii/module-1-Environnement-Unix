@@ -50,6 +50,8 @@ Les prérequis à ce module : [ici](prerequis/README.md)
 
 [Tutoriel](seance3/tutorial/README.md)
 
+[Changer son prompt](seance3/slides/index.html)
+
 ## Séance 4 - Automatisation
 
 - Mercredi 06/02/2019 10:00 - 13:00
