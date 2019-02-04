@@ -84,8 +84,8 @@ Si vous souhaitez simplement un logiciel sous Windows pour vous connecter au clu
 
 Pour copier / coller entre Windows et le *shell* Linux :
 
-- Pour copier depuis Windows (<kbd>Ctrl</kbd>+<kbd>C</kbd>) et coller dans le *shell* : clic droit de la souris.
-- Pour copier depuis le *shell* (<kbd>Ctrl</kbd>+<kbd>Maj</kbd>+<kbd>C</kbd>) et coller dans Windows (<kbd>Ctrl</kbd>+<kbd>V</kbd>)
+- Pour copier depuis Windows (<kbd>Ctrl</kbd>+<kbd>C</kbd>) puis coller dans le *shell* : clic droit de la souris.
+- Pour copier depuis le *shell* (<kbd>Ctrl</kbd>+<kbd>Maj</kbd>+<kbd>C</kbd>) puis coller dans Windows (<kbd>Ctrl</kbd>+<kbd>V</kbd>)
 
 
 ## Bibliographie / webographie
