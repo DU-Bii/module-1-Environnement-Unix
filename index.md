@@ -76,10 +76,16 @@ Si vous travaillez avec Windows :
     + https://www.windowscentral.com/how-install-bash-shell-command-line-windows-10
     + https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/
     + https://www.howtogeek.com/265900/everything-you-can-do-with-windows-10s-new-bash-shell/
+    Depuis un *shell* Linux, votre répertoire utilisateur de Windows est accessible via le chemin `/mnt/c/Users/<login-windows>` ou `<login-windows>` est votre *login* sous Windows. Nous vous conseillons de travailler depuis ce répertoire afin que vos fichiers puissent également être visibles depuis Windows.
 
 Ces recommandations sont tirées du site de [Software Carpentry](https://carpentries.org/) dédié au [*Shell*](http://swcarpentry.github.io/shell-novice/setup.html).
 
 Si vous souhaitez simplement un logiciel sous Windows pour vous connecter au cluster du NNCR en SSH. Nous vous conseillons [MobaXterm](https://mobaxterm.mobatek.net/). La version [*Free*](https://mobaxterm.mobatek.net/download.html) est suffisante. Vous trouverez quelques vidéos de démo [ici](https://mobaxterm.mobatek.net/demo.html).
+
+Pour copier / coller entre Windows et le *shell* Linux :
+
+- Pour copier depuis Windows (<kbd>Ctrl</kbd>+<kbd>C</kbd>) et coller dans le *shell* : clic droit de la souris.
+- Pour copier depuis le *shell* (<kbd>Ctrl</kbd>+<kbd>Maj</kbd>+<kbd>C</kbd>) et coller dans Windows (<kbd>Ctrl</kbd>+<kbd>V</kbd>)
 
 
 ## Bibliographie / webographie
