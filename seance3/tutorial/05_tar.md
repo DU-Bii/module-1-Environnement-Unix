@@ -65,9 +65,7 @@ dans ce répertoire ? Trier les fichiers du plus volumineux au moins volumineux.
 > >-rw-rw-r-- 1 laurent laurent 385K Feb  1 10:44 GSM1388556_WT_1.Gene.rpkm.txt.gz
 > >-rw-rw-r-- 1 laurent laurent 385K Feb  1 10:44 GSM1388557_WT_8.Gene.rpkm.txt.gz
 > >-rw-rw-r-- 1 laurent laurent  729 Feb  1 10:44 README.md
-> >```
 > >
-> >```
 > >$ # Trier les fichiers par taille du plus volumineux au moins volumineux
 > >$ ls -lh | sort -rh -k 5
 > >-rw-rw-r-- 1 laurent laurent  13M Feb  1 10:44 12870_2016_726_MOESM1_ESM.tsv
@@ -206,7 +204,8 @@ et l'outil de décompression associé `gunzip`.
 **Question 12**: Quelle est la taille du fichier `./Arabidopsis_thaliana/transcripto_proteo_metabo_Liang_2016/12870_2016_726_MOESM1_ESM.tsv` ?
 Le compresser avec `gzip`. Quelle est la taille du fichier compressé ?
 
-> **Solution**:
+> **Solution** :
+> > ```
 > > $ # Taille du fichier ./Arabidopsis_thaliana/transcripto_proteo_metabo_Liang_2016/12870_2016_726_MOESM1_ESM.tsv
 > > $ ls -lh ./Arabidopsis_thaliana/transcripto_proteo_metabo_Liang_2016/12870_2016_726_MOESM1_ESM.tsv
 > > -rw-rw-r-- 1 laurent laurent 13M Feb  1 10:44 ./Arabidopsis_thaliana/transcripto_proteo_metabo_Liang_2016/12870_2016_726_MOESM1_ESM.tsv
@@ -221,6 +220,7 @@ Le compresser avec `gzip`. Quelle est la taille du fichier compressé ?
 > > $ ls -lh ./Arabidopsis_thaliana/transcripto_proteo_metabo_Liang_2016/12870_2016_726_MOESM1_ESM.tsv.gz
 > > -rw-rw-r-- 1 laurent laurent 2.5M Feb  1 15:44 ./Arabidopsis_thaliana/transcripto_proteo_metabo_Liang_2016/12870_2016_726_MOESM1_ESM.tsv.gz
 > > $ # Le fichier fait 2.5M, soit un taux de compression de 80%.
+> > ```
 {:.answer}
 
 ## Réduire le nombre de fichiers présents sur un disque et compression d'un dossier.
