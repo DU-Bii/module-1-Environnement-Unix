@@ -5,7 +5,7 @@ Il est important d'être conscient des capacités de stockage de sa machine d'un
 et du fait qu'un trop grand nombre de fichiers sur une machine peut engendrer
 un crash pur et simple du système.
 
-Ainsi, dans ce chapitre nous allons apprendre 
+Ainsi, dans ce chapitre nous allons apprendre
 
 - comment savoir si un disque est plein,
 - comment connaître la quantité d'espace disque occupé par un fichier/dossier,
@@ -37,6 +37,7 @@ Quelle est la quantité d'espace disque occupée par chacun des fichiers présen
 dans ce répertoire ? Trier les fichiers du plus volumineux au moins volumineux.
 
 > **Solution:**
+> >```
 > >$ cd study-cases/Arabidopsis_thaliana/transcripto_proteo_metabo_Liang_2016
 > >
 > >$ # Afficher la taille des fichiers
@@ -64,7 +65,9 @@ dans ce répertoire ? Trier les fichiers du plus volumineux au moins volumineux.
 > >-rw-rw-r-- 1 laurent laurent 385K Feb  1 10:44 GSM1388556_WT_1.Gene.rpkm.txt.gz
 > >-rw-rw-r-- 1 laurent laurent 385K Feb  1 10:44 GSM1388557_WT_8.Gene.rpkm.txt.gz
 > >-rw-rw-r-- 1 laurent laurent  729 Feb  1 10:44 README.md
+> >```
 > >
+> >```
 > >$ # Trier les fichiers par taille du plus volumineux au moins volumineux
 > >$ ls -lh | sort -rh -k 5
 > >-rw-rw-r-- 1 laurent laurent  13M Feb  1 10:44 12870_2016_726_MOESM1_ESM.tsv
@@ -90,6 +93,7 @@ dans ce répertoire ? Trier les fichiers du plus volumineux au moins volumineux.
 > >-rw-rw-r-- 1 laurent laurent  15K Feb  1 10:44 12870_2016_726_MOESM19_ESM.tsv
 > >-rw-rw-r-- 1 laurent laurent  729 Feb  1 10:44 README.md
 > >total 24M
+> >```
 {:.answer}
 
 Pour connaître la quantité d'espace disque occupée par un dossier, utiliser
@@ -99,6 +103,7 @@ la commande `du`, encore une fois avec l'option `-h`.
 Comment faire pour ne pas tenir compte du dossier `.git` ?
 
 > **Solution**:
+> > ```
 > > # Taille des sous-dossiers du dossier study-cases
 > > $ du -h
 > > 8.0K    ./img
@@ -133,7 +138,7 @@ Comment faire pour ne pas tenir compte du dossier `.git` ?
 > > 24M      ./Arabidopsis_thaliana/transcripto_proteo_metabo_Liang_2016
 > > 27M      ./Arabidopsis_thaliana
 > > 49M
-> > 
+> >
 > > # Ne pas tenir compte du dossier .git
 > > $ du -h --exclude .git
 > > 8.0K    ./img
@@ -151,6 +156,7 @@ Comment faire pour ne pas tenir compte du dossier `.git` ?
 > > 24M     ./Arabidopsis_thaliana/transcripto_proteo_metabo_Liang_2016
 > > 27M     ./Arabidopsis_thaliana
 > > 30M .
+> > ```
 {:.answer}
 
 
@@ -205,12 +211,12 @@ Le compresser avec `gzip`. Quelle est la taille du fichier compressé ?
 > > $ ls -lh ./Arabidopsis_thaliana/transcripto_proteo_metabo_Liang_2016/12870_2016_726_MOESM1_ESM.tsv
 > > -rw-rw-r-- 1 laurent laurent 13M Feb  1 10:44 ./Arabidopsis_thaliana/transcripto_proteo_metabo_Liang_2016/12870_2016_726_MOESM1_ESM.tsv
 > > $ # Le fichier fait 13M.
-> > 
+> >
 > > $ # Compression du fichier.
 > > $ # Attention : par défaut, gzip compresse directement le fichier sans créer de copie
 > > $ # On utilise l'option -c pour écrire la sortie sur la sortie standard et > pour rédiriger la sortie standard dans un fichier.
 > > $ gzip -c ./Arabidopsis_thaliana/transcripto_proteo_metabo_Liang_2016/12870_2016_726_MOESM1_ESM.tsv > ./Arabidopsis_thaliana/transcripto_proteo_metabo_Liang_2016/12870_2016_726_MOESM1_ESM.tsv.gz
-> > 
+> >
 > > $ # Taille du fichier compressé
 > > $ ls -lh ./Arabidopsis_thaliana/transcripto_proteo_metabo_Liang_2016/12870_2016_726_MOESM1_ESM.tsv.gz
 > > -rw-rw-r-- 1 laurent laurent 2.5M Feb  1 15:44 ./Arabidopsis_thaliana/transcripto_proteo_metabo_Liang_2016/12870_2016_726_MOESM1_ESM.tsv.gz
