@@ -29,7 +29,7 @@ $ ls  /shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/bacterial-r
 
 ## Première exemple : contrôle qualité
 
-Nous allons utiliser un premier script bash pour lancer sur le cluster de l'IFB 8 calculs `fastqc` correspondant aux 8 fichiers à analyser. Pour cela on va utiliser un job batch (commande sbatch) qui va lancer 8 job steps en tâche de fond et pour chaque job step utiliser une task. Chque fois qu'on utilise une commande `srun` du script batch est associé un jon-step 
+Nous allons utiliser un premier script bash pour lancer sur le cluster de l'IFB 8 calculs `fastqc` correspondant aux 8 fichiers à analyser. Pour cela on va utiliser un job batch (commande sbatch) qui va lancer 8 job steps en tâche de fond. Chaque fois qu'on utilise une commande `srun` dans un script batch est associé un job-step 
 
 ```bash
 $ cat fastqc_myfiles.sh  
