@@ -106,8 +106,8 @@ STAR --runThreadN 56 --outSAMtype BAM SortedByCoordinate --readFilesIn ${raw_rea
 Ce script sera ensuite lancé grâce à un 2ème script qui parcourera les fichiers fastq au format `*_1.fastq` du répertoire où sont stockées les données :  
 
 > > ```bash
-> > $ cat star_paired_data.sh
-> > #!/bin/bash
+$ cat star_paired_data.sh
+#!/bin/bash
 REP_FASTQ_FILES=$1
 R1_fastq_files=$(ls $1/*_1.fastq)
 
@@ -119,7 +119,6 @@ do
        sbatch -o ${sample_file}.stdout.txt -e ${sample_file}.stderr.txt star_myfiles.sbatch ${path_fastq}/${sample_file}_1.fastq ${path_fastq}/${sample_file}_2.fastq  
        sleep 1 # pause to be kind to the scheduler  
 done  
-> > 
 > >```
 
 
