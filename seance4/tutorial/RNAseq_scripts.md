@@ -39,10 +39,10 @@ Nous allons utiliser un premier script bash pour lancer sur le cluster de l'IFB 
 
 > >  data=$(ls $1/*.fastq)   
 
-> >  for fastqc_file in ${data[@]}   
+> >  for fastqc_file in ${data[@]} 
 > >  do  
-          echo "srun srun fastqc --quiet  $fastqc_file -o ./fastqc-results/ 2>> fastqc.err "
-> >       srun fastqc --quiet  $fastqc_file -o ./fastqc-results/ 2>> fastqc.err  &   
+> >       echo "srun srun fastqc --quiet  $fastqc_file -o ./fastqc-results/ 2>> fastqc.err "
+> >       srun fastqc --quiet  $fastqc_file -o ./fastqc-results/ 2>> fastqc.err  & 
 > >  done  
 > >```
 
@@ -89,7 +89,7 @@ Une fois l'index créé, nous allons créer un script permettant de lancer un ma
 
 > > ```bash
 $ cat star_myfiles.sbatch 
-> >  #!/bin/bash
+> > #!/bin/bash
 > > # star_myfiles.sh
 > > #
 > > #SBATCH -n 28 # one CPU
@@ -117,13 +117,13 @@ Ce script sera ensuite lancé grâce à un 2ème script qui parcourera les fichi
 > > R1_fastq_files=$(ls $1/*_1.fastq)
 > > 
 > > 
-> > for fastq_file in ${R1_fastq_files[@]}  
-> > do  
-> > 	sample_file="$(basename $fastq_file _1.fastq)"   
-> > 	path_fastq="$(dirname $fastq_file)"  
-> > 	#echo $sample_file  
-> > 	sbatch -o ${sample_file}.stdout.txt -e ${sample_file}.stderr.txt star_myfiles.sbatch $path_fastq/${sample_file}_1.fastq $path_fastq/${sample_file}_2.fastq  
-> > 	sleep 1 # pause to be kind to the scheduler  
+> > for fastq_file in ${R1_fastq_files[@]}
+> > do 
+> >       sample_file="$(basename $fastq_file _1.fastq)"   
+> >       path_fastq="$(dirname $fastq_file)"  
+> >       #echo $sample_file  
+> >       sbatch -o ${sample_file}.stdout.txt -e ${sample_file}.stderr.txt star_myfiles.sbatch $path_fastq/${sample_file}_1.fastq $path_fastq/${sample_file}_2.fastq  
+> >       sleep 1 # pause to be kind to the scheduler  
 > > done  
 
 
