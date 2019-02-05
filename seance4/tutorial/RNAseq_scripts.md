@@ -50,7 +50,7 @@ Pour lancer ce script on utilise la commande suivante :
 ```
 
 **Questions** :   
-- Comment suivre l'éxécution des jobs ?  
+- Comment suivre l'éxécution des job-steps ?  
 - Où seront produits les fichiers résulats de la commande `fastqc`?  
 - Que veut dire "2>> fastqc.err" ?  
 
@@ -85,9 +85,9 @@ sacct --format=JobID,JobName,User,ReqCPUS,ReqMem,NTasks,MaxVMSize,MaxRSS,Start,E
 - Que pensez-vous qu'il se passe s'il y a plus de 8 fichiers `.fastq` à traiter ?
 
 
-## Deuxième exemple : mapping des reads sur le génome de E. coli
+## Deuxième exemple : mapping des reads sur le génome de *E. coli*
 
-Nous allons utiliser le logiciel **STAR** pour aligner les reads RNAseq sur le génome de E. coli.  
+Nous allons utiliser le logiciel **STAR** pour aligner les reads RNAseq sur le génome de *E. coli*.  
 
 Pour pouvoir utiliser STAR il faut d'abord indexer le génome de référence.  
 
