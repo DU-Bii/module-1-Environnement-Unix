@@ -107,13 +107,11 @@ Une fois l'index créé, nous allons créer un script permettant de lancer un ma
 Ce script sera ensuite lancé grâce à un 2ème script qui parcourera les fichiers fastq au format `*_1.fastq` du répertoire où sont stockées les données :  
 
 > > ```bash
-> > $ more star_paired_data.sh
+> > $ cat star_paired_data.sh
 > > #!/bin/bash
 > > REP_FASTQ_FILES=$1
-> > 
-> > 
+> >
 > > R1_fastq_files=$(ls $1/*_1.fastq)
-> > 
 > > 
 > > for fastq_file in ${R1_fastq_files[@]}
 > > do 
