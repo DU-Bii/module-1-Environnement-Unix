@@ -92,8 +92,7 @@ Une fois l'index créé, nous allons créer un script permettant de lancer un ma
 > > $ cat star_myfiles.sbatch 
 > > #!/bin/bash
 > > # star_myfiles.sbatch
-> > #SBATCH -n 28 # one CPU
-> > #SBATCH -n 28 # one CPU
+> > #SBATCH -c 28 # 28 CPUs per task (and node)
 > > #SBATCH -N 1 # on one node
 > > #SBATCH -t 0-2:00 # Running time of 4 hours
 > > #SBATCH --mem 16G # Memory request 16Gb
