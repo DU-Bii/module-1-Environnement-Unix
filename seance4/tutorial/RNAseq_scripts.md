@@ -88,7 +88,7 @@ srun STAR --runMode genomeGenerate --genomeDir ./Ecoli_star --genomeFastaFiles /
 
 Une fois l'index créé, nous allons créer un script permettant de lancer un mapping STAR avec la commande `sbatch`pour une paire de fichiers fastq (reads 1 et reads 2) donnés en arguments :
 
-> > ```bash
+> > ```bash  
 $ cat star_myfiles.sbatch 
 #!/bin/bash
 #star_myfiles.sbatch
@@ -105,7 +105,7 @@ STAR --runThreadN 56 --outSAMtype BAM SortedByCoordinate --readFilesIn ${raw_rea
 
 Ce script sera ensuite lancé grâce à un 2ème script qui parcourera les fichiers fastq au format `*_1.fastq` du répertoire où sont stockées les données :  
 
-> > ```bash
+> > ```bash  
 $ cat star_paired_data.sh
 #!/bin/bash
 REP_FASTQ_FILES=$1
