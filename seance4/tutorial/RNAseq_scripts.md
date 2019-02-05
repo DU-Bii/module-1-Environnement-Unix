@@ -105,7 +105,7 @@ $ cat star_myfiles.sbatch
 
 > >```
 
-Ce script sera ensuite lancé grâce à un 2ème script qui parcourera les fichiers fastq au format `*_[1,2].fastq` du répertoire où sont stockées les données :  
+Ce script sera ensuite lancé grâce à un 2ème script qui parcourera les fichiers fastq au format `*_1.fastq` du répertoire où sont stockées les données :  
 
 > > ```bash
 > > $ more star_paired_data.sh
