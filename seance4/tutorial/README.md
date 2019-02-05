@@ -1,7 +1,7 @@
 
 # Unix: module 4
 
-This module will be separated in 3 parts:
+This module will be separated in 4 parts:
 
 - [Environment Variables](environment.md)
 - [Shell Programming](scripting.md)

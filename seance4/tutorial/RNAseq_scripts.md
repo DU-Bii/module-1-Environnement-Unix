@@ -7,8 +7,7 @@ $ ssh <username>@core.cluster.france-bioinformatique.fr
 ```
 
 ```bash
-module load conda
-source activate eba_rnaseq_ref-2018
+module load eba_rnaseq_ref/2018
 ```
 
 ## Le jeu de données
@@ -30,28 +29,28 @@ $ ls  /shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/bacterial-r
 
 ## Première exemple : contrôle qualité
 
-Nous allons utiliser un premier script bash pour lancer sur le cluster de l'IFB 8 calculs `fastqc` correspondant aux 8 fichiers à analyser :  
+Nous allons utiliser un premier script bash pour lancer sur le cluster de l'IFB 8 calculs `fastqc` correspondant aux 8 fichiers à analyser. Pour cela on va utiliser un job batch (commande sbatch) qui va lancer 8 job steps en tâche de fond. Chaque fois qu'on utilise une commande `srun` dans un script batch est associé un job-step 
 
 ```bash
 $ cat fastqc_myfiles.sh  
 #! /bin/bash  
-data=$(ls $1/*.fastq)   
-for fastqc_file in ${data[@]} 
-do  
-      #echo "srun srun fastqc --quiet  ${fastqc_file} -o ./fastqc-results/ 2>> fastqc.err "
-      srun fastqc --quiet  ${fastqc_file} -o ./fastqc-results/ 2>> fastqc.err  & 
-done  
+#SBATCH -n 8 
+ 
+data=$(ls $1/*.fastq)  
+for fastqc_file in ${data[@]}
+do 
+      srun -n 1 fastqc --quiet  ${fastqc_file} -o ./fastqc-results/ 2>> fastqc.err  &
+done
+wait
 ```
-
 Pour lancer ce script on utilise la commande suivante :
 
 ```bash  
-    ./fastqc_myfiles.sh /shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq
+    sbatch ./fastqc_myfiles.sh /shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq
 ```
 
 **Questions** :   
-- Combien de jobs sont lancés sur le cluster ?  
-- Comment suivre l'éxécution des jobs ?  
+- Comment suivre l'éxécution des job-steps ?  
 - Où seront produits les fichiers résulats de la commande `fastqc`?  
 - Que veut dire "2>> fastqc.err" ?  
 
@@ -65,7 +64,7 @@ Tester le lancement du script suivant comme suit pour paralléliser le lancement
 ```bash 
 cat ./fastqc_myfiles_array.sbatch
 #! /bin/bash
-#SBATCH --array=0-20
+#SBATCH --array=0-7
 
 DATA=(/shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq/*.fastq)
 srun fastqc --quiet ${DATA[$SLURM_ARRAY_TASK_ID]} -o ./fastqc-results/ 2>> fastqc.err
@@ -76,14 +75,19 @@ Puis lancer l'execution comme suit :
 $ sbatch ./fastqc_myfiles_array.sbatch
 ```
 
+Pour regarder les ressources allouées à un job, on peut utiliser la commande 
+```bash 
+sacct --format=JobID,JobName,User,ReqCPUS,ReqMem,NTasks,MaxVMSize,MaxRSS,Start,End,NNodes,NodeList%40,CPUTime -j <id-du-job>
+```
+
 **Questions** :
 - Que constatez-vous en terme de performance ?
-- Que pensez-vous qu'il se passe s'il y a plus de 20 fichiers `.fastq` à traiter ?
+- Que pensez-vous qu'il se passe s'il y a plus de 8 fichiers `.fastq` à traiter ?
 
 
-## Deuxième exemple : mapping des reads sur le génome de E. coli
+## Deuxième exemple : mapping des reads sur le génome de *E. coli*
 
-Nous allons utiliser le logiciel **STAR** pour aligner les reads RNAseq sur le génome de E. coli.  
+Nous allons utiliser le logiciel **STAR** pour aligner les reads RNAseq sur le génome de *E. coli*.  
 
 Pour pouvoir utiliser STAR il faut d'abord indexer le génome de référence.  
 
@@ -106,46 +110,33 @@ Puis nous lancons la commande d'indexation du génome sur le cluster :
 srun STAR --runMode genomeGenerate --genomeDir ./Ecoli_star --genomeFastaFiles /shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/genome/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.dna.chromosome.Chromosome.fa  --runThreadN 4 --sjdbGTFfile /shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/genome/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.gtf
 ```
 
-Une fois l'index créé, nous allons créer un script permettant de lancer un mapping STAR avec la commande `sbatch`pour une paire de fichiers fastq (reads 1 et reads 2) donnés en arguments :
+Une fois l'index créé, nous allons utiliser un script `star_pairedfiles.sbatch` permettant de lancer un mapping STAR sur toutes les paires de fichiers fatsq d'un répertoire donén en argument :
 
 ```bash
-$ cat star_one_pair.sbatch 
+$ cat star_pairedfiles.sbatch
 #!/bin/bash
-#star_one_pair.sbatch
-#SBATCH -c 28 # 28 CPUs per task (and node)
-#SBATCH -N 1 # on one node
-#SBATCH -t 0-4:00 # Running time of 4 hours
-#SBATCH --mem 16G # Memory request 16Gb
-raw_readsR1=$1
-raw_readsR2=$2
-star_outfile="$(basename $raw_readsR1 _1.fastq)-star-out"
-srun STAR --runThreadN 56 --outSAMtype BAM SortedByCoordinate --readFilesIn ${raw_readsR1} ${raw_readsR2} --genomeDir /shared/home/hchiapello/DUBii/module1/Ecoli_star/ --outFileNamePrefix ${star_outfile}
-```
-
-Ce script sera ensuite lancé grâce à un 2ème script qui parcourera les fichiers fastq au format `*_1.fastq` du répertoire où sont stockées les données :  
-
-```bash
-$ cat star_all_paired_data.sh
-#!/bin/bash
+#SBATCH -n 8
+#SBATCH –cpus-per-task=28
+ 
 REP_FASTQ_FILES=$1
 R1_fastq_files=$(ls $1/*_1.fastq)
-
+ 
 for fastq_file in ${R1_fastq_files[@]}
-do 
-       sample_file="$(basename $fastq_file _1.fastq)"   
-       path_fastq="$(dirname $fastq_file)"  
-       #echo $sample_file  
-       sbatch -o ${sample_file}.stdout.txt -e ${sample_file}.stderr.txt star_one_pair.sbatch ${path_fastq}/${sample_file}_1.fastq ${path_fastq}/${sample_file}_2.fastq  
-       sleep 1 # pause to be kind to the scheduler  
-done  
+do
+       sample_file="$(basename $fastq_file _1.fastq)"  
+       path_fastq="$(dirname $fastq_file)"
+       srun -n 1 STAR --runThreadN 56 --outSAMtype BAM SortedByCoordinate --readFilesIn ${path_fastq}/${sample_file}_1.fastq ${path_fastq}/${sample_file}_2.fastq --genomeDir /shared/home/hchiapello/DUBii/module1/Ecoli_star/ --outFileNamePrefix ${sample_file}.fastq-star-out &
+done
+wait
+
 ```
 
-Pour lancer ce script on utilise la commande suivante :
+Ce script sera lancé avec la commande `sbatch` :
 
 ```bash  
-    ./star_all_paired_data.sh /shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq
+    sbatch star_pairedfiles.sbatch /shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq
 ```
-**Questions** :   
-- Combien de jobs sont lancés sur le cluster ?    
-- Combien de noeud et de CPU seront utilisés pour chaque job ?  
-- A combien de temps de calcul maximal a-t-on estimé chaque job ?  
+**Questions** :      
+- Combien de CPU seront utilisés pour cette task ?
+- Regarder les ressources allouées à ce job en utilisant la commande sacct -j <job_id>
+
