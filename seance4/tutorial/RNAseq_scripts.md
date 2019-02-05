@@ -61,13 +61,13 @@ Nous allons utiliser le logiciel **STAR** pour aligner les reads RNAseq sur le g
 
 Pour pouvoir utiliser STAR il faut d'abord indexer le génome de référence.  
 
-Regarder la documentaion de STAR  
+Regarder la documentation de STAR  
 ```bash  
 $ STAR --help | less
 ```
 
 L'usage est :  
- `Usage: STAR  [options]... --genomeDir REFERENCE   --readFilesIn R1.fq R2.fq  
+ `Usage: STAR  [options]... --genomeDir REFERENCE   --readFilesIn R1.fq R2.fq   
   Spliced Transcripts Alignment to a Reference (c) Alexander Dobin, 2009-2015`  
 
 Nous allons commencer par créer un répertoire pour le génome de référence indexé :  
