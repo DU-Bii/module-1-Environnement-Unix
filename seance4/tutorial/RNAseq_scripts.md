@@ -78,7 +78,7 @@ $ sbatch ./fastqc_myfiles_array.sbatch
 
 **Questions** :
 - Que constatez-vous en terme de performance ?
-- Que pensez-cous qu'il se passe s'il y a plus de 20 fichiers `.fastq` à traiter ?
+- Que pensez-vous qu'il se passe s'il y a plus de 20 fichiers `.fastq` à traiter ?
 
 
 ## Deuxième exemple : mapping des reads sur le génome de E. coli
@@ -109,9 +109,9 @@ srun STAR --runMode genomeGenerate --genomeDir ./Ecoli_star --genomeFastaFiles /
 Une fois l'index créé, nous allons créer un script permettant de lancer un mapping STAR avec la commande `sbatch`pour une paire de fichiers fastq (reads 1 et reads 2) donnés en arguments :
 
 ```bash
-$ cat star_myfiles.sbatch 
+$ cat star_one_pair.sbatch 
 #!/bin/bash
-#star_myfiles.sbatch
+#star_one_pair.sbatch
 #SBATCH -c 28 # 28 CPUs per task (and node)
 #SBATCH -N 1 # on one node
 #SBATCH -t 0-4:00 # Running time of 4 hours
@@ -125,7 +125,7 @@ STAR --runThreadN 56 --outSAMtype BAM SortedByCoordinate --readFilesIn ${raw_rea
 Ce script sera ensuite lancé grâce à un 2ème script qui parcourera les fichiers fastq au format `*_1.fastq` du répertoire où sont stockées les données :  
 
 ```bash
-$ cat star_paired_data.sh
+$ cat star_all_paired_data.sh
 #!/bin/bash
 REP_FASTQ_FILES=$1
 R1_fastq_files=$(ls $1/*_1.fastq)
@@ -135,7 +135,7 @@ do
        sample_file="$(basename $fastq_file _1.fastq)"   
        path_fastq="$(dirname $fastq_file)"  
        #echo $sample_file  
-       sbatch -o ${sample_file}.stdout.txt -e ${sample_file}.stderr.txt star_myfiles.sbatch ${path_fastq}/${sample_file}_1.fastq ${path_fastq}/${sample_file}_2.fastq  
+       sbatch -o ${sample_file}.stdout.txt -e ${sample_file}.stderr.txt star_one_pair.sbatch ${path_fastq}/${sample_file}_1.fastq ${path_fastq}/${sample_file}_2.fastq  
        sleep 1 # pause to be kind to the scheduler  
 done  
 ```
