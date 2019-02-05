@@ -13,7 +13,7 @@ source activate eba_rnaseq_ref-2018
 
 ## Le jeu de données
 
-On dispose de 2 échantillons de reads pairés de E. coli : WT (Wild Type) et dFNR (mutant du gène FNR).  
+On dispose de 2 échantillons de reads pairés de *E. coli* : WT (Wild Type) et dFNR (mutant du gène FNR).  
 Il y a 2 répliques par échantillons (soient 4 échantillons et 8 fichiers, les paires de reads étant stockées dans 2 fichiers séparés) :
 
 ```bash
@@ -67,8 +67,7 @@ $ STAR --help | less
 ```
 
 L'usage est :  
- `Usage: STAR  [options]... --genomeDir REFERENCE   --readFilesIn R1.fq R2.fq   
-  Spliced Transcripts Alignment to a Reference (c) Alexander Dobin, 2009-2015`  
+ `Usage: STAR  [options]... --genomeDir REFERENCE   --readFilesIn R1.fq R2.fq`  
 
 Nous allons commencer par créer un répertoire pour le génome de référence indexé :  
 ```bash  
