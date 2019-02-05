@@ -4,8 +4,9 @@ class: center, middle
 
 ## DU-Bii 2019
 
-Benoist LAURENT (benoist.laurent@gmail.com)<br/>
-Hélène Chiapello (helene.chiapello@inra.fr)
+Benoist Laurent (benoist.laurent@gmail.com)<br/>
+Hélène Chiapello (helene.chiapello@inra.fr)<br/>
+Pierre Poulain (pierre.poulain@univ-paris-diderot.fr)
 
 .footer[
 https://du-bii.github.io/module-1-Environnement-Unix/
