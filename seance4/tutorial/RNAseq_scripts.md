@@ -30,7 +30,7 @@ $ ls  /shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/bacterial-r
 
 ## Première exemple : contrôle qualité
 
-Nous allons utiliser un premier script bash pour lancer sur le cluster de l'IFB 8 calculs fastqc correspondant aux 8 fichiers à analyser
+Nous allons utiliser un premier script bash pour lancer sur le cluster de l'IFB 8 calculs `fastqc` correspondant aux 8 fichiers à analyser :  
 
 ```bash
 $ cat fastqc_myfiles.sh  
