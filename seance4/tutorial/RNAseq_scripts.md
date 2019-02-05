@@ -55,6 +55,32 @@ Pour lancer ce script on utilise la commande suivante :
 - Où seront produits les fichiers résulats de la commande `fastqc`?  
 - Que veut dire "2>> fastqc.err" ?  
 
+**Solution alternative :** il est possible de paralléliser l'exécution des 8 jobs en utilisant l'option `--array`
+Ceci est possible lorsqu'on effectue exactement le même traitement sur un ensemble de fichiers
+Dans ce cas on doit préciser le nombre de jobs maximum qui vont être lancés
+C'est à priori la solution de parallélisation la plus efficace
+
+Tester le lancement du script suivant comme suit pour paralléliser le lancement des 8 jobs en parallèle :
+
+```bash 
+cat ./fastqc_myfiles_array.sbatch
+#! /bin/bash
+#SBATCH --array=0-20
+
+DATA=(/shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq/*.fastq)
+srun fastqc --quiet ${DATA[$SLURM_ARRAY_TASK_ID]} -o ./fastqc-results/ 2>> fastqc.err
+```
+
+Puis lancer l'execution comme suit :
+```bash 
+$ sbatch --array=0-20 ./fastqc_myfiles_array.sbatch
+```
+
+**Question** :
+- Que constatez-vous en terme de performance ?
+- Que pensez-cous qu'il se passe s'il y a plus de 20 fichiers `.fastq` à traiter ?
+
+
 ## Deuxième exemple : mapping des reads sur le génome de E. coli
 
 Nous allons utiliser le logiciel **STAR** pour aligner les reads RNAseq sur le génome de E. coli.  
