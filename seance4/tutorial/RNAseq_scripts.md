@@ -1,4 +1,4 @@
-# Exemple de mise en pratique pour analyse de données RNAseq
+# Exemple de mise en pratique pour sur de l'analyse de données RNAseq
 # Lancement des analyses sur le cluster NNCR en utilisant des scripts bash
 
 ## Connnection au cluster NNCR IFB et chargement des environnements nécessaires
@@ -37,18 +37,29 @@ Nous allons utiliser un premier script bash pour lancer sur le cluster de l'IFB 
 > >  $ cat fastqc_myfiles.sh  
 > >  #! /bin/bash  
 
-> >  data=$(ls $1/*.fastq)  
+> >  data=$(ls $1/*.fastq)   
 
 > >  for fastqc_file in ${data[@]}   
 > >  do  
-> >    srun fastqc --quiet  $fastqc_file -o ./fastqc-results/ 2> fastqc.err  &  
+          echo "srun srun fastqc --quiet  $fastqc_file -o ./fastqc-results/ 2>> fastqc.err "
+> >       srun fastqc --quiet  $fastqc_file -o ./fastqc-results/ 2>> fastqc.err  &   
 > >  done  
 
-Pour lance ce script je vais écrire la commande  
+Pour lancer ce script on utilise la commande suivante :
 
-> > ```bash
-> >   ./fastqc_myfiles.sh /shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq
-> >
+> > ```bash  
+> >     ./fastqc_myfiles.sh /shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq
+> >  
+
+**Questions** :   
+- Combien de jobs sont lancés sur le cluster ?  
+- Comment suivre l'éxécution des jobs ?  
+- Où seront produits les fichiers résulats de la commande `fastqc`?  
+- Que veut dire "2>> fastqc.err" ?  
+
+
+
+
 
 
 
