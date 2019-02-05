@@ -76,7 +76,7 @@ Puis lancer l'execution comme suit :
 $ sbatch ./fastqc_myfiles_array.sbatch
 ```
 
-**Question** :
+**Questions** :
 - Que constatez-vous en terme de performance ?
 - Que pensez-cous qu'il se passe s'il y a plus de 20 fichiers `.fastq` à traiter ?
 
