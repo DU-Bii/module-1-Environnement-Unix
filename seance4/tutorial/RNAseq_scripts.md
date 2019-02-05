@@ -36,14 +36,13 @@ Nous allons utiliser un premier script bash pour lancer sur le cluster de l'IFB 
 > > ```bash
 > >  $ cat fastqc_myfiles.sh  
 > >  #! /bin/bash  
-
 > >  data=$(ls $1/*.fastq)   
-
 > >  for fastqc_file in ${data[@]} 
 > >  do  
 > >       echo "srun srun fastqc --quiet  $fastqc_file -o ./fastqc-results/ 2>> fastqc.err "
 > >       srun fastqc --quiet  $fastqc_file -o ./fastqc-results/ 2>> fastqc.err  & 
 > >  done  
+> > 
 > >```
 
 Pour lancer ce script on utilise la commande suivante :
@@ -68,6 +67,7 @@ Pour pouvoir utiliser STAR il faut d'abord indexer le génome de référence.
 Regarder la documentaion de STAR  
 > > ```bash  
 > > $ STAR --help | less
+> > 
 > >```
 
 L'usage est :  
@@ -77,6 +77,7 @@ L'usage est :
 Nous allons commencer par créer un répertoire pour le génome de référence indexé :  
 > > ```bash  
 > >  mkdir ./Ecoli_star
+> > 
 > >```
 
 Puis nous lancons la commande d'indexation du génome sur le cluster :  
@@ -90,19 +91,16 @@ Une fois l'index créé, nous allons créer un script permettant de lancer un ma
 > > ```bash
 $ cat star_myfiles.sbatch 
 > > #!/bin/bash
-> > # star_myfiles.sh
-> > #
+> > # star_myfiles.sbatch
 > > #SBATCH -n 28 # one CPU
 > > #SBATCH -N 1 # on one node
 > > #SBATCH -t 0-2:00 # Running time of 4 hours
 > > #SBATCH --mem 16G # Memory request 16Gb
-
 > > raw_readsR1=$1
 > > raw_readsR2=$2
 > > star_outfile="$(basename $raw_readsR1 _1.fastq)-star-out"
-
 > > STAR --runThreadN 56 --outSAMtype BAM SortedByCoordinate --readFilesIn $raw_readsR1 $raw_readsR2 --genomeDir /shared/home/hchiapello/DUBii/module1/Ecoli_star/ --outFileNamePrefix $star_outfile
-
+> > 
 > >```
 
 Ce script sera ensuite lancé grâce à un 2ème script qui parcourera les fichiers fastq au format `*_1.fastq` du répertoire où sont stockées les données :  
@@ -110,7 +108,6 @@ Ce script sera ensuite lancé grâce à un 2ème script qui parcourera les fichi
 > > ```bash
 > > $ more star_paired_data.sh
 > > #!/bin/bash
-
 > > REP_FASTQ_FILES=$1
 > > 
 > > 
@@ -125,7 +122,7 @@ Ce script sera ensuite lancé grâce à un 2ème script qui parcourera les fichi
 > >       sbatch -o ${sample_file}.stdout.txt -e ${sample_file}.stderr.txt star_myfiles.sbatch $path_fastq/${sample_file}_1.fastq $path_fastq/${sample_file}_2.fastq  
 > >       sleep 1 # pause to be kind to the scheduler  
 > > done  
-
-
+> > 
+> >```
 
 
