@@ -119,7 +119,7 @@ $ cat star_one_pair.sbatch
 raw_readsR1=$1
 raw_readsR2=$2
 star_outfile="$(basename $raw_readsR1 _1.fastq)-star-out"
-STAR --runThreadN 56 --outSAMtype BAM SortedByCoordinate --readFilesIn ${raw_readsR1} ${raw_readsR2} --genomeDir /shared/home/hchiapello/DUBii/module1/Ecoli_star/ --outFileNamePrefix ${star_outfile}
+srun STAR --runThreadN 56 --outSAMtype BAM SortedByCoordinate --readFilesIn ${raw_readsR1} ${raw_readsR2} --genomeDir /shared/home/hchiapello/DUBii/module1/Ecoli_star/ --outFileNamePrefix ${star_outfile}
 ```
 
 Ce script sera ensuite lancé grâce à un 2ème script qui parcourera les fichiers fastq au format `*_1.fastq` du répertoire où sont stockées les données :  
