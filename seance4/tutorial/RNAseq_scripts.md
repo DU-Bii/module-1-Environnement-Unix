@@ -1,5 +1,4 @@
-# Exemple de mise en pratique pour sur de l'analyse de données RNAseq
-# Lancement des analyses sur le cluster NNCR en utilisant des scripts bash
+# Mise en pratique : exemple de scripts pour l'analyse de données RNAseq en utilisant les ressources du cluster NNCR  
 
 ## Connnection au cluster NNCR IFB et chargement des environnements nécessaires
 
