@@ -77,9 +77,9 @@ mkdir ./Ecoli_star
 
 Puis nous lancons la commande d'indexation du génome sur le cluster :  
 
-> > ```bash  
+```bash  
 srun STAR --runMode genomeGenerate --genomeDir ./Ecoli_star --genomeFastaFiles /shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/genome/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.dna.chromosome.Chromosome.fa  --runThreadN 4 --sjdbGTFfile /shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/genome/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.gtf
-> >```
+```
 
 Une fois l'index créé, nous allons créer un script permettant de lancer un mapping STAR avec la commande `sbatch`pour une paire de fichiers fastq (reads 1 et reads 2) donnés en arguments :
 
