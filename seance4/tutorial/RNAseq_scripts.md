@@ -31,15 +31,24 @@ On dispose de 2 échantillons de reads pairés et de 2 répliques par échantill
 
 ## Première étape : contrôle qualité
 
-Nous allons utiliser un script bash pour lancer sur le cluster de l'IFB 8 calculs fastqc correspondant aux 8 fichiers à analyser
+Nous allons utiliser un premier script bash pour lancer sur le cluster de l'IFB 8 calculs fastqc correspondant aux 8 fichiers à analyser
 
 > > ```bash
-> >  $ cat fastqc_myfiles.sbatch 
-> >  #! /bin/bash
+> >  $ cat fastqc_myfiles.sh  
+> >  #! /bin/bash  
 
-> >  data=$(ls $1/*.fastq)
+> >  data=$(ls $1/*.fastq)  
 
-> >  for fastqc_file in ${data[@]} 
-> >  do
-> >    srun  fastqc --quiet  $fastqc_file -o ./fastqc-results/ 2> fastqc.err  &
-> >  done
+> >  for fastqc_file in ${data[@]}   
+> >  do  
+> >    srun fastqc --quiet  $fastqc_file -o ./fastqc-results/ 2> fastqc.err  &  
+> >  done  
+
+Pour lance ce script je vais écrire la commande  
+
+> > ```bash
+> >   ./fastqc_myfiles.sh /shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq
+> >
+
+
+
