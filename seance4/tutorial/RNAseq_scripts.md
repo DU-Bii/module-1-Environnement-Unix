@@ -45,12 +45,14 @@ Nous allons utiliser un premier script bash pour lancer sur le cluster de l'IFB 
           echo "srun srun fastqc --quiet  $fastqc_file -o ./fastqc-results/ 2>> fastqc.err "
 > >       srun fastqc --quiet  $fastqc_file -o ./fastqc-results/ 2>> fastqc.err  &   
 > >  done  
+> >```
 
 Pour lancer ce script on utilise la commande suivante :
 
 > > ```bash  
 > >     ./fastqc_myfiles.sh /shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq
 > >  
+> >```
 
 **Questions** :   
 - Combien de jobs sont lancés sur le cluster ?  
@@ -60,7 +62,29 @@ Pour lancer ce script on utilise la commande suivante :
 
 ## Deuxième exemple : mapping des reads sur le génome de E. coli
 
+Nous allons utiliser le logiciel **STAR** pour aligner les reads RNAseq sur le génome de E. coli.  
 
+Pour pouvoir utiliser STAR il faut d'abord indexer le génome de référence.  
+
+Regarder la documentaion de STAR  
+> > ```bash  
+> > $ STAR --help | less
+> >```
+
+L'usage est :  
+ `Usage: STAR  [options]... --genomeDir REFERENCE   --readFilesIn R1.fq R2.fq 
+  Spliced Transcripts Alignment to a Reference (c) Alexander Dobin, 2009-2015`
+
+Nous allons commencer par créer un répertoire pour le génome de référence indexé :  
+> > ```bash  
+> >  mkdir ./Ecoli_star
+> >```
+
+Puis nous lancons la commande d'indexation du génome sur le cluster :  
+
+> > ```bash  
+> >  srun STAR --runMode genomeGenerate --genomeDir ./Ecoli_star --genomeFastaFiles /shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/genome/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.dna.chromosome.Chromosome.fa  --runThreadN 4 --sjdbGTFfile /shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/genome/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.gtf
+> >```
 
 
 
