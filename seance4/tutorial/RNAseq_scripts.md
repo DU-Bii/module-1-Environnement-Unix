@@ -38,7 +38,7 @@ $ cat fastqc_myfiles.sh
 data=$(ls $1/*.fastq)   
 for fastqc_file in ${data[@]} 
 do  
-      echo "srun srun fastqc --quiet  ${fastqc_file} -o ./fastqc-results/ 2>> fastqc.err "
+      #echo "srun srun fastqc --quiet  ${fastqc_file} -o ./fastqc-results/ 2>> fastqc.err "
       srun fastqc --quiet  ${fastqc_file} -o ./fastqc-results/ 2>> fastqc.err  & 
 done  
 ```
@@ -56,9 +56,9 @@ Pour lancer ce script on utilise la commande suivante :
 - Que veut dire "2>> fastqc.err" ?  
 
 **Solution alternative :** il est possible de paralléliser l'exécution des 8 jobs en utilisant l'option `--array`
-Ceci est possible lorsqu'on effectue exactement le même traitement sur un ensemble de fichiers
-Dans ce cas on doit préciser le nombre de jobs maximum qui vont être lancés
-C'est à priori la solution de parallélisation la plus efficace
+Ceci est possible lorsqu'on effectue exactement le même traitement sur un ensemble de fichiers.
+Dans ce cas on doit préciser le nombre de jobs maximum qui vont être lancés.
+C'est à priori la solution de parallélisation la plus efficace en terme de temps de calcul.
 
 Tester le lancement du script suivant comme suit pour paralléliser le lancement des 8 jobs en parallèle :
 
@@ -73,7 +73,7 @@ srun fastqc --quiet ${DATA[$SLURM_ARRAY_TASK_ID]} -o ./fastqc-results/ 2>> fastq
 
 Puis lancer l'execution comme suit :
 ```bash 
-$ sbatch --array=0-20 ./fastqc_myfiles_array.sbatch
+$ sbatch ./fastqc_myfiles_array.sbatch
 ```
 
 **Question** :
