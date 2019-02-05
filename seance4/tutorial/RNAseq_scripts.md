@@ -143,7 +143,7 @@ done
 Pour lancer ce script on utilise la commande suivante :
 
 ```bash  
-    ./star_paired_data.sh /shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq
+    ./star_all_paired_data.sh /shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq
 ```
 **Questions** :   
 - Combien de jobs sont lancés sur le cluster ?    
