@@ -5,5 +5,4 @@ This module will be separated in 4 parts:
 
 - [Environment Variables](environment.md)
 - [Shell Programming](scripting.md)
-- [Distributed Computing](distributed_computing.md)
 - [RNAseq Scripts](RNAseq_scripts.md)
