@@ -14,7 +14,8 @@
 
 ## Le jeu de données
 
-On dispose de 2 échantillons de reads pairés et de 2 répliques par échantillons (soient 4 échantillons et 8 fichiers, les paires de reads étant stockées dans 2 fichiers séparés) :
+On dispose de 2 échantillons de reads pairés de E. coli : WT (Wild Type) et dFNR (mutant du gène FNR).  
+Il y a 2 répliques par échantillons (soient 4 échantillons et 8 fichiers, les paires de reads étant stockées dans 2 fichiers séparés) :
 
 > > ```bash
 > > $ ls  /shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq/*.fastq
@@ -29,7 +30,7 @@ On dispose de 2 échantillons de reads pairés et de 2 répliques par échantill
 > > 
 > >```
 
-## Première étape : contrôle qualité
+## Première exemple : contrôle qualité
 
 Nous allons utiliser un premier script bash pour lancer sur le cluster de l'IFB 8 calculs fastqc correspondant aux 8 fichiers à analyser
 
@@ -57,7 +58,7 @@ Pour lancer ce script on utilise la commande suivante :
 - Où seront produits les fichiers résulats de la commande `fastqc`?  
 - Que veut dire "2>> fastqc.err" ?  
 
-
+## Deuxième exemple : mapping des reads sur le génome de E. coli
 
 
 
