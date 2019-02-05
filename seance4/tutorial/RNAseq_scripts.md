@@ -121,5 +121,5 @@ Pour lancer ce script on utilise la commande suivante :
 ```
 **Questions** :   
 - Combien de jobs sont lancés sur le cluster ?    
-- Combien de CPU seront utilisés pour chaque job ?  
+- Combien de noeud et de CPU seront utilisés pour chaque job ?  
 - A combien de temps de calcul maximal a-t-on estimé chaque job ?  
