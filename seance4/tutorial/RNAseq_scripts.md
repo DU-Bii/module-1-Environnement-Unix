@@ -116,7 +116,7 @@ Une fois l'index créé, nous allons utiliser un script `star_pairedfiles.sbatch
 ```bash
 $ cat star_pairedfiles.sbatch
 #!/bin/bash
-#SBATCH -n 8
+#SBATCH -n 4
 #SBATCH –cpus-per-task=28
  
 REP_FASTQ_FILES=$1
