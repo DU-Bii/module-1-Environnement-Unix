@@ -118,6 +118,7 @@ $ cat star_pairedfiles.sbatch
 #!/bin/bash
 #SBATCH -n 4
 #SBATCH –cpus-per-task=28
+#SBATCH -mem=64GB # Memory request 64Gb for the 4 tasks
  
 REP_FASTQ_FILES=$1
 R1_fastq_files=$(ls $1/*_1.fastq)
