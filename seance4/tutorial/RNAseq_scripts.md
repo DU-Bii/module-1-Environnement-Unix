@@ -1,13 +1,14 @@
 # Mise en pratique : exemple de scripts pour l'analyse de données RNAseq en utilisant les ressources du cluster NNCR  
 
-## Connnection au cluster NNCR IFB et chargement des environnements nécessaires
+## Connnection au cluster NNCR IFB
 
 ```bash
 $ ssh <username>@core.cluster.france-bioinformatique.fr
 ```
 
+## Chargement des environnements nécessaires
 ```bash
-module load eba_rnaseq_ref/2018
+$ module load eba_rnaseq_ref/2018
 ```
 
 ## Le jeu de données
@@ -46,13 +47,13 @@ wait
 Pour lancer ce script on utilise la commande suivante :
 
 ```bash  
-    sbatch ./fastqc_myfiles.sh /shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq
+$ sbatch ./fastqc_myfiles.sh /shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq
 ```
 
 **Questions** :   
 - Comment suivre l'éxécution des job-steps ?  
 - Où seront produits les fichiers résulats de la commande `fastqc`?  
-- Que veut dire "2>> fastqc.err" ?  
+- Que veut dire `2>> fastqc.err` ?  
 
 **Solution alternative :** il est possible de paralléliser l'exécution des 8 jobs en utilisant l'option `--array`
 Ceci est possible lorsqu'on effectue exactement le même traitement sur un ensemble de fichiers.
@@ -62,7 +63,7 @@ C'est à priori la solution de parallélisation la plus efficace en terme de tem
 Tester le lancement du script suivant comme suit pour paralléliser le lancement des 8 jobs en parallèle :
 
 ```bash 
-cat ./fastqc_myfiles_array.sbatch
+$ cat ./fastqc_myfiles_array.sbatch
 #! /bin/bash
 #SBATCH --array=0-7
 
@@ -77,7 +78,7 @@ $ sbatch ./fastqc_myfiles_array.sbatch
 
 Pour regarder les ressources allouées à un job, on peut utiliser la commande 
 ```bash 
-sacct --format=JobID,JobName,User,ReqCPUS,ReqMem,NTasks,MaxVMSize,MaxRSS,Start,End,NNodes,NodeList%40,CPUTime -j <id-du-job>
+$ sacct --format=JobID,JobName,User,ReqCPUS,ReqMem,NTasks,MaxVMSize,MaxRSS,Start,End,NNodes,NodeList%40,CPUTime -j <id-du-job>
 ```
 
 **Questions** :
@@ -101,13 +102,13 @@ L'usage est :
 
 Nous allons commencer par créer un répertoire pour le génome de référence indexé :  
 ```bash  
-mkdir ./Ecoli_star
+$ mkdir ./Ecoli_star
 ```
 
 Puis nous lancons la commande d'indexation du génome sur le cluster :  
 
 ```bash  
-srun STAR --runMode genomeGenerate --genomeDir ./Ecoli_star --genomeFastaFiles /shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/genome/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.dna.chromosome.Chromosome.fa  --runThreadN 4 --sjdbGTFfile /shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/genome/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.gtf
+$ srun STAR --runMode genomeGenerate --genomeDir ./Ecoli_star --genomeFastaFiles /shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/genome/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.dna.chromosome.Chromosome.fa  --runThreadN 4 --sjdbGTFfile /shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/genome/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.gtf
 ```
 
 Une fois l'index créé, nous allons utiliser un script `star_pairedfiles.sbatch` permettant de lancer un mapping STAR sur toutes les paires de fichiers fatsq d'un répertoire donén en argument :
@@ -134,7 +135,7 @@ wait
 Ce script sera lancé avec la commande `sbatch` :
 
 ```bash  
-    sbatch star_pairedfiles.sbatch /shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq
+$ sbatch star_pairedfiles.sbatch /shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq
 ```
 **Questions** :      
 - Combien de CPU seront utilisés pour cette task ?
