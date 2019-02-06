@@ -139,6 +139,6 @@ Ce script sera lancé avec la commande `sbatch` :
 $ sbatch star_pairedfiles.sbatch /shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq
 ```
 **Questions** :      
-- Combien de CPU seront utilisés pour cette task ?
+- Combien de CPU seront utilisés pour chacune des task ?
 - Regarder les ressources allouées à ce job en utilisant la commande `sacct -j <job_id>`
 
