@@ -43,10 +43,10 @@ Variables are defined in a script in the same fashion as in the terminal:
 
 ```bash
 # Define a variable named "VAR" with value 42
-VAR=42
+var=42
 
 # Print the variable value
-echo $VAR
+echo ${var}
 ```
 
 The output of a command can be stored in a variable for later use.
@@ -54,11 +54,11 @@ It is then necessary to put the command between ` characters.
 
 ```bash
 # Store file names into a variable
-FILENAMES=$(ls -1 molecules)
+filenames=$(ls -1 molecules)
 
 # Display the file names
 echo "the filenames:"
-echo "$FILENAMES"
+echo "${filenames}"
 ```
 
 
@@ -70,9 +70,9 @@ with the file's name next to it.
 Let's create `first_line.bash` with a text editor and write those lines:
 
 ```bash
-FILE=molecules/cubane.pdb
-HEAD=$(head -1 $FILE)
-echo "$FILE: $HEAD"
+fname=molecules/cubane.pdb
+thehead=$(head -1 $FILE)
+echo "${fname}: ${thehead}"
 ```
 
 
@@ -117,9 +117,9 @@ the command-line.
 
 > **Solution**:
 > > ```bash
-> > FILE=$1
-> > HEAD=$(head -1 $FILE)
-> > echo "$FILE: $HEAD"
+> > fname=$1
+> > thehead=$(head -1 $FILE)
+> > echo "${fname}: ${thehead}"
 > > ```
 {:.answer}
 
@@ -136,12 +136,12 @@ script becomes:
 
 ```bash
 # Store file names into a variable: $* represents all command-line arguments.
-FILENAMES=$*
+filenames=$*
 
-for FILE in $FILENAMES
+for fname in ${filenames}
 do
-    HEAD=$(head -1 $FILE)
-    echo "$FILE: $HEAD"    
+    thehead=$(head -1 ${fname})
+    echo "${fname}: ${thehead}"    
 done
 ```
 
@@ -173,11 +173,11 @@ The script will display an error message if no input file is provided.
 > > ```bash
 > > # The -ge operator stands for "greater or equal"
 > > if [ $# -ge 1 ]; then
-> >     FILENAMES=$*    
-> >     for FILE in $FILENAMES
+> >     filenames=$*    
+> >     for fname in ${filenames}
 > >     do
-> >         HEAD=$(head -1 $FILE)
-> >         echo "$FILE: $HEAD"    
+> >         thehead=$(head -1 ${fname})
+> >         echo "${fname}: ${thehead}"    
 > >     done
 > > else
 > >     echo "ERROR: no file provided from command-line"
