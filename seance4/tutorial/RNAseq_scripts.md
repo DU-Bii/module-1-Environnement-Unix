@@ -141,5 +141,5 @@ $ sbatch star_pairedfiles.sbatch /shared/projects/du_bii_2019/data/study_cases/E
 ```
 **Questions** :      
 - Combien de CPU seront utilisés pour chacune des task ?
-- Regarder les ressources allouées à ce job en utilisant la commande `sacct -j <job_id>`
+- Regarder les ressources allouées à ce job en utilisant la commande `sacct`
 
