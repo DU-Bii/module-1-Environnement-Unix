@@ -49,10 +49,10 @@ the value of the `HOME` variable (`$HOME` refers to the value for the
 `HOME` variable):
 
 ```bash
-$ echo $HOME
+$ echo ${HOME}
 /home/fish
 
-$ echo "This is the value of HOME: $HOME"
+$ echo "This is the value of HOME: ${HOME}"
 This is the value of HOME: /home/fish
 ```
 
@@ -60,7 +60,7 @@ Importantly, trying to use a environment variable that hasn't been defined
 is equivalent to using a variable set to empty string:
 
 ```bash
-$ echo "hello: '$SOME_UNDEFINED_ENVIRONMENT_VARIABLE'"
+$ echo "hello: '${SOME_UNDEFINED_ENVIRONMENT_VARIABLE}'"
 hello: ''
 ```
 
@@ -72,7 +72,7 @@ To set an envionement varible:
 ```bash
 $ export MY_VARIABLE=12
 $ # Check the result
-$ echo $MY_VARIABLE
+$ echo ${MY_VARIABLE}
 12
 ```
 
@@ -80,10 +80,10 @@ To unset this environment variable, use the command `unset`:
 
 ```bash
 $ export FOO="I am Groot"
-$ echo "FOO is: '$FOO'"
+$ echo "FOO is: '${FOO}'"
 FOO is: 'I am Groot'
 $ unset FOO
-$ echo "FOO is: '$FOO'"
+$ echo "FOO is: '${FOO}'"
 FOO is: ''
 ```
 
@@ -99,10 +99,10 @@ The most important environment variable would be
 
 ## Configuring the environment
 
-### The `$HOME/.bashrc` file
+### The `${HOME}/.bashrc` file
 
 A file is often used to configure the environment.
-This file, `$HOME/.bashrc`, is read by `bash`, the terminal interpreter upon
+This file, `${HOME}/.bashrc`, is read by `bash`, the terminal interpreter upon
 start.
 
 ### Aliases
@@ -130,6 +130,6 @@ To set an environment variable value on a global level, the command to use
 is `export`.
 
 For example, a current practice is to store some executables in your home
-directory, more precisely in `$HOME/.local/bin`.
+directory, more precisely in `${HOME}/.local/bin`.
 To append this directory to the list of directories where executable should
-be looked for, type: `export PATH=$HOME/.local/bin:$PATH`
+be looked for, type: `export PATH=${HOME}/.local/bin:$PATH`
