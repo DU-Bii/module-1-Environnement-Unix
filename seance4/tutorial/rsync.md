@@ -21,7 +21,11 @@ to copying large files/directories.
 - `-h, --human-readable` output numbers in a human-readable format (to be use with `-P`).
 
 
-## Copy a file/directory in a different location.
+- [Simple Copy](#simple_copy)
+- [Copy From/To A Different Machine](#copy_from_to_a_different_machine)
+- [Copy Large Files](#copy_large_files)
+
+## Simple Copy
 
 ```bash
 $ rsync -av study-cases /data/
@@ -157,7 +161,7 @@ We can see on this output that only the file that has been modified is transfere
 again.
 
 
-## Copy from/to a different machine
+## Copy From/To A Different Machine
 
 Notably, `rsync` can also be used as a substitute for `scp`, with a very close
 syntax:
@@ -174,7 +178,7 @@ rsync -a study-cases login@server.domain:
 rsync -a login@server.domain:study-cases .
 ```
 
-## Copy large files
+## Copy Large Files
 
 When copying large files, it may be nice to use the `-Ph` options together
 to see how fast the transfert is going:
