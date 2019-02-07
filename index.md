@@ -60,6 +60,8 @@ Les prérequis à ce module : [ici](prerequis/README.md)
 
 [Tutoriel](seance4/tutorial/README.md)
 
+[Présentation](seance4/slides/index.html)
+
 
 ## Installer un *shell* Linux sur sa machine
 
