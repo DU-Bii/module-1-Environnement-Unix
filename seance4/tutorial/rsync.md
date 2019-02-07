@@ -21,9 +21,9 @@ to copying large files/directories.
 - `-h, --human-readable` output numbers in a human-readable format (to be use with `-P`).
 
 
-- [Simple Copy](#simple_copy)
-- [Copy From/To A Different Machine](#copy_from_to_a_different_machine)
-- [Copy Large Files](#copy_large_files)
+- [Simple Copy](#simple-copy)
+- [Copy From/To A Different Machine](#copy-from-to-a-different_machine)
+- [Copy Large Files](#copy-large-files)
 
 ## Simple Copy
 
