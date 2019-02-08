@@ -117,9 +117,9 @@ Une fois l'index créé, nous allons utiliser un script `star_pairedfiles.sbatch
 $ cat star_pairedfiles.sbatch
 #!/bin/bash
 #SBATCH -n 4
-#SBATCH –cpus-per-task=28
-#SBATCH --mem=64000 # Memory request 64Gb for the 4 tasks
-#SBATCH --mem-per-cpu=16000 # Memory request 16Gb for each task
+#SBATCH --cpus-per-task=24
+#SBATCH --mem=64GB # Memory request 64Gb for the 4 tasks
+#SBATCH --mem-per-cpu=16GB # Memory request 16Gb for each task
  
 REP_FASTQ_FILES=$1
 R1_fastq_files=$(ls $1/*_1.fastq)
