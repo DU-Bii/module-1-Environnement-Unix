@@ -128,7 +128,7 @@ for fastq_file in ${R1_fastq_files[@]}
 do
        sample_file="$(basename $fastq_file _1.fastq)"  
        path_fastq="$(dirname $fastq_file)"
-       srun -n 1 STAR --runThreadN 56 --outSAMtype BAM SortedByCoordinate --readFilesIn ${path_fastq}/${sample_file}_1.fastq ${path_fastq}/${sample_file}_2.fastq --genomeDir /shared/home/hchiapello/DUBii/module1/Ecoli_star/ --outFileNamePrefix ${sample_file}.fastq-star-out &
+       srun -n 1 STAR --runThreadN 48 --outSAMtype BAM SortedByCoordinate --readFilesIn ${path_fastq}/${sample_file}_1.fastq ${path_fastq}/${sample_file}_2.fastq --genomeDir /shared/home/hchiapello/DUBii/module1/Ecoli_star/ --outFileNamePrefix ${sample_file}.fastq-star-out &
 done
 wait
 
