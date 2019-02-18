@@ -182,6 +182,25 @@ Compte le nombre de lignes, mots et caractères du ou des fichiers donnés en ar
 Le '|' (pipe) permet rediriger la sortie d'une commande vers l'entrée d'une autre commande. On peut enchainer un nombre pratiquement illimité de commandes grâce à des pipes : command 1 | command 2 | command 3 ...
 
 
+# Partie 5 : utiliser le cluster IFB
+
+## srun
+
+Soumettre une commande de manière interactive sur un noeud du cluster  
+ex : `srun ma_commande`
+
+## sbatch
+
+Soumettre un script de manière asynchrone sur le cluster
+ex : `sbatch mon_script.sh`
+On peut mettre des commandes `srun` dans `mon_script.sh`  
+
+## squeue
+
+Voir les jobs soumis sur un cluster
+exemple pour voir les jobs d'un utilisteur  :  `squeue -u <username>`
+
+## scancel
 
 
 
