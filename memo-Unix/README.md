@@ -202,7 +202,9 @@ exemple pour voir les jobs d'un utilisteur  :  `squeue -u <username>`
 
 ## scancel
 
-
+Annuler un job
+`scancel <jobid>` : annule le job avec l'id <jobid>
+`scancel -u <user>` : annule tous les jobs de l'utilisateur <user>
 
 
 
