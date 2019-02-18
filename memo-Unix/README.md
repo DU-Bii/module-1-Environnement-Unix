@@ -83,11 +83,32 @@ Signfie 'remove directory'. Supprime un répertoire : rmdir chemin
 Signifie 'remove'. Supprime un fichier : rmdir fichier
 
 
+# Partie 2 : Recherche de fichiers ou de contenus
+
+## find [chemin] -name <MOTIF>
+  
+Rechercher des fichiers de manière récursive à partir d'un chemin et contenant un motif. Un motif est ici une expression ou une chaine de caractères correspondant au nom ou à une partie du nom du fichier recherché
+
+## grep
+
+Affiche les lignes du ou des fichiers en argument correspondant à un 'motif' (ou contenu) donné en argument
+(Abréviation de Get Regular Expression Print)
+
+grep 'motif' fichier1 fichier2
+
+Option utiles :
+
+'-c' : signifie 'count'. Affiche uniquement le nombre de lignes contenant le motif
+
+'-n' : affiche aussi le numéro de la ligne contenant le motif
+
+'-v' : affiche les lignes qui ne contiennent pas le motif
+
 # Partie 2 : accéder et manipuler le contenu des fichiers
 
 ## cat
 
-Affiche le contenu du ou des fichiers en arguments ou de l'entrée standart
+Affiche le contenu complet du ou des fichiers en arguments ou de l'entrée standart sur la sortie standart
 
 ## less
 
@@ -114,39 +135,7 @@ Affiche la dernière partie (10 lignes par défaut) de chacun des fichiers en ar
 
 'tail -n nom_fichier' : affiche les n dernières lignes d'un fichier
 
-## grep
-
-Affiche les lignes du ou des fichiers en argument correspondant à un 'motif' (ou contenu) donné en argument
-(Abréviation de Get Regular Expression Print)
-
-grep 'motif' fichier1 fichier2
-
-Option utiles :
-
-'-c' : signifie 'count'. Affiche uniquement le nombre de lignes contenant le motif
-
-'-n' : affiche aussi le numéro de la ligne contenant le motif
-
-'-v' : affiche les lignes qui ne contiennent pas le motif
-
-## wc
-
-Compte le nombre de lignes, mots et caractères du ou des fichiers donnés en arguments
-
-'-l' : uniquement le nombre de lignes
-
-'-w' : uniquement le nombre de mots
-
-'-c' : uniquement le nombre de caractères
-
-## sort
-
-Trie les lignes du ou des fichiers donnés en argument
-Attention : tri par défaut selon le code ASCII
-
-'-n' : tri numérique
-
-'-k num_colonne' : tri selon la colonne k du fichier
+# Partie 4 : Extraction des données d'un fichier et gestion de flux
 
 ## cut
 
@@ -160,9 +149,30 @@ Par défaut une colonne est un caractère
 
 '-f liste de champs' : spécifie les champs à extraire
 
+## sort
+
+Trie les lignes du ou des fichiers donnés en argument
+Attention : tri par défaut selon le code ASCII
+
+'-n' : tri numérique
+
+'-k num_colonne' : tri selon la colonne k du fichier
+
+## uniq
 
 
 
+## wc
+
+Compte le nombre de lignes, mots et caractères du ou des fichiers donnés en arguments
+
+'-l' : uniquement le nombre de lignes
+
+'-w' : uniquement le nombre de mots
+
+'-c' : uniquement le nombre de caractères
+
+## |
 
 
 
