@@ -101,7 +101,7 @@ Sites internet :
 
 - [The UNIX Shell](http://swcarpentry.github.io/shell-novice/), cours en ligne de *Software Carpentry*.
 - [Unix Fondamentals](https://edu.sib.swiss/pluginfile.php/2878/mod_resource/content/4/couselab-html/content.html), du *Swiss Institute of Bioinformatics*.
-- [IFB cluster user guide] (http://taskforce-nncr.gitlab.cluster.france-bioinformatique.fr/doc/slurm_user_guide/), guide d'utilisation du *cluster SLURM de l'IFB*.
+- [IFB SLURM cluster user guide](http://taskforce-nncr.gitlab.cluster.france-bioinformatique.fr/doc/slurm_user_guide/), guide d'utilisation du *cluster SLURM de l'Institut Français de Bioinformatique*.
 
 
 ## Licence
