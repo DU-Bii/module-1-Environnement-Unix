@@ -1,3 +1,3 @@
-# Révisions sur les cpmmandes de bases d'Unix
+# Révisions sur les bases d'Unix
 
 ...to do...
