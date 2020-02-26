@@ -1,4 +1,4 @@
-#Séance 1 : les bases de l'environnement Unix
+# Séance 1 : les bases de l'environnement Unix
 
 Cette séance sera découpée en 4 parties :
 
