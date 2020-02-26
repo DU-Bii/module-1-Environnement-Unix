@@ -1,3 +1,5 @@
+#Séance 1 : les bases de l'environnement Unix
+
 Cette séance sera découpée en 4 parties :
 
 1. Révisions séances Datacamp et présentation de l'environnement de travail (machines locales, shell, arborescence, fichiers et répertoires)
