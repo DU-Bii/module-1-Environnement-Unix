@@ -4,7 +4,7 @@ L'objectif de ce module est de vous familiariser avec l'environnement Unix et se
 
 Lien court vers cette page : <https://huit.re/dubii-m1>
 
-Rappel des prérequis : https://du-bii.github.io/accueil/activites_preparatoires/
+Rappel des prérequis : <https://du-bii.github.io/accueil/activites_preparatoires/>
 
 
 ## Intervenants
