@@ -344,3 +344,23 @@ documentation et des options à l'écran.
 > > ```
 > L'option `-N` sert à afficher les numéros des lignes à gauche de chaque ligne.
 {:.answer}
+
+## Partie 2.5 : Répéter une commande, notion d'historique
+
+Le système d'exploitation Linux garde en mémoire les commandes lancées par un
+utilisateur dans un terminal.
+La liste des commandes lancées par un utilisateur est accessible via la commande
+`history`.
+Il est aussi possible de retrouver une commande en utilisant la commande `!`
+Par exemple la commande `!?expression?` permet de relancer la dernière commande
+utilisée contenant le mot `expression`.
+La commande `!grep` permet de relancer la dernière commande utilisée comemnçant par 'grep'
+
+**Question 9** : que fait la commande `!n -3` ?
+
+> **Réponse**:
+> > Cette commande permet d'exécuter la 3° dernière commande exécutée.
+{:.answer}
+
+On peut également retrouver les commandes déjà exécutées en naviguant dans
+l'historique avec les flèches du clavier.
