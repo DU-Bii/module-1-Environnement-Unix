@@ -13,6 +13,7 @@ Rappel des prérequis : <https://du-bii.github.io/accueil/activites_preparatoire
 - Pierre Poulain, Université de Paris, `pierre.poulain@univ-paris-diderot.fr`, [@pierrepo](https://twitter.com/pierrepo)
 - Benoist Laurent, IPBC, `benoist.laurent@ibpc.fr`
 - Julien Seiler, IGBMC, `seilerj@igbmc.fr`
+- Jacques van Helden, Institut Français de Bioinformatique et Univ. Aix-Marseille, `Jacques.van-Helden@univ-amu.fr`
 - Sandra Dérozier, INRAE, `sandra.derozier@inra.fr`
 - Hubert Santuz, CNRS, `hubert.santuz@ibpc.fr`
 
@@ -40,7 +41,7 @@ Rappel des prérequis : <https://du-bii.github.io/accueil/activites_preparatoire
 
 - Jeudi 05/03/2020 9:00 - 12:00
 - Instructeurs : Julein Seiler & Pierre Poulain
-- Helpers : Hélène Chiapello & Benoist Laurent
+- Helpers : Hélène Chiapello, Benoist Laurent & Jacques van Helden
 
 <!--
 [Tutoriel](seance3/tutorial/README.md)
