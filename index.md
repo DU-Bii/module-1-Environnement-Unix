@@ -26,7 +26,7 @@ Lien court vers cette page : <https://huit.re/dubii-m1>
 
 - Mardi 03/03/2020 14:30 - 17:30
 - Instructeurs : Hélène Chiapello & Benoist Laurent
-- Helpers : Pierre Poulain
+- Helpers : Sandra Derozier & Pierre Poulain
 
 <!--
 [Présentation + TP](seance2/slides/index.html)
@@ -34,9 +34,9 @@ Lien court vers cette page : <https://huit.re/dubii-m1>
 
 ## Séance 3 - Gestion et utilisation des ressources IFB
 
-- Lundi 04/02/2019 10:00 - 13:00
-- Instructeurs : Benoist Laurent & Hélène Chiapello
-- Helpers : Pierre Poulain, Sandra Dérozier  
+- Jeudi 05/03/2020 9:00 - 12:00
+- Instructeurs : Julein Seiler & Pierre Poulain
+- Helpers : Hélène Chiapello & Benoist Laurent
 
 <!--
 [Tutoriel](seance3/tutorial/README.md)
@@ -46,7 +46,7 @@ Lien court vers cette page : <https://huit.re/dubii-m1>
 
 ## Séance 4 - Automatisation
 
-- Mercredi 06/02/2019 10:00 - 13:00
+- Mardi 10/03/2020 9:30 - 12:30
 - Instructeurs : Benoist Laurent & Hélène Chiapello
 - Helper : Pierre Poulain
 
@@ -55,6 +55,7 @@ Lien court vers cette page : <https://huit.re/dubii-m1>
 
 [Présentation](seance4/slides/index.html)
 -->
+
 
 ## Installer un *shell* Linux sur sa machine
 
