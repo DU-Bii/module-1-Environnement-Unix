@@ -1,5 +1,41 @@
 # Tutoriel 2 : Les bases d'Unix
 
+
+## Prérequis : téléchargement des jeux de données sur votre poste de travail 
+
+Sur votre station de travail, dans un *shell* :
+
+- déplacez-vous dans votre répertoire personnel,
+- créez le répertoire `dubii`,
+- déplacez-vous dans ce répertoire.
+
+> **Aide :**:
+> > ```bash
+> > $ cd ~
+> > $ mkdir dubii
+> > $ cd dubii
+> > ```
+{:.answer}
+
+
+Téléchargez les fichiers des jeux de données du DUBii avec la commande :
+
+```bash
+$ git clone https://github.com/DU-Bii/study-cases.git
+```
+
+Remarques :
+
+- L'instruction `git` vous sera expliquée un peu plus tard.
+- La commande à exécuter est assez longue et complexe. Pour éviter de faire des erreurs et aller plus vite, utilisez le copier/coller. Voici deux méthodes :
+    1. Sélectionnez la commande en la surlignant avec le clic gauche de votre souris. Puis dans votre shell, cliquez sur le bouton du milieu de votre souris.
+    2. Sélectionnez la commande en la surlignant avec le clic gauche de votre souris. Appuyez ensuite sur les touches `Ctrl` + `C` (c'est-à-dire les touches *Control* et *C* pressées en même temps). Dans votre shell, appuyez sur les touches `Ctrl` + `Maj` + `V` (c'est-à-dire les touches *Control*, *Majuscule* et *V* pressées en même temps).
+
+
+Patientez quelques instants que les données soient téléchargées.
+
+Déplacez-vous ensuite dans le répertoire `study-cases` nouvellement créé.
+
 ## Partie 2.1 : Espace disque
 
 ### Connaître le taux d'occupation des espaces disques d'un poste de travail
