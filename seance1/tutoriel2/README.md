@@ -61,26 +61,38 @@ $ df- h
 ### Connaître la quantité d'espace disque occupé par un fichier/dossier.
 
 La commande pour connaître la taille des fichiers présents dans un dossier est `ls -lh`.
+Déplacez-vous maintenant dans le répertoire `Escherichia_coli/bacterial-regulons_myers_2013/data/ChIP-seq`
+Astuce : utilisez la touche `Tab` (*Tabulation*) pour compléter les noms des répertoires.
 
-<blockquote>
-Exemple: Déterminer la quantité d'espace disque occupée par chacun des fichiers présents dans le répertoire `/home/sdv/dubii` et trier les fichiers du plus volumineux au moins volumineux :
+> **Aide :**:
+> > ```bash
+> > $ cd Escherichia_coli/bacterial-regulons_myers_2013/data/ChIP-seq
+> > ```
+{:.answer}
 
-```{bash}
-$ cd /home/sdv/dubii
-$ ls -lh
-# Afficher la taille des fichiers du dossier courant
-```
-</blockquote>
+Utilisez la commande `ls` avec les options `l` et `h` pour afficher le contenu du répertoire courant, puis déterminez la taille du fichier `FNR_200bp.wig`.
+
+> **Réponse :**:
+> > ```bash
+> > $ ls -lh
+> > total 264K
+> > -rw-r--r-- 1 pierre pierre 8,9K janv. 27 23:25 FNR1_vs_input1_cutadapt_bowtie2_homer.bed
+> > -rw-r--r-- 1 pierre pierre  45K janv. 27 23:25 FNR1_vs_input1_cutadapt_bowtie2_macs2.bed
+> > -rw-r--r-- 1 pierre pierre  80K janv. 27 23:25 FNR_200bp.wig
+> > -rw-r--r-- 1 pierre pierre  90K janv. 27 23:25 input_200bp.wig
+> > ```
+> > Le fichier `FNR_200bp.wig` a une taille de 80 ko (peut varier légèrement sur votre disque dur).
+{:.answer}
 
 Pour connaître la quantité d'espace disque occupée par un dossier, utiliser la commande `du` (disk usage), encore une fois avec l'option `-h`. On peut affichier la version résumé avec `-s`.
 
-<blockquote>
+
 Exemple: Afficher la taille des sous-dossiers du dossier `/home/sdv/dubii`.
 
 ```{bash}
 $ du -sh /home/sdv/dubii
 ```
-</blockquote>
+
 
 ## Partie 2.2 : Afficher le contenu d'un fichier
 
