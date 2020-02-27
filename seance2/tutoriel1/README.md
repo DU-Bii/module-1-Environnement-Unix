@@ -53,7 +53,7 @@ Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3**
 > > ```
 {:.answer}
 
-# Partie 2 : Extraction des données d'un fichier 
+# Partie 2.2 : Extraction des données d'un fichier 
 
 ## cut  
 
@@ -159,7 +159,36 @@ et `cutadapt_bwa_featureCounts_WT1_sorted_uniq.tsv` ?
 > > ```
 {:.answer}
 
-# Partie 3 : redirection des flux d'entrée et sortie et "|"
+# Partie 2.3 : redirection des flux d'entrée et sortie et "|"
+
+## Sauver le résultat d'une commande Linux dans un fichier : notion de redirection
+
+La possibilité de redirection de l'entrée ou de la sortie standard est une
+notion fondamentale du système d'exploitation Linux.
+
+Par défaut tout programme Linux a trois flots de direction :
+
+- une **entrée standard**, appelée `stdin` par défaut associée au **clavier**
+- une **sortie standard**, appelée `stdout`, par défaut associée à **l'écran**
+- une **erreur standard** appelée `stderr`, par défaut associée à **l'écran**
+
+Une redirection est une modification de l’une de ces associations.
+Elle est valable uniquement le temps de la commande sur laquelle elle porte.
+
+Pour modifier l'entrée standard d'une commande en lisant les données d'un
+fichier `infile` on utilise `< infile`.
+
+Pour modifier la sortie standard d'une commande et écrire les résultats dans un
+fichier `outfile` on utilise `> outfile` ou `>> outfile`
+
+Pour modifier l'erreur standard d'une commande et écrire les messages d'erreurs
+dans un fichier `errfile` on utilise : `2> errfile`.
+
+En résumé tout programme Linux peut s'écrire
+`$program < infile > outfile 2> errfile`
+
+**Question 10**: rediriger le résultat de la commande `cat` sur le fichier
+`ChIP-seq/FNR1_vs_input1_cutadapt_bowtie2_homer.bed` dans le fichier `test.txt`.
 
 ## Le pipe `|`
 
