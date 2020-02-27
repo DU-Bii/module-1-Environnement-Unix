@@ -189,6 +189,16 @@ En résumé tout programme Linux peut s'écrire
 
 **Question 10**: rediriger le résultat de la commande `cat` sur le fichier
 `ChIP-seq/FNR1_vs_input1_cutadapt_bowtie2_homer.bed` dans le fichier `test.txt`.
+Que contient le fichier `test.txt` ?
+
+> **Réponse**
+> > ```bash
+> > $ cat ChIP-seq/FNR1_vs_input1_cutadapt_bowtie2_homer.bed > test.txt
+> > ```
+> `cat` affiche le contenu de `ChIP-seq/FNR1_vs_input1_cutadapt_bowtie2_homer.bed`.
+> `>` redirige la sortie de la commande vers le fichier `test.txt`.
+> Finalement, le fichier `test.txt` contient le contenu du fichier `ChIP-seq/FNR1_vs_input1_cutadapt_bowtie2_homer.bed`.
+{:.answer}
 
 ## Le pipe `|`
 
