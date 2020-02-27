@@ -9,8 +9,8 @@ Rappel des prérequis : <https://du-bii.github.io/accueil/activites_preparatoire
 
 ## Intervenants
 
-- Hélène Chiapello, INRAE, `helene.chiapello@inra.fr`
-- Pierre Poulain, Univ. Paris Diderot, `pierre.poulain@univ-paris-diderot.fr`, [@pierrepo](https://twitter.com/pierrepo)
+- Hélène Chiapello, INRAE, `helene.chiapello@inra.fr`, [@HeleneChiapello](https://twitter.com/HeleneChiapello)
+- Pierre Poulain, Université de Paris, `pierre.poulain@univ-paris-diderot.fr`, [@pierrepo](https://twitter.com/pierrepo)
 - Benoist Laurent, IPBC, `benoist.laurent@ibpc.fr`
 - Julien Seiler, IGBMC, `seilerj@igbmc.fr`
 - Sandra Dérozier, INRAE, `sandra.derozier@inra.fr`
