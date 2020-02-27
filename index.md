@@ -10,28 +10,19 @@ Lien court vers cette page : <https://huit.re/dubii-m1>
 - Pierre Poulain, Univ. Paris Diderot, `<pierre.poulain@univ-paris-diderot.fr>`, [@pierrepo](https://twitter.com/pierrepo)
 - Benoist Laurent, CNRS, `<benoist.laurent@ibpc.fr>`
 - Julien Seiler, IGBMC, `<seilerj@igbmc.fr>`
-- Jacques van Helden, Institut Français de Bioinformatique + Univ. Aix-Marseille, `<Jacques.van-Helden@univ-amu.fr>`
 - Sandra Dérozier, INRA, `<sandra.derozier@inra.fr>`
-
-
-## Prérequis
-
-Les prérequis à ce module : [ici](prerequis/README.md)
-
-
-## Planning DU-Bii 2019
-
-<https://tinyurl.com/dubii19-planning>
 
 
 ## Séance 1 - Premiers pas
 
-- Lundi 28/01/2019 10:30 - 12:30
+- Lundi 02/03/2020 14:30 - 17:30
 - Instructeurs : Hélène Chiapello & Pierre Poulain
 - helpers : Benoist Laurent, Sandra Dérozier
 
 [Présentation](seance1/slides/index.html) - [Tutoriel](seance1/tutorial/README.md)
 
+
+<!--
 
 ## Séance 2 - Gestion et utilisation des ressources IFB
 
@@ -62,6 +53,7 @@ Les prérequis à ce module : [ici](prerequis/README.md)
 
 [Présentation](seance4/slides/index.html)
 
+-->
 
 ## Installer un *shell* Linux sur sa machine
 
