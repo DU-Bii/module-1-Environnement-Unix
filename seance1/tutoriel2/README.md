@@ -36,6 +36,18 @@ Patientez quelques instants que les données soient téléchargées.
 
 Déplacez-vous ensuite dans le répertoire `study-cases` nouvellement créé.
 
+> **Aide :**:
+> > ```bash
+> > $ cd study-cases
+> > ```
+{:.answer}
+
+Utilisez la commande `tree` pour visualiser l'arborescence qui représente l'organisation des répertoires, sous-répertoires et fichiers.
+
+```bash
+$ tree
+```
+
 ## Partie 2.1 : Espace disque
 
 ### Connaître le taux d'occupation des espaces disques d'un poste de travail
