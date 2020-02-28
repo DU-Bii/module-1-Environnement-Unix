@@ -38,3 +38,5 @@ Transférez le répertoire X de votre machine locale vers le serveur core.cluste
 
 ## Synchronisation de contenus avec rsync
 
+## A voir : commade wget pour récupérer par exemple un génome du NCBI ?
+
