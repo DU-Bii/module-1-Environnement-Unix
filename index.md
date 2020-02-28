@@ -24,7 +24,7 @@ Rappel des prérequis : <https://du-bii.github.io/accueil/activites_preparatoire
 - Instructeurs : Hélène Chiapello & Pierre Poulain
 - helpers : Benoist Laurent & Hubert Santuz
 
-[Introduction](seance1/slides_intro/index.html) - [Tutoriel 1](seance1/tutorial1/README.md) - [Tutoriel 2](seance1/tutoriel2/README.md) - [Bonnes pratiques](seance1/slides_good_practices/)
+[Introduction](seance1/slides_intro/) - [Tutoriel 1](seance1/tutorial1/README.md) - [Tutoriel 2](seance1/tutoriel2/README.md) - [Bonnes pratiques](seance1/slides_good_practices/)
 
 Bibliographie / webographie
 
