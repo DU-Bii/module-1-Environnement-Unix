@@ -24,8 +24,16 @@ Rappel des prérequis : <https://du-bii.github.io/accueil/activites_preparatoire
 - Instructeurs : Hélène Chiapello & Pierre Poulain
 - helpers : Benoist Laurent & Hubert Santuz
 
-[Présentation](seance1/slides_intro/index.html) - [Tutoriel 1](seance1/tutorial1/README.md) - [Tutoriel 2](seance1/tutoriel2/README.md)
+[Introduction](seance1/slides_intro/index.html) - [Tutoriel 1](seance1/tutorial1/README.md) - [Tutoriel 2](seance1/tutoriel2/README.md) - [Bonnes pratiques](seance1/slides_good_practices/)
 
+Bibliographie / webographie
+
+- Livre : [Bioinformatics Data Skills](http://shop.oreilly.com/product/0636920030157.do), Vince Buffalo, O'Reilly Media, 2015.
+- Article : [A Quick Guide to Organizing Computational Biology Projects](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000424), Noble, PLOS Comput Biol, 2009.
+- Article : [Good enough practices in scientific computing](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510), Wilson et al., PLOS Comput Biol, 2017.
+- Mémo : [A Critical Guide to Unix](https://f1000research.com/documents/7-1436), Attwood, F1000 Research, 2018.
+- Site internet : [The UNIX Shell](http://swcarpentry.github.io/shell-novice/), cours en ligne de *Software Carpentry*.
+- Site intenet : [Unix Fondamentals](https://edu.sib.swiss/pluginfile.php/2878/mod_resource/content/4/couselab-html/content.html), du *Swiss Institute of Bioinformatics*.
 
 ## Séance 2 - Gestion de flux et extraction de données
 
@@ -47,6 +55,10 @@ Rappel des prérequis : <https://du-bii.github.io/accueil/activites_preparatoire
 [Tutoriel](seance3/tutorial/README.md)
 
 [Changer son prompt](seance3/slides/index.html)
+
+Bibliographie / webographie
+
+- Site internet : [IFB SLURM cluster user guide](http://taskforce-nncr.gitlab.cluster.france-bioinformatique.fr/doc/slurm_user_guide/), guide d'utilisation du *cluster SLURM de l'Institut Français de Bioinformatique*.
 -->
 
 ## Séance 4 - Automatisation
@@ -88,19 +100,6 @@ Pour copier / coller entre Windows et le *shell* Linux :
 
 - Pour copier depuis Windows (<kbd>Ctrl</kbd>+<kbd>C</kbd>) puis coller dans le *shell* : clic droit de la souris.
 - Pour copier depuis le *shell* (<kbd>Ctrl</kbd>+<kbd>Maj</kbd>+<kbd>C</kbd>) puis coller dans Windows (<kbd>Ctrl</kbd>+<kbd>V</kbd>)
-
-
-## Bibliographie / webographie
-
-Livre :
-
-- [Bioinformatics Data Skills](http://shop.oreilly.com/product/0636920030157.do), Vince Buffalo, O'Reilly Media, 2015.
-
-Sites internet :
-
-- [The UNIX Shell](http://swcarpentry.github.io/shell-novice/), cours en ligne de *Software Carpentry*.
-- [Unix Fondamentals](https://edu.sib.swiss/pluginfile.php/2878/mod_resource/content/4/couselab-html/content.html), du *Swiss Institute of Bioinformatics*.
-- [IFB SLURM cluster user guide](http://taskforce-nncr.gitlab.cluster.france-bioinformatique.fr/doc/slurm_user_guide/), guide d'utilisation du *cluster SLURM de l'Institut Français de Bioinformatique*.
 
 
 ## Licence
