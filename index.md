@@ -24,7 +24,7 @@ Rappel des prérequis : <https://du-bii.github.io/accueil/activites_preparatoire
 - Instructeurs : Hélène Chiapello & Pierre Poulain
 - helpers : Benoist Laurent & Hubert Santuz
 
-[Présentation](seance1/slides/index.html) - [Tutoriel](seance1/tutorial/README.md)
+[Présentation](seance1/slides_intro/index.html) - [Tutoriel 1](seance1/tutorial1/README.md) - [Tutoriel 2](seance1/tutoriel2/README.md)
 
 
 ## Séance 2 - Gestion de flux et extraction de données
