@@ -6,7 +6,7 @@ Sous Unix, on utilise la commande `ssh` pour établir une communication sécuris
 sur un réseau informatique (intranet ou Internet) entre une machine locale (le client) et une machine distante (le serveur)
 La syntaxe de la commande est la suivante :
 
-ssh <nom_utilisateur>@nom_machine
+ssh <nom_utilisateur>@nom_serveur_distant
 
 Question : Connectez-vous au serveur **core.cluster.france-bioinformatique.fr** en utilisant la commande `ssh`.
 
@@ -16,13 +16,24 @@ Question : Connectez-vous au serveur **core.cluster.france-bioinformatique.fr** 
 > > ```
 {:.answer}
 
-## Transfert - copie de fichiers
+## Transfert - copie de fichiers - avec scp
 Pour copier un fichier à partir d'un ordinateur sur un autre vous devrez utiliser la commande `scp`. 
 La syntaxe est la suivante :
 
-scp <fichier> <username>@<ServeurDistant>:<RépertoireDestination>
-  
-Exercice: 
+### Pour un fichier
+
+scp monfichier.txt <nom_utilisateur>@<nom_serveur_distant>:<répertoire_destination>
+
+Exemple :
+
+### Pour un répertoire :
+
+scp -r monrépertoire <nom_utilisateur>@<nom_serveur_distant>:<répertoire_destination>
+
+Exemple : 
+
 
 Transférez le fichier X de votre machine locale vers le serveur core.cluster.france-bioinformatique.fr dans votre répertoire utilisateur par défaut ("home")
+
+## Synchronisation de contenus avec rsync
 
