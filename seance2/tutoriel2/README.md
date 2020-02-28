@@ -3,7 +3,7 @@
 ## Connexion à un serveur distant
 
 Sous Unix, on utilise la commande `ssh` pour établir une communication sécurisée, 
-sur un réseau informatique (intranet ou Internet) entre une machine locale (le client) et une machine distante (le serveur)
+sur un réseau informatique (Intranet ou Internet) entre une machine locale (le client) et une machine distante (le serveur).
 La syntaxe de la commande est la suivante :
 
 ssh <nom_utilisateur>@nom_serveur_distant
@@ -32,8 +32,9 @@ scp -r monrépertoire <nom_utilisateur>@<nom_serveur_distant>:<répertoire_desti
 
 Exemple : 
 
+Exercice :
 
-Transférez le fichier X de votre machine locale vers le serveur core.cluster.france-bioinformatique.fr dans votre répertoire utilisateur par défaut ("home")
+Transférez le répertoire X de votre machine locale vers le serveur core.cluster.france-bioinformatique.fr dans votre répertoire utilisateur par défaut ("home")
 
 ## Synchronisation de contenus avec rsync
 
