@@ -14,25 +14,13 @@ Sur votre station de travail, dans un *shell* :
 - déplacez-vous dans ce répertoire.
 
 > **Aide :**:
+> > Le caractère `$` au début de chaque ligne est un repère qui représente votre invite de commande. Il ne faut pas entrer ce caractère dans votre ligne de commande.
 > > ```bash
 > > $ cd ~
 > > $ mkdir dubii
 > > $ cd dubii
 > > ```
 {:.answer}
-
-<details> 
-<summary><b>Aide :</b></summary>
-Le caractère `$` au début de chaque ligne est un repère qui représente votre invite de commande. Il ne faut pas entrer ce caractère dans votre ligne de commande.
-```bash
-$ cd ~
-$ mkdir dubii
-$ cd dubii
-```
-</details> 
-
-
-
 
 Téléchargez les fichiers des jeux de données du DUBii avec la commande :
 
