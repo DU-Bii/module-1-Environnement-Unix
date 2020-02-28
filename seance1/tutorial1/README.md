@@ -2,8 +2,6 @@
 
 - **Répertoires** : Afficher le répertoire courant. Afficher le contenu d'un répertoire. Changer de répertoire. Créer, déplacer et supprimer un répertoire.
 - **Aborescence Linux** : Distinguer la notion de chemin absolu et relatif. Utiliser les raccourcis de l'arborescence Linux (`.`, `..`, `~`). Afficher l'arborescence Linux.
-- **Fichiers** : Copier, supprimer et déplacer un fichier. Nommer un fichier avec une extension adéquate. Utiliser les caractères spéciaux (`*`, `?`). Afficher le contenu d'un fichier (complet, le début, la fin). Modifier un fichier avec un éditeur de texte.
-
 
 # Partie 1 : les fichiers et les répertoires
 
@@ -102,53 +100,6 @@ En restant dans le même répertoire, déterminez le nombre de fichiers présent
 ---
 
 # Partie 3 : les commandes Linux : aide, répétition, redirection
-
-## Avoir de l'aide sur une commande
-
-Sous Linux toutes les commandes sont documentées de manière standardisée.
-
-Il y a deux moyens d'accèder à l'aide d'une commande :
-
-- via la commande `man <nom_commande>` qui permet d'accéder au manuel
-(description complète) de la commande page par page avec les facilités de
-recherche d'un éditeur de texte,
-
-- via l'option `<nom_commande> --help`: on affiche un résumé de la
-documentation et des options à l'écran.
-
-**Question 8** : Quelle signifie l'option `-N` de la commande less ?
-
-> **Réponse**:
-> > ```bash
-> > $ man less
-> > [...]
-> >   -n  -N  ....  --line-numbers  --LINE-NUMBERS
-> >                   Don't use line numbers.
-> > [...]
-> > ```
-> L'option `-N` sert à afficher les numéros des lignes à gauche de chaque ligne.
-{:.answer}
-
-## Répéter une commande : notion d'historique
-
-Le système d'exploitation Linux garde en mémoire les commandes lancées par un
-utilisateur dans un terminal.
-La liste des commandes lancées par un utilisateur est accessible via la commande
-`history`.
-Il est aussi possible de retrouver une commande en utilisant la commande `!`
-Par exemple la commande `!?expression?` permet de relancer la dernière commande
-utilisée contenant le mot `expression`.
-La commande `!grep` permet de relancer la dernière commande utilisée comemnçant par 'grep'
-
-**Question 9** : que fait la commande `!n -3` ?
-
-> **Réponse**:
-> > Cette commande permet d'exécuter la 3° dernière commande exécutée.
-{:.answer}
-
-On peut également retrouver les commandes déjà exécutées en naviguant dans
-l'historique avec les flèches du clavier.
-
 
 ## Sauver le résultat d'une commande Linux dans un fichier : notion de redirection
 
