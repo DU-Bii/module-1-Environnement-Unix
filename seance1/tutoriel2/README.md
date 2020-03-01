@@ -55,7 +55,7 @@ $ tree
 La commande `df` (pour *disk free*) permet de connaître les quantités d'espace occupé et disponible pour tous les disques du système. L'option `-h` permet d'utiliser les multiples "human readable" (ko, Mo, Go, To, ...).
 
 ```{bash}
-$ df- h
+$ df -h
 ```
 
 ### Connaître la quantité d'espace disque occupé par un fichier/dossier.
