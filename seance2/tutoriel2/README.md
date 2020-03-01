@@ -37,9 +37,13 @@ scp -r monrépertoire <nom_utilisateur>@<nom_serveur_distant>:<répertoire_desti
 
 Exemple : 
 
-Exercice :
+Question : Transférez le répertoire study-cases/Escherichia_coli/bacterial-regulons_myers_2013/data/ChIP-seq de votre machine locale vers le serveur core.cluster.france-bioinformatique.fr dans votre répertoire utilisateur par défaut ("home directory")
 
-Transférez le répertoire X de votre machine locale vers le serveur core.cluster.france-bioinformatique.fr dans votre répertoire utilisateur par défaut ("home")
+> **Solution :**:
+> > ```bash
+> > $ scp -r study-cases/Escherichia_coli/bacterial-regulons_myers_2013/data/ChIP-seq ~/
+> > ```
+{:.answer}
 
 ## Synchronisation de contenus avec rsync
 
