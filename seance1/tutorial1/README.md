@@ -3,9 +3,9 @@
 - **Répertoires** : Afficher le répertoire courant. Afficher le contenu d'un répertoire. Changer de répertoire. Créer, déplacer et supprimer un répertoire.
 - **Aborescence Linux** : Distinguer la notion de chemin absolu et relatif. Utiliser les raccourcis de l'arborescence Linux (`.`, `..`, `~`). Afficher l'arborescence Linux.
 
-# Partie 1 : les fichiers et les répertoires
+# Tutoriel 1 : exploration de fichiers et de répertoires
 
-Sur votre station de travail, dans un *shell* :
+Sur votre station de travail, ouvrez un *shell*, puis :
 
 - déplacez-vous dans votre répertoire personnel,
 - créez le répertoire `dubii`,
@@ -26,9 +26,8 @@ Téléchargez les fichiers des jeux de données du DUBii avec la commande :
 $ git clone https://github.com/DU-Bii/study-cases.git
 ```
 
-Remarques :
+Remarque :
 
-- L'instruction `git` vous sera expliquée un peu plus tard.
 - La commande à exécuter est assez longue et complexe. Pour éviter de faire des erreurs et aller plus vite, utilisez le copier/coller. Voici deux méthodes :
     1. Sélectionnez la commande en la surlignant avec le clic gauche de votre souris. Puis dans votre shell, cliquez sur le bouton du milieu de votre souris.
     2. Sélectionnez la commande en la surlignant avec le clic gauche de votre souris. Appuyez ensuite sur les touches <kbd>Ctrl</kbd> + <kbd>C</kbd> (c'est-à-dire les touches <kbd>Control</kbd> et <kbd>C</kbd> pressées en même temps). Dans votre shell, appuyez sur les touches <kbd>Ctrl</kbd> + <kbd>Maj</kbd> + <kbd>V</kbd> (c'est-à-dire les touches <kbd>Control</kbd>, <kbd>Majuscule</kbd> et <kbd>V</kbd> pressées en même temps).
@@ -97,45 +96,3 @@ En restant dans le même répertoire, déterminez le nombre de fichiers présent
 > > Il y a un seul fichier.
 {:.answer}
 
----
-
-# Partie 3 : les commandes Linux : aide, répétition, redirection
-
-## Sauver le résultat d'une commande Linux dans un fichier : notion de redirection
-
-La possibilité de redirection de l'entrée ou de la sortie standard est une
-notion fondamentale du système d'exploitation Linux.
-
-Par défaut tout programme Linux a trois flots de direction :
-
-- une **entrée standard**, appelée `stdin` par défaut associée au **clavier**
-- une **sortie standard**, appelée `stdout`, par défaut associée à **l'écran**
-- une **erreur standard** appelée `stderr`, par défaut associée à **l'écran**
-
-Une redirection est une modification de l’une de ces associations.
-Elle est valable uniquement le temps de la commande sur laquelle elle porte.
-
-Pour modifier l'entrée standard d'une commande en lisant les données d'un
-fichier `infile` on utilise `< infile`.
-
-Pour modifier la sortie standard d'une commande et écrire les résultats dans un
-fichier `outfile` on utilise `> outfile` ou `>> outfile`
-
-Pour modifier l'erreur standard d'une commande et écrire les messages d'erreurs
-dans un fichier `errfile` on utilise : `2> errfile`.
-
-En résumé tout programme Linux peut s'écrire
-`$program < infile > outfile 2> errfile`
-
-**Question 10**: rediriger le résultat de la commande `cat` sur le fichier
-`ChIP-seq/FNR1_vs_input1_cutadapt_bowtie2_homer.bed` dans le fichier `test.txt`.
-Que contient le fichier `test.txt` ?
-
-> **Réponse**
-> > ```bash
-> > $ cat ChIP-seq/FNR1_vs_input1_cutadapt_bowtie2_homer.bed > test.txt
-> > ```
-> `cat` affiche le contenu de `ChIP-seq/FNR1_vs_input1_cutadapt_bowtie2_homer.bed`.
-> `>` redirige la sortie de la commande vers le fichier `test.txt`.
-> Finalement, le fichier `test.txt` contient le contenu du fichier `ChIP-seq/FNR1_vs_input1_cutadapt_bowtie2_homer.bed`.
-{:.answer}

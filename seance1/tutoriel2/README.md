@@ -1,52 +1,9 @@
 # Tutoriel 2 : Les bases d'Unix
 
+Vous devez au préalable avoir réalisé le tutoriel 1 et notamment téléchargé le jeu de données *study-cases*.
 
-## Prérequis : téléchargement des jeux de données sur votre poste de travail 
+Ouvrez également un *shell* et dirigez-vous dans le répertoire `dubii/study-cases` (créé dans le tutoriel précédent).
 
-Sur votre station de travail, dans un *shell* :
-
-- déplacez-vous dans votre répertoire personnel,
-- créez le répertoire `dubii`,
-- déplacez-vous dans ce répertoire.
-
-> **Aide :**:
-> > ```bash
-> > $ cd ~
-> > $ mkdir dubii
-> > $ cd dubii
-> > ```
-{:.answer}
-
-
-Téléchargez les fichiers des jeux de données du DUBii avec la commande :
-
-```bash
-$ git clone https://github.com/DU-Bii/study-cases.git
-```
-
-Remarques :
-
-- L'instruction `git` vous sera expliquée un peu plus tard.
-- La commande à exécuter est assez longue et complexe. Pour éviter de faire des erreurs et aller plus vite, utilisez le copier/coller. Voici deux méthodes :
-    1. Sélectionnez la commande en la surlignant avec le clic gauche de votre souris. Puis dans votre shell, cliquez sur le bouton du milieu de votre souris.
-    2. Sélectionnez la commande en la surlignant avec le clic gauche de votre souris. Appuyez ensuite sur les touches `Ctrl` + `C` (c'est-à-dire les touches *Control* et *C* pressées en même temps). Dans votre shell, appuyez sur les touches `Ctrl` + `Maj` + `V` (c'est-à-dire les touches *Control*, *Majuscule* et *V* pressées en même temps).
-
-
-Patientez quelques instants que les données soient téléchargées.
-
-Déplacez-vous ensuite dans le répertoire `study-cases` nouvellement créé.
-
-> **Aide :**:
-> > ```bash
-> > $ cd study-cases
-> > ```
-{:.answer}
-
-Utilisez la commande `tree` pour visualiser l'arborescence qui représente l'organisation des répertoires, sous-répertoires et fichiers.
-
-```bash
-$ tree
-```
 
 ## Partie 2.1 : Espace disque
 
@@ -266,9 +223,6 @@ Utiliser l'option `-n N` pour afficher les `N` dernières lignes d'un fichier.
 
 Il existe beaucoup d'éditeurs de fichiers textes sour Linux.
 
-
-[![Un bon éditeur](img/un-bon-editeur.png)](img/un-bon-editeur.png)
-
 Parmi les plus connus on trouve : `vi`, `emacs` et `nano`.  
 ___Nano___ est l'éditeur le plus simple à utiliser.
 
@@ -350,6 +304,7 @@ documentation et des options à l'écran.
 > L'option `-N` sert à afficher les numéros des lignes à gauche de chaque ligne.
 {:.answer}
 
+
 ## Partie 2.5 : Répéter une commande, notion d'historique
 
 Le système d'exploitation Linux garde en mémoire les commandes lancées par un
@@ -369,3 +324,43 @@ La commande `!grep` permet de relancer la dernière commande utilisée comemnça
 
 On peut également retrouver les commandes déjà exécutées en naviguant dans
 l'historique avec les flèches du clavier.
+
+
+## Partie 2.6 : Sauver le résultat d'une commande Linux dans un fichier
+
+La possibilité de redirection de l'entrée ou de la sortie standard est une
+notion fondamentale du système d'exploitation Linux.
+
+Par défaut tout programme Linux a trois flux de données :
+
+- une **entrée standard**, appelée `stdin` par défaut associée au **clavier**
+- une **sortie standard**, appelée `stdout`, par défaut associée à **l'écran**
+- une **erreur standard** appelée `stderr`, par défaut associée à **l'écran**
+
+Une redirection est une modification de l’une de ces associations.
+Elle est valable uniquement le temps de la commande sur laquelle elle porte.
+
+Pour modifier l'entrée standard d'une commande en lisant les données d'un
+fichier `infile` on utilise `< infile`.
+
+Pour modifier la sortie standard d'une commande et écrire les résultats dans un
+fichier `outfile` on utilise `> outfile` ou `>> outfile`
+
+Pour modifier l'erreur standard d'une commande et écrire les messages d'erreurs
+dans un fichier `errfile` on utilise : `2> errfile`.
+
+En résumé tout programme Linux peut s'écrire
+`$program < infile > outfile 2> errfile`
+
+**Question 10**: rediriger le résultat de la commande `cat` sur le fichier
+`ChIP-seq/FNR1_vs_input1_cutadapt_bowtie2_homer.bed` dans le fichier `test.txt`.
+Que contient le fichier `test.txt` ?
+
+> **Réponse**
+> > ```bash
+> > $ cat ChIP-seq/FNR1_vs_input1_cutadapt_bowtie2_homer.bed > test.txt
+> > ```
+> `cat` affiche le contenu de `ChIP-seq/FNR1_vs_input1_cutadapt_bowtie2_homer.bed`.
+> `>` redirige la sortie de la commande vers le fichier `test.txt`.
+> Finalement, le fichier `test.txt` contient le contenu du fichier `ChIP-seq/FNR1_vs_input1_cutadapt_bowtie2_homer.bed`.
+{:.answer}
