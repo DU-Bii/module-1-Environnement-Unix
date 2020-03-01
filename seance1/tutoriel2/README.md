@@ -2,7 +2,7 @@
 
 Vous devez au préalable avoir réalisé le tutoriel 1 et notamment téléchargé le jeu de données *study-cases*.
 
-Ouvrez également un *shell* et dirigez-vous dans le répertoire `dubii/study-cases` (créé dans le tutoriel précédent).
+Ouvrez un *shell* puis déplacez-vous dans le répertoire `dubii/study-cases` (créé dans le tutoriel précédent).
 
 
 ## Partie 2.1 : Espace disque
