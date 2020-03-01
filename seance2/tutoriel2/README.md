@@ -41,7 +41,7 @@ Question : Transférez le répertoire study-cases/Escherichia_coli/bacterial-reg
 
 > **Solution :**:
 > > ```bash
-> > $ scp -r study-cases/Escherichia_coli/bacterial-regulons_myers_2013/data/ChIP-seq ~/
+> > $ scp -r study-cases/Escherichia_coli/bacterial-regulons_myers_2013/data/ChIP-seq hchiapello@core.cluster.france-bioinformatique.fr:~/
 > > ```
 {:.answer}
 
