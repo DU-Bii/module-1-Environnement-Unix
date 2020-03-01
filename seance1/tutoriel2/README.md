@@ -87,10 +87,15 @@ Utilisez la commande `ls` avec les options `l` et `h` pour afficher le contenu d
 Pour connaître la quantité d'espace disque occupée par un dossier, utiliser la commande `du` (disk usage), encore une fois avec l'option `-h`. On peut affichier la version résumé avec `-s`.
 
 
-Exemple: Afficher la taille des sous-dossiers du dossier `/home/sdv/dubii`.
+Exemple: Déterminer la taille du dossier `study-cases`.
 
-```{bash}
-$ du -sh /home/sdv/dubii
+> **Réponse :**:
+> > ```bash
+> > $ du -sh ./study-cases
+ 89M	/Users/helenechiapello/Desktop/Hélène/COURS/DUBii/dubii/study-cases
+> > ```
+> > Le dossier `study-cases` a une taille totale de 89 Mo.
+{:.answer}
 ```
 
 
