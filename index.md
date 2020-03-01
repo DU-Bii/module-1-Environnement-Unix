@@ -9,12 +9,12 @@ Rappel des prérequis : <https://du-bii.github.io/accueil/activites_preparatoire
 
 ## Intervenants
 
-- Hélène Chiapello, INRAE, `helene.chiapello@inra.fr`, [@HeleneChiapello](https://twitter.com/HeleneChiapello)
+- Hélène Chiapello, INRAE, `helene.chiapello@inrae.fr`, [@HeleneChiapello](https://twitter.com/HeleneChiapello)
 - Pierre Poulain, Université de Paris, `pierre.poulain@univ-paris-diderot.fr`, [@pierrepo](https://twitter.com/pierrepo)
 - Benoist Laurent, IPBC, `benoist.laurent@ibpc.fr`
 - Julien Seiler, IGBMC, `seilerj@igbmc.fr`
 - Jacques van Helden, Institut Français de Bioinformatique et Univ. Aix-Marseille, `Jacques.van-Helden@univ-amu.fr`
-- Sandra Dérozier, INRAE, `sandra.derozier@inra.fr`
+- Sandra Dérozier, INRAE, `sandra.derozier@inrae.fr`
 - Hubert Santuz, CNRS, `hubert.santuz@ibpc.fr`
 
 
@@ -24,7 +24,7 @@ Rappel des prérequis : <https://du-bii.github.io/accueil/activites_preparatoire
 - Instructeurs : Hélène Chiapello & Pierre Poulain
 - helpers : Benoist Laurent & Hubert Santuz
 
-[Introduction](seance1/slides_intro/Unix_seance1_introduction_methodes.pdf) - [Tutoriel 1](seance1/tutorial1/README.md) - [Tutoriel 2](seance1/tutoriel2/README.md) - [Bonnes pratiques](seance1/slides_good_practices/)
+[Introduction](seance1/slides_intro/Unix_seance1_introduction_methodes.pdf) - [Tutoriel 1](seance1/tutorial1/README.md) - [Tutoriel 2](seance1/tutoriel2/README.md) - [Bonnes pratiques](seance1/slides_good_practices/Unix_seance1_bonnes_pratiques_bioinfo.pdf)
 
 Bibliographie / webographie
 
