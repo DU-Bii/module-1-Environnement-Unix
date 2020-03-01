@@ -86,13 +86,11 @@ Si vous travaillez avec Windows :
 
 - Pour Windows 7. Nous vous conseillons d'installer [Git pour Windows](https://git-for-windows.github.io/) qui en plus du gestionnaire de versions git installera un *shell* Linux.
 - Pour Windows 10. Vous pouvez installer très rapidement un *shell* Linux. Voici quelques liens pour y arriver :
-    + <https://www.windowscentral.com/how-install-bash-shell-command-line-windows-10>
-    + <https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/>
-    + <https://www.howtogeek.com/265900/everything-you-can-do-with-windows-10s-new-bash-shell/>
+    + [Installer le shell Bash Linux sous Windows 10 avec WSL](https://www.youtube.com/watch?v=CyG16N3GJWo), 2020.
+    + [How to install Windows Subsystem for Linux (WSL) on Windows 10](How to install Windows Subsystem for Linux (WSL) on Windows 10), 2019.
+    + [Everything You Can Do With Windows 10’s New Bash Shell](https://www.howtogeek.com/265900/everything-you-can-do-with-windows-10s-new-bash-shell/), 2018.
 
     Depuis un *shell* Linux, votre répertoire utilisateur de Windows est accessible via le chemin `/mnt/c/Users/<login-windows>` ou `<login-windows>` est votre *login* sous Windows. Nous vous conseillons de travailler depuis ce répertoire afin que vos fichiers puissent également être visibles depuis Windows.
-
-Ces recommandations sont tirées du site de [Software Carpentry](https://carpentries.org/) dédié au [*Shell*](http://swcarpentry.github.io/shell-novice/setup.html).
 
 Si vous souhaitez simplement un logiciel sous Windows pour vous connecter au cluster du NNCR en SSH. Nous vous conseillons [MobaXterm](https://mobaxterm.mobatek.net/). La version [*Free*](https://mobaxterm.mobatek.net/download.html) est suffisante. Vous trouverez quelques vidéos de démo [ici](https://mobaxterm.mobatek.net/demo.html).
 
