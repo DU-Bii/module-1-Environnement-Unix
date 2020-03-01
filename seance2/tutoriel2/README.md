@@ -24,7 +24,12 @@ La syntaxe est la suivante :
 
 scp monfichier.txt <nom_utilisateur>@<nom_serveur_distant>:<répertoire_destination>
 
-Exemple :
+Question : copier le fichier `Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3` dans votre  répertoire utilisateur ("home directory") du serveur core cluster de l'IFB :
+> **Solution :**:
+> > ```bash
+> > $ scp Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3 hchiapello@core.cluster.france-bioinformatique.fr:~/ 
+> > ```
+{:.answer}
 
 ### Pour un répertoire :
 
