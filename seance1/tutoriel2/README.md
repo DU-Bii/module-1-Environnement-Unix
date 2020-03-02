@@ -316,7 +316,7 @@ Par exemple la commande `!?expression?` permet de relancer la dernière commande
 utilisée contenant le mot `expression`.
 La commande `!grep` permet de relancer la dernière commande utilisée comemnçant par 'grep'
 
-**Question 9** : que fait la commande `!n -3` ?
+**Question 9** : que fait la commande `!-3` ?
 
 > **Réponse**:
 > > Cette commande permet d'exécuter la 3° dernière commande exécutée.
