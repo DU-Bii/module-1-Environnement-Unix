@@ -10,7 +10,7 @@ class: left, top
 Une expression régulière (en anglais *Regular Expression*) 
 est une chaîne de caractères décrivant un ensemble de chaîne de
 caractères.
-
+--
 ```bash
 $ # Liste des fichiers du répertoire courant
 $ ls -lh 
@@ -28,6 +28,6 @@ $ ls -lh *.bed
 
 ---
 
-# This is slide 2 (or 3)
+# Une syntaxe par outil
 
-Hello world!
+.center[grep ≠ sed ≠ awk ≠ Python]
