@@ -44,8 +44,17 @@ Bibliographie / webographie
 <!--
 [Présentation + TP](seance2/slides/index.html)
 -->
-Révision - [tutoriel1](seance2/tutoriel1/README.md) - Expressions régulières, initiation à sed et awk -
-Compression et archivage -[tutoriel2](seance2/tutoriel2/README.md)
+
+**Contenu :**
+
+- Révisions
+- Traitement de fichiers
+- Expressions régulières (`sed` & `awk`)
+- Compression et archivage
+- Machines distantes
+
+[Liens vers les tutoriels](seance2/index.md)
+
 
 ## Séance 3 - Gestion et utilisation des ressources IFB
 

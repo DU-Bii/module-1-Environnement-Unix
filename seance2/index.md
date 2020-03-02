@@ -1,8 +1,9 @@
-# Utilisation de SLURM sur l'infrastrusture de calul de l'IFB
+# Séance 2 : Manipulation avancée de fichiers et données sous Unix
 
-## Liens utiles
+Cette séance est divisée en 5 parties :
 
-* [Diapositives du cours (en anglais)](https://du-bii.github.io/module-1-Environnement-Unix/seance2/slides/)
-* [Pierre de rosette des systèmes de Batch](https://slurm.schedmd.com/rosetta.pdf)
-* [Documentation du Core Cluster de l'IFB](http://taskforce-nncr.gitlab.cluster.france-bioinformatique.fr/doc/)
-* [Demande de comptes/projets sur le Core Cluster de l'IFB](https://goo.gl/forms/Npp5QHeKtpaWoTip1)
+1. Révision et consolidation séance 1
+2. [Extraction et flux de données](tutorial/01-flux.md)
+3. Expressions régulières (`sed` & `awk`)
+4. Compression et archivage
+5. [Transfert de fichiers](tutorial/05-ssh_scp.md)
