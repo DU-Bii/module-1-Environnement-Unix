@@ -1,4 +1,4 @@
-# Tutoriel 2 : connexion à un serveur distant, transfert de fichier
+# Partie 2.5 : connexion à un serveur distant, transfert de fichier
 
 ## Connexion à un serveur distant
 
