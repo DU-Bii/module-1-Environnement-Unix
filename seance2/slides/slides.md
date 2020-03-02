@@ -29,6 +29,12 @@ $ ls -lh *.bed
 
 ---
 
-# Une syntaxe par outil
+# Nombre d'outils, autant de syntaxes
+
+* `grep`
+* `sed`
+* `awk`
+* `Python`
+* ...
 
 .center[grep ≠ sed ≠ awk ≠ Python]
