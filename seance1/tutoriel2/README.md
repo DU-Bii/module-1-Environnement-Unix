@@ -49,9 +49,9 @@ Exemple: Déterminer la taille du dossier `study-cases`.
 > **Réponse :**:
 > > ```bash
 > > $ du -sh ./study-cases
- 89M	/Users/helenechiapello/Desktop/Hélène/COURS/DUBii/dubii/study-cases
+ 92M	/Users/helenechiapello/Desktop/Hélène/COURS/DUBii/dubii/study-cases
 > > ```
-> > Le dossier `study-cases` a une taille totale de 89 Mo.
+> > Le dossier `study-cases` a une taille totale de 92 Mo.
 {:.answer}
 ```
 
@@ -254,7 +254,7 @@ de page en page (les raccourcis <kbd>CTRL-Y</kbd> et <kbd>CTRL-V</kbd> fonctionn
 
 **Question 6** : ouvrir avec l'éditeur `nano` le fichier `Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3`  
 **Recommandations :**  
-- Créer un répertoire ~/DUBii/study-cases/Escherichia_coli/bacterial-regulons_myers_2013/data/Annotations  
+- Créer un répertoire ~/dubii/study-cases/Escherichia_coli/bacterial-regulons_myers_2013/data/Annotations  
 - Télécharger depuis le site https://du-bii.github.io/study-cases/Escherichia_coli/bacterial-regulons_myers_2013/ le fichier `Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3`
 
 - Rechercher les lignes contenant le nom de gène `oriC` et afficher le numéro de ces lignes

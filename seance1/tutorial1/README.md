@@ -76,7 +76,7 @@ Utilisez la commande `ls` avec les options `l` et `h` pour afficher le contenu d
 > **Réponse :**:
 > > ```bash
 > > $ ls -lh
-> > total 264K
+> > total 240K
 > > -rw-r--r-- 1 pierre pierre 8,9K janv. 27 23:25 FNR1_vs_input1_cutadapt_bowtie2_homer.bed
 > > -rw-r--r-- 1 pierre pierre  45K janv. 27 23:25 FNR1_vs_input1_cutadapt_bowtie2_macs2.bed
 > > -rw-r--r-- 1 pierre pierre  80K janv. 27 23:25 FNR_200bp.wig
