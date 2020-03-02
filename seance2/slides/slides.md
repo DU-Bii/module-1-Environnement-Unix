@@ -2,9 +2,7 @@ class: left, top
 
 # Les expressions régulières Unix
 
-
 --- 
-
 
 # Expressions régulière - Définition
 Une expression régulière (en anglais *Regular Expression*) 
@@ -15,3 +13,9 @@ caractères.
 $ # Liste de tous les fichiers bed dans le répertoire courant
 $ ls *.bed
 ```
+
+---
+
+# This is slide 2 (or 3)
+
+Hello world!
