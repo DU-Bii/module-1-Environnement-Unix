@@ -45,15 +45,7 @@ Bibliographie / webographie
 [Présentation + TP](seance2/slides/index.html)
 -->
 
-**Contenu :**
-
-- Révisions
-- Traitement de fichiers
-- Expressions régulières (`sed` & `awk`)
-- Compression et archivage
-- Machines distantes
-
-[Liens vers les tutoriels](seance2/index.md)
+[Lien vers la séance 2](seance2/index.md)
 
 
 ## Séance 3 - Gestion et utilisation des ressources IFB
