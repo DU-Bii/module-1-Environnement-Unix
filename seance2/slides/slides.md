@@ -1,9 +1,10 @@
-class: left, top
 
 class: center, middle
 # Les expressions régulières Unix
 
 --- 
+
+class: left, top
 
 # Expressions régulière - Définition
 Une expression régulière (en anglais *Regular Expression*) 
