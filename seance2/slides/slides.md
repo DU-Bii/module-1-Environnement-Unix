@@ -2,7 +2,7 @@
 class: center, middle
 # Les expressions régulières Unix
 
---- 
+---
 
 class: left, top
 
