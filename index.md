@@ -44,10 +44,10 @@ Bibliographie / webographie
 <!--
 [Présentation + TP](seance2/slides/index.html)
 -->
-Révision et consolidation séance 1
-Extraction et flux de données [tutoriel1](seance2/tutoriel1/README.md)
-Expressions régulières, initiation à sed et awk
-Compression et archivage
+Révision et consolidation séance 1 -
+Extraction et flux de données [tutoriel1](seance2/tutoriel1/README.md) -
+Expressions régulières, initiation à sed et awk -
+Compression et archivage -
 Transfert de fichiers [tutoriel2](seance2/tutoriel2/README.md)
 
 ## Séance 3 - Gestion et utilisation des ressources IFB
