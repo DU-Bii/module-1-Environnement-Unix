@@ -7,3 +7,5 @@ Cette séance est divisée en 5 parties :
 3. Expressions régulières (`sed` & `awk`)
 4. Compression et archivage
 5. [Transfert de fichiers](tutorial/05-ssh_scp.md)
+
+[Lien vers les slides](slides/index.html)
