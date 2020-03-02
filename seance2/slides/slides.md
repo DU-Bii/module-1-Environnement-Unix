@@ -1,5 +1,6 @@
 class: left, top
 
+class: center, middle
 # Les expressions régulières Unix
 
 --- 
