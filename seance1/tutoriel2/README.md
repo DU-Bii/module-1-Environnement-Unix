@@ -253,10 +253,14 @@ qu'avec les touches <kbd>PageUp</kbd> et <kbd>PageDown</kbd> pour avancer
 de page en page (les raccourcis <kbd>CTRL-Y</kbd> et <kbd>CTRL-V</kbd> fonctionnent aussi).
 
 **Question 6** : ouvrir avec l'éditeur `nano` le fichier `Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3`  
-**Recommandations :**  
-- Créer un répertoire ~/dubii/study-cases/Escherichia_coli/bacterial-regulons_myers_2013/data/Annotations  
-- Télécharger depuis le site https://du-bii.github.io/study-cases/Escherichia_coli/bacterial-regulons_myers_2013/ le fichier `Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3`
 
+**Recommandations :**  
+- Créer un répertoire `~/dubii/study-cases/Escherichia_coli/bacterial-regulons_myers_2013/data/Annotations`  
+- Dans un navigateur internet, ouvrir la page <https://du-bii.github.io/study-cases/Escherichia_coli/bacterial-regulons_myers_2013/>
+- Cliquer sur *Genome annotations (GFF3 format)* pour télécharger le fichier `Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3`
+- Le déplacer dans le répertoire précédemment créé (`~/dubii/study-cases/Escherichia_coli/bacterial-regulons_myers_2013/data/Annotations`)
+- Décompresser ce fichier avec la commande `gunzip Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3.gz`
+- vérifier que le fichier `Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3` existe.
 - Rechercher les lignes contenant le nom de gène `oriC` et afficher le numéro de ces lignes
 - Supprimer ces lignes
 - Enregistrer le fichier sous le nom `Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome_wo_oriC.gff`
