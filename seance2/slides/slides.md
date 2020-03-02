@@ -1,7 +1,12 @@
-class: center, middle
+class: left, top
 
 # Les expressions régulières Unix
 
+
+--- 
+
+
+# Expressions régulière - Définition
 Une expression régulière (en anglais *Regular Expression*) 
 est une chaîne de caractères décrivant un ensemble de chaîne de
 caractères.
