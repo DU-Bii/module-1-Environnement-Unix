@@ -1,4 +1,6 @@
 
+class: center, middle
+
 # DUBiii 2020 - Unix 2
 
 Hélène Chiapello<br/>
