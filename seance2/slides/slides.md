@@ -58,5 +58,43 @@ et dnaD dans le fichier
 
 ```bash
 $ grep -e "dna[A-D]" Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3 
+```
 
 ---
+
+# `sed` : *Stream Editor*
+
+`sed` permet de filtrer et transformer les lignes d'un fichier passé
+en argument.
+
+```bash
+$ # Syntaxe :
+$ sed [expression] <fichier>
+```
+
+---
+
+# `sed` : Exemple 1
+
+Remplacer toutes les occurences de `Chromosome` par `chr`.
+
+--
+
+```bash
+$ sed 's/Chromosome/chr/g' Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3 > gff_modified.gff3
+```
+
+---
+
+# `sed` : Exemple 2
+
+Supprimer toutes les lignes contenant la chaîne de caractère `dnaC`
+
+--
+
+```bash
+$ Escherichia_coli/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3 > gff_no-dnaC.gff3
+```
+
+---
+
