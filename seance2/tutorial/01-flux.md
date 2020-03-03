@@ -226,7 +226,7 @@ Le fichier est dans le répertoire `~/dubii/study_cases/Escherichia_coli/`
 > **Solution :**  
 >
 > > ```bash  
-> > $ cut -f 9 /shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3 | cut -d';' -f 1 | grep 'gene' | sort -u | wc -l  
+> > $ cut -f 9 ~/dubii/study_cases/Escherichia_coli/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3 | cut -d';' -f 1 | grep 'gene' | sort -u | wc -l  
 $ 4498  
 > > ```
 {:.answer}
