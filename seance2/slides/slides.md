@@ -234,3 +234,38 @@ $ tar xvzf <SOURCE>
 -- 
 
 - `-Ph` permet de voir l'avancement de la copie
+
+---
+
+class: center, middle
+# Les variables d'environnement
+
+---
+
+class: center, middle
+
+# Les variables d'environnement
+
+Les variables d'environnement sont un ensemble de variable utilisées
+en interne par les différents programmes, ou simplement comme
+raccourcis dans le terminal.
+
+---
+
+# Exemple : HOME
+
+La variable d'environnement `HOME` contient le chemin
+vers votre répertoire utilisateur:
+
+```bash
+$ echo $HOME
+/home/laurent
+```
+
+---
+
+# Définir / supprimer une variable d'environnement
+
+* définition : `export`
+* suppression : `unset`
+
