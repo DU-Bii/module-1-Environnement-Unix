@@ -10,7 +10,7 @@ nom ou une partie du nom du fichier recherché
 
 **Syntaxe** : `find [chemin] -name <MOTIF>`  
 
-**Question 1 : Aller dans le répertoire `study-cases` et rechercher tous les
+**Question 1** : Aller dans le répertoire `study-cases` et rechercher tous les
 fichiers au format bed (i.e. dont l'extension est `.bed`)**
 
 > **Solution :**: 
@@ -38,7 +38,7 @@ La commande grep a beaucoup d'options très utiles, par exemple :
 - `-n` : préfixe chaque ligne de sortie avec son numéro de ligne
 - `-c` : affiche uniquement le nombre total de lignes contenant le motif  
 
-**Question 2 : rechercher toutes les occurences du gène 'oriC' en affichant le
+**Question 2** : rechercher toutes les occurences du gène 'oriC' en affichant le
 numéro de ligne de chaque occurence dans le fichier 
 Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3**
 
@@ -77,7 +77,7 @@ Exemple : extraction de la deuxième colonne d'un fichier au format csv
 $ cut -d "," -f 2 <CSV_FILE>
 ```
 
-**Question 3 : Rendez-vous dans le répertoire `Escherichia_coli/bacterial-regulons_myers_2013/data/RNA-seq`.
+**Question 3** : Rendez-vous dans le répertoire `Escherichia_coli/bacterial-regulons_myers_2013/data/RNA-seq`.
 Extraire de deux manières différentes la colonne Geneid du fichier `cutadapt_bwa_featureCounts_all.tsv`**
 
 > **Solution :**   
@@ -105,7 +105,7 @@ La commande `sort` permet de trier les lignes du ou des fichiers donnés en argu
 l'ordre numérique.
 Pour faire un tri numérique utiliser l'option `-n`.
 
-**Question 4 : Extraire la 2ème colonne 'WT1' du fichier `cutadapt_bwa_featureCounts_all.tsv`
+**Question 4** : Extraire la 2ème colonne 'WT1' du fichier `cutadapt_bwa_featureCounts_all.tsv`
 en redirigeant le résultat dans un fichier de sortie 'cutadapt_bwa_featureCounts_WT1.tsv'.
 Trier ensuite les valeurs de ce fichier par ordre croissant et écrire le résultat
 dans le fichier `cutadapt_bwa_featureCounts_WT1_sorted.tsv`.
@@ -130,7 +130,7 @@ Les options les plus couramment utilisées de `uniq` sont :
 - `-d` pour afficher les lignes dupliquées,
 - `-i` pour ignore la casse.
 
-**Question 5 : Éliminer les lignes dupliquées du fichier `cutadapt_bwa_featureCounts_WT1_sorted.tsv`
+**Question 5** : Éliminer les lignes dupliquées du fichier `cutadapt_bwa_featureCounts_WT1_sorted.tsv`
 et écrire le résultat dans le fichier `cutadapt_bwa_featureCounts_WT1_sorted_uniq.tsv`    
 
 > **Solution :**  
@@ -145,7 +145,7 @@ et écrire le résultat dans le fichier `cutadapt_bwa_featureCounts_WT1_sorted_u
 La commande `wc` (*word count*) permet de compter le nombre de lignes, de mots
 et de caractères du fichier ou des fichiers donnés en argument.
 
-**Question 6 : Comment afficher uniquement le nombre de lignes d'un fichier ?
+**Question 6** : Comment afficher uniquement le nombre de lignes d'un fichier ?
 Combien de lignes y a-t-il dans les fichiers `cutadapt_bwa_featureCounts_WT1_sorted.tsv` 
 et `cutadapt_bwa_featureCounts_WT1_sorted_uniq.tsv` ?
 
@@ -158,6 +158,7 @@ et `cutadapt_bwa_featureCounts_WT1_sorted_uniq.tsv` ?
 > > 1357 cutadapt_bwa_featureCounts_WT1_sorted_uniq.tsv
 > > ```
 {:.answer}
+
 
 # Partie 2.3 : redirection des flux d'entrée et sortie et "|"
 
@@ -187,7 +188,7 @@ dans un fichier `errfile` on utilise : `2> errfile`.
 En résumé tout programme Linux peut s'écrire
 `$program < infile > outfile 2> errfile`
 
-**Question 10**: rediriger le résultat de la commande `cat` sur le fichier
+**Question 7**: rediriger le résultat de la commande `cat` sur le fichier
 `ChIP-seq/FNR1_vs_input1_cutadapt_bowtie2_homer.bed` dans le fichier `test.txt`.
 Que contient le fichier `test.txt` ?
 
@@ -209,7 +210,7 @@ ou la sortie erreur d'une commande vers un fichier de son choix.
 Le `|` permet rediriger la sortie d'une commande vers l'entrée d'une autre commande.
 On peut enchainer un nombre pratiquement illimité de commandes grâce à des pipes.
 
-**Question : Comment afficher page par page le nombre d'occurences de chaque
+**Question 8** : Comment afficher page par page le nombre d'occurences de chaque
 valeur de la colonne `WT1` du fichier `cutadapt_bwa_featureCounts_all.tsv` en 1 seule commande ?**
 
 > **Solution :** 
@@ -219,7 +220,7 @@ valeur de la colonne `WT1` du fichier `cutadapt_bwa_featureCounts_all.tsv` en 1 
 {:.answer}
 
 
-**Question 7 : Utiliser le `|` et les commandes précédentes pour déterminer le nombre de gènes uniques dans le fichier `Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3`  
+**Question 9** : Utiliser le `|` et les commandes précédentes pour déterminer le nombre de gènes uniques dans le fichier `Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3`  
 Le fichier est dans le répertoire /shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/  
 >
 > **Solution :**  
