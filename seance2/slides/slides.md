@@ -21,7 +21,7 @@ total 232K
 -rw-r--r-- 1 benoist staff  80K Mar  2 23:49 FNR_200bp.wig
 -rw-r--r-- 1 benoist staff  90K Mar  2 23:49 input_200bp.wig
 
-$ # Seule les fichiers .bed
+$ # Seulement les fichiers .bed
 $ ls -lh *.bed
 -rw-r--r-- 1 benoist staff 8.9K Mar  2 23:49 FNR1_vs_input1_cutadapt_bowtie2_homer.bed
 -rw-r--r-- 1 benoist staff  45K Mar  2 23:49 FNR1_vs_input1_cutadapt_bowtie2_macs2.bed
@@ -46,7 +46,7 @@ grep ≠ sed ≠ awk ≠ Python
 - `^` indique une recherche d'un motif en début de ligne  
 - `$` indique une recherche d'un motif en fin de ligne  
 
---- 
+---
 
 # Exercice
 
@@ -93,7 +93,7 @@ Supprimer toutes les lignes contenant la chaîne de caractère `dnaC`
 --
 
 ```bash
-$ Escherichia_coli/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3 > gff_no-dnaC.gff3
+$ sed '/dnaC/d' Escherichia_coli/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3 > gff_no-dnaC.gff3
 ```
 
 ---
@@ -150,7 +150,12 @@ Autres outils de compression/décompression : `bzip2`, `7z`, ...
 * `zless`
 * `zcat`
 * `zgrep`
+* ...
 
+* `bzless`
+* `bzcat`
+* `bzgrep`
+* ...
 
 ---
 
