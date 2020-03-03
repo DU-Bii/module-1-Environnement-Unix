@@ -44,7 +44,7 @@ Question : Transférer le répertoire study-cases/Escherichia_coli/bacterial-reg
 > > ```
 {:.answer}
 
-## Synchronisation de contenus avec rsync
+## Si vous voulez aller plus loin
 
 Exercice :  récupérer un génome Refseq de votre choix sur le site du NCBI avec la commande `rsync`
 voir documentation ici : https://www.ncbi.nlm.nih.gov/genome/doc/ftpfaq/ 
