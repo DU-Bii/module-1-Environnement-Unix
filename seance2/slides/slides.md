@@ -67,8 +67,7 @@ grep ≠ sed ≠ awk ≠ Python
 
 # Exercice
 
-Rechercher tous les noms de gènes nommés dnaA, dnaB, dnaC
-et dnaD dans le fichier
+Rechercher tous gènes nommés dnaA, dnaB, dnaC et dnaD dans le fichier
 `Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3`
 
 --
@@ -195,3 +194,43 @@ $ tar xvf <nom_de_l_archive> <liste_des_entrees>
 
 On peut compresser/décompresser à la volée en utilisant
 les options `-z` (gzip) et `-j` (bzip2).
+
+---
+
+class: center, middle
+# rsync
+
+---
+
+* Sert à faire de la copie et du transfert de fichier
+* Détecte les éléments ajoutés/supprimés/modifiés et ne considère que ceux-ci
+
+---
+
+# rsync : création d'une archive
+
+```bash
+$ tar cvzf <SOURCE> <DESTINATION>
+```
+
+- `c` : mode création
+- `v` : mode verbeux
+- `z` : mode compression avec gzip
+- `f <NOM>` : nom de l'archive créée
+
+---
+
+# rsync : extration d'une archive
+
+```bash
+$ tar xvzf <SOURCE>
+```
+
+---
+
+# rsync : des options intéressantes
+
+- `--exclude` permet d'exclure certains éléments de la copie
+-- 
+
+- `-Ph` permet de voir l'avancement de la copie

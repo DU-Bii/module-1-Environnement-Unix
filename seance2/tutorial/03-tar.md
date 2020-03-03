@@ -217,7 +217,6 @@ fichiers au fur et à mesure qu'ils sont ajoutés à l'archive) :
 ```bash
 $ # Idem mais en compressant l'archive à la volée.
 $ tar cvzf Arabidopsis_thaliana.tar.gz Arabidopsis_thaliana
-$ tar cvzf Arabidopsis_thaliana.tar.gz Arabidopsis_thaliana
 Arabidopsis_thaliana/
 Arabidopsis_thaliana/metabo_proteo_Strehmel_2017/
 Arabidopsis_thaliana/metabo_proteo_Strehmel_2017/Strehmel revised suppl tables/
@@ -254,6 +253,15 @@ Arabidopsis_thaliana/transcripto_proteo_metabo_Liang_2016/GSM1388556_WT_1.Gene.r
 Arabidopsis_thaliana/transcripto_proteo_metabo_Liang_2016/12870_2016_726_MOESM4_ESM.xlsx
 Arabidopsis_thaliana/transcripto_proteo_metabo_Liang_2016/12870_2016_726_MOESM19_ESM.xlsx
 Arabidopsis_thaliana/transcripto_proteo_metabo_Liang_2016/12870_2016_726_MOESM3_ESM.xlsx
+```
+
+Par ailleurs, l'option `--exclude <PATTERN>` permet d'exclude certains fichiers de l'archive.
+
+**Exemple:**
+
+```bash
+$ # Création d'une archive du répertoire study-cases en ne tenant pas compte du dossier .git
+$ tar cvzf ~/study-cases.tar.gz --exclude ".git" ~/study-cases
 ```
 
 ### Extraction d'une archive
