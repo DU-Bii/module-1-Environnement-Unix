@@ -1,5 +1,4 @@
 
-Cette séance est divisée en 6 parties :
 
 1. Révision et consolidation séance 1
 2. [Extraction et flux de données](01-flux.md)
