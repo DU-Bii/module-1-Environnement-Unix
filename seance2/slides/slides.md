@@ -17,6 +17,12 @@ https://du-bii.github.io/module-1-Environnement-Unix/
 ---
 
 class: center, middle
+# Révisions de la séance 1
+
+
+---
+
+class: center, middle
 # Les expressions régulières Unix
 
 ---
