@@ -1,4 +1,4 @@
-# Partie 2.3 : Notions sur les expressions régulières
+# Partie 2.2 : Notions sur les expressions régulières
 
 ## Les expressions de bases  
 
@@ -62,6 +62,3 @@ Pour cela on utilise la fonction de subsitution *s*
 Supprimons toutes les lignes contenant le nom `oriC` dans le fichier Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3  
 Pour cela on utilise la fonction de suppression *d*  
 `sed '/oriC/d' Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3  > Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome_wo_oriC.gff`
-
-
-Suite : [Espace de stockage, compression et archivage des données](05_tar.md)
