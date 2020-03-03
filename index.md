@@ -41,11 +41,9 @@ Bibliographie / webographie
 - Instructeurs : Hélène Chiapello & Benoist Laurent
 - Helpers : Sandra Derozier & Pierre Poulain
 
-<!--
-[Présentation + TP](seance2/slides/index.html)
--->
 
-[Lien vers la séance 2](seance2/index.md)
+[Présentation](seance2/slides/index.html) <br />
+[Support](seance2/tutorial/index.md)
 
 
 ## Séance 3 - Gestion et utilisation des ressources IFB
