@@ -229,3 +229,5 @@ Le fichier est dans le répertoire /shared/projects/du_bii_2019/data/study_cases
 $ 4498  
 > > ```
 {:.answer}
+
+[Retour au sommaire](index.md)

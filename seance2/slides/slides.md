@@ -98,3 +98,78 @@ $ Escherichia_coli/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosom
 
 ---
 
+class: center, middle
+# Compression / Archivage
+
+---
+
+# Revisions
+
+* Quantité d'espace disponible sur un disque : `df -h`
+--
+
+* Liste des fichiers avec leur taille : `ls -lh`
+--
+
+* Espace disque occupé par un dossier : `du -h`
+--
+
+* Trouver les fichiers volumineux : `find -size`
+
+---
+
+# Compression/décompression d'un fichier
+
+La méthode la plus commune pour compresser un fichier est 
+d'utiliser `gzip` :
+
+```bash
+$ ls -lh 12870_2016_726_MOESM10_ESM.tsv
+-rw-r--r-- 1 benoist staff 1.6M Mar  2 23:49 12870_2016_726_MOESM10_ESM.tsv
+$ gzip 12870_2016_726_MOESM10_ESM.tsv
+$ ls -lh 12870_2016_726_MOESM10_ESM.tsv.gz
+-rw-r--r-- 1 benoist staff 346K Mar  2 23:49 12870_2016_726_MOESM10_ESM.tsv.gz
+```
+
+---
+
+# Compression/décompression d'un fichier
+
+Pour décompresser ce fichier, utiliser `gunzip` : 
+
+```bash
+$ gunzip 12870_2016_726_MOESM10_ESM.tsv.gz
+```
+
+Autres outils de compression/décompression : `bzip2`, `7z`, ...
+
+---
+
+# Travailler avec des fichiers compressés
+
+* `zless`
+* `zcat`
+* `zgrep`
+
+
+---
+
+# Réduire le nombre de fichier présents sur un disque
+
+La commande `tar` permet de réunir plusieurs fichiers et/ou dossiers
+en une seule archive :
+
+```bash
+$ # Création d'une archive
+$ tar cvf <nom_de_l_archive> <liste_des_entrees>
+```
+--
+
+```bash
+$ # Désarchivage
+$ tar xvf <nom_de_l_archive> <liste_des_entrees>
+```
+--
+
+On peut compresser/décompresser à la volée en utilisant
+les options `-z` (gzip) et `-j` (bzip2).
