@@ -103,7 +103,7 @@ Extraire de deux manières différentes la colonne Geneid du fichier `cutadapt_b
 La commande `sort` permet de trier les lignes du ou des fichiers donnés en argument  
 **Attention**: le tri par défaut est selon le code ASCII et pas selon 
 l'ordre numérique.
-Pour faire un tri numérique utiliser l'option `-n`.
+Pour faire un tri numérique, utiliser l'option `-g` (plus polyvalente que l'option `-n` habituellement préconisée).
 
 **Question 4** : Extraire la 2ème colonne 'WT1' du fichier `cutadapt_bwa_featureCounts_all.tsv`
 en redirigeant le résultat dans un fichier de sortie 'cutadapt_bwa_featureCounts_WT1.tsv'.
@@ -113,7 +113,7 @@ dans le fichier `cutadapt_bwa_featureCounts_WT1_sorted.tsv`.
 > **Solution :**  
 > > ```bash  
 > > cut -f 2 cutadapt_bwa_featureCounts_all.tsv > cutadapt_bwa_featureCounts_WT1.tsv
-> > sort -n cutadapt_bwa_featureCounts_WT1.tsv > cutadapt_bwa_featureCounts_WT1_sorted.tsv
+> > sort -g cutadapt_bwa_featureCounts_WT1.tsv > cutadapt_bwa_featureCounts_WT1_sorted.tsv
 > > ```
 {:.answer}
 
@@ -215,7 +215,7 @@ valeur de la colonne `WT1` du fichier `cutadapt_bwa_featureCounts_all.tsv` en 1 
 
 > **Solution :** 
 > > ```bash 
-> > $ cut -f 2 cutadapt_bwa_featureCounts_all.tsv | sort | uniq -c | less
+> > $ cut -f 2 cutadapt_bwa_featureCounts_all.tsv | sort -g | uniq -c | less
 > > ```
 {:.answer}
 
