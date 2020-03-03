@@ -208,6 +208,8 @@ class: center, middle
 
 ---
 
+# rsync
+
 * Sert à faire de la copie et du transfert de fichier
 * Détecte les éléments ajoutés/supprimés/modifiés et ne considère que ceux-ci
 
