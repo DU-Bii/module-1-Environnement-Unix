@@ -28,10 +28,9 @@ Les expressions régulières vont se baser sur des caractères spéciaux ou mét
 - `^` indique une recherche d'un motif en début de ligne  
 - `$` indique une recherche d'un motif en fin de ligne  
 
-**Question 8 :** Rechercher tous les noms de gènes du fichier
+**Question :** Rechercher tous les noms de gènes nommés dnaA, dnaB, dnaC
+et dnaD dans le fichier
 `Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3`
-correspondant à oriA, oriB, oriC et oriD avec la commande `grep` et en
-utilisant une expression régulière.
 
 > **Solution :**  
 > > ```bash 

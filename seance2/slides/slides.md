@@ -29,8 +29,34 @@ $ ls -lh *.bed
 
 ---
 
+class: middle, center
+
 # Nombre d'outils, autant de syntaxes
 
+grep ≠ sed ≠ awk ≠ Python
 
+---
 
-.middle[.center[grep ≠ sed ≠ awk ≠ Python]]
+# Métacaractères
+
+- `.` correspond à n'importe quel caractère  
+- `*` correspond à une répétition de 0 à n occurences (déconseillé) 
+- `+` correspond à une répétition de 1 à n occurences 
+- les caractères entre crochets (`[ ]`) correspondent à un ensemble de valeurs possibles (intervale ou explicites par exemple `[A-D]` est équivalent à [A,B,C,D]
+- `^` indique une recherche d'un motif en début de ligne  
+- `$` indique une recherche d'un motif en fin de ligne  
+
+--- 
+
+# Exercice
+
+Rechercher tous les noms de gènes nommés dnaA, dnaB, dnaC
+et dnaD dans le fichier
+`Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3`
+
+--
+
+```bash
+$ grep -e "dna[A-D]" Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3 
+
+---
