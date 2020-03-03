@@ -1,4 +1,18 @@
 
+# DUBiii 2020 - Unix 2
+
+Hélène Chiapello<br/>
+Benoist Laurent
+
+Pierre Poulain<br/>
+Sandra Dérozier
+
+
+.footer[
+https://du-bii.github.io/module-1-Environnement-Unix/
+]
+
+
 class: center, middle
 # Les expressions régulières Unix
 
