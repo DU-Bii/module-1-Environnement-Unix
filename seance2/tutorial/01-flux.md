@@ -221,7 +221,7 @@ valeur de la colonne `WT1` du fichier `cutadapt_bwa_featureCounts_all.tsv` en 1 
 
 
 **Question 9** : Utiliser le `|` et les commandes précédentes pour déterminer le nombre de gènes uniques dans le fichier `Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3`  
-Le fichier est dans le répertoire /shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/  
+Le fichier est dans le répertoire `~/dubii/study_cases/Escherichia_coli/`  
 >
 > **Solution :**  
 >
