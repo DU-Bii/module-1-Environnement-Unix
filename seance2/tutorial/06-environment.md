@@ -1,4 +1,4 @@
-# Environnement
+# Partie 2.6 : l'environnement
 
 ## Variables d'environnement
 

@@ -1,5 +1,5 @@
 
-# Un mot sur rsync
+# Partie 2.5: rsync
 
 **Syntax**: `rsync [options] <SOURCE> <DESTINATION>`
 

@@ -47,7 +47,7 @@ Bibliographie / webographie
     - [Extraction et flux de données](seance2/tutorial/01-flux.md)
     - [Expressions régulières](seance2/tutorial/02-regex.md)
     - [Compression et archivage](seance2/tutorial/03-tar.md)
-    - [Transfert de fichiers](seance2/tutorial/04-ssh_scp.md)
+    - [Travail à distance (ssh & scp)](seance2/tutorial/04-ssh_scp.md)
     - [rsync](seance2/tutorial/05-rsync.md)
     - [Les variables d'environnement](seance2/tutorial/06-environment.md)
 
