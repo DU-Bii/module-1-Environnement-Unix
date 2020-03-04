@@ -204,10 +204,6 @@ template: slurm
 tar xvzf my_data.tar.gz
 ```
 
---
-
-.center[![A job](images/bowtie2.drawio.png)]
-
 ---
 template: slurm
 
@@ -221,7 +217,7 @@ sbatch myscript.sh
 
 The job will be placed in the jobs queue till the resources required to run the job are available.
 
-By default, all output of the job are redirected to a file called slurm-<jobid>.out in your current folder.
+By default, all output of the job are redirected to a file called `slurm-<jobid>.out` in your current folder.
 
 You can use the `sbatch` paramater `-o` and `-e` to change the standard output and error output default location.
 When defining the file name you can use special characters like :<br/>
@@ -505,12 +501,12 @@ Submitted batch job 5251623
 
 ```
 $ sacct --format=JobID,JobName,Elapsed,State -j 5251623
-       JobID    JobName    CPUTime    Elapsed      State
------------- ---------- ---------- ---------- ----------
-5251623      random-nu+   00:00:22   00:00:58  COMPLETED
-5251623.bat+      batch   00:00:2   00:00:58  COMPLETED
-5251623.0          shuf   00:00:03   00:00:05  COMPLETED
-5251623.1          sort   00:00:19   00:00:52  COMPLETED
+       JobID    JobName    Elapsed      State
+------------ ---------- ---------- ----------
+5251623      random-nu+   00:00:17  COMPLETED
+5251623.bat+      batch   00:00:17  COMPLETED
+5251623.0          shuf   00:00:04  COMPLETED
+5251623.1          sort   00:00:13  COMPLETED
 ```
 
 ---
@@ -586,12 +582,12 @@ template: slurm
 
 ## Job priority
 
-Job priority is determined according to several criteria:
-Age: the amount of time the job has been on hold. This criterion will have its maximum value after 7 days.
-Fair-Share: the difference between the amount of computing resources promised and the amount of resources used. Valid only for the last 14 days.
-Job Size: the number of nodes or CPUs requested (large jobs have priority)
+Job priority is determined according to several criteria:<br/>
+**Age**: the amount of time the job has been on hold. This criterion will have its maximum value after 7 days.<br/>
+**Fair-Share**: the difference between the amount of computing resources promised and the amount of resources used. Valid only for the last 14 days.<br/>
+**Job Size**: the number of nodes or CPUs requested (large jobs have priority)<br/>
 
-For each job, SLURM calculates a value between 0 and 1 for each criterion. Then a ponderation is applied according to the cluster configuration.
+For each job, SLURM calculates a value between 0 and 1 for each criterion. Then a ponderation is applied according to the cluster configuration.<br/>
 
 The `sprio` command allows you to consult the application of the priority criteria.
 
@@ -644,6 +640,171 @@ $ sacct --format=JobID,JobName,NCPUS,CPUTime,Elapsed,State -j 5263299
 5263299.0          shuf          1   00:00:04   00:00:04  COMPLETED
 5263299.1          sort         32   00:06:56   00:00:13  COMPLETED
 ```
+
+---
+
+template: slurm
+
+## Exercice 6 : sorting numbers... faster
+
+* Modify the `sort` step to use multiple cores
+* Check that the job is running faster ?
+* Can you image other ways to make this job faster ?
+
+--
+
+**Splitting the shuf step in several tasks**
+
+Write a script that generate a given amount of random numbers :
+
+`shuf.sh`
+```
+#! /bin/bash
+shuf -i 1-10000000000 -n $1 -r -o numbers.$RANDOM.txt
+```
+
+---
+
+template: slurm
+
+## Exercice 6 : sorting numbers... faster
+
+* Modify the `sort` step to use multiple cores
+* Check that the job is running faster ?
+* Can you image other ways to make this job faster ?
+
+Modify the job script to use the shuf script to generate 10 times 1 millions random numbers:
+
+```
+#! /bin/bash
+
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=32
+
+srun --cpus-per-task=1 --ntasks=10 ./shuf.sh 1000000
+cat numbers.*.txt > numbers.txt
+srun sort --parallel=32 -g -o numbers.sorted.txt numbers.txt
+```
+
+---
+
+template: slurm
+
+## How to parallelize ?
+
+SLURM offers several way to parallelize your processing.
+
+
+**Multithreading**<br/>
+*One process can run on several CPU using threads*
+
+- TopHat: `-p` / `--num-threads`
+- Bowtie2: `-p` / `--threads`
+- Trinity: `--CPU`
+- sort: `--parallel`
+
+<br/>
+.callout.callout-warning[Multithreading is not possible with all software]
+
+<br/><br/>
+
+**Multiprocessing (or multitasking)**<br/>
+*Several process of the same software can run in parallel*
+
+---
+
+template: slurm
+
+## Common parallelization patterns
+
+### Input data splitting
+
+.center[![Input data splitting pattern](images/input_splitting_pattern.drawio.png)]
+
+---
+
+template: slurm
+
+## Common parallelization patterns
+
+### Variables exploration
+
+.center[![Variable exploration pattern](images/multiparams_pattern.drawio.png)]
+
+---
+
+template: slurm
+
+## Using `--array`
+
+Example:
+
+.left-column[
+`fastqc.sh`
+```bash
+#!/bin/bash
+#SBATCH --array=0-29  # 30 jobs
+
+INPUTS=(../fastqc/*.fq.gz)
+
+srun fastqc ${INPUTS[$SLURM_ARRAY_TASK_ID]}
+```
+
+```
+$ sbatch fastqc.sh
+Submitted batch job 3161045
+```
+
+`--array=1,2,4,8`<br/>
+`--array=0,100:5 # equivalent to 5,10,15,20...`<br/>
+`--array=1-50000%200 # 200 jobs max at the time`
+
+]
+
+--
+
+.right-column[
+`multiqc.sh`
+```bash
+#!/bin/bash
+
+srun multiqc .
+
+```
+
+```
+$ sbatch --dependency=afterok:3161045 multiqc.sh
+```
+]
+
+---
+template: slurm
+
+## Exercice 7: multiple numbers sorting
+
+* Run a job array that generate 10 files with 10 millions random numbers between 1 and 10 billion and then sort them
+
+--
+
+Let's update our `random-numbers.sh` script:
+
+```
+#! /bin/bash
+
+#SBATCH --array=1-10
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=32
+
+srun --cpus-per-task=1 shuf -i 1-10000000000 -n 10000000 -r -o numbers.$SLURM_ARRAY_TASK_ID.txt
+srun sort -g --parallel=32 -o numbers.$SLURM_ARRAY_TASK_ID.sorted.txt numbers.$SLURM_ARRAY_TASK_ID.txt
+```
+
+Run the job array:
+```
+$ sbatch random-numbers.sh
+```
+
+---
 
 ---
 template: slurm
@@ -769,121 +930,4 @@ $ squeue
 JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
     2      fast data_ana  jseiler PD       0:00      1 cpu-node1(Dependency)
     3      fast data_dow  jseiler  R       0:33      1 cpu-node1
-```
-
----
-template: slurm
-
-## How to parallelize ?
-
-SLURM offers several way to parallelize your processing.
-
-
-**Multithreading**<br/>
-*One process can run on several CPU using threads*
-
-- TopHat: `-p` / `--num-threads`
-- Bowtie2: `-p` / `--threads`
-- Trinity: `--CPU`
-- sort: `--parallel`
-
-<br/>
-.callout.callout-warning[Multithreading is not possible with all software]
-
-<br/><br/>
-
-**Multiprocessing (or multitasking)**<br/>
-*Several process of the same software can run in parallel*
-
----
-
-template: slurm
-
-## Common parallelization patterns
-
-### Input data splitting
-
-.center[![Input data splitting pattern](images/input_splitting_pattern.drawio.png)]
-
----
-
-template: slurm
-
-## Common parallelization patterns
-
-### Variables exploration
-
-.center[![Variable exploration pattern](images/multiparams_pattern.drawio.png)]
-
----
-
-template: slurm
-
-## Using `--array`
-
-Example:
-
-.left-column[
-`fastqc.sh`
-```bash
-#!/bin/bash
-#SBATCH --array=0-29  # 30 jobs
-
-INPUTS=(../fastqc/*.fq.gz)
-
-srun fastqc ${INPUTS[$SLURM_ARRAY_TASK_ID]}
-```
-
-```
-$ sbatch fastqc.sh
-Submitted batch job 3161045
-```
-
-`--array=1,2,4,8`<br/>
-`--array=0,100:5 # equivalent to 5,10,15,20...`<br/>
-`--array=1-50000%200 # 200 jobs max at the time`
-
-]
-
---
-
-.right-column[
-`multiqc.sh`
-```bash
-#!/bin/bash
-
-srun multiqc .
-
-```
-
-```
-$ sbatch --dependency=afterok:3161045 multiqc.sh
-```
-]
-
----
-template: slurm
-
-## Exercice 7: multiple numbers sorting
-
-* Run a job array that generate 10 files with 10 millions random numbers between 1 and 10 billion and then sort them
-
---
-
-Let's update our `random-numbers.sh` script:
-
-```
-#! /bin/bash
-
-#SBATCH --array=1-10
-#SBATCH --ntasks=1
-#SBATCH --cpus-per-task=32
-
-srun --cpus-per-task=1 shuf -i 1-10000000000 -n 10000000 -r -o numbers.$SLURM_ARRAY_TASK_ID.txt
-srun sort -g --parallel=32 -o numbers.$SLURM_ARRAY_TASK_ID.sorted.txt numbers.$SLURM_ARRAY_TASK_ID.txt
-```
-
-Run the job array:
-```
-$ sbatch random-numbers.sh
 ```
