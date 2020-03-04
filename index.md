@@ -42,8 +42,14 @@ Bibliographie / webographie
 - Helpers : Sandra Derozier & Pierre Poulain
 
 
-[Présentation](seance2/slides/index.html) <br />
-[Support](seance2/tutorial/index.md)
+- [Présentation](seance2/slides/index.html) <br />
+- [Support](seance2/tutorial/index.md)
+    - [Extraction et flux de données](seance2/tutorial/01-flux.md)
+    - [Expressions régulières](seance2/tutorial/02-regex.md)
+    - [Compression et archivage](seance2/tutorial/03-tar.md)
+    - [Transfert de fichiers](seance2/tutorial/04-ssh_scp.md)
+    - [rsync](seance2/tutorial/05-rsync.md)
+    - [Les variables d'environnement](seance2/tutorial/06-environment.md)
 
 
 ## Séance 3 - Gestion et utilisation des ressources IFB
