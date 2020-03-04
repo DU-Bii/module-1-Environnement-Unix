@@ -48,8 +48,6 @@ Bibliographie / webographie
     - [Expressions régulières](seance2/tutorial/02-regex.md)
     - [Compression et archivage](seance2/tutorial/03-tar.md)
     - [Travail à distance (ssh & scp)](seance2/tutorial/04-ssh_scp.md)
-    - [rsync](seance2/tutorial/05-rsync.md)
-    - [Les variables d'environnement](seance2/tutorial/06-environment.md)
 
 
 ## Séance 3 - Gestion et utilisation des ressources IFB
