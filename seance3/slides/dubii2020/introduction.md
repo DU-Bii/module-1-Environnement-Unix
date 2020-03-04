@@ -5,7 +5,7 @@ class: center, middle
 ## DU-Bii 2020
 
 Julien Seiler (julien.seiler@igbmc.fr)<br/>
-Pierre Poulain (pierre.poulain@cupnet.net)<br/>
+Pierre Poulain (pierre.poulain@u-paris.fr)<br/>
 Jacques van Helden (jacques.van-helden@univ-amu.fr)
 
 ---
