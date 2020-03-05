@@ -56,15 +56,8 @@ Bibliographie / webographie
 - Instructeurs : Julein Seiler & Pierre Poulain
 - Helpers : Hélène Chiapello, Benoist Laurent & Jacques van Helden
 
-<!--
-[Tutoriel](seance3/tutorial/README.md)
-
-[Changer son prompt](seance3/slides/index.html)
-
-Bibliographie / webographie
-
-- Site internet : [IFB SLURM cluster user guide](http://taskforce-nncr.gitlab.cluster.france-bioinformatique.fr/doc/slurm_user_guide/), guide d'utilisation du *cluster SLURM de l'Institut Français de Bioinformatique*.
--->
+- [Présentation](seance3/slides/index.html)
+- [Learn SLURM in 5 minutes](https://asciinema.org/a/275233)
 
 ## Séance 4 - Automatisation
 
