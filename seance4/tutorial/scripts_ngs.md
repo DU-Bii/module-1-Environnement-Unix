@@ -39,7 +39,7 @@ Pour cela on va demande d'utiliser un job batch (commande sbatch) qui va lancer 
 > > #! /bin/bash  
 > > module load fastqc/0.11.8
 > > #SBATCH -n 8 
- 
+> >
 > > data=$(ls $1/*.fastq)  
 > > for fastqc_file in ${data[@]}
 > > do 
@@ -47,7 +47,6 @@ Pour cela on va demande d'utiliser un job batch (commande sbatch) qui va lancer 
 > > done
 > > wait
 ```
-{:.answer}
 
 > > Pour lancer ce script on utilise la commande suivante :
 
