@@ -745,6 +745,8 @@ Example:
 #!/bin/bash
 #SBATCH --array=0-29  # 30 jobs
 
+module load fastqc/0.11.8
+
 INPUTS=(../fastqc/*.fq.gz)
 
 srun fastqc ${INPUTS[$SLURM_ARRAY_TASK_ID]}
@@ -767,6 +769,8 @@ Submitted batch job 3161045
 `multiqc.sh`
 ```bash
 #!/bin/bash
+
+module load multiqc/1.7
 
 srun multiqc .
 
