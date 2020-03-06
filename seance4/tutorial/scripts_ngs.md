@@ -6,10 +6,10 @@
 $ ssh <username>@core.cluster.france-bioinformatique.fr
 ```
 
-<! ## Chargement des environnements nécessaires !>
-<! ```bash !>
-<! $ module load eba_rnaseq_ref/2018 !>
-<! ``` !>
+<!-- Chargement des environnements nécessaires -->
+<!-- ```bash ! -->
+<!-- $ module load eba_rnaseq_ref/2018 -->
+<!-- ``` -->
 
 ## Le jeu de données
 
