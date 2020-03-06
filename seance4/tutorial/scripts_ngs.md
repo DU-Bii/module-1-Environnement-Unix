@@ -33,23 +33,29 @@ $ ls  /shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/bacterial-r
 Ecrire un premier script bash pour lancer sur le cluster de l'IFB 8 calculs `fastqc` correspondant aux 8 fichiers à analyser.  
 Pour cela on va demande d'utiliser un job batch (commande sbatch) qui va lancer 8 job steps en tâche de fond. Chaque fois qu'on utilise une commande `srun` dans un script batch est associé un job-step 
 
-```bash
-$ cat fastqc_myfiles.sh  
-#! /bin/bash  
-#SBATCH -n 8 
+> **Réponse :**:
+> > ```bash
+> > $ cat fastqc_myfiles.sh  
+> > #! /bin/bash  
+> > module load fastqc/0.11.8
+> > #SBATCH -n 8 
  
-data=$(ls $1/*.fastq)  
-for fastqc_file in ${data[@]}
-do 
-      srun -n 1 fastqc --quiet  ${fastqc_file} -o ./fastqc-results/ 2>> fastqc.err  &
-done
-wait
+> > data=$(ls $1/*.fastq)  
+> > for fastqc_file in ${data[@]}
+> > do 
+> >      srun -n 1 fastqc --quiet  ${fastqc_file} -o ./fastqc-results/ 2>> fastqc.err  &
+> > done
+> > wait
 ```
-Pour lancer ce script on utilise la commande suivante :
+{:.answer}
 
-```bash  
-$ sbatch ./fastqc_myfiles.sh /shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq
-```
+> > Pour lancer ce script on utilise la commande suivante :
+
+> > ```bash  
+> > $ sbatch ./fastqc_myfiles.sh /shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq
+> > 
+> > ```
+{:.answer}
 
 **Questions** :   
 - Comment suivre l'éxécution des job-steps ?  
