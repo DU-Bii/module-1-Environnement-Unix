@@ -46,7 +46,7 @@ Pour cela on va demande d'utiliser un job batch (commande sbatch) qui va lancer 
 > >      srun -n 1 fastqc --quiet  ${fastqc_file} -o ./fastqc-results/ 2>> fastqc.err  &
 > > done
 > > wait
-```
+>>```
 
 > > Pour lancer ce script on utilise la commande suivante :
 
