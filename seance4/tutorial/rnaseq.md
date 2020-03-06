@@ -1,4 +1,4 @@
-# Mise en pratique : exemple de scripts pour l'analyse de données RNAseq en utilisant les ressources du cluster NNCR  
+# Mise en pratique : exemple de scripts pour l'analyse de données NGS en utilisant les ressources du cluster NNCR  
 
 ## Connnection au cluster NNCR IFB
 
@@ -6,10 +6,10 @@
 $ ssh <username>@core.cluster.france-bioinformatique.fr
 ```
 
-## Chargement des environnements nécessaires
-```bash
-$ module load eba_rnaseq_ref/2018
-```
+<! ## Chargement des environnements nécessaires !>
+<! ```bash !>
+<! $ module load eba_rnaseq_ref/2018 !>
+<! ``` !>
 
 ## Le jeu de données
 
