@@ -1,31 +1,34 @@
 
-# A word on rsync
+# Partie 2.5: rsync
 
-**Syntax**: `rsync [options] <SOURCE> <TARGET>`
+**Syntax**: `rsync [options] <SOURCE> <DESTINATION>`
 
-`rsync` is a very powerfull tool that basically do copies and more.
-It's most notable feature is that it is able to detect added and/or updated files
-from `SOURCE` and copy only these ones into `TARGET`.
+`rsync` est un outil très puissant servant à faire notamment de la copie et 
+du transfert de fichier.
+Sa particularité est qu'il est capable de détecter des fichiers ou dossier
+ajoutés/supprimés/modifiés dans la `SOURCE` et de ne copy que ceux-ci dans
+le répertoire de `DESTINATION`.
 
-This is a major difference with `cp` that will copy `SOURCE` to `TARGET` in a
-brute force fashion.
+Cette une différence majeure avec `cp` qui lui copie `SOURCE` vers `DESTINATION`
+de manière brutale.
 
-Being able to ignore unchanged files may have a dramatic impact when it comes
-to copying large files/directories.
+Cette capacité à ne transférer que la partie "utile" de la `SOURCE` permet
+d'économiser un temps précieux lors de la copie de fichiers volumineux.
 
-`rsync` has a lot of options, the most used being:
+`rsync` a de nombreuses options, les plus utilisées étant :
 
-- `-a, --archive` archive mode (basically what you want to do 95% of the time)
-- `-v, --verbose` verbose mode (print files as they are being copied)
-- `-P, --progress` show progress during transfer
-- `-h, --human-readable` output numbers in a human-readable format (to be use with `-P`).
+- `-a, --archive` mode archive (typiquement ce qu'on veut 95% du temps)
+- `-v, --verbose` mode verbeux  (afficher les éléments au fur et à mesure qu'il sont copiés)
+- `-P, --progress` montre l'avancement, fichier par fichier
+- `-h, --human-readable` montre les tailles au format humain (à utiliser avec `-P`)
+- `-x, --exclude <MOTIF>` exclut des éléments de la copie.
 
 
-- [Simple Copy](#simple-copy)
-- [Copy From/To A Different Machine](#copy-from-to-a-different_machine)
-- [Copy Large Files](#copy-large-files)
+- [Copie simple](#copie-simple)
+- [Copie depuis/vers une machine distance](#copie-depuis-vers-une-machine-distante)
+- [Copie de fichiers volumineux](#copie-de-fichiers-volumineux)
 
-## Simple Copy
+## Copie simple
 
 ```bash
 $ rsync -av study-cases /data/
@@ -142,8 +145,8 @@ study-cases/img/
 study-cases/img/CC-BY-SA.png
 ```
 
-Now if only one file is updated, only this file is transfered again, which
-dramatically shortens the transfer time:
+Si seulement un fichier est modifié et qu'on relance la copie, seulement ledit
+fichier est copié :
 
 ```bash
 $ # Modifying README.md
@@ -157,31 +160,29 @@ sent 8,153 bytes  received 67 bytes  16,440.00 bytes/sec
 total size is 50,480,444  speedup is 6,141.17
 ```
 
-We can see on this output that only the file that has been modified is transfered
-again.
+
+## Copie depuis/vers une machine distance]
+
+`rsync` peut être utilisé comme alternative (plus efficace) à `scp` :
 
 
-## Copy From/To A Different Machine
-
-Notably, `rsync` can also be used as a substitute for `scp`, with a very close
-syntax:
-
-**Copy local directory to a distant machine**:
-
-```bash
-rsync -a study-cases login@server.domain:
-```
-
-**Copy distant directory to local machine**:
+**Copie depuis une machine distante**:
 
 ```bash
 rsync -a login@server.domain:study-cases .
 ```
 
-## Copy Large Files
+**Copie vers une machine distante**:
 
-When copying large files, it may be nice to use the `-Ph` options together
-to see how fast the transfert is going:
+```bash
+rsync -a study-cases login@server.domain:
+```
+
+
+## Copie de fichiers volumineux
+
+Lorsqu'on copie des fichiers volumineux, il peut être intéressant d'utiliser
+les options `-Ph` pour voir l'avancement du processus :
 
 ```bash
 $ rsync -aPh my-big-file.tar.gz login@server.domain:
