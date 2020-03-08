@@ -6,10 +6,6 @@
 $ ssh <username>@core.cluster.france-bioinformatique.fr
 ```
 
-<!-- Chargement des environnements nécessaires -->
-<!-- ```bash ! -->
-<!-- $ module load eba_rnaseq_ref/2018 -->
-<!-- ``` -->
 
 ## Le jeu de données
 
@@ -30,12 +26,12 @@ $ ls  /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-reg
 
 ## Exercice 1 : 3 versions de scripts bash pour faire du contrôle qualité 
 
-1.1 Ecrire 3 scripts bash pour lancer sur le cluster de l'IFB 8 calculs `fastqc` correspondant aux 8 fichiers fastq à analyser.  
+### Question 1.1 Ecrire 3 scripts bash pour lancer sur le cluster de l'IFB 8 calculs `fastqc` correspondant aux 8 fichiers fastq à analyser.  
 - Un premier script basique qui n'utilise pas la parallélisation mais lance séquenciellement le traitement sur les 8 fichiers
 - Un deuxième script qui utilise la version multi-threadée de fastqc sur 16 threads et qui lance séquenciellement le traitement des fichiers 
 - Un troisième script qui utilise la version multi-threadée de fastqc sur 16 threads et qui lance en parallèle les 8 jobs
 
-> **Réponse script v1 (aucune parallélisation) :**:
+> **Réponse script v1 (aucune parallélisation) :**
 > > ```bash
 > > $ cat fastqc_v1.sh  
 > > #! /bin/bash  
@@ -50,7 +46,7 @@ $ ls  /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-reg
 >>```
 {:.answer}
 
-> **Réponse script v2 (version multithreadée de fastqc avec 16 threads):**:
+> **Réponse script v2 (version multithreadée de fastqc avec 16 threads):**
 > > ```bash
 > > $ cat fastqc_v2.sh  
 > > #! /bin/bash  
@@ -86,33 +82,26 @@ $ ls  /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-reg
 > > ```
 {:.answer}
 
+### Question 1.2  : Indiquer le temps CPU obtenus pour les 3 scripts 
+
+> **Réponse**
+> > Pour regarder les ressources allouées à un job, on peut utiliser la commande 
+> > ```bash 
+> > $ sacct --format=JobID,JobName,User,ReqCPUS,ReqMem,NTasks,MaxVMSize,MaxRSS,Start,End,NNodes,NodeList%40,CPUTime -j <id-du-job>
+> > ```
+{:.answer}
+
+### Question 1.3  : Comment peut-on rediriger les fichiers d'eerreurs de la commande fastqc ? 
+
+> **Réponse**
+> > On utilise la rédirection de l'erreur standart dean un fichier, avec `2>> fastqc.err` ?  
+> > ```bash 
+> > srun fastqc -t 16 --quiet ${FASTQ_FILES[$SLURM_ARRAY_TASK_ID]} -o ./fastqc-results/ 2>> fastqc.err
+> >```
+{:.answer}
 
 
-**Questions** :   
-- Indiquer le temps CPU obtenus pour les 3 scripts 
-- Où seront produits les fichiers résulats de la commande `fastqc`?  
-- Comment peut-on rediriger les fichiers d'eerreurs de la commande fasqc ? `2>> fastqc.err` ?  
-
-**Solution alternative :** il est possible de paralléliser l'exécution des 8 jobs en utilisant l'option `--array`
-Ceci est possible lorsqu'on effectue exactement le même traitement sur un ensemble de fichiers.
-Dans ce cas on doit préciser le nombre de jobs maximum qui vont être lancés.
-C'est à priori la solution de parallélisation la plus efficace en terme de temps de calcul.
-
-Tester le lancement du script suivant comme suit pour paralléliser le lancement des 8 jobs en parallèle :
-
-
-
-Pour regarder les ressources allouées à un job, on peut utiliser la commande 
-```bash 
-$ sacct --format=JobID,JobName,User,ReqCPUS,ReqMem,NTasks,MaxVMSize,MaxRSS,Start,End,NNodes,NodeList%40,CPUTime -j <id-du-job>
-```
-
-**Questions** :
-- Que constatez-vous en terme de performance ?
-- Que pensez-vous qu'il se passe s'il y a plus de 8 fichiers `.fastq` à traiter ?
-
-
-##Exercice 2: mapping des reads sur le génome de *E. coli*
+## Exercice 2: mapping des reads sur le génome de *E. coli*
 
 Nous allons utiliser le logiciel **STAR** pour aligner les reads RNAseq sur le génome de *E. coli*.  
 
