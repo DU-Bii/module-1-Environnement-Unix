@@ -24,13 +24,16 @@ $ ls  /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-reg
 /shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq/WT2_2.fastq
 ```
 
-## Exercice 1 : Scripts bash pour faire du contrôle qualité 
+## Exercice 1 - Scripts bash pour faire du contrôle qualité 
 
-### Question 1.1 Ecrire 3 scripts bash pour lancer sur le cluster de l'IFB 8 calculs `fastqc` correspondant aux 8 fichiers fastq à analyser  
+### Question 1.1 : Ecrire 3 scripts bash pour lancer sur le cluster de l'IFB 8 calculs `fastqc` correspondant aux 8 fichiers fastq à analyser  
 - Un premier script basique qui n'utilise pas la parallélisation mais lance séquenciellement le traitement sur les 8 fichiers
 - Un deuxième script qui utilise la version multi-threadée de fastqc sur 16 threads et qui lance séquenciellement le traitement des fichiers 
 - Un troisième script qui utilise la version multi-threadée de fastqc sur 16 threads et qui lance en parallèle les 8 jobs
-Ces 3 scripts deront prendre en argument sur la ligne de commande le répertoire */shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq/* contenant les 8 fichiers à traiter.
+Conseils utiles : 
+- Ces 3 scripts deront prendre en argument sur la ligne de commande le répertoire des fichiers fastq : /shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq/
+- Créer au préalable un répertoire pour les résultats fastqc, par exemple fastqc-results
+- Utiliser la redirection de l'erreur de fastqc avec la commande `2>> fastqc.err 
 
 > **Réponse script v1 (aucune parallélisation) :**
 > > ```bash
@@ -78,28 +81,20 @@ Ces 3 scripts deront prendre en argument sur la ligne de commande le répertoire
 
 > > Pour lancer ces scripts on utilise la commande suivante :
 > > ```bash  
-> > $ sbatch ./fastqc_myfiles.sh /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq/*.fastq
+> > $ sbatch ./fastqc_v1.sh /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq/*.fastq
 > > 
 > > ```
 {:.answer}
 
-### Question 1.2  : Indiquer le temps CPU obtenus pour les 3 scripts 
+### Question 1.2  : Indiquer le nombre de CPU et le temps CPU obtenus pour les 3 scripts 
 
 > **Réponse**
 > > Pour regarder les ressources allouées à un job, on peut utiliser la commande 
 > > ```bash 
-> > $ sacct --format=JobID,JobName,User,ReqCPUS,ReqMem,NTasks,MaxVMSize,MaxRSS,Start,End,NNodes,NodeList%40,CPUTime -j <id-du-job>
+> > $ sacct --format=JobID,JobName,NCPU,CPUTime,Elapsed, State -j <id-du-job>
 > > ```
 {:.answer}
 
-### Question 1.3  : Comment peut-on rediriger les fichiers d'eerreurs de la commande fastqc ? 
-
-> **Réponse**
-> > On utilise la rédirection de l'erreur standart dean un fichier, avec `2>> fastqc.err` ?  
-> > ```bash 
-> > srun fastqc -t 16 --quiet ${FASTQ_FILES[$SLURM_ARRAY_TASK_ID]} -o ./fastqc-results/ 2>> fastqc.err
-> >```
-{:.answer}
 
 
 ## Exercice 2: mapping des reads sur le génome de *E. coli*
