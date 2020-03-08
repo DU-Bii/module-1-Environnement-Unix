@@ -82,6 +82,9 @@ $ ls  /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-reg
 > > Pour lancer ces scripts on utilise la commande suivante :
 > > ```bash  
 > > $ sbatch ./fastqc_v1.sh /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq/*.fastq
+> > $ sbatch ./fastqc_v2.sh /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq/*.fastq
+> > $ sbatch ./fastqc_v3.sh
+
 > > 
 > > ```
 {:.answer}
@@ -99,38 +102,26 @@ $ ls  /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-reg
 
 ## Exercice 2: mapping des reads sur le génome de *E. coli*
 
-Nous allons utiliser le logiciel **STAR** pour aligner les reads RNAseq sur le génome de *E. coli*.  
+Nous allons utiliser le logiciel **BWA** pour aligner les reads RNAseq sur le génome de *E. coli*.  
 
-Pour pouvoir utiliser STAR il faut d'abord indexer le génome de référence.  
-
-Regarder la documentation de STAR  
-```bash  
-$ STAR --help | less
-```
-
-L'usage est :  
- `Usage: STAR  [options]... --genomeDir REFERENCE   --readFilesIn R1.fq R2.fq`  
-
-Nous allons commencer par créer un répertoire pour le génome de référence indexé :  
-```bash  
-$ mkdir ./Ecoli_star
-```
-
-Puis nous lancons la commande d'indexation du génome sur le cluster en utilisation les fichiers fasta et gtf du répertoire /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/genome/ et en utilisant la version multi-threadée de STAR (16 threads) et en mode 'genomeGenerate' :  
+Pour pouvoir utiliser BWA il faut d'abord indexer le génome de référence avec la commande `bwa-index` 
 
 ```bash  
-$ srun --cpus-per-task=16 STAR --runThreadN 16 --runMode genomeGenerate --genomeDir ./Ecoli_star --genomeFastaFiles /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/genome/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.dna.chromosome.Chromosome.fa   --sjdbGTFfile /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/genome/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.gtf
+$ srun bwa index /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/genome/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.dna.chromosome.Chromosome.fa
 ```
 
-Une fois l'index créé, nous allons utiliser un script `star_pairedfiles.sh` permettant de lancer un mapping STAR sur toutes les paires de fichiers fatsq d'un répertoire donné en argument :
+
+Une fois l'index créé, nous allons utiliser un script `bwa_pairedfiles.sh` permettant de lancer un mapping STAR sur toutes les paires de fichiers fatsq d'un répertoire donné en argument :
 
 ```bash
-$ cat star_pairedfiles.sh
+$ cat bwa_pairedfiles.sh
 #!/bin/bash
-#SBATCH --nodes 4   # on réserve 4 noeuds
-#SBATCH --cpus-per-task=24  # 24 cpus (threads) par tache 
+#SBATCH -N 4   # on réserve 4 noeuds pour 4 tâches en parallèles
+#SBATCH --cpus-per-task=24   
 #SBATCH --mem=64GB # Memory request 64Gb for the 4 tasks
 #SBATCH --mem-per-cpu=16GB # Memory request 16Gb for each task
+
+module load bwa/0.7.17
  
 REP_FASTQ_FILES=$1
 R1_fastq_files=$(ls $1/*_1.fastq)
@@ -139,7 +130,8 @@ for fastq_file in ${R1_fastq_files[@]}
 do
        sample_file="$(basename $fastq_file _1.fastq)"  
        path_fastq="$(dirname $fastq_file)"
-       srun -n 1 STAR --runThreadN 24 --outSAMtype BAM SortedByCoordinate --readFilesIn ${path_fastq}/${sample_file}_1.fastq ${path_fastq}/${sample_file}_2.fastq --genomeDir /shared/home/hchiapello/DUBii/dubii2020/module1/Ecoli_star/ --outFileNamePrefix ${sample_file}.fastq-star-out &
+       srun -n 1 --cpus-per-task=14 bwa mem /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/genome/Escherichia_coli_str_k_12_substr
+_mg1655.ASM584v2.dna.chromosome.Chromosome.fa  ${path_fastq}/${sample_file}_1.fastq ${path_fastq}/${sample_file}_2.fastq -t 14 > ./$sample_file.sam &
 done
 
 
@@ -148,8 +140,7 @@ done
 Ce script sera lancé avec la commande `sbatch` :
 
 ```bash  
-$ sbatch star_pairedfiles.sh /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq
+$ sbatch bwa_pairedfiles.sh /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq
 ```
-**Questions** :      
-- Combien de CPU seront utilisés pour chacune des task ?
-- Regarder les ressources allouées à ce job en utilisant la commande `sacct`
+
+**Question** : Regarder les ressources allouées à ce job en utilisant la commande `sacct`
