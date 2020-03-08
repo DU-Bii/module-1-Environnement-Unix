@@ -116,16 +116,16 @@ Nous allons commencer par créer un répertoire pour le génome de référence i
 $ mkdir ./Ecoli_star
 ```
 
-Puis nous lancons la commande d'indexation du génome sur le cluster :  
+Puis nous lancons la commande d'indexation du génome sur le cluster en utilisation les fichiers fasta et gtf du répertoire /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/genome/ et en utilisant la version multi-threadée de STAR (16 threads) et en mode 'genomeGenerate' :  
 
 ```bash  
-$ srun STAR --runMode genomeGenerate --genomeDir ./Ecoli_star --genomeFastaFiles /shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/genome/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.dna.chromosome.Chromosome.fa  --runThreadN 4 --sjdbGTFfile /shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/genome/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.gtf
+$ srun --cpus-per-task=16 STAR --runThreadN 16 --runMode genomeGenerate --genomeDir ./Ecoli_star --genomeFastaFiles /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/genome/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.dna.chromosome.Chromosome.fa   --sjdbGTFfile /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/genome/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.gtf
 ```
 
-Une fois l'index créé, nous allons utiliser un script `star_pairedfiles.sbatch` permettant de lancer un mapping STAR sur toutes les paires de fichiers fatsq d'un répertoire donné en argument :
+Une fois l'index créé, nous allons utiliser un script `star_pairedfiles.ss` permettant de lancer un mapping STAR sur toutes les paires de fichiers fatsq d'un répertoire donné en argument :
 
 ```bash
-$ cat star_pairedfiles.sbatch
+$ cat star_pairedfiles.sh
 #!/bin/bash
 #SBATCH -n 4
 #SBATCH --cpus-per-task=24
@@ -148,7 +148,7 @@ wait
 Ce script sera lancé avec la commande `sbatch` :
 
 ```bash  
-$ sbatch star_pairedfiles.sbatch /shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq
+$ sbatch star_pairedfiles.sh /shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq
 ```
 **Questions** :      
 - Combien de CPU seront utilisés pour chacune des task ?
