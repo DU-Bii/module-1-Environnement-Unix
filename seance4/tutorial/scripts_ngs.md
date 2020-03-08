@@ -122,7 +122,7 @@ Puis nous lancons la commande d'indexation du génome sur le cluster en utilisat
 $ srun --cpus-per-task=16 STAR --runThreadN 16 --runMode genomeGenerate --genomeDir ./Ecoli_star --genomeFastaFiles /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/genome/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.dna.chromosome.Chromosome.fa   --sjdbGTFfile /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/genome/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.gtf
 ```
 
-Une fois l'index créé, nous allons utiliser un script `star_pairedfiles.ss` permettant de lancer un mapping STAR sur toutes les paires de fichiers fatsq d'un répertoire donné en argument :
+Une fois l'index créé, nous allons utiliser un script `star_pairedfiles.sh` permettant de lancer un mapping STAR sur toutes les paires de fichiers fatsq d'un répertoire donné en argument :
 
 ```bash
 $ cat star_pairedfiles.sh
