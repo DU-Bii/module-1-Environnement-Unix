@@ -74,7 +74,7 @@ $ ls  /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-reg
 > > $SBATCH --cpus-per-task 16
 > > module load fastqc/0.11.8
 > >
-> >FASTQ_FILES=$(ls $1/*.fastq)
+> >FASTQ_FILES=$($1/*.fastq)
 > >srun fastqc -t 16 --quiet ${FASTQ_FILES[$SLURM_ARRAY_TASK_ID]} -o ./fastqc-results/ 2>> fastqc.err
 > >```
 {:.answer}
@@ -86,7 +86,7 @@ $ ls  /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-reg
 > > ```
 {:.answer}
 
-### Question 1.2  : Indiquer le nombre de CPU et le temps CPU obtenus pour les 3 scripts 
+### Question 1.2  : Comparer les ressources et temps d'execution obtenus pour les 3 scripts 
 
 > **Réponse**
 > > Pour regarder les ressources allouées à un job, on peut utiliser la commande 
@@ -127,8 +127,8 @@ Une fois l'index créé, nous allons utiliser un script `star_pairedfiles.sh` pe
 ```bash
 $ cat star_pairedfiles.sh
 #!/bin/bash
-#SBATCH -n 4
-#SBATCH --cpus-per-task=24
+#SBATCH --nodes 4   # on réserve 4 noeuds
+#SBATCH --cpus-per-task=24  # 24 cpus (threads) par tache 
 #SBATCH --mem=64GB # Memory request 64Gb for the 4 tasks
 #SBATCH --mem-per-cpu=16GB # Memory request 16Gb for each task
  
@@ -139,16 +139,16 @@ for fastq_file in ${R1_fastq_files[@]}
 do
        sample_file="$(basename $fastq_file _1.fastq)"  
        path_fastq="$(dirname $fastq_file)"
-       srun -n 1 STAR --runThreadN 48 --outSAMtype BAM SortedByCoordinate --readFilesIn ${path_fastq}/${sample_file}_1.fastq ${path_fastq}/${sample_file}_2.fastq --genomeDir /shared/home/hchiapello/DUBii/module1/Ecoli_star/ --outFileNamePrefix ${sample_file}.fastq-star-out &
+       srun -n 1 STAR --runThreadN 24 --outSAMtype BAM SortedByCoordinate --readFilesIn ${path_fastq}/${sample_file}_1.fastq ${path_fastq}/${sample_file}_2.fastq --genomeDir /shared/home/hchiapello/DUBii/dubii2020/module1/Ecoli_star/ --outFileNamePrefix ${sample_file}.fastq-star-out &
 done
-wait
+
 
 ```
 
 Ce script sera lancé avec la commande `sbatch` :
 
 ```bash  
-$ sbatch star_pairedfiles.sh /shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq
+$ sbatch star_pairedfiles.sh /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq
 ```
 **Questions** :      
 - Combien de CPU seront utilisés pour chacune des task ?
