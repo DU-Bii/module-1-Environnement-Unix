@@ -17,7 +17,7 @@ On dispose de 2 échantillons de reads pairés de *E. coli* : WT (Wild Type) et 
 Il y a 2 répliques par échantillons (soient 4 échantillons et 8 fichiers, les paires de reads étant stockées dans 2 fichiers séparés) :
 
 ```bash
-$ ls  /shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq/*.fastq
+$ ls  /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq/*.fastq/*.fastq
 /shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq/dFNR1_1.fastq
 /shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq/dFNR1_2.fastq
 /shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq/dFNR2_1.fastq
@@ -28,38 +28,70 @@ $ ls  /shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/bacterial-r
 /shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq/WT2_2.fastq
 ```
 
-## Exercice 1 : contrôle qualité
+## Exercice 1 : 3 versions de scripts bash pour faire du contrôle qualité 
 
-Ecrire un premier script bash pour lancer sur le cluster de l'IFB 8 calculs `fastqc` correspondant aux 8 fichiers à analyser.  
-Pour cela on va demande d'utiliser un job batch (commande sbatch) qui va lancer 8 job steps en tâche de fond. Chaque fois qu'on utilise une commande `srun` dans un script batch est associé un job-step 
+1.1 Ecrire 3 scripts bash pour lancer sur le cluster de l'IFB 8 calculs `fastqc` correspondant aux 8 fichiers fastq à analyser.  
+- Un premier script basique qui n'utilise pas la parallélisation mais lance séquenciellement le traitement sur les 8 fichiers
+- Un deuxième script qui utilise la version multi-threadée de fastqc sur 16 threads et qui lance séquenciellement le traitement des fichiers 
+- Un troisième script qui utilise la version multi-threadée de fastqc sur 16 threads et qui lance en parallèle les 8 jobs
 
-> **Réponse :**:
+> **Réponse script v1 (aucune parallélisation) :**:
 > > ```bash
-> > $ cat fastqc_myfiles.sh  
+> > $ cat fastqc_v1.sh  
 > > #! /bin/bash  
-> > module load fastqc/0.11.8
-> > #SBATCH -n 8 
+> > module load fastqc/0.11.8 
 > >
 > > data=$(ls $1/*.fastq)  
 > > for fastqc_file in ${data[@]}
 > > do 
-> >      srun -n 1 fastqc --quiet  ${fastqc_file} -o ./fastqc-results/ 2>> fastqc.err  &
+> >      srun fastqc --quiet  ${fastqc_file} -o ./fastqc-results/ 2>> fastqc.err  &
 > > done
 > > wait
 >>```
+{:.answer}
 
-> > Pour lancer ce script on utilise la commande suivante :
+> **Réponse script v2 (version multithreadée de fastqc avec 16 threads):**:
+> > ```bash
+> > $ cat fastqc_v2.sh  
+> > #! /bin/bash  
+> > $SBATCH --cpus-per-task 16
+> > module load fastqc/0.11.8
+> >
+> > data=$(ls $1/*.fastq)  
+> > for fastqc_file in ${data[@]}
+> > do 
+> >      srun fastqc -t 16 --quiet  ${fastqc_file} -o ./fastqc-results/ 2>> fastqc.err  &
+> > done
+> > wait
+>>```
+{:.answer}
 
+> **Réponse script v3 (version multithreadée de fastqc avec 16 threads avec execution des 8 jobs en parallème):**:
+> > ```bash 
+> > $ cat ./fastqc_v3.sh
+> > #! /bin/bash
+> > #SBATCH --array=0-7
+> > $SBATCH --cpus-per-task 16
+> > module load fastqc/0.11.8
+> >
+> >FASTQ_FILES=$(ls $1/*.fastq)
+> >srun fastqc -t 16 --quiet ${FASTQ_FILES[$SLURM_ARRAY_TASK_ID]} -o ./fastqc-results/ 2>> fastqc.err
+> >```
+{:.answer}
+
+> > Pour lancer ces scripts on utilise la commande suivante :
 > > ```bash  
-> > $ sbatch ./fastqc_myfiles.sh /shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq
+> > $ sbatch ./fastqc_myfiles.sh /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq/*.fastq
 > > 
 > > ```
 {:.answer}
 
+
+
 **Questions** :   
-- Comment suivre l'éxécution des job-steps ?  
+- Indiquer le temps CPU obtenus pour les 3 scripts 
 - Où seront produits les fichiers résulats de la commande `fastqc`?  
-- Que veut dire `2>> fastqc.err` ?  
+- Comment peut-on rediriger les fichiers d'eerreurs de la commande fasqc ? `2>> fastqc.err` ?  
 
 **Solution alternative :** il est possible de paralléliser l'exécution des 8 jobs en utilisant l'option `--array`
 Ceci est possible lorsqu'on effectue exactement le même traitement sur un ensemble de fichiers.
@@ -68,19 +100,7 @@ C'est à priori la solution de parallélisation la plus efficace en terme de tem
 
 Tester le lancement du script suivant comme suit pour paralléliser le lancement des 8 jobs en parallèle :
 
-```bash 
-$ cat ./fastqc_myfiles_array.sbatch
-#! /bin/bash
-#SBATCH --array=0-7
 
-DATA=(/shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq/*.fastq)
-srun fastqc --quiet ${DATA[$SLURM_ARRAY_TASK_ID]} -o ./fastqc-results/ 2>> fastqc.err
-```
-
-Puis lancer l'execution comme suit :
-```bash 
-$ sbatch ./fastqc_myfiles_array.sbatch
-```
 
 Pour regarder les ressources allouées à un job, on peut utiliser la commande 
 ```bash 
@@ -92,7 +112,7 @@ $ sacct --format=JobID,JobName,User,ReqCPUS,ReqMem,NTasks,MaxVMSize,MaxRSS,Start
 - Que pensez-vous qu'il se passe s'il y a plus de 8 fichiers `.fastq` à traiter ?
 
 
-## Deuxième exemple : mapping des reads sur le génome de *E. coli*
+##Exercice 2: mapping des reads sur le génome de *E. coli*
 
 Nous allons utiliser le logiciel **STAR** pour aligner les reads RNAseq sur le génome de *E. coli*.  
 
