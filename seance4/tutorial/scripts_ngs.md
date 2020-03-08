@@ -24,12 +24,13 @@ $ ls  /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-reg
 /shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq/WT2_2.fastq
 ```
 
-## Exercice 1 : 3 versions de scripts bash pour faire du contrôle qualité 
+## Exercice 1 : Scripts bash pour faire du contrôle qualité 
 
-### Question 1.1 Ecrire 3 scripts bash pour lancer sur le cluster de l'IFB 8 calculs `fastqc` correspondant aux 8 fichiers fastq à analyser.  
+### Question 1.1 Ecrire 3 scripts bash pour lancer sur le cluster de l'IFB 8 calculs `fastqc` correspondant aux 8 fichiers fastq à analyser  
 - Un premier script basique qui n'utilise pas la parallélisation mais lance séquenciellement le traitement sur les 8 fichiers
 - Un deuxième script qui utilise la version multi-threadée de fastqc sur 16 threads et qui lance séquenciellement le traitement des fichiers 
 - Un troisième script qui utilise la version multi-threadée de fastqc sur 16 threads et qui lance en parallèle les 8 jobs
+Ces 3 scripts deront prendre en argument sur la ligne de commande le répertoire */shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq/* contenant les 8 fichiers à traiter.
 
 > **Réponse script v1 (aucune parallélisation) :**
 > > ```bash
