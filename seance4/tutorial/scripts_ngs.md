@@ -97,6 +97,7 @@ $ ls  /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-reg
 {:.answer}
 
 ### Question 1.2  : Comparer les ressources et temps d'execution obtenus pour les 3 scripts 
+Utiliser pour cela la commande `sacct`
 
 > **Réponse**
 > > Pour regarder les ressources allouées à un job, on peut utiliser la commande 
