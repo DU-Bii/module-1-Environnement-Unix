@@ -143,7 +143,7 @@ $ cat bwa_pairedfiles.sh
 module load bwa/0.7.17
 
 REP_FASTQ_FILES=$1
-R1_fastq_files=$(ls $1/*_1.fastq)
+R1_fastq_files=($1/*_1.fastq)
 
 for fastq_file in ${R1_fastq_files[@]}
 do
