@@ -49,9 +49,8 @@ $ ls  /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-reg
 > > data=$(ls $1/*.fastq)  
 > > for fastqc_file in ${data[@]}
 > > do 
-> >      srun fastqc --quiet  ${fastqc_file} -o ./fastqc-results/ 2>> fastqc.err  &
+> >      fastqc --quiet  ${fastqc_file} -o ./fastqc-results/ 2>> fastqc.err  &
 > > done
-> > wait # Attendre la fin des processus "enfants" (Steps) avant de terminer le processus parent (Job)
 >>```
 {:.answer}
 
