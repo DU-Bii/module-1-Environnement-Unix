@@ -48,8 +48,8 @@ $ ls  /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-reg
 > > output_dir="fastqc-results-v1"  
 > > mkdir -p ${output_dir}
 > >
-> > data=$(ls $1/*.fastq) 
-> > for fastqc_file in ${data[@]} 
+> > data=$(ls $1/*.fastq)    
+> > for fastqc_file in ${data[@]}  
 > > do 
 > >      srun fastqc --quiet  ${fastqc_file} -o ${output_dir} &  
 > > done
