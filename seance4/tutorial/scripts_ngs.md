@@ -137,8 +137,8 @@ $ cat bwa_pairedfiles.sh
 
 #SBATCH --ntasks=4  # 4 job steps ou tasks
 #SBATCH --cpus-per-task=14  # 14 cpus (threads) par tache
-#SBATCH -o bwa_v1.%N.%j.out           # STDOUT
-#SBATCH -e bwa_v1.%N.%j.err           # STDERR
+#SBATCH -o bwa_v1.%j.out           # STDOUT
+#SBATCH -e bwa_v1.%j.err           # STDERR
 
 module load bwa/0.7.17
 
