@@ -27,9 +27,9 @@ $ ls  /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-reg
 ## Exercice 1 - Scripts bash pour faire du contrôle qualité 
 
 ### Question 1.1 : Ecrire 3 scripts bash pour lancer sur le cluster de l'IFB 8 calculs `fastqc` correspondant aux 8 fichiers fastq à analyser  
-- Un premier script basique qui n'utilise pas la parallélisation mais lance séquenciellement le traitement sur les 8 fichiers
-- Un deuxième script qui utilise la version multi-threadée de fastqc sur 16 threads et qui lance séquenciellement le traitement des fichiers en utilisant les job-steps
-- Un troisième script qui utilise la version multi-threadée de fastqc sur 16 threads et qui lance en parallèle les 8 jobs en utilisant l'option `--array` de `sbatch`
+- Un premier script basique qui n'utilise pas la parallélisation mais lance séquenciellement le traitement sur les 8 fichiers en utilisant une boucle
+- Un deuxième script qui utilise la version multi-threadée de fastqc sur 6 threads et qui lance en une seule commande le traitement des 8 fichiers fastq
+- Un troisième script qui lance en parallèle les 8 jobs en utilisant l'option `--array` de `sbatch`
 #### Conseils :  
 - Ces 3 scripts devront prendre en argument sur la ligne de commande le répertoire des fichiers fastq : /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq/
 - Créer dans votre script bash un répertoire pour les résultats fastqc dans votre répertoire courant, par exemple fastqc-results-v1
@@ -56,7 +56,7 @@ $ ls  /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-reg
 >>```
 {:.answer}
 
-> **Réponse script v2 (version multithreadée de fastqc avec 16 threads):**
+> **Réponse script v2 (version multithreadée de fastqc avec 6 threads :**
 > > ```bash
 > > $ cat fastqc_v2.sh  
 > > #! /bin/bash  
@@ -69,10 +69,7 @@ $ ls  /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-reg
 > > mkdir -p ${output_dir}
 > >
 > > data=($1/*.fastq)  
-> > for fastqc_file in ${data[@]}
-> > do  
-> >      srun fastqc -t 16 --quiet  ${fastqc_file} -o ${output_dir} &  
-> > done
+> > srun fastqc -t 6 --quiet  ${data} -o ${output_dir} &  
 > > wait # Attendre la fin des processus "enfants" (Steps) avant de terminer le processus parent (Job)
 >>```
 {:.answer}
@@ -91,7 +88,7 @@ $ ls  /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-reg
 > > mkdir -p ${output_dir}
 > >
 > >FASTQ_FILES=($1/*.fastq)
-> >srun fastqc -t 16 --quiet ${FASTQ_FILES[$SLURM_ARRAY_TASK_ID]} -o ${output_dir} 
+> >srun fastqc --quiet ${FASTQ_FILES[$SLURM_ARRAY_TASK_ID]} -o ${output_dir} 
 > >```
 {:.answer}
 
