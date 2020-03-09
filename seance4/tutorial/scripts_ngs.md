@@ -32,10 +32,9 @@ $ ls  /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-reg
 - Un troisième script qui utilise la version multi-threadée de fastqc sur 16 threads et qui lance en parallèle les 8 jobs en utilisant l'option `--array` de `sbatch`
 #### Conseils :  
 - Ces 3 scripts devront prendre en argument sur la ligne de commande le répertoire des fichiers fastq : /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq/
-- Créer au préalable un répertoire pour les résultats fastqc dans votre répertoire courant, par exemple fastqc-results
+- Créer dans votre script bash un répertoire pour les résultats fastqc dans votre répertoire courant, par exemple fastqc-results-v1
 - Renommer de manière explicite les noms des fichiers de sortie et d'erreur de SLURM avec un nom explicite (version du script et  process id)
 - N'oublier pas charger le logiciel dans le script bash avec la commande `module load`
-- Utiliser la redirection de l'erreur de fastqc avec la commande `2>> fastqc.err` 
 
 > **Réponse script v1 (aucune parallélisation) :**
 > > ```bash
@@ -45,11 +44,14 @@ $ ls  /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-reg
 > > #SBATCH -e fastq_v1_slurm.%j.err           # STDERR
 > >
 > > module load fastqc/0.11.8 
+
+> > output_dir="fastqc-results-v1"
+> > mkdir -p ${output_dir}
 > >
-> > data=$(ls $1/*.fastq)  
+> > data=($1/*.fastq)  
 > > for fastqc_file in ${data[@]}
 > > do 
-> >      fastqc --quiet  ${fastqc_file} -o ./fastqc-results/ 2>> fastqc.err  &
+> >      fastqc --quiet  ${fastqc_file} -o ${output_dir} &
 > > done
 >>```
 {:.answer}
@@ -63,10 +65,13 @@ $ ls  /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-reg
 > > #SBATCH -e fastq_v2_slurm.%j.err           # STDERR
 > > module load fastqc/0.11.8
 > >
-> > data=$(ls $1/*.fastq)  
+> > output_dir="fastqc-results-v2"
+> > mkdir -p ${output_dir}
+> >
+> > data=($1/*.fastq)  
 > > for fastqc_file in ${data[@]}
 > > do 
-> >      srun fastqc -t 16 --quiet  ${fastqc_file} -o ./fastqc-results/ 2>> fastqc.err  &
+> >      srun fastqc -t 16 --quiet  ${fastqc_file} -o ${output_dir}   &
 > > done
 > > wait # Attendre la fin des processus "enfants" (Steps) avant de terminer le processus parent (Job)
 >>```
@@ -82,8 +87,11 @@ $ ls  /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-reg
 > > #SBATCH -e fastq_v3_slurm.%j.err           # STDERR
 > > module load fastqc/0.11.8
 > >
+> > output_dir="fastqc-results-v3"
+> > mkdir -p ${output_dir}
+> >
 > >FASTQ_FILES=($1/*.fastq)
-> >srun fastqc -t 16 --quiet ${FASTQ_FILES[$SLURM_ARRAY_TASK_ID]} -o ./fastqc-results/ 2>> fastqc.err
+> >srun fastqc -t 16 --quiet ${FASTQ_FILES[$SLURM_ARRAY_TASK_ID]} -o ${output_dir} 
 > >```
 {:.answer}
 
