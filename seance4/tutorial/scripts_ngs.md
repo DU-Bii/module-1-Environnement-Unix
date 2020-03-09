@@ -69,7 +69,7 @@ $ ls  /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-reg
 > > mkdir -p ${output_dir}
 > >
 > > data=($1/*.fastq)  
-> > srun fastqc -t 6 --quiet  $data -o ${output_dir} &  
+> > srun fastqc -t 6 --quiet  ${data[@]} -o ${output_dir} &  
 > > 
 >>```
 {:.answer}
