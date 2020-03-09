@@ -44,7 +44,7 @@ $ ls  /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-reg
 > > #SBATCH -e fastq_v1_slurm.%j.err           # STDERR
 > >
 > > module load fastqc/0.11.8 
-
+> >  
 > > output_dir="fastqc-results-v1"  
 > > mkdir -p ${output_dir}
 > >
@@ -60,7 +60,7 @@ $ ls  /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-reg
 > > ```bash
 > > $ cat fastqc_v2.sh  
 > > #! /bin/bash  
-> > #SBATCH --cpus-per-task 16
+> > #SBATCH --cpus-per-task 6
 > > #SBATCH -o fastq_v2_slurm.%j.out           # STDOUT
 > > #SBATCH -e fastq_v2_slurm.%j.err           # STDERR
 > > module load fastqc/0.11.8
@@ -87,8 +87,8 @@ $ ls  /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-reg
 > > output_dir="fastqc-results-v3"
 > > mkdir -p ${output_dir}
 > >
-> >FASTQ_FILES=($1/*.fastq)
-> >srun fastqc --quiet ${FASTQ_FILES[$SLURM_ARRAY_TASK_ID]} -o ${output_dir} 
+> > FASTQ_FILES=($1/*.fastq)  
+> > srun fastqc --quiet ${FASTQ_FILES[$SLURM_ARRAY_TASK_ID]} -o ${output_dir} 
 > >```
 {:.answer}
 
