@@ -58,9 +58,9 @@ $ ls  /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-reg
 > > ```bash
 > > $ cat fastqc_v2.sh  
 > > #! /bin/bash  
-> > $SBATCH --cpus-per-task 16
-> > #SBATCH -o fastq_v2_slurm.%j.out           # STDOUT
-> > #SBATCH -e fastq_v2_slurm.%j.err           # STDERR
+> > #SBATCH --cpus-per-task 16
+> > #SBATCH -o fastq_v2_slurm.%N.%j.out           # STDOUT
+> > #SBATCH -e fastq_v2_slurm.%N.%j.err           # STDERR
 > > module load fastqc/0.11.8
 > >
 > > data=$(ls $1/*.fastq)  
@@ -77,9 +77,9 @@ $ ls  /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-reg
 > > $ cat ./fastqc_v3.sh
 > > #! /bin/bash
 > > #SBATCH --array=0-7
-> > $SBATCH --cpus-per-task 16
-> > #SBATCH -o fastq_v3_slurm.%j.out           # STDOUT
-> > #SBATCH -e fastq_v3_slurm.%j.err           # STDERR
+> > #SBATCH --cpus-per-task 16
+> > #SBATCH -o fastq_v3_slurm.%N.%j.out           # STDOUT
+> > #SBATCH -e fastq_v3_slurm.%N.%j.err           # STDERR
 > > module load fastqc/0.11.8
 > >
 > >FASTQ_FILES=$($1/*.fastq)
