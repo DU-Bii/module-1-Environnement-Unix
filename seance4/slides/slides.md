@@ -51,3 +51,12 @@ class: center, middle
 
 ---
 
+class: top, left
+# rsync
+
+- Alternative plus puissante à cp
+- Copie seulement les fichiers plus récents
+- Capable d'exclure des fichiers
+- Capable de copie depuis/vers un serveur distant
+- ...
+
