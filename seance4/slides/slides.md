@@ -25,6 +25,8 @@ class: center, middle
 
 ---
 
+class: center, middle
+
 **Question** : Utiliser le `|` et les commandes précédentes pour déterminer le nombre de gènes uniques dans le fichier `study_cases/Escherichia_coli/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3`  
 
 --
@@ -35,6 +37,8 @@ $ cut -f 9 study-cases/Escherichia_coli/Escherichia_coli_str_k_12_substr_mg1655.
 ```
 
 ---
+
+class: center, middle
 
 **Question** : créer une archive du dossier `study-cases` ne contenant pas le répertoire `.git`
 
@@ -59,4 +63,7 @@ class: top, left
 - Capable d'exclure des fichiers
 - Capable de copie depuis/vers un serveur distant
 - ...
+
+---
+
 
