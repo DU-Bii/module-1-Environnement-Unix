@@ -63,7 +63,7 @@ total size is 50,480,444  speedup is 6,141.17
 ```
 
 
-## Copie depuis/vers une machine distance]
+## Copie depuis/vers une machine distance
 
 `rsync` peut être utilisé comme alternative (plus efficace) à `scp`.
 

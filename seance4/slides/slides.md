@@ -25,7 +25,7 @@ class: center, middle
 
 ---
 
-class: center, middle
+class: left, middle
 
 **Question** : Utiliser le `|` et les commandes précédentes pour déterminer le nombre de gènes uniques dans le fichier `study_cases/Escherichia_coli/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3`  
 
@@ -38,7 +38,7 @@ $ cut -f 9 study-cases/Escherichia_coli/Escherichia_coli_str_k_12_substr_mg1655.
 
 ---
 
-class: center, middle
+class: left, middle
 
 **Question** : créer une archive du dossier `study-cases` ne contenant pas le répertoire `.git`
 
@@ -55,7 +55,7 @@ class: center, middle
 
 ---
 
-class: top, left
+class: left, top
 # rsync
 
 - Alternative plus puissante à cp
@@ -66,4 +66,50 @@ class: top, left
 
 ---
 
+class: left, top
+
+# rsync : les options les plus courantes
+
+- `-a, --archive` mode archive (typiquement ce qu'on veut 95% du temps)
+- `-v, --verbose` mode verbeux  (afficher les éléments au fur et à mesure qu'il sont copiés)
+- `-P, --progress` montre l'avancement, fichier par fichier
+- `-h, --human-readable` montre les tailles au format humain (à utiliser avec `-P`)
+- `-x, --exclude <MOTIF>` exclut des éléments de la copie.
+
+---
+
+class: left, top
+
+# rsync : copie simple
+
+**Question** : copier le répertoire `study-cases` tant le répertoire `/tmp`
+
+--
+
+```bash
+$ rsync -av study-cases /tmp
+rsync -av study-cases /data/
+building file list ... done
+study-cases/
+study-cases/.gitignore
+study-cases/LICENSE.txt
+study-cases/README.md -> study-cases.md
+study-cases/_config.yml
+...
+```
+
+---
+
+# rsync : copie depuis un serveur distant
+
+**Question** : copier les fichiers FastQ présents sur le cluster de l'IFB dans le répertoire
+`/shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq/` en affichant la progression.
+
+--
+
+```bash
+$ rsync -aPh  <username>@core.cluster.france-bioinformatique.fr:/shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq/*.fastq .
+```
+
+---
 
