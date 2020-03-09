@@ -112,7 +112,7 @@ Utiliser pour cela la commande `sacct`
 
 
 
-## Exercice 2: mapping des reads sur le génome de *E. coli*
+## Exercice 2 - mapping des reads sur le génome de *E. coli*
 
 Nous allons créer un nouveau script bash qui utile **BWA** pour aligner les reads RNAseq sur le génome de *E. coli*.  
 
