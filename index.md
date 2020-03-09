@@ -65,11 +65,9 @@ Bibliographie / webographie
 - Instructeurs : Benoist Laurent & Hélène Chiapello
 - Helper : Pierre Poulain
 
-<!--
-[Tutoriel](seance4/tutorial/README.md)
 
-[Présentation](seance4/slides/index.html)
--->
+- [Tutoriel](seance4/tutorial/README.md)
+- [Présentation](seance4/slides/index.html)
 
 
 ## Installer un *shell* Linux sur sa machine
