@@ -113,34 +113,38 @@ $ srun bwa index /shared/projects/dubii2020/data/study_cases/Escherichia_coli/ba
 
 Une fois l'index créé, nous allons utiliser un script `bwa_pairedfiles.sh` permettant de lancer un mapping STAR sur toutes les paires de fichiers fatsq d'un répertoire donné en argument :
 
+> **Solution**
 ```bash
 $ cat bwa_pairedfiles.sh
-#!/bin/bash
-#SBATCH -N 4   # on réserve 4 noeuds pour 4 tâches en parallèles
-#SBATCH --cpus-per-task=24   
-#SBATCH --mem=64GB # Memory request 64Gb for the 4 tasks
-#SBATCH --mem-per-cpu=16GB # Memory request 16Gb for each task
+#! /bin/bash
+
+#SBATCH --ntasks=4  # 4 job steps ou tasks
+#SBATCH --cpus-per-task=14  # 14 cpus (threads) par tache
+#SBATCH -o bwa_v1.%N.%j.out           # STDOUT
+#SBATCH -e bwa_v1.%N.%j.err           # STDERR
 
 module load bwa/0.7.17
- 
+
 REP_FASTQ_FILES=$1
 R1_fastq_files=$(ls $1/*_1.fastq)
- 
+
 for fastq_file in ${R1_fastq_files[@]}
 do
-       sample_file="$(basename $fastq_file _1.fastq)"  
+       sample_file="$(basename $fastq_file _1.fastq)"
        path_fastq="$(dirname $fastq_file)"
-       srun -n 1 --cpus-per-task=14 bwa mem /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/genome/Escherichia_coli_str_k_12_substr
-_mg1655.ASM584v2.dna.chromosome.Chromosome.fa  ${path_fastq}/${sample_file}_1.fastq ${path_fastq}/${sample_file}_2.fastq -t 14 > ./$sample_file.sam &
+       srun -n 1 -N 1 --cpus-per-task=14 bwa mem /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/genome/Escherichia_col
+i_str_k_12_substr_mg1655.ASM584v2.dna.chromosome.Chromosome.fa  ${path_fastq}/${sample_file}_1.fastq ${path_fastq}/${sample_file}_2.fastq -t 14 > ./${sample_file}
+.sam 
+
 done
-
-
 ```
+
 
 Ce script sera lancé avec la commande `sbatch` :
 
 ```bash  
 $ sbatch bwa_pairedfiles.sh /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq
 ```
+{:.answer}
 
 **Question** : Regarder les ressources allouées à ce job en utilisant la commande `sacct`
