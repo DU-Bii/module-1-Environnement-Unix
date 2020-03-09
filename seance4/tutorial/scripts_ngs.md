@@ -121,8 +121,8 @@ $ srun bwa index /shared/projects/dubii2020/data/study_cases/Escherichia_coli/ba
 
 Une fois l'index créé, nous allons utiliser un script `bwa_pairedfiles.sh` permettant de lancer un mapping BWA sur toutes les paires de fichiers fatsq d'un répertoire donné en argument.
 ### Conseils
-- Utiliser le programme `bwa-mem`et regarder la syntaxe et les options au préalable en tapant `$ bawa-mem`
-- Utiliser les commandes basename et dirname pour extraire les noms des fichiers fastq et leur répertoire source
+- Utiliser le programme `bwa-mem`et regarder la syntaxe et les options au préalable en tapant `$ bwa-mem`
+- Utiliser les commandes `basename` et `dirname` pour extraire les noms des fichiers fastq et leur répertoire source
 - Votre script devra utiliser le multi-threading pour bwa mem et les job-steps (tasks) pour les fichiers à traiter
 
 
