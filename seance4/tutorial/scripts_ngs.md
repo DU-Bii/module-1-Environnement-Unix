@@ -74,7 +74,7 @@ $ ls  /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-reg
 >>```
 {:.answer}
 
-> **Réponse script v3 (version multithreadée de fastqc avec 16 threads avec execution des 8 jobs en parallème):**:
+> **Réponse script v3 (fastqc avec execution en parallèle des 8 jobs ):**:
 > > ```bash 
 > > $ cat ./fastqc_v3.sh
 > > #! /bin/bash
