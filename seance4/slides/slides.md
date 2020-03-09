@@ -25,9 +25,11 @@ class: center, middle
 
 ---
 
-class: left, middle
+class: left, top
 
-**Question** : Utiliser le `|` et les commandes précédentes pour déterminer le nombre de gènes uniques dans le fichier `study_cases/Escherichia_coli/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3`  
+# Question 1
+
+Utiliser le `|` et les commandes précédentes pour déterminer le nombre de gènes uniques dans le fichier `study_cases/Escherichia_coli/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3`  
 
 --
 
@@ -38,9 +40,11 @@ $ cut -f 9 study-cases/Escherichia_coli/Escherichia_coli_str_k_12_substr_mg1655.
 
 ---
 
-class: left, middle
+class: left, top
 
-**Question** : créer une archive du dossier `study-cases` ne contenant pas le répertoire `.git`
+# Question 2
+
+Créer une archive du dossier `study-cases` ne contenant pas le répertoire `.git`
 
 --
 
@@ -58,7 +62,8 @@ class: center, middle
 class: left, top
 # rsync
 
-- Alternative plus puissante à cp
+- Copie (synchronisation) de fichier
+- Alternative plus puissante à `cp`
 - Copie seulement les fichiers plus récents
 - Capable d'exclure des fichiers
 - Capable de copie depuis/vers un serveur distant
@@ -125,7 +130,78 @@ class: center, middle
 - Un langage interprété
 -- 
 - Possède toutes les caractéristiques d'un langage de programmation
+    - variables
     - fonctions
     - conditions
     - arithmétique
     - ...
+
+---
+
+class: left, top
+
+# Bash : écriture d'un script
+
+## Écriture du script
+
+**Question**: écrire le script `first-line.bash` qui affiche la première ligne
+des fichiers `bed` présents dans `./Escherichia_coli/bacterial-regulons_myers_2013/data/ChIP-seq`
+
+--
+
+```bash
+head -1 ./Escherichia_coli/bacterial-regulons_myers_2013/data/ChIP-seq/*.bed
+```
+
+-- 
+
+## Éxécution du script
+
+```bash
+$ bash first-line.bash
+==> ./Escherichia_coli/bacterial-regulons_myers_2013/data/ChIP-seq/FNR1_vs_input1_cutadapt_bowtie2_homer.bed <==
+# HOMER Peaks
+
+==> ./Escherichia_coli/bacterial-regulons_myers_2013/data/ChIP-seq/FNR1_vs_input1_cutadapt_bowtie2_macs2.bed <==
+Chromosome	0	1023	FNR1_vs_input1_cutadapt_bowtie2_macs2_peak_1	26744	.	9.21896	2677.47827	2674.42871	173
+```
+
+--- 
+
+class: left, top
+
+# Bash : les variables
+
+## Définition
+
+```bash
+$ my_variable=42
+```
+
+--
+
+## Affichage
+
+```bash 
+$ echo ${my_variable}
+42
+```
+
+---
+
+class: left, top
+
+# Bash : stocker la sortie d'une commande
+
+**Syntaxe**: `$(<command> [arguments])`
+
+--
+
+```bash
+$ fastq_files = $(ls ./Escherichia_coli/bacterial-regulons_myers_2013/data/ChIP-seq/*.bed)
+```
+
+---
+
+
+

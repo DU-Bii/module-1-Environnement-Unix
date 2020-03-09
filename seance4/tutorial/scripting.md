@@ -54,7 +54,7 @@ It is then necessary to put the command between ` characters.
 
 ```bash
 # Store file names into a variable
-filenames=$(ls -1 molecules)
+filenames=$(ls study-cases/Escherichia_coli/bacterial-regulons_myers_2013/data/ChIP-seq)
 
 # Display the file names
 echo "the filenames:"
