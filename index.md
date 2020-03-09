@@ -66,7 +66,7 @@ Bibliographie / webographie
 - Helper : Pierre Poulain
 
 
-- [Tutoriel](seance4/tutorial/README.md)
+- [Tutoriel](seance4/tutorial/index.md)
 - [Présentation](seance4/slides/index.html)
 
 
