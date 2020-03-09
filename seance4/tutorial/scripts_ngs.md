@@ -28,13 +28,13 @@ $ ls  /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-reg
 
 ### Question 1.1 : Ecrire 3 scripts bash pour lancer sur le cluster de l'IFB 8 calculs `fastqc` correspondant aux 8 fichiers fastq à analyser  
 - Un premier script basique qui n'utilise pas la parallélisation mais lance séquenciellement le traitement sur les 8 fichiers
-- Un deuxième script qui utilise la version multi-threadée de fastqc sur 16 threads et qui lance séquenciellement le traitement des fichiers 
-- Un troisième script qui utilise la version multi-threadée de fastqc sur 16 threads et qui lance en parallèle les 8 jobs
+- Un deuxième script qui utilise la version multi-threadée de fastqc sur 16 threads et qui lance séquenciellement le traitement des fichiers en utilisant les job-steps
+- Un troisième script qui utilise la version multi-threadée de fastqc sur 16 threads et qui lance en parallèle les 8 jobs en utilisant l'option `--array` de `sbatch`
 **Conseils :**  
 - Ces 3 scripts deront prendre en argument sur la ligne de commande le répertoire des fichiers fastq : /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq/
 - Créer au préalable un répertoire pour les résultats fastqc dans votre répertoire courant, par exemple fastqc-results
-- Renommer de manière explicite les noms des fichiers de sortie et d'erreur avec la versions du script et le process id
-- N'oublier pas charger le logiciel dans le script avec la commande `module load
+- Renommer de manière explicite les noms des fichiers de sortie et d'erreur de SLURM avec un nom explicite (version du script et  process id)
+- N'oublier pas charger le logiciel dans le script bash avec la commande `module load`
 - Utiliser la redirection de l'erreur de fastqc avec la commande `2>> fastqc.err` 
 
 > **Réponse script v1 (aucune parallélisation) :**
