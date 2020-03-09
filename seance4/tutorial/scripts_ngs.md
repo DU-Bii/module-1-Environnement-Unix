@@ -78,11 +78,11 @@ $ ls  /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-reg
 > > #! /bin/bash
 > > #SBATCH --array=0-7
 > > #SBATCH --cpus-per-task 16
-> > #SBATCH -o fastq_v3_slurm.%N.%j.out           # STDOUT
-> > #SBATCH -e fastq_v3_slurm.%N.%j.err           # STDERR
+> > #SBATCH -o fastq_v3_slurm.%j.out           # STDOUT
+> > #SBATCH -e fastq_v3_slurm.%j.err           # STDERR
 > > module load fastqc/0.11.8
 > >
-> >FASTQ_FILES=$($1/*.fastq)
+> >FASTQ_FILES=($1/*.fastq)
 > >srun fastqc -t 16 --quiet ${FASTQ_FILES[$SLURM_ARRAY_TASK_ID]} -o ./fastqc-results/ 2>> fastqc.err
 > >```
 {:.answer}
