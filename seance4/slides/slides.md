@@ -100,6 +100,8 @@ study-cases/_config.yml
 
 ---
 
+class: left, top
+
 # rsync : copie depuis un serveur distant
 
 **Question** : copier les fichiers FastQ présents sur le cluster de l'IFB dans le répertoire
@@ -113,3 +115,17 @@ $ rsync -aPh  <username>@core.cluster.france-bioinformatique.fr:/shared/projects
 
 ---
 
+class: center, middle
+# Scripting
+
+---
+
+# Bash
+
+- Un langage interprété
+-- 
+- Possède toutes les caractéristiques d'un langage de programmation
+    - fonctions
+    - conditions
+    - arithmétique
+    - ...
