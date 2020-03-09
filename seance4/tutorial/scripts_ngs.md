@@ -30,15 +30,19 @@ $ ls  /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-reg
 - Un premier script basique qui n'utilise pas la parallélisation mais lance séquenciellement le traitement sur les 8 fichiers
 - Un deuxième script qui utilise la version multi-threadée de fastqc sur 16 threads et qui lance séquenciellement le traitement des fichiers 
 - Un troisième script qui utilise la version multi-threadée de fastqc sur 16 threads et qui lance en parallèle les 8 jobs
-**Conseils utiles :**  
+**Conseils :**  
 - Ces 3 scripts deront prendre en argument sur la ligne de commande le répertoire des fichiers fastq : /shared/projects/du_bii_2019/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq/
 - Créer au préalable un répertoire pour les résultats fastqc, par exemple fastqc-results
+- renommer de manière explicite les noms des fichiers de sortie et d'erreur avec la versions du script et le process id
 - Utiliser la redirection de l'erreur de fastqc avec la commande `2>> fastqc.err 
 
 > **Réponse script v1 (aucune parallélisation) :**
 > > ```bash
 > > $ cat fastqc_v1.sh  
-> > #! /bin/bash  
+> > #! /bin/bash
+> > #SBATCH -o fastq_v1_slurm.%j.out           # STDOUT
+> > #SBATCH -e fastq_v1_slurm.%j.err           # STDERR
+> >
 > > module load fastqc/0.11.8 
 > >
 > > data=$(ls $1/*.fastq)  
@@ -55,6 +59,8 @@ $ ls  /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-reg
 > > $ cat fastqc_v2.sh  
 > > #! /bin/bash  
 > > $SBATCH --cpus-per-task 16
+> > #SBATCH -o fastq_v2_slurm.%j.out           # STDOUT
+> > #SBATCH -e fastq_v2_slurm.%j.err           # STDERR
 > > module load fastqc/0.11.8
 > >
 > > data=$(ls $1/*.fastq)  
@@ -72,6 +78,8 @@ $ ls  /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-reg
 > > #! /bin/bash
 > > #SBATCH --array=0-7
 > > $SBATCH --cpus-per-task 16
+> > #SBATCH -o fastq_v3_slurm.%j.out           # STDOUT
+> > #SBATCH -e fastq_v3_slurm.%j.err           # STDERR
 > > module load fastqc/0.11.8
 > >
 > >FASTQ_FILES=$($1/*.fastq)
@@ -94,7 +102,7 @@ $ ls  /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-reg
 > **Réponse**
 > > Pour regarder les ressources allouées à un job, on peut utiliser la commande 
 > > ```bash 
-> > $ sacct --format=JobID,JobName,NCPU,CPUTime,Elapsed, State -j <id-du-job>
+> > $ sacct --format=JobID,JobName,NCPU,CPUTime,Elapsed,State -j <id-du-job>
 > > ```
 {:.answer}
 
@@ -102,7 +110,7 @@ $ ls  /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-reg
 
 ## Exercice 2: mapping des reads sur le génome de *E. coli*
 
-Nous allons utiliser le logiciel **BWA** pour aligner les reads RNAseq sur le génome de *E. coli*.  
+Nous allons créer un nouveau script bash qui utile **BWA** pour aligner les reads RNAseq sur le génome de *E. coli*.  
 
 Pour pouvoir utiliser BWA il faut d'abord indexer le génome de référence avec la commande `bwa-index` 
 
@@ -111,7 +119,11 @@ $ srun bwa index /shared/projects/dubii2020/data/study_cases/Escherichia_coli/ba
 ```
 
 
-Une fois l'index créé, nous allons utiliser un script `bwa_pairedfiles.sh` permettant de lancer un mapping STAR sur toutes les paires de fichiers fatsq d'un répertoire donné en argument :
+Une fois l'index créé, nous allons utiliser un script `bwa_pairedfiles.sh` permettant de lancer un mapping BWA sur toutes les paires de fichiers fatsq d'un répertoire donné en argument.
+### Conseils
+- Utiliser les commandes basename et dirname pour extraire les noms des fichiers fastq et leur répertoire source
+- Utiliser le multi-threading pour bwa et les job-steps (tasks)
+ks)
 
 > **Solution**
 ```bash
