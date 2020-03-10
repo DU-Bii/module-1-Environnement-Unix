@@ -141,12 +141,12 @@ Une fois l'index créé, nous allons utiliser un script `bwa_pairedfiles.sh` per
 > > #SBATCH --cpus-per-task=14  # 14 cpus (threads) par tache
 > > #SBATCH -o bwa_paired_files.%j.out           # STDOUT
 > > #SBATCH -e bwa_peired_files.%j.err           # STDERR
-
+> >
 > > module load bwa/0.7.17
-
+> >
 > > REP_FASTQ_FILES=$1
 > > R1_fastq_files=($1/*_1.fastq)
-
+> >
 > > for fastq_file in ${R1_fastq_files[@]}
 > > do
 > >        sample_file="$(basename $fastq_file _1.fastq)"
