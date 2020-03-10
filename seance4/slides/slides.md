@@ -168,7 +168,7 @@ $ bash first-line.bash
 Chromosome	0	1023	FNR1_vs_input1_cutadapt_bowtie2_macs2_peak_1	26744	.	9.21896	2677.47827	2674.42871	173
 ```
 
---- 
+---
 
 class: left, top
 
