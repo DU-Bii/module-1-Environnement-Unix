@@ -134,10 +134,9 @@ Une fois l'index créé, nous allons utiliser un script `bwa_pairedfiles.sh` per
 
 
 > **Solution**
-> > ```bash
+> > ```bash 
 > > $ cat bwa_pairedfiles.sh
 > > #! /bin/bash
-
 > > #SBATCH --ntasks=4  # 4 job steps ou tasks
 > > #SBATCH --cpus-per-task=14  # 14 cpus (threads) par tache
 > > #SBATCH -o bwa_paired_files.%j.out           # STDOUT
@@ -158,7 +157,7 @@ Une fois l'index créé, nous allons utiliser un script `bwa_pairedfiles.sh` per
 > >```
 {:.answer}
 
->Ce script sera lancé avec la commande `sbatch` :
+> Ce script sera lancé avec la commande `sbatch` :  
 > >
 > >```bash  
 > >$ sbatch bwa_pairedfiles.sh /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq
