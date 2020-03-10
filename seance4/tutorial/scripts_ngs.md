@@ -33,8 +33,8 @@ $ ls  /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-reg
 #### Conseils :  
 - Ces 3 scripts devront prendre en argument sur la ligne de commande le répertoire des fichiers fastq : /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq/
 - Créer dans votre script bash un répertoire pour les résultats fastqc dans votre répertoire courant, par exemple fastqc-results-v1
-- Renommer de manière explicite les noms des fichiers de sortie et d'erreur de SLURM avec un nom explicite (version du script et  process id)
-- N'oublier pas charger le logiciel dans le script bash avec la commande `module load`
+- Renommer les noms des fichiers de sortie et d'erreur de SLURM avec un nom explicite (version du script et  process id)
+- N'oublier pas charger le logiciel fasqc dans le script bash avec la commande `module load`
 
 > **Réponse script v1 (aucune parallélisation) :**
 > > ```bash
@@ -56,7 +56,7 @@ $ ls  /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-reg
 >>```
 {:.answer}
 
-> **Réponse script v2 (version multithreadée de fastqc avec 6 threads :**
+> **Réponse script v2 (version multithreadée de fastqc avec 6 threads) :**
 > > ```bash
 > > $ cat fastqc_v2.sh  
 > > #! /bin/bash  
