@@ -133,7 +133,7 @@ Une fois l'index créé, nous allons utiliser un script `bwa_pairedfiles.sh` per
 - Lorsque des `job-steps` sont exécutés en parallèle, le script parent (Job) doit attendre la fin de l'exécution des processus enfants avec un `wait`, sinon ces derniers seront automatiquement interrompus (killed) une fois la fin du batch atteinte
 
 
->   **Solution**
+> **Solution**
 > > ```bash
 > > $ cat bwa_pairedfiles.sh
 > > #! /bin/bash
@@ -155,14 +155,14 @@ Une fois l'index créé, nous allons utiliser un script `bwa_pairedfiles.sh` per
 > >        srun --cpus-per-task=14 bwa mem /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterialregulons_myers_2013/genome/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.dna.chromosome.Chromosome.fa  ${path_fastq}/${sample_file}_1.fastq ${path_fastq}/${sample_file}_2.fastq -t 14 > ./${sample_file}.sam  &  
 > > done
 > > wait 
-> > ```
+> >```
 {:.answer}
 
-Ce script sera lancé avec la commande `sbatch` :
-
-```bash  
-$ sbatch bwa_pairedfiles.sh /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq
-```
+>Ce script sera lancé avec la commande `sbatch` :
+> >
+> >```bash  
+> >$ sbatch bwa_pairedfiles.sh /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq
+> >```
 {:.answer}
 
 
