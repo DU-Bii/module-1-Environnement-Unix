@@ -175,7 +175,7 @@ class: left, top
 ## Définition
 
 ```bash
-$ my_variable=42
+my_variable=42
 ```
 
 --
@@ -198,10 +198,49 @@ class: left, top
 --
 
 ```bash
-$ fastq_files = $(ls ./Escherichia_coli/bacterial-regulons_myers_2013/data/ChIP-seq/*.bed)
+fastq_files=$(ls ./Escherichia_coli/bacterial-regulons_myers_2013/data/ChIP-seq/*.bed)
+```
+
+--
+
+**Question** : écrire le script `nb-lignes.bash` qui affiche le nombre de lignes 
+du fichier `Escherichia_coli/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3` sous la forme `nombre de lignes : <nombre>`
+
+-- 
+
+```bash
+n=$(wc -l Escherichia_coli/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3)
+
+echo "nombre de lignes : ${n}"
 ```
 
 ---
 
+class: left, top
 
+# Bash : les boucles
+
+**Syntaxe** :
+
+```bash
+for <variable_name> in <list>
+do
+    <instructions>
+done
+```
+
+--
+
+```bash
+for filename in $(ls *.bed)
+do
+    echo "$filename: $(wc -l $filename|cut -f 1 -d ' ') lines"
+done
+```
+
+---
+
+class: middle, center
+
+https://devhints.io/bash
 
