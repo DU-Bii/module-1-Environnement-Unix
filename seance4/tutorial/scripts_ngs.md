@@ -33,8 +33,8 @@ $ ls  /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-reg
 #### Conseils :  
 - Ces 3 scripts devront prendre en argument sur la ligne de commande le répertoire des fichiers fastq : /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq/
 - Créer dans votre script bash un répertoire pour les résultats fastqc dans votre répertoire courant, par exemple fastqc-results-v1
-- Renommer de manière explicite les noms des fichiers de sortie et d'erreur de SLURM avec un nom explicite (version du script et  process id)
-- N'oublier pas charger le logiciel dans le script bash avec la commande `module load`
+- Renommer les noms des fichiers de sortie et d'erreur de SLURM avec un nom explicite (version du script et  process id)
+- N'oublier pas charger le logiciel fasqc dans le script bash avec la commande `module load`
 
 > **Réponse script v1 (aucune parallélisation) :**
 > > ```bash
@@ -56,7 +56,7 @@ $ ls  /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-reg
 >>```
 {:.answer}
 
-> **Réponse script v2 (version multithreadée de fastqc avec 6 threads :**
+> **Réponse script v2 (version multithreadée de fastqc avec 6 threads) :**
 > > ```bash
 > > $ cat fastqc_v2.sh  
 > > #! /bin/bash  
@@ -128,9 +128,9 @@ Une fois l'index créé, nous allons utiliser un script `bwa_pairedfiles.sh` per
 ### Conseils
 - Utiliser le programme `bwa-mem`et regarder la syntaxe et les options au préalable en tapant `$ bwa-mem`
 - Utiliser les commandes `basename` et `dirname` pour extraire les noms des fichiers fastq et leur répertoire source
-- Votre script devra utiliser le multi-threading pour bwa mem et les job-steps (tasks) pour les fichiers à traiter
+- Votre script devra utiliser le multi-threading pour `bwa mem` et les `job-steps` (tasks) pour les fichiers à traiter
 - Pour pouvoir exécuter les job-steps (tasks) en parallèle, la commande srun doit se terminer par `&`
-- Lorsque des steps sont exécutés en parallèle, il est impératif dans le script parent (Job), d'attendre la fin de l'exécution des processus enfants avec un "wait", faute de quoi ces derniers seront automatiquement interrompus (killed) une fois la fin du batch atteinte
+- Lorsque des `job-steps` sont exécutés en parallèle, le script parent (Job) doit attendre la fin de l'exécution des processus enfants avec un `wait`, sinon ces derniers seront automatiquement interrompus (killed) une fois la fin du batch atteinte
 
 
 > **Solution**
