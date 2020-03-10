@@ -213,7 +213,7 @@ du fichier `Escherichia_coli/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37
 --
 
 ```bash
-n=$(wc -l Escherichia_coli/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3)
+n=$(wc -l Escherichia_coli/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3|cut -f 1 -d ' ')
 
 echo "nombre de lignes : ${n}"
 ```
@@ -248,5 +248,5 @@ done
 
 class: middle, center
 
-https://devhints.io/bash
+[https://devhints.io/bash](https://devhints.io/bash)
 
