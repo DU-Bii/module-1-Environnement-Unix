@@ -51,7 +51,7 @@ $ ls  /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-reg
 > > data=($1/*.fastq)    
 > > for fastqc_file in ${data[@]}  
 > > do 
-> >      srun fastqc --quiet  ${fastqc_file} -o ${output_dir} &  
+> >      srun fastqc --quiet  ${fastqc_file} -o ${output_dir}
 > > done
 >>```
 {:.answer}
@@ -70,6 +70,7 @@ $ ls  /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-reg
 > >
 > > data=($1/*.fastq)  
 > > srun fastqc -t 6 --quiet  ${data[@]} -o ${output_dir} &  
+> > wait
 > > 
 >>```
 {:.answer}
