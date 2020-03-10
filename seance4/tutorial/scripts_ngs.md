@@ -133,30 +133,30 @@ Une fois l'index créé, nous allons utiliser un script `bwa_pairedfiles.sh` per
 - Lorsque des `job-steps` sont exécutés en parallèle, le script parent (Job) doit attendre la fin de l'exécution des processus enfants avec un `wait`, sinon ces derniers seront automatiquement interrompus (killed) une fois la fin du batch atteinte
 
 
-> **Solution**
-```bash
-$ cat bwa_pairedfiles.sh
-#! /bin/bash
+>   **Solution**
+> > ```bash
+> > $ cat bwa_pairedfiles.sh
+> > #! /bin/bash
 
-#SBATCH --ntasks=4  # 4 job steps ou tasks
-#SBATCH --cpus-per-task=14  # 14 cpus (threads) par tache
-#SBATCH -o bwa_paired_files.%j.out           # STDOUT
-#SBATCH -e bwa_peired_files.%j.err           # STDERR
+> > #SBATCH --ntasks=4  # 4 job steps ou tasks
+> > #SBATCH --cpus-per-task=14  # 14 cpus (threads) par tache
+> > #SBATCH -o bwa_paired_files.%j.out           # STDOUT
+> > #SBATCH -e bwa_peired_files.%j.err           # STDERR
 
-module load bwa/0.7.17
+> > module load bwa/0.7.17
 
-REP_FASTQ_FILES=$1
-R1_fastq_files=($1/*_1.fastq)
+> > REP_FASTQ_FILES=$1
+> > R1_fastq_files=($1/*_1.fastq)
 
-for fastq_file in ${R1_fastq_files[@]}
-do
-       sample_file="$(basename $fastq_file _1.fastq)"
-       path_fastq="$(dirname $fastq_file)"
-       srun --cpus-per-task=14 bwa mem /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterialregulons_myers_2013/genome/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.dna.chromosome.Chromosome.fa  ${path_fastq}/${sample_file}_1.fastq ${path_fastq}/${sample_file}_2.fastq -t 14 > ./${sample_file}.sam  &  
-done
-wait 
-```
-
+> > for fastq_file in ${R1_fastq_files[@]}
+> > do
+> >        sample_file="$(basename $fastq_file _1.fastq)"
+> >        path_fastq="$(dirname $fastq_file)"
+> >        srun --cpus-per-task=14 bwa mem /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterialregulons_myers_2013/genome/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.dna.chromosome.Chromosome.fa  ${path_fastq}/${sample_file}_1.fastq ${path_fastq}/${sample_file}_2.fastq -t 14 > ./${sample_file}.sam  &  
+> > done
+> > wait 
+> > ```
+{:.answer}
 
 Ce script sera lancé avec la commande `sbatch` :
 
