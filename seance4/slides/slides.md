@@ -155,7 +155,7 @@ des fichiers `bed` présents dans `./Escherichia_coli/bacterial-regulons_myers_2
 head -1 ./Escherichia_coli/bacterial-regulons_myers_2013/data/ChIP-seq/*.bed
 ```
 
--- 
+--
 
 ## Éxécution du script
 
