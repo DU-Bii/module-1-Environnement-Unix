@@ -127,9 +127,9 @@ Une fois l'index créé, nous allons utiliser un script `bwa_pairedfiles.sh` per
 ### Conseils
 - Utiliser le programme `bwa-mem`et regarder la syntaxe et les options au préalable en tapant `$ bwa-mem`
 - Utiliser les commandes `basename` et `dirname` pour extraire les noms des fichiers fastq et leur répertoire source
-- Votre script devra utiliser le multi-threading pour bwa mem et les job-steps (tasks) pour les fichiers à traiter
+- Votre script devra utiliser le multi-threading pour `bwa mem` et les `job-steps` (tasks) pour les fichiers à traiter
 - Pour pouvoir exécuter les job-steps (tasks) en parallèle, la commande srun doit se terminer par `&`
-- Lorsque des steps sont exécutés en parallèle, il est impératif dans le script parent (Job), d'attendre la fin de l'exécution des processus enfants avec un "wait", faute de quoi ces derniers seront automatiquement interrompus (killed) une fois la fin du batch atteinte
+- Lorsque des `job-steps` sont exécutés en parallèle, le script parent (Job) doit attendre la fin de l'exécution des processus enfants avec un `wait`, sinon ces derniers seront automatiquement interrompus (killed) une fois la fin du batch atteinte
 
 
 > **Solution**
