@@ -29,7 +29,7 @@ class: left, top
 
 # Question 1
 
-Utiliser le `|` et les commandes précédentes pour déterminer le nombre de gènes uniques dans le fichier `study_cases/Escherichia_coli/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3`  
+Utiliser le `|` et les commandes précédentes pour déterminer le nombre de gènes uniques dans le fichier `Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3`  
 
 --
 
@@ -87,7 +87,7 @@ class: left, top
 
 # rsync : copie simple
 
-**Question** : copier le répertoire `study-cases` tant le répertoire `/tmp`
+**Question** : copier le répertoire `study-cases` dans le répertoire `/tmp`
 
 --
 
