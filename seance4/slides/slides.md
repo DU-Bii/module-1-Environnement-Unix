@@ -185,7 +185,7 @@ my_variable=42
 ## Affichage
 
 ```bash 
-$ echo ${my_variable}
+echo ${my_variable}
 42
 ```
 
