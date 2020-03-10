@@ -199,6 +199,8 @@ class: left, top
 
 --
 
+**Exemple** :
+
 ```bash
 fastq_files=$(ls ./Escherichia_coli/bacterial-regulons_myers_2013/data/ChIP-seq/*.bed)
 ```
@@ -232,6 +234,8 @@ done
 ```
 
 --
+
+**Exemple** :
 
 ```bash
 for filename in $(ls *.bed)
