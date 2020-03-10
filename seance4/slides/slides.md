@@ -208,7 +208,7 @@ fastq_files=$(ls ./Escherichia_coli/bacterial-regulons_myers_2013/data/ChIP-seq/
 **Question** : écrire le script `nb-lignes.bash` qui affiche le nombre de lignes 
 du fichier `Escherichia_coli/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3` sous la forme `nombre de lignes : <nombre>`
 
--- 
+--
 
 ```bash
 n=$(wc -l Escherichia_coli/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3)
