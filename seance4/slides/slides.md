@@ -128,7 +128,9 @@ class: center, middle
 # Bash
 
 - Un langage interprété
--- 
+
+--
+
 - Possède toutes les caractéristiques d'un langage de programmation
     - variables
     - fonctions
