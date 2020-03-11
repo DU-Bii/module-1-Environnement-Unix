@@ -273,7 +273,7 @@ done
 **Exemple** :
 
 ```bash
-input_gff_list=(*.gff)
+input_gff_list=*.gff
 
 for input_gff in ${input_gff_list}
 do
