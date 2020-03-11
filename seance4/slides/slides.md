@@ -34,8 +34,8 @@ Utiliser le `|` et les commandes précédentes pour déterminer le nombre de gè
 --
 
 ```bash
-$ cut -f 9 study-cases/Escherichia_coli/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3 | cut -d ';' -f 1 | grep 'gene' | sort -u | wc -l
-4498
+$ cut -f 9 study-cases/Escherichia_coli/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3 | cut -d ";" -f 1 | grep "ID=gene" | sort -u | wc -l
+4497
 ```
 
 ---
@@ -146,13 +146,16 @@ class: left, top
 
 ## Écriture du script
 
-**Question**: écrire le script `first-line.bash` qui affiche la première ligne
-des fichiers `bed` présents dans `./Escherichia_coli/bacterial-regulons_myers_2013/data/ChIP-seq`
+**Question**: écrire le script `unique-genes.bash` qui affiche le nombre de gènes
+unique dans le fichier `~/dubii/study-cases/Escherichia_coli/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3`
 
 --
 
+Créer le fichier `unique-genes.bash` avec un éditeur de texte et écrire
+dedans.
+
 ```bash
-head -1 ./Escherichia_coli/bacterial-regulons_myers_2013/data/ChIP-seq/*.bed
+cut -f 9 ~/dubii/study-cases/Escherichia_coli/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3 | cut -d ";" -f 1 | grep "ID=gene" | sort -u | wc -l
 ```
 
 --
@@ -160,12 +163,8 @@ head -1 ./Escherichia_coli/bacterial-regulons_myers_2013/data/ChIP-seq/*.bed
 ## Éxécution du script
 
 ```bash
-$ bash first-line.bash
-==> ./Escherichia_coli/bacterial-regulons_myers_2013/data/ChIP-seq/FNR1_vs_input1_cutadapt_bowtie2_homer.bed <==
-# HOMER Peaks
-
-==> ./Escherichia_coli/bacterial-regulons_myers_2013/data/ChIP-seq/FNR1_vs_input1_cutadapt_bowtie2_macs2.bed <==
-Chromosome	0	1023	FNR1_vs_input1_cutadapt_bowtie2_macs2_peak_1	26744	.	9.21896	2677.47827	2674.42871	173
+$ bash unique-genes.bash
+Number of unique genes: 4497
 ```
 
 ---
@@ -186,7 +185,31 @@ my_variable=42
 
 ```bash 
 echo ${my_variable}
-42
+# ou encore
+echo "La valeur de la my_variable est ${my_variable}"
+```
+
+---
+
+# Bash : les variables
+
+## Exercice : modifier `unique-genes.bash`
+
+**Question** : modifier le script `unique-genes.bash` de sorte que 
+le nom du fichier gff soit stocké dans une variable et que cette variable
+soit utilisée dans la suite du script.
+
+--
+
+```bash
+input_gff=~/dubii/study-cases/Escherichia_coli/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3
+
+cut -f 9 ${input_gff} | cut -d ";" -f 1 | grep "ID=gene" | sort -u | wc -l
+```
+
+```bash
+$ bash unique-genes.bash
+4497
 ```
 
 ---
@@ -199,24 +222,36 @@ class: left, top
 
 --
 
-**Exemple** :
+**Exemple** : stocker le répertoire courant dans une variable
 
 ```bash
-fastq_files=$(ls ./Escherichia_coli/bacterial-regulons_myers_2013/data/ChIP-seq/*.bed)
+workdir=$(pwd)
+
+# Prints the current working directory.
+echo "The current working directory is ${workdir}.
 ```
 
 --
 
-**Question** : écrire le script `nb-lignes.bash` qui affiche le nombre de lignes 
-du fichier `Escherichia_coli/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3` sous la forme `nombre de lignes : <nombre>`
+**Question** : modifier le script `unique-genes.bash` pour qu'il stocke
+le nombre de gènes dans une variable et l'affiche sous la forme
+`Number of unique genes: 4497`
 
 --
 
 ```bash
-n=$(wc -l Escherichia_coli/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3|cut -f 1 -d ' ')
+input_gff=~/dubii/study-cases/Escherichia_coli/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3
 
-echo "nombre de lignes : ${n}"
+n=$(cut -f 9 ${input_gff} | cut -d ";" -f 1 | grep "ID=gene" | sort -u | wc -l)
+
+echo "Number of unique genes: ${n}"
 ```
+
+```bash
+$ bash unique-genes.bash
+Number of unique genes: 4497
+```
+
 
 ---
 
@@ -238,9 +273,10 @@ done
 **Exemple** :
 
 ```bash
-for filename in $(ls *.bed)
+for input_gff in *.gff
 do
-    echo "$filename: $(wc -l $filename|cut -f 1 -d ' ') lines"
+    n=$(cut -f 9 ${input_gff} | cut -d ";" -f 1 | grep "ID=gene" | sort -u | wc -l)
+    echo "${input_gff}: ${n}"
 done
 ```
 

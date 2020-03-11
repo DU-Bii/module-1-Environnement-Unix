@@ -92,7 +92,7 @@ Let's create `unique-genes.bash` with a text editor and write those lines:
 ```bash
 input_gff=~/dubii/study-cases/Escherichia_coli/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3
 
-n=$(cut -f 9 ${input_gff} | cut -d';' -f 1 | grep 'ID=gene' | sort -u | wc -l)
+n=$(cut -f 9 ${input_gff} | cut -d ";" -f 1 | grep "ID=gene" | sort -u | wc -l)
 echo "Number of unique genes: ${n}"
 ```
 
@@ -143,7 +143,7 @@ arguments (e.g. `${1}` is the first argument, `${10}` the tenth argument, etc).
 from the command-line. Then run the script:
 
 ```bash
-$ ./unique-genes.bash ./Escherichia_coli/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3
+$ ./unique-genes.bash ~/dubii/study-cases/Escherichia_coli/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3
 Number of unique genes: 4497
 ```
 
