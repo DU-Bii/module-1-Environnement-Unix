@@ -49,7 +49,7 @@ Créer une archive du dossier `study-cases` ne contenant pas le répertoire `.gi
 --
 
 ```bash
-tar cvf ~/dubii/study-cases.tar --exclude ".git" study-cases
+tar cvf study-cases.tar --exclude ".git" ~/dubii/study-cases
 ```
 
 ---
