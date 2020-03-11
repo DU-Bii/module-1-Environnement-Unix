@@ -114,6 +114,8 @@ class: left, top
 
 --
 
+**Solution** :
+
 ```bash
 $ rsync -aPh  <username>@core.cluster.france-bioinformatique.fr:/shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq/*.fastq .
 ```
@@ -150,6 +152,8 @@ class: left, top
 unique dans le fichier `~/dubii/study-cases/Escherichia_coli/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3`
 
 --
+
+**Solution** :
 
 Créer le fichier `unique-genes.bash` avec un éditeur de texte et écrire
 dedans.
@@ -201,6 +205,8 @@ soit utilisée dans la suite du script.
 
 --
 
+**Solution** :
+
 ```bash
 input_gff=~/dubii/study-cases/Escherichia_coli/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3
 
@@ -238,6 +244,8 @@ le nombre de gènes dans une variable et l'affiche sous la forme
 `Number of unique genes: 4497`
 
 --
+
+**Solution** :
 
 ```bash
 input_gff=~/dubii/study-cases/Escherichia_coli/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3
