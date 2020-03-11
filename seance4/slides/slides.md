@@ -155,8 +155,8 @@ unique dans le fichier `~/dubii/study-cases/Escherichia_coli/Escherichia_coli_st
 
 **Solution** :
 
-Créer le fichier `unique-genes.bash` avec un éditeur de texte et écrire
-dedans.
+Avec un éditeur de texte créer le fichier `unique-genes.bash` contenant :
+
 
 ```bash
 cut -f 9 ~/dubii/study-cases/Escherichia_coli/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3 | cut -d ";" -f 1 | grep "ID=gene" | sort -u | wc -l
@@ -168,7 +168,7 @@ cut -f 9 ~/dubii/study-cases/Escherichia_coli/Escherichia_coli_str_k_12_substr_m
 
 ```bash
 $ bash unique-genes.bash
-Number of unique genes: 4497
+4497
 ```
 
 ---
@@ -189,6 +189,11 @@ my_variable=42
 
 ```bash 
 echo ${my_variable}
+```
+
+--
+
+```bash 
 # ou encore
 echo "La valeur de la my_variable est ${my_variable}"
 ```
@@ -237,7 +242,9 @@ workdir=$(pwd)
 echo "The current working directory is ${workdir}.
 ```
 
---
+---
+
+# Bash : stocker la sortie d'une commande
 
 **Question** : modifier le script `unique-genes.bash` pour qu'il stocke
 le nombre de gènes dans une variable et l'affiche sous la forme
