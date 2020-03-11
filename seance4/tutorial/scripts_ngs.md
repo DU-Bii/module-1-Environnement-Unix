@@ -49,7 +49,7 @@ $ ls  /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-reg
 > > mkdir -p ${output_dir}
 > >
 > > data=(*.fastq)
-> > for fastqc_file in ${data}  
+> > for fastqc_file in ${data[@]}  
 > > do 
 > >      srun fastqc --quiet  ${fastqc_file} -o ${output_dir}
 > > done
@@ -69,7 +69,7 @@ $ ls  /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-reg
 > > mkdir -p ${output_dir}
 > >
 > > data=(*.fastq)
-> > srun fastqc -t 6 --quiet  ${data} -o ${output_dir} &  
+> > srun fastqc -t 6 --quiet  ${data[@]} -o ${output_dir} &  
 > > wait
 > > 
 >>```
@@ -87,7 +87,7 @@ $ ls  /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-reg
 > > output_dir="fastqc-results-v3"
 > > mkdir -p ${output_dir}
 > >
-> > FASTQ_FILES=($1/*.fastq)  
+> > FASTQ_FILES=(*.fastq)  
 > > srun fastqc --quiet ${FASTQ_FILES[$SLURM_ARRAY_TASK_ID]} -o ${output_dir} 
 > >```
 {:.answer}
@@ -144,8 +144,8 @@ Une fois l'index créé, nous allons utiliser un script `bwa_pairedfiles.sh` per
 > >
 > > module load bwa/0.7.17
 > >
-> > REP_FASTQ_FILES=$1
-> > R1_fastq_files=($1/*_1.fastq)
+> > REP_FASTQ_FILES=$1  # argument depuis la ligne de commande
+> > R1_fastq_files=(${REP_FASTQ_FILES}/*_1.fastq)
 > >
 > > for fastq_file in ${R1_fastq_files[@]}
 > > do
