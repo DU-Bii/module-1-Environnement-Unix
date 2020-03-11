@@ -37,7 +37,7 @@ $ history | tail -n 3
 ```
 
 
-### Defining variables
+### Using variables.
 
 Variables are defined in a script in the same fashion as in the terminal:
 
@@ -46,80 +46,115 @@ Variables are defined in a script in the same fashion as in the terminal:
 var=42
 
 # Print the variable value
-echo ${var}
+echo ${var}     # nice
+echo "${var}"   # better
 ```
 
-The output of a command can be stored in a variable for later use.
-It is then necessary to put the command between ` characters.
+**IMPORTANT**: note the absence of spaces between the `=` sign when assigning
+a value.
 
 ```bash
-# Store file names into a variable
-filenames=$(ls study-cases/Escherichia_coli/bacterial-regulons_myers_2013/data/ChIP-seq)
+$ var=42   # works
 
-# Display the file names
-echo "the filenames:"
-echo "${filenames}"
+$ var = 42
+bash: var: command not found
+```
+
+### Storing a command's output.
+
+A command's output can be stored in a variable for later use.
+
+This is done by using the syntax `$(command [arguments])`.
+
+Example:
+
+```bash
+# Store the current working directory.
+workdir=$(pwd)
+
+# Prints the current working directory.
+echo "The current working directory is ${workdir}.
 ```
 
 
-### Writing our first script: a file's first line
+### Writing our first script: the number of unique genes in a gff.
 
-Let's say we want to write a script that displays the first line of a file
-with the file's name next to it.
-
-Let's create `first_line.bash` with a text editor and write those lines:
+We've seen that the command to get the number of unique genes in a gff is
 
 ```bash
-fname=molecules/cubane.pdb
-thehead=$(head -1 $FILE)
-echo "${fname}: ${thehead}"
+cut -f 9 <GFF_NAME> | cut -d';' -f 1 | grep 'ID=gene' | sort -u | wc -l
+```
+
+Let's say we want to write a script that does that for us.
+
+Let's create `unique-genes.bash` with a text editor and write those lines:
+
+```bash
+input_gff=~/dubii/study-cases/Escherichia_coli/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3
+
+n=$(cut -f 9 ${input_gff} | cut -d';' -f 1 | grep 'ID=gene' | sort -u | wc -l)
+echo "Number of unique genes: ${n}"
 ```
 
 
 ### Executing a script
 
 To execute the script we just wrote, we can execute it or "invoke" it in a terminal
-simply by typing `bash first_line.bash`:
+simply by typing `bash unique-genes.bash`:
 
 ```bash
-$ bash first_line.bash
-molecules/cubane.pdb: COMPND      CUBANE
+$ bash unique-genes.bash
+Number of unique genes: 4497
 ```
 
-Alternatively, we can add the sheband (`#!/bin/bash`) at the beginning of the
-file and make the script executable with `chmod +x <script>` and the execute it:
+Alternatively, we make the script executable and run it by typing
+`./unique-genes.bash`.
+To do this, we first need to tell the system how to execute the script, meaning
+we have to tell the system it should use bash as interpreter.
+
+This is done by putting a so-called "shebang" at the very top of the script.
+
+Open the script and insert this as the first line: `#!/bin/bash`.
+
+Then, we have to make the script executable: `chmod +x ./unique-genes.bash`.
 
 ```bash
-$ # Add the shebang to the script: we use sed in interactive insertion mode
-$ # We could as well use a classic text editor.
-$ sed '1 i\#!/bin/bash' first_line.bash
-$ chmod +x first_line.bash
-$ ./first_line.bash
-molecules/cubane.pdb: COMPND      CUBANE
+$ ./unique-genes.bash
+Number of unique genes: 4497
 ```
 
 ### Passing arguments to a script
 
-In the script we wrote, the input file is defined by the variable `FILE`.
-It has the value `molecules/cubane.pdb`, meaning that if we want to run the
-script on another file, we have to modify the script.
+In the script we wrote, the input file is defined by the variable `input_gff`.
+It has the value `~/dubii/study-cases/Escherichia_coli/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3`, meaning that if we want to run the
+script on another file, we would have to modify the script.
 
 So it may be conveniant to have a script that takes the input file name as an
 argument.
 
 Inside a script, the variables named by numbers represent the command-line
-arguments (e.g. `$1` is the first argument, `$10` the tenth argument, etc).
+arguments (e.g. `${1}` is the first argument, `${10}` the tenth argument, etc).
 
 `$#` contains the number of arguments passed to the script.
 
-**Question**: adapt the script so that it takes the input file name from
-the command-line.
+`$*` represents all the arguments passed to the script.
+
+**Question**: adapt the `./unique-genes.bash` so that it takes the gff path
+from the command-line. Then run the script:
+
+```bash
+$ ./unique-genes.bash ./Escherichia_coli/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3
+Number of unique genes: 4497
+```
 
 > **Solution**:
 > > ```bash
-> > fname=$1
-> > thehead=$(head -1 $FILE)
-> > echo "${fname}: ${thehead}"
+> > #!/bin/bash
+> > 
+> > input_gff=$1
+> > 
+> > n=$(cut -f 9 ${input_gff} | cut -d';' -f 1 | grep 'ID=gene' | sort -u | wc -l)
+> > echo "Number of unique genes: ${n}"
 > > ```
 {:.answer}
 
@@ -135,13 +170,15 @@ So, assuming that several input files were provided from the command-line, our
 script becomes:
 
 ```bash
+#!/bin/bash
+
 # Store file names into a variable: $* represents all command-line arguments.
 filenames=$*
 
-for fname in ${filenames}
+for input_gff in ${filenames}
 do
-    thehead=$(head -1 ${fname})
-    echo "${fname}: ${thehead}"    
+    n=$(cut -f 9 ${input_gff} | cut -d';' -f 1 | grep 'ID=gene' | sort -u | wc -l)
+    echo "${input_gff}: ${n}"
 done
 ```
 
@@ -151,7 +188,10 @@ done
 An test block starts with the keyword `if` and ends with `fi`
 (which is `if` reversed).
 In between, it is possible do add as many `else` and `elif` (the contraction
-of `else if`) as necessary:
+of `else if`) as necessary.
+
+In the exemple below, we check that the number of command-line arguments
+passed to the script:
 
 ```bash
 # The -gt operator stands for "greater than"
@@ -165,21 +205,28 @@ else
 fi
 ```
 
-**Question**: adapt `first_line.bash` so that it runs as well
+**Question**: adapt `unique-genes.bash` so that it runs as well
 whether a single or multiple files are passed to the command-line.
 The script will display an error message if no input file is provided.
 
 > **Solution**:
 > > ```bash
+> > #!/bin/bash
+> > 
 > > # The -ge operator stands for "greater or equal"
-> > if [ $# -ge 1 ]; then
-> >     filenames=$*    
-> >     for fname in ${filenames}
+> > if [ $# -gt 1 ]; then
+> >     filenames=$*
+> >     for input_gff in ${filenames}
 > >     do
-> >         thehead=$(head -1 ${fname})
-> >         echo "${fname}: ${thehead}"    
+> >         n=$(cut -f 9 ${input_gff} | cut -d';' -f 1 | grep 'ID=gene' | sort -u | wc -l)
+> >         echo "${input_gff}: ${n}"
 > >     done
+> > elif [ $# -eq 1 ]; then
+> >     input_gff=$1
+> >     n=$(cut -f 9 ${input_gff} | cut -d';' -f 1 | grep 'ID=gene' | sort -u | wc -l)
+> >     echo "Number of unique genes: ${n}"
 > > else
+> >     echo "usage: $0 <input_gff> [input_gff2..]"  # $0 is the script name
 > >     echo "ERROR: no file provided from command-line"
 > > fi
 > > ```
