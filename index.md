@@ -65,9 +65,11 @@ Bibliographie / webographie
 - Instructeurs : Benoist Laurent & Hélène Chiapello
 - Helper : Pierre Poulain
 
-
-- [Tutoriel](seance4/tutorial/index.md)
-- [Présentation](seance4/slides/index.html)
+- [Présentation](seance4/slides/index.html) <br />
+- [Support](seance4/tutorial/index.md)
+    - [rsync](rsync.md)
+    - [Scripting](scripting.md)
+    - [Scripts NGS](scripts_ngs.md)
 
 
 ## Installer un *shell* Linux sur sa machine

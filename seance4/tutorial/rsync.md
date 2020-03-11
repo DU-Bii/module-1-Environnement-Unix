@@ -1,5 +1,5 @@
 
-# Partie 2.5: rsync
+# rsync
 
 **Syntax**: `rsync [options] <SOURCE> <DESTINATION>`
 
@@ -93,11 +93,3 @@ building file list ...
 my-big-file.tar.gz
      301.75M  22%   71.97MB/s    0:00:14
 ```
-
-
-
-
-
-
-
-
