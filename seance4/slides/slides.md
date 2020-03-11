@@ -34,7 +34,7 @@ Utiliser le `|` et les commandes précédentes pour déterminer le nombre de gè
 --
 
 ```bash
-$ cut -f 9 study-cases/Escherichia_coli/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3 | cut -d ";" -f 1 | grep "ID=gene" | sort -u | wc -l
+$ cut -f 9 ~/dubii/study-cases/Escherichia_coli/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3 | cut -d ";" -f 1 | grep "ID=gene" | sort -u | wc -l
 4497
 ```
 
@@ -49,7 +49,7 @@ Créer une archive du dossier `study-cases` ne contenant pas le répertoire `.gi
 --
 
 ```bash
-tar cvf study-cases.tar --exclude ".git" study-cases
+tar cvf ~/dubii/study-cases.tar --exclude ".git" study-cases
 ```
 
 ---
@@ -92,7 +92,7 @@ class: left, top
 --
 
 ```bash
-$ rsync -av study-cases /tmp
+$ rsync -av ~/dubii/study-cases /tmp
 rsync -av study-cases /data/
 building file list ... done
 study-cases/
