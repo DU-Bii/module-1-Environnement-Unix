@@ -273,7 +273,9 @@ done
 **Exemple** :
 
 ```bash
-for input_gff in *.gff
+input_gff_list=(*.gff)
+
+for input_gff in ${input_gff_list}
 do
     n=$(cut -f 9 ${input_gff} | cut -d ";" -f 1 | grep "ID=gene" | sort -u | wc -l)
     echo "${input_gff}: ${n}"
