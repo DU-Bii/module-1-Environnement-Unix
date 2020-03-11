@@ -67,9 +67,9 @@ Bibliographie / webographie
 
 - [Présentation](seance4/slides/index.html) <br />
 - [Support](seance4/tutorial/index.md)
-    - [rsync](rsync.md)
-    - [Scripting](scripting.md)
-    - [Scripts NGS](scripts_ngs.md)
+    - [rsync](seance4/tutorial/rsync.md)
+    - [Scripting](seance4/tutorial/scripting.md)
+    - [Scripts NGS](seance4/tutorial/scripts_ngs.md)
 
 
 ## Installer un *shell* Linux sur sa machine
