@@ -144,7 +144,7 @@ Une fois l'index créé, nous allons utiliser un script `bwa_pairedfiles.sh` per
 > >
 > > module load bwa/0.7.17
 > >
-> > BASE_DIR="/shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013"
+> > BASE_DIR="/shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq"
 > > R1_fastq_files=(${BASE_DIR}/*_1.fastq)
 > >
 > > for fastq_file in ${R1_fastq_files[@]}
@@ -160,7 +160,7 @@ Une fois l'index créé, nous allons utiliser un script `bwa_pairedfiles.sh` per
 > Ce script sera lancé avec la commande `sbatch` :  
 > >
 > >```bash  
-> >$ sbatch bwa_pairedfiles.sh /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq
+> >$ sbatch bwa_pairedfiles.sh 
 > >```
 {:.answer}
 
