@@ -48,7 +48,7 @@ $ ls  /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-reg
 > > output_dir="fastqc-results-v1"  
 > > mkdir -p ${output_dir}
 > >
-> > data=(*.fastq)
+> > data=(/shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq/*.fastq)
 > > for fastqc_file in ${data[@]}  
 > > do 
 > >      srun fastqc --quiet  ${fastqc_file} -o ${output_dir}
@@ -68,7 +68,7 @@ $ ls  /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-reg
 > > output_dir="fastqc-results-v2"
 > > mkdir -p ${output_dir}
 > >
-> > data=(*.fastq)
+> > data=(/shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq/*.fastq)
 > > srun fastqc -t 6 --quiet  ${data[@]} -o ${output_dir} &  
 > > wait
 > > 
@@ -87,16 +87,16 @@ $ ls  /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-reg
 > > output_dir="fastqc-results-v3"
 > > mkdir -p ${output_dir}
 > >
-> > FASTQ_FILES=(*.fastq)  
+> > FASTQ_FILES=(/shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq/*.fastq)  
 > > srun fastqc --quiet ${FASTQ_FILES[$SLURM_ARRAY_TASK_ID]} -o ${output_dir} 
 > >```
 {:.answer}
 
 > > Pour lancer ces scripts on utilise la commande suivante :
 > > ```bash  
-> > $ sbatch ./fastqc_v1.sh /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq/
-> > $ sbatch ./fastqc_v2.sh /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq/
-> > $ sbatch ./fastqc_v3.sh /shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq/
+> > $ sbatch ./fastqc_v1.sh 
+> > $ sbatch ./fastqc_v2.sh 
+> > $ sbatch ./fastqc_v3.sh 
 > > 
 > > ```
 {:.answer}
