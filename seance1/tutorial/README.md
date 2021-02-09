@@ -11,9 +11,11 @@ Sur votre station de travail, ouvrez un *shell*, puis :
 - créez le répertoire `dubii`,
 - déplacez-vous dans ce répertoire.
 
-> **Aide :**:
+> **Aide**
 > > Le caractère `$` au début de chaque ligne est un repère qui représente votre invite de commande. 
 > > Il ne faut pas entrer ce caractère dans votre ligne de commande.
+> > 
+> > Le caractère `~` est un raccourci pour désigner le répertoire personnel de l'utilisateur.
 > > ```bash
 > > $ cd ~
 > > $ mkdir dubii
@@ -73,7 +75,7 @@ Astuce : utilisez la touche <kbd>Tab</kbd> (*Tabulation*) pour compléter les no
 {:.answer}
 
 
-**Question 1.5** : En restant dans le même répertoire, déterminez le nombre de fichiers présents dans le répertoire `RNA-seq` qui est au même niveau que le répertoire `ChIP-seq` ?
+**Question 1.4** : En restant dans le même répertoire, déterminez le nombre de fichiers présents dans le répertoire `RNA-seq` qui est au même niveau que le répertoire `ChIP-seq` ?
 
 > **Réponse**
 > > ```bash
@@ -111,7 +113,7 @@ La commande pour connaître la taille des fichiers présents dans un dossier est
 > > ```
 {:.answer}
 
-Pour connaître la quantité d'espace disque occupée par un dossier, utiliser la commande `du` (*disk usage*), encore une fois avec l'option `-h`. On peut afficher la version résumé avec `-s`.
+Pour connaître la quantité d'espace disque occupée par un dossier, utilisez la commande `du` (*disk usage*), encore une fois avec l'option `-h`. On peut afficher la version résumé avec l'option `-s`.
 
 
 **Question 2.2** : Déterminez la taille du répertoire `study-cases`.
@@ -213,7 +215,7 @@ Quelques raccourcis clavier :
 - `:p` : passe au fichier précédent ('previous file', si plusieurs fichiers en arguments)
 - `q` : quitte less  
 
-**Question 3.3** : Affichez le contenu du fichier `../RNA-seq/cutadapt_bwa_featureCounts_all.tsv` avec `less`.
+**Question 3.4** : Affichez le contenu du fichier `../RNA-seq/cutadapt_bwa_featureCounts_all.tsv` avec `less`.
 
 > **Réponse**
 > > ```bash
@@ -227,7 +229,7 @@ La commande `head` affiche uniquement le début du ou des fichier(s) passé(s) e
 Par défaut, `head` affiche les 10 premières lignes d'un fichier.  
 Utiliser l'option `-n <N>` pour afficher les `N` premières lignes d'un fichier.
 
-**Question 3.4** : Affichez les 20 premières lignes du fichier `../RNA-seq/cutadapt_bwa_featureCounts_all.tsv`.
+**Question 3.5** : Affichez les 20 premières lignes du fichier `../RNA-seq/cutadapt_bwa_featureCounts_all.tsv`.
 
 > **Réponse**
 > > ```bash
@@ -261,7 +263,7 @@ La commande `tail` affiche uniquement la fin du ou des fichier(s) passé(s) en a
 Par défaut `tail` affiche les 10 dernières lignes d'un fichier.
 Utilisez l'option `-n N` pour afficher les `N` dernières lignes d'un fichier.
 
-**Question 3.5** : Affichez les 20 dernières lignes du fichier `../RNA-seq/cutadapt_bwa_featureCounts_all.tsv`.
+**Question 3.6** : Affichez les 20 dernières lignes du fichier `../RNA-seq/cutadapt_bwa_featureCounts_all.tsv`.
 
 > **Réponse**
 > > ```bash
@@ -300,7 +302,7 @@ Nano est l'éditeur de texte le plus simple à utiliser.
 **Question 4.1** : Qu'est-ce qu'un éditeur de texte ? Quelle différence avec un traitement de texte ?
 
 > **Réponse**
-> > Un éditeur de texte est un programme qui modifie des fichiers texte sans mise en forme.
+> > Un éditeur de texte est un programme qui modifie des fichiers texte sans mise en forme.  
 > > Un traitement de texte est un logiciel, le plus souvent avec une interface graphique, utilisé pour mettre en forme des documents
 {:.answer}
 
@@ -308,7 +310,7 @@ Pour lancer l'éditeur de texte nano, il suffit de taper la commande `nano`,
 éventuellement suivi d'un nom de fichier à éditer.
 
 Toutes les commandes possibles sont résumées dans le bandeau en bas de l'écran
-Le symbole `^` signifie <kbd>Ctrl</kbd> (la touche Contrôle de votre clavier).
+Le symbole `^` signifie <kbd>Ctrl</kbd> (la touche *Contrôle* de votre clavier).
 
 Voici les raccourcis les plus importants :
 - <kbd>Ctrl</kbd> + <kbd>G</kbd> : afficher l'aide
@@ -320,7 +322,7 @@ Voici les raccourcis les plus importants :
 - <kbd>Ctrl</kbd> + <kbd>X</kbd> : quitter Nano.
 
 Vous pouvez vous déplacer dans le fichier avec les flèches du clavier ainsi
-qu'avec les touches <kbd>PageUp</kbd> et <kbd>PageDown</kbd> pour avancer
+qu'avec les touches <kbd>PageUp</kbd> et <kbd>PageDown</kbd> pour vous déplacer
 de page en page (les raccourcis <kbd>Ctrl</kbd> +  <kbd>Y</kbd> et <kbd>Ctrl</kbd> + <kbd>V</kbd> fonctionnent aussi).
 
 **Question 4.2** : 
@@ -334,7 +336,7 @@ de page en page (les raccourcis <kbd>Ctrl</kbd> +  <kbd>Y</kbd> et <kbd>Ctrl</kb
 
 Conseils :
 
-- Pour rechercher un mot plusieurs fois sans le réécrire, tapez juste `Ctrl-W` puis <kbd>Enter</kbd>.
+- Pour rechercher un mot plusieurs fois sans le réécrire, tapez juste <kbd>Ctrl</kbd> + <kbd>W</kbd> puis <kbd>Enter</kbd>.
 - Pour sortir du mode recherche, tapez <kbd>Ctrl</kbd> + <kbd>C</kbd>.
 
 > **Réponse**  
