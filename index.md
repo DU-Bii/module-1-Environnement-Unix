@@ -22,7 +22,7 @@ Lundi 01/03/2021 après-midi
 Instructeurs : Hélène Chiapello & Pierre Poulain  
 Helpers : Benoist Laurent  
 
-[Introduction](seance1/slides_intro/Unix_seance1_introduction_methodes.pdf) - [Tutoriel 1](seance1/tutorial1/README.md) - [Tutoriel 2](seance1/tutoriel2/README.md) - [Bonnes pratiques](seance1/slides_good_practices/Unix_seance1_bonnes_pratiques_bioinfo.pdf)
+[Introduction](seance1/slides_intro/Unix_seance1_introduction_methodes.pdf) - [Tutoriel](seance1/tutorial/README.md) - [Bonnes pratiques](seance1/slides_good_practices/Unix_seance1_bonnes_pratiques_bioinfo.pdf)
 
 Bibliographie / webographie
 
