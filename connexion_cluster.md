@@ -1,4 +1,4 @@
-## Connexion au cluster de calcul de l'IFB et transfert de données
+## Connexion au cluster de calcul de l'IFB et transfert de données
 
 ### Linux, Mac OS X et WSL
 

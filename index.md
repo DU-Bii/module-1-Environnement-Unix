@@ -50,7 +50,7 @@ Helpers : Pierre Poulain
 
 ## Séance 3 - Automatisation
 
-Jeudi 04/03/2020 matin
+Jeudi 04/03/2020 matin  
 Instructeurs : Benoist Laurent & Hélène Chiapello  
 Helper : Pierre Poulain
 
@@ -59,10 +59,10 @@ Helper : Pierre Poulain
     - [rsync](seance3/tutorial/rsync.md)
     - [Scripting](seance3/tutorial/scripting.md)
     - [Scripts NGS](seance3/tutorial/scripts_ngs.md)
-    - 
+  
 ## Séance 4 - Utilisation d'un cluster de calcul
 
-Jeudi 09/03/2020 matin
+Jeudi 09/03/2020 matin  
 Instructeurs : Julien Seiler & Pierre Poulain  
 Helpers : Hélène Chiapello, Benoist Laurent
 

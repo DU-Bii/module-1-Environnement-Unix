@@ -1,3 +1,5 @@
+## Installation d'un *shell* Linux
+
 ### Linux et Mac OS X
 
 Si vous travaillez avec les systèmes d'exploitations Linux (Ubuntu, Mint, Debian...) ou Mac OS X, vous avez déjà un *shell* installé sur votre machine.
