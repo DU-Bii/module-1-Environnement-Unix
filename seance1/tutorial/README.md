@@ -138,7 +138,7 @@ Rappel : si vous avez bien suivi les instructions depuis le début, le répertoi
 {:.answer}
 
 
-## Partie 3 : Afficher le contenu d'un fichier
+## Partie 3 : Afficher le contenu d'un fichier texte
 
 Sous Linux, on dispose de plusieurs commandes pour afficher le contenu de fichiers texte.
 
@@ -399,7 +399,7 @@ La commande `!grep` permet de relancer la dernière commande utilisée commença
 
 **Question 6.1** : Que fait la commande `!-3` ?
 
-> **Réponse**:
+> **Réponse**
 > > Cette commande permet d'exécuter la 3° dernière commande exécutée.
 {:.answer}
 
