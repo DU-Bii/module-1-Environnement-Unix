@@ -1,6 +1,6 @@
 ## Synopsis
 
-L'objectif de ce module est de vous familiariser avec l'environnement Unix et ses principales commandes.
+L'objectif de ce module est de vous familiariser avec l'environnement Unix, ses principales commandes et l'utilisation d'un cluster de calcul.
 
 Lien court vers cette page : <https://huit.re/dubii-m1>
 
@@ -13,16 +13,14 @@ Rappel des prérequis : <https://du-bii.github.io/accueil/activites_preparatoire
 - Pierre Poulain, Université de Paris, `pierre.poulain@univ-paris-diderot.fr`, [@pierrepo](https://twitter.com/pierrepo)
 - Benoist Laurent, CNRS, `benoist.laurent@ibpc.fr`
 - Julien Seiler, IGBMC, `seilerj@igbmc.fr`
-- Jacques van Helden, Institut Français de Bioinformatique et Univ. Aix-Marseille, `Jacques.van-Helden@univ-amu.fr`
-- Sandra Dérozier, INRAE, `sandra.derozier@inrae.fr`
-- Hubert Santuz, CNRS, `hubert.santuz@ibpc.fr`
+
 
 
 ## Séance 1 - Premiers pas
 
-- Lundi 02/03/2020 14:30 - 17:30
-- Instructeurs : Hélène Chiapello & Pierre Poulain
-- helpers : Benoist Laurent & Hubert Santuz
+Lundi 01/03/2021 après-midi   
+Instructeurs : Hélène Chiapello & Pierre Poulain  
+Helpers : Benoist Laurent  
 
 [Introduction](seance1/slides_intro/Unix_seance1_introduction_methodes.pdf) - [Tutoriel 1](seance1/tutorial1/README.md) - [Tutoriel 2](seance1/tutoriel2/README.md) - [Bonnes pratiques](seance1/slides_good_practices/Unix_seance1_bonnes_pratiques_bioinfo.pdf)
 
@@ -37,9 +35,9 @@ Bibliographie / webographie
 
 ## Séance 2 - Gestion de flux et extraction de données
 
-- Mardi 03/03/2020 14:30 - 17:30
-- Instructeurs : Hélène Chiapello & Benoist Laurent
-- Helpers : Sandra Derozier & Pierre Poulain
+Mardi 02/03/2021 après-midi  
+Instructeurs : Hélène Chiapello & Benoist Laurent  
+Helpers : Pierre Poulain
 
 
 - [Présentation](seance2/slides/index.html) <br />
@@ -50,26 +48,28 @@ Bibliographie / webographie
     - [Travail à distance (ssh & scp)](seance2/tutorial/04-ssh_scp.md)
 
 
-## Séance 3 - Gestion et utilisation des ressources IFB
+## Séance 3 - Automatisation
 
-- Jeudi 05/03/2020 9:00 - 12:00
-- Instructeurs : Julein Seiler & Pierre Poulain
-- Helpers : Hélène Chiapello, Benoist Laurent & Jacques van Helden
+Jeudi 04/03/2020 matin
+Instructeurs : Benoist Laurent & Hélène Chiapello  
+Helper : Pierre Poulain
 
-- [Présentation](seance3/slides/index.html)
+- [Présentation](seance3/slides/index.html) <br />
+- [Support](seance3/tutorial/index.md)
+    - [rsync](seance3/tutorial/rsync.md)
+    - [Scripting](seance3/tutorial/scripting.md)
+    - [Scripts NGS](seance3/tutorial/scripts_ngs.md)
+    - 
+## Séance 4 - Utilisation d'un cluster de calcul
+
+Jeudi 09/03/2020 matin
+Instructeurs : Julien Seiler & Pierre Poulain  
+Helpers : Hélène Chiapello, Benoist Laurent
+
+- [Présentation](seance4/slides/index.html)
 - [Learn SLURM in 5 minutes](https://asciinema.org/a/275233)
 
-## Séance 4 - Automatisation
 
-- Mardi 10/03/2020 9:30 - 12:30
-- Instructeurs : Benoist Laurent & Hélène Chiapello
-- Helper : Pierre Poulain
-
-- [Présentation](seance4/slides/index.html) <br />
-- [Support](seance4/tutorial/index.md)
-    - [rsync](seance4/tutorial/rsync.md)
-    - [Scripting](seance4/tutorial/scripting.md)
-    - [Scripts NGS](seance4/tutorial/scripts_ngs.md)
 
 
 ## Installer un *shell* Linux sur sa machine

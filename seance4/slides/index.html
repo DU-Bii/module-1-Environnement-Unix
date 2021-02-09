@@ -1,24 +1,50 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DUBii - Unix 4</title>
+    <title>DUBii - Utilisation de la ferme de calcul de l'IFB</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link rel="stylesheet" href="css/pure-min.css">
     <link rel="stylesheet" href="css/callout.css" media="screen">
     <link rel="stylesheet" href="css/theme.css" media="screen">
-    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
 
     <script src="remark-latest.min.js">
     </script>
     <script>
+    // Place all of your files here
+    sourceUrls = [
+      'dubii2020/layouts.md',
+      'dubii2020/introduction.md',
+      'hpc-cluster.md',
+      'dubii2020/ssh.md',
+      'dubii2020/ifb-core-cluster.md',
+      'module.md',
+      'dubii2020/slurm.md'
+      ]
+
+    var xmlhttp = new XMLHttpRequest();
+
+    var source = ""
+
+    for (var i = 0; i < sourceUrls.length; i++) {
+      xmlhttp.open('GET', sourceUrls[i], false);
+      xmlhttp.send();
+
+      source += xmlhttp.responseText;
+
+      // Files shouldn't have --- at the head or foot
+      // It is added automatically here
+      if (i + 1 < sourceUrls.length) {
+        source += "\n---\n"
+      }
+    };
     var slideshow = remark.create({
       ratio: '16:9',
       countIncrementalSlides: false,
-      sourceUrl: 'slides.md'
+      source: source
     });
     </script>
   </body>

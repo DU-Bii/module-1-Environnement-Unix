@@ -6,6 +6,7 @@ body { font-family: 'Droid Serif'; }
 h1, h2, h3 {
   font-family: 'Yanone Kaffeesatz';
   font-weight: normal;
+  font-size: 80%;
 }
 .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
 
@@ -50,4 +51,8 @@ h1, h2, h3 {
 .right-column {
   width: 45%;
   float: right;
+}
+
+.clear {
+  clear: both;
 }
