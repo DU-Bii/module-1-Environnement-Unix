@@ -12,9 +12,10 @@
 
 Sur votre station de travail, ouvrez un *shell*, puis :
 
-- déplacez-vous dans votre répertoire personnel,
-- créez le répertoire `dubii`,
-- déplacez-vous dans ce répertoire.
+- Déplacez-vous dans votre répertoire personnel.
+- Créez le répertoire `dubii`
+- Déplacez-vous dans ce nouveau répertoire.
+- Affichez le chemin du répertoire courant.
 
 > **Aide**
 > > Le caractère `$` au début de chaque ligne est un repère qui représente votre invite de commande. 
@@ -25,10 +26,12 @@ Sur votre station de travail, ouvrez un *shell*, puis :
 > > $ cd ~
 > > $ mkdir dubii
 > > $ cd dubii
+> > $ pwd
 > > ```
+> > Vous devriez obtenir un chemin du type `/shared/home/ppoulain/dubii` où `ppoulain` est remplacé par votre nom d'utilisateur.
 {:.answer}
 
-Téléchargez les fichiers des jeux de données du DUBii avec la commande :
+Téléchargez ensuite les fichiers des jeux de données du DUBii avec la commande :
 
 ```bash
 $ git clone https://github.com/DU-Bii/study-cases.git
