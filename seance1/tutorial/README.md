@@ -36,7 +36,7 @@ La commande à exécuter est assez longue et complexe. Pour éviter de faire des
 Patientez quelques instants que les données soient téléchargées.
 
 
-**Question 1** : Déplacez-vous dans le répertoire `study-cases` nouvellement créé.
+**Question 1.1** : Déplacez-vous dans le répertoire `study-cases` nouvellement créé.
 
 > **Réponse**
 > > ```bash
@@ -50,19 +50,20 @@ Utilisez la commande `tree` pour visualiser l'arborescence qui représente l'org
 $ tree
 ```
 
-Déplacez-vous maintenant dans le répertoire `Escherichia_coli/bacterial-regulons_myers_2013/data/ChIP-seq`
+**Question 1.2** : Déplacez-vous maintenant dans le répertoire `Escherichia_coli/bacterial-regulons_myers_2013/data/ChIP-seq`
 
 Astuce : utilisez la touche <kbd>Tab</kbd> (*Tabulation*) pour compléter les noms des répertoires.
 
-> **Aide :**:
+> **Réponse**:
 > > ```bash
 > > $ cd Escherichia_coli/bacterial-regulons_myers_2013/data/ChIP-seq
 > > ```
 {:.answer}
 
-Combien de fichiers `.bed` y a t-il dans ce répertoire ?
 
-> **Réponse :**:
+**Question 1.3** : Combien de fichiers `.bed` y a-t-il dans ce répertoire ?
+
+> **Réponse**
 > > ```bash
 > > $ ls
 > > FNR1_vs_input1_cutadapt_bowtie2_homer.bed  FNR_200bp.wig
@@ -72,9 +73,9 @@ Combien de fichiers `.bed` y a t-il dans ce répertoire ?
 {:.answer}
 
 
-Utilisez la commande `ls` avec les options `l` et `h` pour afficher le contenu du répertoire courant, puis déterminez la taille du fichier `FNR_200bp.wig`.
+**Question 1.4** : Utilisez la commande `ls` avec les options `l` et `h` pour afficher le contenu du répertoire courant, puis déterminez la taille du fichier `FNR_200bp.wig`.
 
-> **Réponse :**:
+> **Réponse**
 > > ```bash
 > > $ ls -lh
 > > total 240K
@@ -87,9 +88,9 @@ Utilisez la commande `ls` avec les options `l` et `h` pour afficher le contenu d
 {:.answer}
 
 
-En restant dans le même répertoire, déterminez le nombre de fichiers présents dans le répertoire `RNA-seq` qui est au même niveau que le répertoire `ChIP-seq` ?
+**Question 1.5** : En restant dans le même répertoire, déterminez le nombre de fichiers présents dans le répertoire `RNA-seq` qui est au même niveau que le répertoire `ChIP-seq` ?
 
-> **Réponse :**:
+> **Réponse**
 > > ```bash
 > > $ ls ../RNA-seq
 > > cutadapt_bwa_featureCounts_all.tsv
