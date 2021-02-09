@@ -54,7 +54,7 @@ $ tree
 
 Astuce : utilisez la touche <kbd>Tab</kbd> (*Tabulation*) pour compléter les noms des répertoires.
 
-> **Réponse**:
+> **Réponse**
 > > ```bash
 > > $ cd Escherichia_coli/bacterial-regulons_myers_2013/data/ChIP-seq
 > > ```
@@ -73,21 +73,6 @@ Astuce : utilisez la touche <kbd>Tab</kbd> (*Tabulation*) pour compléter les no
 {:.answer}
 
 
-**Question 1.4** : Utilisez la commande `ls` avec les options `l` et `h` pour afficher le contenu du répertoire courant, puis déterminez la taille du fichier `FNR_200bp.wig`.
-
-> **Réponse**
-> > ```bash
-> > $ ls -lh
-> > total 240K
-> > -rw-r--r-- 1 pierre pierre 8,9K janv. 27 23:25 FNR1_vs_input1_cutadapt_bowtie2_homer.bed
-> > -rw-r--r-- 1 pierre pierre  45K janv. 27 23:25 FNR1_vs_input1_cutadapt_bowtie2_macs2.bed
-> > -rw-r--r-- 1 pierre pierre  80K janv. 27 23:25 FNR_200bp.wig
-> > -rw-r--r-- 1 pierre pierre  90K janv. 27 23:25 input_200bp.wig
-> > ```
-> > Le fichier `FNR_200bp.wig` a une taille de 80 ko. Cette peut varier légèrement sur votre disque dur.
-{:.answer}
-
-
 **Question 1.5** : En restant dans le même répertoire, déterminez le nombre de fichiers présents dans le répertoire `RNA-seq` qui est au même niveau que le répertoire `ChIP-seq` ?
 
 > **Réponse**
@@ -103,7 +88,7 @@ Astuce : utilisez la touche <kbd>Tab</kbd> (*Tabulation*) pour compléter les no
 
 ### Connaître le taux d'occupation des espaces disques d'un poste de travail
 
-La commande `df` (pour *disk free*) permet de connaître les quantités d'espace occupé et disponible pour tous les disques du système. L'option `-h` permet d'afficher ces valeurs en *human readable*, c'est-à-dire avec les unités ko, Mo, Go, To ...
+La commande `df` (pour *disk free*) permet de connaître les quantités d'espace occupé et disponible pour tous les disques du système. L'option `-h` permet d'afficher ces valeurs *human readable*, c'est-à-dire avec les unités ko, Mo, Go, To ...
 
 ```bash
 $ df -h
@@ -112,18 +97,10 @@ $ df -h
 ### Connaître la quantité d'espace disque occupé par un fichier/dossier.
 
 La commande pour connaître la taille des fichiers présents dans un dossier est `ls -lh`.
-Déplacez-vous maintenant dans le répertoire `Escherichia_coli/bacterial-regulons_myers_2013/data/ChIP-seq`
-Astuce : utilisez la touche `Tab` (*Tabulation*) pour compléter les noms des répertoires.
 
-> **Aide :**:
-> > ```bash
-> > $ cd Escherichia_coli/bacterial-regulons_myers_2013/data/ChIP-seq
-> > ```
-{:.answer}
+**Question 2.1** : Utilisez la commande `ls` avec les options `l` et `h` pour afficher le contenu du répertoire courant, puis déterminez la taille du fichier `FNR_200bp.wig`.
 
-Utilisez la commande `ls` avec les options `l` et `h` pour afficher le contenu du répertoire courant, puis déterminez la taille du fichier `FNR_200bp.wig`.
-
-> **Réponse :**:
+> **Réponse**
 > > ```bash
 > > $ ls -lh
 > > total 264K
@@ -132,20 +109,22 @@ Utilisez la commande `ls` avec les options `l` et `h` pour afficher le contenu d
 > > -rw-r--r-- 1 pierre pierre  80K janv. 27 23:25 FNR_200bp.wig
 > > -rw-r--r-- 1 pierre pierre  90K janv. 27 23:25 input_200bp.wig
 > > ```
-> > Le fichier `FNR_200bp.wig` a une taille de 80 ko (peut varier légèrement sur votre disque dur).
 {:.answer}
 
-Pour connaître la quantité d'espace disque occupée par un dossier, utiliser la commande `du` (*disk usage*), encore une fois avec l'option `-h`. On peut affichier la version résumé avec `-s`.
+Pour connaître la quantité d'espace disque occupée par un dossier, utiliser la commande `du` (*disk usage*), encore une fois avec l'option `-h`. On peut afficher la version résumé avec `-s`.
 
 
-Exemple : Déterminez la taille du dossier `study-cases`.
+**Question 2.2** : Déterminez la taille du répertoire `study-cases`.
 
-> **Réponse :**:
+Rappel : si vous avez bien suivi les instructions depuis le début, le répertoire `study-cases` est normalement dans le répertoire `dubii` dans votre repertoire personnel.
+
+> **Réponse**
+> > Le chemin du répertoire `study-cases` depuis le répertoire personnel (représenté par `~`) est donc `~/dubii/study-cases`.
 > > ```bash
-> > $ du -sh ./study-cases
- 92M	/Users/helenechiapello/Desktop/Hélène/COURS/DUBii/dubii/study-cases
+> > $ du -sh ~/dubii/study-cases
+ 100M	/shared/home/ppoulain/dubii/study-cases
 > > ```
-> > Le dossier `study-cases` a une taille totale de 92 Mo.
+> > Le dossier `study-cases` a une taille totale de 100 Mo.
 {:.answer}
 
 
@@ -155,15 +134,16 @@ Sous Linux, on dispose de plusieurs commandes pour afficher le contenu de fichie
 
 ### cat
 
-Affiche et concatène le contenu du ou des fichiers donnés en arguments
-(ou de l'entrée standard) sur la sortie standard.
+La commande `cat` affiche et concatène le contenu du ou des fichiers donnés en arguments
+(ou de l'entrée standard) sur la sortie standard (à l'écran).
 
-**Exemple 1**: Affichez le contenu du fichier `cutadapt_bwa_featureCounts_all.tsv`
+**Question 3.1** : Affichez le contenu du fichier `cutadapt_bwa_featureCounts_all.tsv` situé
 dans le répertoire `RNA-seq`
 
-> **Solution**:
+> **Réponse**
+> > On suppose que vous êtes toujours dans le répertoire `ChIP-seq`.
 > > ```bash
-> > $ cat RNA-seq/cutadapt_bwa_featureCounts_all.tsv
+> > $ cat ../RNA-seq/cutadapt_bwa_featureCounts_all.tsv
 > > Geneid  WT1 WT2 dFNR1   dFNR2
 > > b0001   70  98  72  63
 > > b0002   23421   33092   32156   20749
@@ -183,12 +163,12 @@ dans le répertoire `RNA-seq`
 {:.answer}
 
 
-**Exemple 2** : Concaténez le contenu des fichiers `FNR1_vs_input1_cutadapt_bowtie2_homer.bed`
+**Question 3.2** : Concaténez le contenu des fichiers `FNR1_vs_input1_cutadapt_bowtie2_homer.bed`
 et `FNR1_vs_input1_cutadapt_bowtie2_macs2.bed` dans le répertoire `ChIP-seq`.
 
-> **Solution**:
+> **Réponse**
 > > ```bash
-> > $ cat ChIP-seq/FNR1_vs_input1_cutadapt_bowtie2_homer.bed ChIP-seq/FNR1_vs_input1_cutadapt_bowtie2_macs2.bed
+> > $ cat FNR1_vs_input1_cutadapt_bowtie2_homer.bed FNR1_vs_input1_cutadapt_bowtie2_macs2.bed
 > > # HOMER Peaks
 > > # Peak finding parameters:
 > > # tag directory = ChIP-seq/results/peaks/FNR1_vs_input1/homer/FNR1_tag
@@ -207,19 +187,17 @@ et `FNR1_vs_input1_cutadapt_bowtie2_macs2.bed` dans le répertoire `ChIP-seq`.
 {:.answer}
 
 
-**Question 1** : Quel inconvénient majeur voyez-vous à la commande `cat`?  
+**Question 3.3** : Quel inconvénient majeur voyez-vous à la commande `cat`?  
 
-> **Réponse**:
+> **Réponse**
 > > La commande `cat` affiche la totalité des fichiers ce qui rend la sortie
-> > de la commande souvent illisible.
+> > de la commande souvent illisible lorsque les fichiers sont très grands.
 {:.answer}
 
 
 ### less
 
-_less does more or less the same as more, but less does more than more_
-
-La commande `less` permet d'afficher le contenu d'un ou plusieurs fichiers
+La commande `less` afficher le contenu d'un ou plusieurs fichiers
 page par page, ce qui est très utile lorsqu'on manipule des fichiers de taille
 importante.
 
@@ -235,10 +213,11 @@ Quelques raccourcis clavier :
 - `:p` : passe au fichier précédent ('previous file', si plusieurs fichiers en arguments)
 - `q` : quitte less  
 
-**Question 2** : afficher le contenu du fichier
-`cutadapt_bwa_featureCounts_all.tsv` avec `less`
+**Question 3.3** : Affichez le contenu du fichier `../RNA-seq/cutadapt_bwa_featureCounts_all.tsv` avec `less`.
+
+> **Réponse**
 > > ```bash
-> > less RNA-seq/cutadapt_bwa_featureCounts_all.tsv
+> > less ../RNA-seq/cutadapt_bwa_featureCounts_all.tsv
 > > ```
 {:.answer}
 
@@ -248,11 +227,11 @@ La commande `head` affiche uniquement le début du ou des fichier(s) passé(s) e
 Par défaut, `head` affiche les 10 premières lignes d'un fichier.  
 Utiliser l'option `-n <N>` pour afficher les `N` premières lignes d'un fichier.
 
-**Question 3** : Affichez les 20 premières lignes du fichier `RNA-seq/cutadapt_bwa_featureCounts_all.tsv`.
+**Question 3.4** : Affichez les 20 premières lignes du fichier `../RNA-seq/cutadapt_bwa_featureCounts_all.tsv`.
 
-> **Réponse**:
+> **Réponse**
 > > ```bash
-> > $ head -n 20 RNA-seq/cutadapt_bwa_featureCounts_all.tsv
+> > $ head -n 20 ../RNA-seq/cutadapt_bwa_featureCounts_all.tsv
 > > Geneid	WT1	WT2	dFNR1	dFNR2
 > > b0001	70	98	72	63
 > > b0002	23421	33092	32156	20749
@@ -282,11 +261,11 @@ La commande `tail` affiche uniquement la fin du ou des fichier(s) passé(s) en a
 Par défaut `tail` affiche les 10 dernières lignes d'un fichier.
 Utilisez l'option `-n N` pour afficher les `N` dernières lignes d'un fichier.
 
-**Question 4** : Affichez les 20 dernières lignes du fichier `RNA-seq/cutadapt_bwa_featureCounts_all.tsv`.
+**Question 3.5** : Affichez les 20 dernières lignes du fichier `../RNA-seq/cutadapt_bwa_featureCounts_all.tsv`.
 
-> **Réponse**:
+> **Réponse**
 > > ```bash
-> > $ tail -n 20 RNA-seq/cutadapt_bwa_featureCounts_all.tsv
+> > $ tail -n 20 ../RNA-seq/cutadapt_bwa_featureCounts_all.tsv
 > > b4384	846	1241	1173	751
 > > b4385	205	224	145	84
 > > b4386	243	233	192	106
@@ -318,7 +297,7 @@ Parmi les plus connus on trouve : `vi`, `emacs` et `nano`.
 
 Nano est l'éditeur de texte le plus simple à utiliser.
 
-**Question 5** : Qu'est-ce qu'un éditeur de texte ? Quelle différence avec un traitement de texte ?
+**Question 4.1** : Qu'est-ce qu'un éditeur de texte ? Quelle différence avec un traitement de texte ?
 
 > **Réponse**
 > > Un éditeur de texte est un programme qui modifie des fichiers texte sans mise en forme.
@@ -332,44 +311,39 @@ Toutes les commandes possibles sont résumées dans le bandeau en bas de l'écra
 Le symbole `^` signifie <kbd>Ctrl</kbd> (la touche Contrôle de votre clavier).
 
 Voici les raccourcis les plus importants :
-- `Ctrl-G` : afficher l'aide
-- `Ctrl-K` : couper la ligne de texte (et la mettre dans le presse-papier)
-- `Ctrl-U` : coller la ligne de texte que vous venez de couper
-- `Ctrl-C` : afficher à quel endroit du fichier votre curseur est positionné (numéro de ligne)
-- `Ctrl-W` : rechercher une chaine de caractères dans le fichier
-- `Ctrl-O` : enregistrer le fichier (écrire)
-- `Ctrl-X` : quitter Nano.
+- <kbd>Ctrl</kbd> + <kbd>G</kbd> : afficher l'aide
+- <kbd>Ctrl</kbd> + <kbd>K</kbd> : couper la ligne de texte (et la mettre dans le presse-papier)
+- <kbd>Ctrl</kbd> + <kbd>U</kbd> : coller la ligne de texte que vous venez de couper
+- <kbd>Ctrl</kbd> + <kbd>C</kbd> : afficher à quel endroit du fichier votre curseur est positionné (numéro de ligne)
+- <kbd>Ctrl</kbd> + <kbd>W</kbd> : rechercher une chaine de caractères dans le fichier
+- <kbd>Ctrl</kbd> + <kbd>O</kbd> : enregistrer le fichier (écrire)
+- <kbd>Ctrl</kbd> + <kbd>X</kbd> : quitter Nano.
 
 Vous pouvez vous déplacer dans le fichier avec les flèches du clavier ainsi
 qu'avec les touches <kbd>PageUp</kbd> et <kbd>PageDown</kbd> pour avancer
 de page en page (les raccourcis <kbd>Ctrl</kbd> +  <kbd>Y</kbd> et <kbd>Ctrl</kbd> + <kbd>V</kbd> fonctionnent aussi).
 
-**Question 6** : Ouvrez avec l'éditeur `nano` le fichier `Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3`  
+**Question 4.2** : 
 
-**Recommandations :**  
-- Créer un répertoire `~/dubii/study-cases/Escherichia_coli/bacterial-regulons_myers_2013/data/Annotations`  
-- Dans un navigateur internet, ouvrir la page <https://du-bii.github.io/study-cases/Escherichia_coli/bacterial-regulons_myers_2013/>
-- Cliquer sur *Genome annotations (GFF3 format)* pour télécharger le fichier `Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3`
-- Le déplacer dans le répertoire précédemment créé (`~/dubii/study-cases/Escherichia_coli/bacterial-regulons_myers_2013/data/Annotations`)
-- Décompresser ce fichier avec la commande `gunzip Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3.gz`
-- vérifier que le fichier `Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3` existe.
-- Rechercher les lignes contenant le nom de gène `oriC` et afficher le numéro de ces lignes
-- Supprimer ces lignes
-- Enregistrer le fichier sous le nom `Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome_wo_oriC.gff`
+1. Déplacez-vous dans le répertoire `~/dubii/study-cases/Escherichia_coli/`
+2. Ouvrez avec l'éditeur `nano` le fichier `Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3`
+3. Recherchez les lignes contenant le nom de gène `oriC`.
+4. Affichez et notez le numéro de ces lignes.
+5. Supprimer ces lignes.
+6. Enregistrez le fichier sous le nom `Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome_wo_oriC.gff3` (la fin du nom du fichier est `Chromosome_wo_oriC.gff3` au lieu de `Chromosome.gff3`).
 
-Remarques :
+Conseils :
 
-- pour rechercher un mot plusieurs fois sans le réécrire, tapez juste `Ctrl-W ENTER`
-- si vous voulez sortir du mode recherche, tapez `CTRL-C`
+- Pour rechercher un mot plusieurs fois sans le réécrire, tapez juste `Ctrl-W` puis <kbd>Enter</kbd>.
+- Pour sortir du mode recherche, tapez <kbd>Ctrl</kbd> + <kbd>C</kbd>.
 
 > **Réponse**  
-> > Utiliser successivement les commandes :  
-> > - `Ctrl-W` pour rechercher `oriC`
-> > - `Ctrl-C` pour connaitre le numéro de ligne courante  
-> > - `Ctrl-K` pour supprimer la ligne courante  
-> > Au moment de sauvergarder le fichier avec la commande `Ctrl-O` penser à modifier le nom du fichier  
-> > Les 4 occurences de `oriC` sont aux lignes 4859, 8256, 18950 et 22228 dans le fichier original (4859, 8255, 18948 et 22225 si vous supprimez les lignes au fur et à mesure)
-> >
+> > Utiliser successivement les commandes : 
+> > - <kbd>Ctrl</kbd> + <kbd>W</kbd> pour rechercher `oriC`.
+> > - <kbd>Ctrl</kbd> + <kbd>C</kbd> pour connaitre le numéro de ligne courante  
+> > - <kbd>Ctrl</kbd> + <kbd>K</kbd> pour supprimer la ligne courante  
+> > Au moment de sauvegarder le fichier avec la commande <kbd>Ctrl</kbd> + <kbd>O</kbd>, pensez à modifier le nom du fichier.  
+> > Les 4 occurences de `oriC` se trouvent aux lignes 4859, 8256, 18950 et 22228 dans le fichier original (4859, 8255, 18948 et 22225 si vous supprimez les lignes au fur et à mesure).
 > >
 {:.answer}
 
@@ -388,9 +362,9 @@ recherche d'un éditeur de texte.
 documentation et des options.
 
 
-**Question 7** : Quel signifie l'option `-N` de la commande `less` ?
+**Question 5.1** : Quel signifie l'option `-N` de la commande `less` ?
 
-> **Réponse**:
+> **Réponse**
 > > ```bash
 > > $ man less
 > > [...]
@@ -398,22 +372,22 @@ documentation et des options.
 > >                   Don't use line numbers.
 > > [...]
 > > ```
-> L'option `-N` sert à afficher les numéros des lignes à gauche de chaque ligne.
+> L'option `-N` affiche les numéros des lignes à gauche de chaque ligne.
 {:.answer}
 
 
 ## Partie 6 : Répéter une commande, notion d'historique
 
-Le système d'exploitation Linux garde en mémoire les commandes lancées par un
-utilisateur dans un *shell*.
+Le *shell* garde en mémoire les commandes lancées par un utilisateur.
+
 La liste des commandes lancées par un utilisateur est accessible via la commande
 `history`.
 Il est aussi possible de retrouver une commande en utilisant la commande `!`
 Par exemple la commande `!?expression?` permet de relancer la dernière commande
 utilisée contenant le mot `expression`.
-La commande `!grep` permet de relancer la dernière commande utilisée comemnçant par 'grep'
+La commande `!grep` permet de relancer la dernière commande utilisée commençant par 'grep'
 
-**Question 9** : Que fait la commande `!-3` ?
+**Question 6.1** : Que fait la commande `!-3` ?
 
 > **Réponse**:
 > > Cette commande permet d'exécuter la 3° dernière commande exécutée.
@@ -432,7 +406,7 @@ Par défaut tout programme Linux a trois flux de données :
 
 - une **entrée standard**, appelée `stdin` par défaut associée au **clavier**
 - une **sortie standard**, appelée `stdout`, par défaut associée à **l'écran**
-- une **erreur standard** appelée `stderr`, par défaut associée à **l'écran**
+- une **erreur standard** appelée `stderr`, par défaut également associée à **l'écran**
 
 Une redirection est une modification de l’une de ces associations.
 Elle est valable uniquement le temps de la commande sur laquelle elle porte.
@@ -446,18 +420,22 @@ fichier `outfile` on utilise `> outfile` ou `>> outfile`
 Pour modifier l'erreur standard d'une commande et écrire les messages d'erreurs
 dans un fichier `errfile` on utilise : `2> errfile`.
 
-En résumé tout programme Linux peut s'écrire
-`$program < infile > outfile 2> errfile`
+En résumé, dans le *shell, un programme peut s'écrire :
+```bash
+$ program < infile > outfile 2> errfile
+```
 
-**Question 10**: Redirigez le résultat de la commande `cat` sur le fichier
-`ChIP-seq/FNR1_vs_input1_cutadapt_bowtie2_homer.bed` dans le fichier `test.txt`.
-Que contient le fichier `test.txt` ?
+**Question 7.1** : 
+
+- Déplacez-vous dans le répertoire `~/dubii/study-cases/Escherichia_coli/bacterial-regulons_myers_2013/data/ChIP-seq`
+- Redirigez le résultat de la commande `cat` sur le fichier `FNR1_vs_input1_cutadapt_bowtie2_homer.bed` dans le fichier `test.txt`.
+- Que contient le fichier `test.txt` ?
 
 > **Réponse**
 > > ```bash
-> > $ cat ChIP-seq/FNR1_vs_input1_cutadapt_bowtie2_homer.bed > test.txt
+> > $ cat FNR1_vs_input1_cutadapt_bowtie2_homer.bed > test.txt
 > > ```
-> `cat` affiche le contenu de `ChIP-seq/FNR1_vs_input1_cutadapt_bowtie2_homer.bed`.
-> `>` redirige la sortie de la commande vers le fichier `test.txt`.
-> Finalement, le fichier `test.txt` contient le contenu du fichier `ChIP-seq/FNR1_vs_input1_cutadapt_bowtie2_homer.bed`.
+> - `cat` affiche le contenu de `FNR1_vs_input1_cutadapt_bowtie2_homer.bed`.
+> - `>` redirige la sortie de la commande `cat` vers le fichier `test.txt`.
+> - Finalement, le fichier `test.txt` contient le contenu du fichier `ChIP-seq/FNR1_vs_input1_cutadapt_bowtie2_homer.bed`.
 {:.answer}
