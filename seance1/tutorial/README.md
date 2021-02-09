@@ -3,7 +3,7 @@
 - **Répertoires** : Afficher le répertoire courant. Afficher le contenu d'un répertoire. Changer de répertoire. Créer, déplacer et supprimer un répertoire.
 - **Aborescence Linux** : Distinguer la notion de chemin absolu et relatif. Utiliser les raccourcis de l'arborescence Linux (`.`, `..`, `~`). Afficher l'arborescence Linux.
 
-## Partie 1 : exploration de fichiers et de répertoires
+## Partie 1 : Exploration de fichiers et de répertoires
 
 Sur votre station de travail, ouvrez un *shell*, puis :
 
@@ -12,7 +12,8 @@ Sur votre station de travail, ouvrez un *shell*, puis :
 - déplacez-vous dans ce répertoire.
 
 > **Aide :**:
-> > Le caractère `$` au début de chaque ligne est un repère qui représente votre invite de commande. Il ne faut pas entrer ce caractère dans votre ligne de commande.
+> > Le caractère `$` au début de chaque ligne est un repère qui représente votre invite de commande. 
+> > Il ne faut pas entrer ce caractère dans votre ligne de commande.
 > > ```bash
 > > $ cd ~
 > > $ mkdir dubii
@@ -26,11 +27,11 @@ Téléchargez les fichiers des jeux de données du DUBii avec la commande :
 $ git clone https://github.com/DU-Bii/study-cases.git
 ```
 
-Remarque :
+La commande à exécuter est assez longue et complexe. Pour éviter de faire des erreurs et aller plus vite, utilisez le copier/coller. Voici deux méthodes :
 
-- La commande à exécuter est assez longue et complexe. Pour éviter de faire des erreurs et aller plus vite, utilisez le copier/coller. Voici deux méthodes :
-    1. Sélectionnez la commande en la surlignant avec le clic gauche de votre souris. Puis dans votre shell, cliquez sur le bouton du milieu de votre souris.
-    2. Sélectionnez la commande en la surlignant avec le clic gauche de votre souris. Appuyez ensuite sur les touches <kbd>Ctrl</kbd> + <kbd>C</kbd> (c'est-à-dire les touches <kbd>Control</kbd> et <kbd>C</kbd> pressées en même temps). Dans votre shell, appuyez sur les touches <kbd>Ctrl</kbd> + <kbd>Maj</kbd> + <kbd>V</kbd> (c'est-à-dire les touches <kbd>Control</kbd>, <kbd>Majuscule</kbd> et <kbd>V</kbd> pressées en même temps).
+1. Sélectionnez la commande en la surlignant avec le clic gauche de votre souris. Puis dans votre shell, cliquez sur le bouton du milieu de votre souris.
+
+2. Sélectionnez la commande en la surlignant avec le clic gauche de votre souris. Appuyez ensuite sur les touches <kbd>Ctrl</kbd> + <kbd>C</kbd> (c'est-à-dire les touches <kbd>Control</kbd> et <kbd>C</kbd> pressées en même temps). Dans votre shell, appuyez sur les touches <kbd>Ctrl</kbd> + <kbd>Maj</kbd> + <kbd>V</kbd> (c'est-à-dire les touches <kbd>Control</kbd>, <kbd>Majuscule</kbd> et <kbd>V</kbd> pressées en même temps).
 
 
 Patientez quelques instants que les données soient téléchargées.
@@ -51,7 +52,7 @@ $ tree
 
 Déplacez-vous maintenant dans le répertoire `Escherichia_coli/bacterial-regulons_myers_2013/data/ChIP-seq`
 
-Astuce : utilisez la touche `Tab` (*Tabulation*) pour compléter les noms des répertoires.
+Astuce : utilisez la touche <kbd>Tab</kbd> (*Tabulation*) pour compléter les noms des répertoires.
 
 > **Aide :**:
 > > ```bash
@@ -67,7 +68,7 @@ Combien de fichiers `.bed` y a t-il dans ce répertoire ?
 > > FNR1_vs_input1_cutadapt_bowtie2_homer.bed  FNR_200bp.wig
 > > FNR1_vs_input1_cutadapt_bowtie2_macs2.bed  input_200bp.wig
 > > ```
-> > Il y a deux fichiers `.bed`
+> > Il y a deux fichiers avec l'extension `.bed`
 {:.answer}
 
 
@@ -82,7 +83,7 @@ Utilisez la commande `ls` avec les options `l` et `h` pour afficher le contenu d
 > > -rw-r--r-- 1 pierre pierre  80K janv. 27 23:25 FNR_200bp.wig
 > > -rw-r--r-- 1 pierre pierre  90K janv. 27 23:25 input_200bp.wig
 > > ```
-> > Le fichier `FNR_200bp.wig` a une taille de 80 ko (peut varier légèrement sur votre disque dur).
+> > Le fichier `FNR_200bp.wig` a une taille de 80 ko. Cette peut varier légèrement sur votre disque dur.
 {:.answer}
 
 
@@ -97,11 +98,11 @@ En restant dans le même répertoire, déterminez le nombre de fichiers présent
 {:.answer}
 
 
-## Partie 2 : espace disque
+## Partie 2 : Espace disque
 
 ### Connaître le taux d'occupation des espaces disques d'un poste de travail
 
-La commande `df` (pour *disk free*) permet de connaître les quantités d'espace occupé et disponible pour tous les disques du système. L'option `-h` permet d'utiliser les multiples "human readable" (ko, Mo, Go, To, ...).
+La commande `df` (pour *disk free*) permet de connaître les quantités d'espace occupé et disponible pour tous les disques du système. L'option `-h` permet d'afficher ces valeurs en *human readable*, c'est-à-dire avec les unités ko, Mo, Go, To ...
 
 ```bash
 $ df -h
@@ -136,7 +137,7 @@ Utilisez la commande `ls` avec les options `l` et `h` pour afficher le contenu d
 Pour connaître la quantité d'espace disque occupée par un dossier, utiliser la commande `du` (*disk usage*), encore une fois avec l'option `-h`. On peut affichier la version résumé avec `-s`.
 
 
-Exemple : Déterminer la taille du dossier `study-cases`.
+Exemple : Déterminez la taille du dossier `study-cases`.
 
 > **Réponse :**:
 > > ```bash
@@ -149,14 +150,14 @@ Exemple : Déterminer la taille du dossier `study-cases`.
 
 ## Partie 3 : Afficher le contenu d'un fichier
 
-Sous Linux on dispose de plusieurs commandes permettant d'afficher le contenu de fichiers texte de différentes manières.
+Sous Linux, on dispose de plusieurs commandes pour afficher le contenu de fichiers texte.
 
 ### cat
 
 Affiche et concatène le contenu du ou des fichiers donnés en arguments
 (ou de l'entrée standard) sur la sortie standard.
 
-**Exemple 1**: afficher le contenu du fichier `cutadapt_bwa_featureCounts_all.tsv`
+**Exemple 1**: Affichez le contenu du fichier `cutadapt_bwa_featureCounts_all.tsv`
 dans le répertoire `RNA-seq`
 
 > **Solution**:
@@ -181,7 +182,7 @@ dans le répertoire `RNA-seq`
 {:.answer}
 
 
-**Exemple 2** : concaténer le contenu des fichiers `FNR1_vs_input1_cutadapt_bowtie2_homer.bed`
+**Exemple 2** : Concaténez le contenu des fichiers `FNR1_vs_input1_cutadapt_bowtie2_homer.bed`
 et `FNR1_vs_input1_cutadapt_bowtie2_macs2.bed` dans le répertoire `ChIP-seq`.
 
 > **Solution**:
@@ -205,7 +206,7 @@ et `FNR1_vs_input1_cutadapt_bowtie2_macs2.bed` dans le répertoire `ChIP-seq`.
 {:.answer}
 
 
-**Question 1** : quel inconvénient majeur voyez-vous à la commande `cat`?  
+**Question 1** : Quel inconvénient majeur voyez-vous à la commande `cat`?  
 
 > **Réponse**:
 > > La commande `cat` affiche la totalité des fichiers ce qui rend la sortie
@@ -221,9 +222,9 @@ La commande `less` permet d'afficher le contenu d'un ou plusieurs fichiers
 page par page, ce qui est très utile lorsqu'on manipule des fichiers de taille
 importante.
 
-Quelques fonctionnalités utiles :
+Quelques raccourcis clavier :
 
-- `barre d'espace` : faire défiler le contenu page par page  
+- `barre d'espace` : fait défiler le contenu page par page  
 - `g`: affiche le debut du fichier
 - `G`: affiche la fin du fichier
 - `/`: recherche les occurences d'un motif
@@ -239,13 +240,14 @@ Quelques fonctionnalités utiles :
 > > less RNA-seq/cutadapt_bwa_featureCounts_all.tsv
 > > ```
 {:.answer}
+
 ### head
-La commande `head` permet d'afficher uniquement le début du ou des fichier(s)
-passé(s) en argument.
+
+La commande `head` affiche uniquement le début du ou des fichier(s) passé(s) en argument.
 Par défaut, `head` affiche les 10 premières lignes d'un fichier.  
 Utiliser l'option `-n <N>` pour afficher les `N` premières lignes d'un fichier.
 
-**Question 3** : afficher les 20 premières lignes du fichier `RNA-seq/cutadapt_bwa_featureCounts_all.tsv`.
+**Question 3** : Affichez les 20 premières lignes du fichier `RNA-seq/cutadapt_bwa_featureCounts_all.tsv`.
 
 > **Réponse**:
 > > ```bash
@@ -275,12 +277,11 @@ Utiliser l'option `-n <N>` pour afficher les `N` premières lignes d'un fichier.
 
 ### tail
 
-La commande `tail` permet d'afficher uniquement la fin du ou des fichier(s)
-passé(s) en argument.
+La commande `tail` affiche uniquement la fin du ou des fichier(s) passé(s) en argument.
 Par défaut `tail` affiche les 10 dernières lignes d'un fichier.
-Utiliser l'option `-n N` pour afficher les `N` dernières lignes d'un fichier.
+Utilisez l'option `-n N` pour afficher les `N` dernières lignes d'un fichier.
 
-**Question 4** : afficher les 20 dernières lignes du fichier `RNA-seq/cutadapt_bwa_featureCounts_all.tsv`.
+**Question 4** : Affichez les 20 dernières lignes du fichier `RNA-seq/cutadapt_bwa_featureCounts_all.tsv`.
 
 > **Réponse**:
 > > ```bash
@@ -305,30 +306,29 @@ Utiliser l'option `-n N` pour afficher les `N` dernières lignes d'un fichier.
 > > b4401	3349	4692	2619	1609
 > > b4402	201	318	224	128
 > > b4403	82	116	87	68
-> >
-> >
+> > ```
 {:.answer}
 
 
 ## Partie 4 : L'éditeur de texte nano
 
-Il existe beaucoup d'éditeurs de fichiers textes sour Linux.
+Il existe beaucoup d'éditeurs de fichiers textes sous Linux.
+Parmi les plus connus on trouve : `vi`, `emacs` et `nano`.
 
-Parmi les plus connus on trouve : `vi`, `emacs` et `nano`.  
-___Nano___ est l'éditeur le plus simple à utiliser.
+Nano est l'éditeur de texte le plus simple à utiliser.
 
-**Question 5** : qu'est-ce qu'un un éditeur de texte ? Quelle différence avec un traitement de texte ?
+**Question 5** : Qu'est-ce qu'un éditeur de texte ? Quelle différence avec un traitement de texte ?
 
 > **Réponse**
-> > éditeur = programme permettant de modifier des fichiers texte sans mise en forme
-> > traitement de texte = logiciel le plus souvent avec une interface graphique pour mettre en forme des documents
+> > Un éditeur de texte est un programme qui modifie des fichiers texte sans mise en forme.
+> > Un traitement de texte est un logiciel, le plus souvent avec une interface graphique, utilisé pour mettre en forme des documents
 {:.answer}
 
-Pour lancer l'éditeur de texte nano : il vous suffit de taper `nano`
+Pour lancer l'éditeur de texte nano, il suffit de taper la commande `nano`, 
 éventuellement suivi d'un nom de fichier à éditer.
 
-Toutes les commandes sont résumées dans le bandeau en bas de l'écran
-Le symbole `^` signifie <kbd>CTRL</kbd> (la touche Contrôle de votre clavier).
+Toutes les commandes possibles sont résumées dans le bandeau en bas de l'écran
+Le symbole `^` signifie <kbd>Ctrl</kbd> (la touche Contrôle de votre clavier).
 
 Voici les raccourcis les plus importants :
 - `Ctrl-G` : afficher l'aide
@@ -341,9 +341,9 @@ Voici les raccourcis les plus importants :
 
 Vous pouvez vous déplacer dans le fichier avec les flèches du clavier ainsi
 qu'avec les touches <kbd>PageUp</kbd> et <kbd>PageDown</kbd> pour avancer
-de page en page (les raccourcis <kbd>CTRL-Y</kbd> et <kbd>CTRL-V</kbd> fonctionnent aussi).
+de page en page (les raccourcis <kbd>Ctrl</kbd> +  <kbd>Y</kbd> et <kbd>Ctrl</kbd> + <kbd>V</kbd> fonctionnent aussi).
 
-**Question 6** : ouvrir avec l'éditeur `nano` le fichier `Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3`  
+**Question 6** : Ouvrez avec l'éditeur `nano` le fichier `Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3`  
 
 **Recommandations :**  
 - Créer un répertoire `~/dubii/study-cases/Escherichia_coli/bacterial-regulons_myers_2013/data/Annotations`  
@@ -373,20 +373,21 @@ Remarques :
 {:.answer}
 
 
-## Partie 5 : Avoir de l'aide sur une commande
+## Partie 5 : Obtenir de l'aide sur une commande
 
 Sous Linux toutes les commandes sont documentées de manière standardisée.
 
 Il y a deux moyens d'accèder à l'aide d'une commande :
 
-- via la commande `man <nom_commande>` qui permet d'accéder au manuel
+1. Via la commande `man <nom_commande>` (par exemple `man ls`) qui affiche le manuel
 (description complète) de la commande page par page avec les facilités de
-recherche d'un éditeur de texte,
+recherche d'un éditeur de texte.
 
-- via l'option `<nom_commande> --help`: on affiche un résumé de la
-documentation et des options à l'écran.
+2. Via l'option `--help` de la commande (par exemple `ls --help`) qui affiche un résumé de la
+documentation et des options.
 
-**Question 7** : Quelle signifie l'option `-N` de la commande less ?
+
+**Question 7** : Quel signifie l'option `-N` de la commande `less` ?
 
 > **Réponse**:
 > > ```bash
@@ -403,7 +404,7 @@ documentation et des options à l'écran.
 ## Partie 6 : Répéter une commande, notion d'historique
 
 Le système d'exploitation Linux garde en mémoire les commandes lancées par un
-utilisateur dans un terminal.
+utilisateur dans un *shell*.
 La liste des commandes lancées par un utilisateur est accessible via la commande
 `history`.
 Il est aussi possible de retrouver une commande en utilisant la commande `!`
@@ -411,14 +412,14 @@ Par exemple la commande `!?expression?` permet de relancer la dernière commande
 utilisée contenant le mot `expression`.
 La commande `!grep` permet de relancer la dernière commande utilisée comemnçant par 'grep'
 
-**Question 9** : que fait la commande `!-3` ?
+**Question 9** : Que fait la commande `!-3` ?
 
 > **Réponse**:
 > > Cette commande permet d'exécuter la 3° dernière commande exécutée.
 {:.answer}
 
 On peut également retrouver les commandes déjà exécutées en naviguant dans
-l'historique avec les flèches du clavier.
+l'historique avec les flèches haut et bas du clavier.
 
 
 ## Partie 7 : Sauver le résultat d'une commande Linux dans un fichier
@@ -447,7 +448,7 @@ dans un fichier `errfile` on utilise : `2> errfile`.
 En résumé tout programme Linux peut s'écrire
 `$program < infile > outfile 2> errfile`
 
-**Question 10**: rediriger le résultat de la commande `cat` sur le fichier
+**Question 10**: Redirigez le résultat de la commande `cat` sur le fichier
 `ChIP-seq/FNR1_vs_input1_cutadapt_bowtie2_homer.bed` dans le fichier `test.txt`.
 Que contient le fichier `test.txt` ?
 
