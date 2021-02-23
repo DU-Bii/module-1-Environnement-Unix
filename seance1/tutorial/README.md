@@ -18,6 +18,7 @@ Ensuite :
 - Créez le répertoire `dubii`
 - Déplacez-vous dans ce nouveau répertoire.
 - Affichez le chemin du répertoire courant.
+- Vérifiez que vous obtenez un chemin du type `/shared/home/ppoulain/dubii` où `ppoulain` est remplacé par votre nom d'utilisateur.
 
 > **Aide**
 > > Le caractère `$` au début de chaque ligne est un repère qui représente votre invite de commande. 
@@ -45,7 +46,6 @@ Remarques :
 2. La commande à exécuter est assez longue et complexe. Pour éviter de faire des erreurs et aller plus vite, utilisez le copier/coller. Voici deux méthodes :
 
    a. Sélectionnez la commande en la surlignant avec le clic gauche de votre souris. Puis dans votre *shell*, cliquez sur le bouton du milieu de votre souris.
-
    b. Sélectionnez la commande en la surlignant avec le clic gauche de votre souris. Appuyez ensuite sur les touches <kbd>Ctrl</kbd> + <kbd>C</kbd> (c'est-à-dire les touches <kbd>Control</kbd> et <kbd>C</kbd> pressées en même temps). Dans votre *shell*, appuyez sur les touches <kbd>Ctrl</kbd> + <kbd>Maj</kbd> + <kbd>V</kbd> (c'est-à-dire les touches <kbd>Control</kbd>, <kbd>Majuscule</kbd> et <kbd>V</kbd> pressées en même temps).
 
 Patientez quelques instants que les données soient téléchargées.
