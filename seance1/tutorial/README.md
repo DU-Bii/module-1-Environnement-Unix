@@ -10,7 +10,7 @@
 
 ## Partie 1 : Exploration de fichiers et de répertoires
 
-Depuis votre station de travail ou le Jupyter Hub, lancez un terminal pour obtenir un *shell*.
+Depuis le Jupyter Hub de l'IFB, lancez un terminal pour obtenir un *shell*.
 
 Ensuite :
 
