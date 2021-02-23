@@ -389,7 +389,7 @@ documentation et des options.
 **Question 5.1** : Quel signifie l'option `-N` de la commande `less` ?
 
 > **Réponse**
-> > ```bash
+> > ```text
 > > $ man less
 > > [...]
 > >   -n  -N  ....  --line-numbers  --LINE-NUMBERS
