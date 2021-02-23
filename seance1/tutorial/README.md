@@ -278,7 +278,7 @@ L'option `-n <N>` permet d'afficher les `N` premières lignes d'un fichier.
 ### tail
 
 La commande `tail` affiche uniquement la fin du ou des fichier(s) passé(s) en argument.
-Par défaut `tail` affiche les 10 dernières lignes d'un fichier.
+Par défaut `tail` affiche les 10 dernières lignes d'un fichier.  
 L'option `-n <N>` permet d'afficher d'afficher les `N` dernières lignes d'un fichier.
 
 **Question 3.6** : Affichez les 20 dernières lignes du fichier `../RNA-seq/cutadapt_bwa_featureCounts_all.tsv`.
@@ -364,7 +364,9 @@ de page en page (les raccourcis <kbd>Ctrl</kbd> +  <kbd>Y</kbd> et <kbd>Ctrl</kb
 > > Rappel : pensez à utiliser la touche <kbd>Tab</kbd> pour compléter rapidement le nom du fichier à ouvrir avec nano.  
 > >  
 > > Dans nano, déplacez-vous sur la ligne 10. Utilisez le raccourci <kbd>Ctrl</kbd> + <kbd>C</kbd> pour connaitre le numéro de ligne courante.
+> >  
 > > Supprimez ensuite les lignes 10, 11, 12 et 13 avec le raccourci- <kbd>Ctrl</kbd> + <kbd>K</kbd>.
+> >  
 > > Au moment de sauvegarder le fichier avec la commande <kbd>Ctrl</kbd> + <kbd>O</kbd>, pensez à modifier le nom du fichier.  
 > >
 {:.answer}
