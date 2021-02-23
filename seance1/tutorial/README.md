@@ -130,8 +130,8 @@ La commande pour connaître la taille des fichiers présents dans un dossier est
 > > Le fichier `FNR_200bp.wig` a une taille d'environ 80 Ko.
 {:.answer}
 
-Pour connaître la quantité d'espace disque occupée par un dossier, utilisez la commande `du` (*disk usage*), encore une fois avec l'option `-h`. On peut afficher la version résumé avec l'option `-s`.
 
+Pour connaître la quantité d'espace disque occupée par un dossier, utilisez la commande `du` (*disk usage*), encore une fois avec l'option `-h`. On peut aussi afficher la version résumé avec l'option `-s`.
 
 **Question 2.2** : Déterminez la taille du répertoire `study-cases`.
 
@@ -157,7 +157,7 @@ La commande `cat` affiche et concatène le contenu du ou des fichiers donnés en
 (ou de l'entrée standard) sur la sortie standard (à l'écran).
 
 **Question 3.1** : Affichez le contenu du fichier `cutadapt_bwa_featureCounts_all.tsv` situé
-dans le répertoire `RNA-seq`
+dans le répertoire `RNA-seq` (qui est au même niveau que le répertoire `ChIP-seq`).
 
 > **Réponse**
 > > On suppose que vous êtes toujours dans le répertoire `ChIP-seq`.
@@ -238,6 +238,7 @@ Quelques raccourcis clavier :
 > > ```bash
 > > less ../RNA-seq/cutadapt_bwa_featureCounts_all.tsv
 > > ```
+> > Pensez à utiliser la touche <kbd>Q</kbd> pour quitter `less`.
 {:.answer}
 
 ### head
