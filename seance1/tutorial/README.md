@@ -245,7 +245,7 @@ Quelques raccourcis clavier :
 
 La commande `head` affiche uniquement le début du ou des fichier(s) passé(s) en argument.
 Par défaut, `head` affiche les 10 premières lignes d'un fichier.  
-Utiliser l'option `-n <N>` pour afficher les `N` premières lignes d'un fichier.
+L'option `-n <N>` permet d'afficher les `N` premières lignes d'un fichier.
 
 **Question 3.5** : Affichez les 20 premières lignes du fichier `../RNA-seq/cutadapt_bwa_featureCounts_all.tsv`.
 
@@ -279,7 +279,7 @@ Utiliser l'option `-n <N>` pour afficher les `N` premières lignes d'un fichier.
 
 La commande `tail` affiche uniquement la fin du ou des fichier(s) passé(s) en argument.
 Par défaut `tail` affiche les 10 dernières lignes d'un fichier.
-Utilisez l'option `-n N` pour afficher les `N` dernières lignes d'un fichier.
+L'option `-n <N>` permet d'afficher d'afficher les `N` dernières lignes d'un fichier.
 
 **Question 3.6** : Affichez les 20 dernières lignes du fichier `../RNA-seq/cutadapt_bwa_featureCounts_all.tsv`.
 
@@ -312,8 +312,7 @@ Utilisez l'option `-n N` pour afficher les `N` dernières lignes d'un fichier.
 
 ## Partie 4 : L'éditeur de texte nano
 
-Il existe beaucoup d'éditeurs de fichiers textes sous Linux.
-Parmi les plus connus on trouve : `vi`, `emacs` et `nano`.
+Sous Linux, il existe beaucoup d'éditeurs de fichiers textes qui soient utilisables dans un terminal. Parmi les plus connus on trouve : `vi`, `emacs` et `nano`.
 
 Nano est l'éditeur de texte le plus simple à utiliser.
 
@@ -347,23 +346,26 @@ de page en page (les raccourcis <kbd>Ctrl</kbd> +  <kbd>Y</kbd> et <kbd>Ctrl</kb
 
 1. Déplacez-vous dans le répertoire `~/dubii/study-cases/Escherichia_coli/`
 2. Ouvrez avec l'éditeur `nano` le fichier `Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3`
-3. Recherchez les lignes contenant le nom de gène `oriC`.
-4. Affichez et notez le numéro de ces lignes.
-5. Supprimer ces lignes.
-6. Enregistrez le fichier sous le nom `Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome_wo_oriC.gff3` (la fin du nom du fichier est `Chromosome_wo_oriC.gff3` au lieu de `Chromosome.gff3`).
+3. Supprimez les 4 lignes qui commencent par :
+    ```
+    Chromosome      ena     gene    190     255
+    Chromosome      ena     mRNA    190     255
+    Chromosome      ena     exon    190     255
+    Chromosome      ena     CDS     190     255
+    ```
+4. Enregistrez le fichier sous le nom `Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome_new.gff3` (la fin du nom du fichier est `Chromosome_new.gff3` au lieu de `Chromosome.gff3`).
 
-Conseils :
-
-- Pour rechercher un mot plusieurs fois sans le réécrire, tapez juste <kbd>Ctrl</kbd> + <kbd>W</kbd> puis <kbd>Enter</kbd>.
-- Pour sortir du mode recherche, tapez <kbd>Ctrl</kbd> + <kbd>C</kbd>.
 
 > **Réponse**  
-> > Utiliser successivement les commandes : 
-> > - <kbd>Ctrl</kbd> + <kbd>W</kbd> pour rechercher `oriC`.
-> > - <kbd>Ctrl</kbd> + <kbd>C</kbd> pour connaitre le numéro de ligne courante  
-> > - <kbd>Ctrl</kbd> + <kbd>K</kbd> pour supprimer la ligne courante  
+> > ```bash
+> > cd ~/dubii/study-cases/Escherichia_coli/
+> > nano Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3
+> > ```
+> > Rappel : pensez à utiliser la touche <kbd>Tab</kbd> pour compléter rapidement le nom du fichier à ouvrir avec nano.  
+> >  
+> > Dans nano, déplacez-vous sur la ligne 10. Utilisez le raccourci <kbd>Ctrl</kbd> + <kbd>C</kbd> pour connaitre le numéro de ligne courante.
+> > Supprimez ensuite les lignes 10, 11, 12 et 13 avec le raccourci- <kbd>Ctrl</kbd> + <kbd>K</kbd>.
 > > Au moment de sauvegarder le fichier avec la commande <kbd>Ctrl</kbd> + <kbd>O</kbd>, pensez à modifier le nom du fichier.  
-> > Les 4 occurences de `oriC` se trouvent aux lignes 4859, 8256, 18950 et 22228 dans le fichier original (4859, 8255, 18948 et 22225 si vous supprimez les lignes au fur et à mesure).
 > >
 {:.answer}
 
