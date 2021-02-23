@@ -81,6 +81,7 @@ Astuce : utilisez la touche <kbd>Tab</kbd> (*Tabulation*) pour compléter les no
 > > FNR1_vs_input1_cutadapt_bowtie2_homer.bed  FNR_200bp.wig
 > > FNR1_vs_input1_cutadapt_bowtie2_macs2.bed  input_200bp.wig
 > > ```
+> >
 > > Ou plus directement, avec `*bed` qui signifie tous les fichiers se terminant par *bed* :
 > > ```bash
 > > $ ls *bed
