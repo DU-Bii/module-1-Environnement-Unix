@@ -10,7 +10,9 @@
 
 ## Partie 1 : Exploration de fichiers et de répertoires
 
-Sur votre station de travail, ouvrez un *shell*, puis :
+Depuis votre station de travail ou le Jupyter Hub, lancez un terminal pour obtenir un *shell*.
+
+Ensuite :
 
 - Déplacez-vous dans votre répertoire personnel.
 - Créez le répertoire `dubii`
@@ -62,7 +64,7 @@ $ tree
 
 **Question 1.2** : Déplacez-vous maintenant dans le répertoire `Escherichia_coli/bacterial-regulons_myers_2013/data/ChIP-seq`
 
-Astuce : utilisez la touche <kbd>Tab</kbd> (*Tabulation*) pour compléter les noms des répertoires.
+Astuce : utilisez la touche <kbd>Tab</kbd> (*Tabulation*) pour compléter les noms des répertoires qui peuvent être très longs et ainsi éviter les erreurs.
 
 > **Réponse**
 > > ```bash
@@ -78,6 +80,11 @@ Astuce : utilisez la touche <kbd>Tab</kbd> (*Tabulation*) pour compléter les no
 > > $ ls
 > > FNR1_vs_input1_cutadapt_bowtie2_homer.bed  FNR_200bp.wig
 > > FNR1_vs_input1_cutadapt_bowtie2_macs2.bed  input_200bp.wig
+> > ```
+> > Ou plus directement, avec `*bed` qui signifie tous les fichiers se terminant par *bed* :
+> > ```bash
+> > $ ls *bed
+> > FNR1_vs_input1_cutadapt_bowtie2_homer.bed  FNR1_vs_input1_cutadapt_bowtie2_macs2.bed
 > > ```
 > > Il y a deux fichiers avec l'extension `.bed`
 {:.answer}
