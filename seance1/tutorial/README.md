@@ -378,11 +378,11 @@ Sous Linux toutes les commandes sont documentées de manière standardisée.
 
 Il y a deux moyens d'accèder à l'aide d'une commande :
 
-1. Via la commande `man <nom_commande>` (par exemple `man ls`) qui affiche le manuel
-(description complète) de la commande page par page avec les facilités de
-recherche d'un éditeur de texte.
+1. Via la commande `man <nom_commande>` (par exemple `man ls`) qui affiche le manuel,
+c'est-à-dire la description complète de la commande page par page avec les facilités de
+recherche d'un éditeur de texte. La touche <kbd>Q</kbd> permet de quitter cet aide.
 
-2. Via l'option `--help` de la commande (par exemple `ls --help`) qui affiche un résumé de la
+1. Via l'option `--help` de la commande (par exemple `ls --help`) qui affiche un résumé de la
 documentation et des options.
 
 
@@ -396,7 +396,7 @@ documentation et des options.
 > >                   Don't use line numbers.
 > > [...]
 > > ```
-> L'option `-N` affiche les numéros des lignes à gauche de chaque ligne.
+> L'aide nous apprend que l'option `-N` affiche les numéros de lignes à gauche de chaque ligne.
 {:.answer}
 
 
@@ -411,10 +411,11 @@ Par exemple la commande `!?expression?` permet de relancer la dernière commande
 utilisée contenant le mot `expression`.
 La commande `!grep` permet de relancer la dernière commande utilisée commençant par 'grep'
 
-**Question 6.1** : Que fait la commande `!-3` ?
+**Question 6.1** : Lancez la commande `history`, puis essayer de deviner ce que fait la commande `!-4` ?
 
 > **Réponse**
-> > Cette commande permet d'exécuter la 3° dernière commande exécutée.
+> > Cette commande permet d'exécuter la 4° dernière commande exécutée.
+> > 
 {:.answer}
 
 On peut également retrouver les commandes déjà exécutées en naviguant dans
