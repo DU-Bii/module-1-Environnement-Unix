@@ -1,6 +1,6 @@
 ## Synopsis
 
-L'objectif de ce module est de vous familiariser avec l'environnement Unix, ses principales commandes et l'utilisation d'un cluster de calcul.
+L'objectif de ce module est de vous familiariser avec l'environnement Unix, les principales commandes du *shell* et l'utilisation d'un cluster de calcul.
 
 ## Liens utiles
 
