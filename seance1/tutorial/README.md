@@ -5,7 +5,7 @@
 - **Espace disque** : Déterminer l'espace disque occupé par un fichier ou un répertoire.
 - **Fichier texte** : Afficher le contenu d'un fichier texte, le modifier.
 - **Aide** : Obtenir de l'aide et de la documentation sur une commande.
-- **Historique** : Afficher l'historique des commandes, rappeler une commande de l'historique.
+- **Historique** : Afficher l'historique des commandes. Rappeler une commande de l'historique.
 - **Redirection** : Sauver le résultat d'une commande dans un fichier.
 
 ## Partie 1 : Exploration de fichiers et de répertoires
