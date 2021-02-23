@@ -2,10 +2,11 @@
 
 L'objectif de ce module est de vous familiariser avec l'environnement Unix, ses principales commandes et l'utilisation d'un cluster de calcul.
 
-Lien court vers cette page : <https://huit.re/dubii-m1>
+## Liens utiles
 
-Rappel des prérequis : <https://du-bii.github.io/accueil/activites_preparatoires/>
-
+- Rappel des prérequis : <https://du-bii.github.io/accueil/activites_preparatoires/>
+- Lien court vers cette page : <https://huit.re/dubii-m1>
+- Le serveur Jupyter Hub de l'IFB : <https://jupyterhub.cluster.france-bioinformatique.fr/>
 
 ## Intervenants
 
@@ -13,7 +14,6 @@ Rappel des prérequis : <https://du-bii.github.io/accueil/activites_preparatoire
 - Pierre Poulain, Université de Paris, `pierre.poulain@univ-paris-diderot.fr`, [@pierrepo](https://twitter.com/pierrepo)
 - Benoist Laurent, CNRS, `benoist.laurent@ibpc.fr`
 - Julien Seiler, IGBMC, `seilerj@igbmc.fr`
-
 
 
 ## Séance 1 - Premiers pas
