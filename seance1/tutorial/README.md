@@ -39,11 +39,14 @@ Téléchargez ensuite les fichiers des jeux de données du DUBii avec la command
 $ git clone https://github.com/DU-Bii/study-cases.git
 ```
 
-La commande à exécuter est assez longue et complexe. Pour éviter de faire des erreurs et aller plus vite, utilisez le copier/coller. Voici deux méthodes :
+Remarques :
 
-1. Sélectionnez la commande en la surlignant avec le clic gauche de votre souris. Puis dans votre *shell*, cliquez sur le bouton du milieu de votre souris.
+1. Le caractère `$` au début d'une ligne de commande est un repère visuel qui représente votre invite de commande. Il ne faut pas entrer ce caractère dans votre ligne de commande.
+2. La commande à exécuter est assez longue et complexe. Pour éviter de faire des erreurs et aller plus vite, utilisez le copier/coller. Voici deux méthodes :
 
-2. Sélectionnez la commande en la surlignant avec le clic gauche de votre souris. Appuyez ensuite sur les touches <kbd>Ctrl</kbd> + <kbd>C</kbd> (c'est-à-dire les touches <kbd>Control</kbd> et <kbd>C</kbd> pressées en même temps). Dans votre *shell*, appuyez sur les touches <kbd>Ctrl</kbd> + <kbd>Maj</kbd> + <kbd>V</kbd> (c'est-à-dire les touches <kbd>Control</kbd>, <kbd>Majuscule</kbd> et <kbd>V</kbd> pressées en même temps).
+   a. Sélectionnez la commande en la surlignant avec le clic gauche de votre souris. Puis dans votre *shell*, cliquez sur le bouton du milieu de votre souris.
+
+   b. Sélectionnez la commande en la surlignant avec le clic gauche de votre souris. Appuyez ensuite sur les touches <kbd>Ctrl</kbd> + <kbd>C</kbd> (c'est-à-dire les touches <kbd>Control</kbd> et <kbd>C</kbd> pressées en même temps). Dans votre *shell*, appuyez sur les touches <kbd>Ctrl</kbd> + <kbd>Maj</kbd> + <kbd>V</kbd> (c'est-à-dire les touches <kbd>Control</kbd>, <kbd>Majuscule</kbd> et <kbd>V</kbd> pressées en même temps).
 
 Patientez quelques instants que les données soient téléchargées.
 
@@ -358,8 +361,8 @@ de page en page (les raccourcis <kbd>Ctrl</kbd> +  <kbd>Y</kbd> et <kbd>Ctrl</kb
 
 > **Réponse**  
 > > ```bash
-> > cd ~/dubii/study-cases/Escherichia_coli/
-> > nano Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3
+> > $ cd ~/dubii/study-cases/Escherichia_coli/
+> > $ nano Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3
 > > ```
 > > Rappel : pensez à utiliser la touche <kbd>Tab</kbd> pour compléter rapidement le nom du fichier à ouvrir avec nano.  
 > >  
@@ -380,7 +383,7 @@ Il y a deux moyens d'accèder à l'aide d'une commande :
 
 1. Via la commande `man <nom_commande>` (par exemple `man ls`) qui affiche le manuel,
 c'est-à-dire la description complète de la commande page par page avec les facilités de
-recherche d'un éditeur de texte. La touche <kbd>Q</kbd> permet de quitter cet aide.
+recherche d'un éditeur de texte. La touche <kbd>Q</kbd> permet de quitter ce manuel.
 
 1. Via l'option `--help` de la commande (par exemple `ls --help`) qui affiche un résumé de la
 documentation et des options.
@@ -445,7 +448,7 @@ fichier `outfile` on utilise `> outfile` ou `>> outfile`
 Pour modifier l'erreur standard d'une commande et écrire les messages d'erreurs
 dans un fichier `errfile` on utilise : `2> errfile`.
 
-En résumé, dans le *shell, un programme peut s'écrire :
+En résumé, dans le *shell*, un programme peut s'écrire :
 ```bash
 $ program < infile > outfile 2> errfile
 ```
@@ -458,9 +461,10 @@ $ program < infile > outfile 2> errfile
 
 > **Réponse**
 > > ```bash
+> > $ cd ~/dubii/study-cases/Escherichia_coli/bacterial-regulons_myers_2013/data/ChIP-seq
 > > $ cat FNR1_vs_input1_cutadapt_bowtie2_homer.bed > test.txt
 > > ```
 > - `cat` affiche le contenu de `FNR1_vs_input1_cutadapt_bowtie2_homer.bed`.
 > - `>` redirige la sortie de la commande `cat` vers le fichier `test.txt`.
-> - Finalement, le fichier `test.txt` contient le contenu du fichier `ChIP-seq/FNR1_vs_input1_cutadapt_bowtie2_homer.bed`.
+> - Finalement, le fichier `test.txt` contient le contenu du fichier `FNR1_vs_input1_cutadapt_bowtie2_homer.bed`.
 {:.answer}
