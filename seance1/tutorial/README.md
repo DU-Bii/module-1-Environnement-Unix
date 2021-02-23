@@ -127,6 +127,7 @@ La commande pour connaître la taille des fichiers présents dans un dossier est
 > > -rw-r--r-- 1 pierre pierre  80K janv. 27 23:25 FNR_200bp.wig
 > > -rw-r--r-- 1 pierre pierre  90K janv. 27 23:25 input_200bp.wig
 > > ```
+> > Le fichier `FNR_200bp.wig` a une taille d'environ 80 Ko.
 {:.answer}
 
 Pour connaître la quantité d'espace disque occupée par un dossier, utilisez la commande `du` (*disk usage*), encore une fois avec l'option `-h`. On peut afficher la version résumé avec l'option `-s`.
