@@ -340,7 +340,7 @@ Voici les raccourcis les plus importants :
 - <kbd>Ctrl</kbd> + <kbd>K</kbd> : couper la ligne de texte (et la mettre dans le presse-papier)
 - <kbd>Ctrl</kbd> + <kbd>U</kbd> : coller la ligne de texte que vous venez de couper
 - <kbd>Ctrl</kbd> + <kbd>C</kbd> : afficher à quel endroit du fichier votre curseur est positionné (numéro de ligne)
-- <kbd>Ctrl</kbd> + <kbd>W</kbd> : rechercher une chaine de caractères dans le fichier
+- <kbd>Ctrl</kbd> + <kbd>W</kbd> : rechercher une chaine de caractères dans le fichier. N'utilisez pas ce raccourci avec un terminal dans Jupyter Hub, cela fermerait l'onglet de votre navigateur.
 - <kbd>Ctrl</kbd> + <kbd>O</kbd> : enregistrer le fichier (écrire)
 - <kbd>Ctrl</kbd> + <kbd>X</kbd> : quitter Nano.
 
@@ -461,6 +461,10 @@ $ program < infile > outfile 2> errfile
 - Déplacez-vous dans le répertoire `~/dubii/study-cases/Escherichia_coli/bacterial-regulons_myers_2013/data/ChIP-seq`
 - Redirigez le résultat de la commande `cat` sur le fichier `FNR1_vs_input1_cutadapt_bowtie2_homer.bed` dans le fichier `test.txt`.
 - Que contient le fichier `test.txt` ?
+- Vérifiez votre réponse en utilisant la commande `diff` pour afficher les différences entre les deux fichiers :
+    ```bash
+    $ diff FNR1_vs_input1_cutadapt_bowtie2_homer.bed test.txt
+    ```
 
 > **Réponse**
 > > ```bash
@@ -470,4 +474,6 @@ $ program < infile > outfile 2> errfile
 > - `cat` affiche le contenu de `FNR1_vs_input1_cutadapt_bowtie2_homer.bed`.
 > - `>` redirige la sortie de la commande `cat` vers le fichier `test.txt`.
 > - Finalement, le fichier `test.txt` contient le contenu du fichier `FNR1_vs_input1_cutadapt_bowtie2_homer.bed`.
+> 
+> La commande `diff FNR1_vs_input1_cutadapt_bowtie2_homer.bed test.txt` ne renvoie rien car les deux fichiers sont bien identiques.
 {:.answer}
