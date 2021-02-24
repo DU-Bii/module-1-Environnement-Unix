@@ -227,8 +227,8 @@ importante.
 Quelques raccourcis clavier :
 
 - `barre d'espace` : se déplace dans le fichier page par page
-- `flèche haut` : se déplace d'une ligne ves le haut
-- `flèche bas` : se déplace d'une ligne ves le bas
+- `flèche haut` : se déplace d'une ligne vers le haut
+- `flèche bas` : se déplace d'une ligne vers le bas
 - `g` : se déplace au début du fichier (également `<`)
 - `G` : se déplace à la fin du fichier (également `>`)
 - `/` : recherche les occurences d'un motif
