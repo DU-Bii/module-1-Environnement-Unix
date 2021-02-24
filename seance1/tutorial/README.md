@@ -226,13 +226,15 @@ importante.
 
 Quelques raccourcis clavier :
 
-- `barre d'espace` : fait défiler le contenu page par page  
-- `g`: affiche le debut du fichier
-- `G`: affiche la fin du fichier
-- `/`: recherche les occurences d'un motif
-- `n`: passe à l'occurence suivante du motif recherché
-- `N`: passe à l'occurence précédente du motif recherché
-- `:n` : passe au fichier suivant ('next file', si plusieurs fichiers en arguments)  
+- `barre d'espace` : se déplace dans le fichier page par page
+- `flèche haut` : se déplace d'une ligne ves le haut
+- `flèche bas` : se déplace d'une ligne ves le bas
+- `g` : se déplace au début du fichier (également `<`)
+- `G` : se déplace à la fin du fichier (également `>`)
+- `/` : recherche les occurences d'un motif
+- `n` : passe à l'occurence suivante du motif recherché
+- `N` : passe à l'occurence précédente du motif recherché
+- `:n` : passe au fichier suivant ('next file', si plusieurs fichiers en arguments)
 - `:p` : passe au fichier précédent ('previous file', si plusieurs fichiers en arguments)
 - `q` : quitte less  
 
