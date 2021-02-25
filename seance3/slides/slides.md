@@ -87,7 +87,7 @@ class: left, top
 
 # rsync : copie simple
 
-**Question** : copier le répertoire `study-cases` dans le répertoire `/tmp`
+**Question** : copier le répertoire `~/dubii/study-cases` dans le répertoire `/tmp`
 
 --
 
@@ -109,16 +109,17 @@ class: left, top
 
 # rsync : copie depuis un serveur distant
 
-**Question** : copier les fichiers FastQ présents sur le cluster de l'IFB dans le répertoire
-`/shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq/` en affichant la progression.
+Syntaxe : 
+
+`rsync [option] <source> <target>`
 
 --
 
-**Solution** :
+`rsync [option] <username>@<server>:<source> <target>`
 
-```bash
-$ rsync -aPh  <username>@core.cluster.france-bioinformatique.fr:/shared/projects/dubii2020/data/study_cases/Escherichia_coli/bacterial-regulons_myers_2013/RNA-seq/fastq/*.fastq .
-```
+-- 
+
+`rsync [option] <source> <username>@<server>:<target>`
 
 ---
 
