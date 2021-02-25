@@ -109,18 +109,19 @@ class: left, top
 
 # rsync : copie depuis un serveur distant
 
-Syntaxe : 
+Syntaxe générale : 
 
 `rsync [option] <source> <target>`
 
 --
 
+Depuis un serveur :
 
 `rsync [option] <username>@<server>:<source> <target>`
 
+--
 
--- 
-
+Vers un serveur :
 
 `rsync [option] <source> <username>@<server>:<target>`
 
