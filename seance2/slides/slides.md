@@ -75,6 +75,8 @@ grep ≠ sed ≠ awk ≠ Python
 
 # Exercice
 
+Rendez-vous dans le dossier `~dubii/study-cases/Escherichia_coli`.
+
 Rechercher tous gènes nommés dnaA, dnaB, dnaC et dnaD dans le fichier
 `Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3`
 
