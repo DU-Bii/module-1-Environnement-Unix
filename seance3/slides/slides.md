@@ -115,12 +115,14 @@ Syntaxe générale :
 
 --
 
+<br/>
 Depuis un serveur :
 
 `rsync [option] <username>@<server>:<source> <target>`
 
 --
 
+<br/>
 Vers un serveur :
 
 `rsync [option] <source> <username>@<server>:<target>`
