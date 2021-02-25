@@ -150,11 +150,11 @@ La méthode la plus commune pour compresser un fichier est
 d'utiliser `gzip` :
 
 ```bash
-$ ls -lh 12870_2016_726_MOESM10_ESM.tsv
--rw-r--r-- 1 benoist staff 1.6M Mar  2 23:49 12870_2016_726_MOESM10_ESM.tsv
-$ gzip 12870_2016_726_MOESM10_ESM.tsv
-$ ls -lh 12870_2016_726_MOESM10_ESM.tsv.gz
--rw-r--r-- 1 benoist staff 346K Mar  2 23:49 12870_2016_726_MOESM10_ESM.tsv.gz
+$ ls -lh example.tsv
+-rw-r--r-- 1 benoist staff 1.6M Mar  2 23:49 example.tsv
+$ gzip example.tsv
+$ ls -lh example.tsv.gz
+-rw-r--r-- 1 benoist staff 346K Mar  2 23:49 example.tsv.gz
 ```
 
 ---
@@ -164,7 +164,7 @@ $ ls -lh 12870_2016_726_MOESM10_ESM.tsv.gz
 Pour décompresser ce fichier, utiliser `gunzip` : 
 
 ```bash
-$ gunzip 12870_2016_726_MOESM10_ESM.tsv.gz
+$ gunzip example.tsv.gz
 ```
 
 Autres outils de compression/décompression : `bzip2`, `7z`, ...
