@@ -119,7 +119,7 @@ Supprimer toutes les lignes contenant la chaîne de caractère `dnaC`
 --
 
 ```bash
-$ sed '/dnaC/d' Escherichia_coli/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3 > gff_no-dnaC.gff3
+$ sed '/dnaC/d' Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3 > gff_no-dnaC.gff3
 ```
 
 ---
