@@ -167,7 +167,9 @@ Pour décompresser ce fichier, utiliser `gunzip` :
 $ gunzip example.tsv.gz
 ```
 
-Autres outils de compression/décompression : `bzip2`, `7z`, ...
+# Autres outils de compression/décompression
+
+`zip`, `bzip2`, `7z`, ...
 
 ---
 
