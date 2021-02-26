@@ -87,12 +87,12 @@ class: left, top
 
 # rsync : synchronisation simple (copie)
 
-**Question** : copier le répertoire `~/dubii/study-cases` dans le répertoire `/tmp`
+**Question** : copier le répertoire `~/dubii/study-cases/Escherichia_coli` dans votre répertoire personnel (*home*)
 
 --
 
 ```bash
-$ rsync -av ~/dubii/study-cases /tmp
+$ rsync -av ~/dubii/study-cases/Escherichia_coli ~
 rsync -av study-cases /data/
 building file list ... done
 study-cases/
