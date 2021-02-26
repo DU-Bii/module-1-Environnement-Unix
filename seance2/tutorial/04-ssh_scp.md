@@ -2,8 +2,8 @@
 
 ## Connexion à un serveur distant
 
-Jusqu'à maintenant vous travailliez à distance sur l'infrastructure IFB en utilisant un logiciel dédié pour vous connecter : **JupyterHub**. 
-Ce logiciel n'est pas disponible sur toutes les plateformes bioinformatiques. Nous vous proposons donc de vous familiariser avec la commande `ssh` qui vous permettra d'accéder à un **serveur Unix distant depuis un *terminal* de votre ordinateur local**.
+Jusqu'à maintenant vous travailliez à distance sur les serveurs de l'infrastructure IFB en utilisant un logiciel dédié dans un navigateur web pour vous connecter : **JupyterHub**. 
+Ce logiciel n'est pas disponible sur toutes les plateformes bioinformatiques. Nous vous proposons donc de vous familiariser avec la commande `ssh` qui vous permettra d'accéder à un **serveur Unix distant depuis un *terminal* de votre ordinateur local**. Cette commande est disponible sur la plupart des ordinateurs sius Unix et vous permettra d'accéder à tout serveur Unix distant autorisant les connexions depuis Internet, donc à la plupart des plateformes bioinformatiques de l'IFB.
 
 Sous Unix, la commande `ssh` permet ainsi d' établir une communication sécurisée, 
 sur un réseau informatique (Intranet ou Internet) entre une machine locale (le client) et une machine distante (le serveur).
@@ -50,6 +50,8 @@ Question : Transférer le répertoire study-cases/Escherichia_coli/bacterial-reg
 
 ## Si vous voulez aller plus loin
 
-Exercice :  récupérer un génome Refseq de votre choix sur le site du NCBI avec la commande `rsync`
-voir documentation ici : https://www.ncbi.nlm.nih.gov/genome/doc/ftpfaq/ 
+D'autres commandes vous permettent de transférer des fichiers de données stockés sur une serveur distant, par exemple :  `wget`, `rsync`, `curl`,...
+
+Exercice :  récupérer un génome Refseq de votre choix sur le site du NCBI avec une des commandes proposées dans 
+la documentation  : https://www.ncbi.nlm.nih.gov/genome/doc/ftpfaq/ 
 
