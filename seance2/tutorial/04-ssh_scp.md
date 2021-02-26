@@ -1,9 +1,22 @@
 # Partie 2.4 : connexion à un serveur distant, transfert de fichier
 
-## Connexion à un serveur distant
+## Connexion à un serveur distant avec `ssh`
 
 Jusqu'à maintenant vous travailliez à distance sur les serveurs de l'infrastructure IFB en utilisant un logiciel dédié dans un navigateur web pour vous connecter : **JupyterHub**. 
 Ce logiciel n'est pas disponible sur toutes les plateformes bioinformatiques. Nous vous proposons donc de vous familiariser avec la commande `ssh` qui vous permettra d'accéder à un **serveur Unix distant depuis un *terminal* de votre ordinateur local**. Cette commande est disponible sur la plupart des ordinateurs sous Unix et vous permettra d'accéder à tout serveur Unix distant autorisant les connexions depuis Internet, donc à la plupart des plateformes bioinformatiques de l'IFB.
+
+### Connexion au cluster de calcul de l'IFB depuis un poste de travail sous Linux, Mac OS X et WSL
+
+Si vous travaillez avec les systèmes d'exploitations Linux (Ubuntu, Mint, Debian...), Mac OS X ou WSL pour Windows 10, vous avez déjà un *shell* installé sur votre machine. 
+
+Avec ce *shell*, vous trouverez également la commande `ssh` qui permet de se connecter à un serveur distant.
+
+### Connexion au cluster de calcul de l'IFB depuis Windows (hors WSL)
+
+
+Si vous souhaitez simplement un logiciel sous Windows pour vous connecter au cluster du NNCR en SSH. Nous vous conseillons [MobaXterm](https://mobaxterm.mobatek.net/). La version [*Free*](https://mobaxterm.mobatek.net/download.html) est suffisante. Vous trouverez quelques vidéos de démo [ici](https://mobaxterm.mobatek.net/demo.html).
+
+### Syntaxe de la commande ssh
 
 Sous Unix, la commande `ssh` permet ainsi d'établir une communication sécurisée, 
 sur un réseau informatique (Intranet ou Internet) entre une machine locale (le client) et une machine distante (le serveur).
@@ -21,7 +34,7 @@ Ouvrez un  **terminal** sur votre poste de travail local Linux et connectez-vous
 > > ```
 {:.answer}
 
-## Transfert - copie de fichiers - avec scp
+## Transfert - copie de fichiers - avec `scp
 Pour copier un fichier à partir d'un ordinateur sur un autre vous devrez utiliser la commande `scp`. 
 La syntaxe est la suivante :
 
