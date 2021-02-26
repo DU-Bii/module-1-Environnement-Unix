@@ -172,7 +172,6 @@ cut -f 9 ~/dubii/study-cases/Escherichia_coli/Escherichia_coli_str_k_12_substr_m
 ```
 
 --
-<br/>
 
 ## Éxécution du script
 
@@ -194,7 +193,6 @@ my_variable=42
 ```
 
 --
-<br/>
 
 ## Affichage
 
@@ -203,7 +201,6 @@ echo ${my_variable}
 ```
 
 --
-<br/>
 
 ```bash 
 # ou encore
@@ -221,7 +218,6 @@ le nom du fichier gff soit stocké dans une variable et que cette variable
 soit utilisée dans la suite du script.
 
 --
-<br/>
 
 **Solution** :
 
@@ -245,7 +241,6 @@ class: left, top
 **Syntaxe**: `$(<command> [arguments])`
 
 --
-<br/>
 
 **Exemple** : stocker le répertoire courant dans une variable
 
@@ -265,7 +260,6 @@ le nombre de gènes dans une variable et l'affiche sous la forme
 `Number of unique genes: 4497`
 
 --
-<br/>
 
 **Solution** :
 
@@ -299,7 +293,6 @@ done
 ```
 
 --
-<br/>
 
 **Exemple** :
 
