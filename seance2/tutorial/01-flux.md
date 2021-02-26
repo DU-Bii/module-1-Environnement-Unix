@@ -186,8 +186,8 @@ fichier `outfile` on utilise `> outfile` ou `>> outfile`
 Pour modifier l'erreur standard d'une commande et écrire les messages d'erreurs
 dans un fichier `errfile` on utilise : `2> errfile`.
 
-En résumé tout programme Linux peut s'écrire
-`$program < infile > outfile 2> errfile`
+En résumé toute commande Linux peut s'écrire
+`$cmd < infile > outfile 2> errfile`
 
 **Question 7**: rediriger le résultat de la commande `cat` sur le fichier
 `ChIP-seq/FNR1_vs_input1_cutadapt_bowtie2_homer.bed` dans le fichier `test.txt`.
@@ -224,6 +224,7 @@ valeur de la colonne `WT1` du fichier `cutadapt_bwa_featureCounts_all.tsv` en 1 
 **Question 9** : Utiliser le `|` et les commandes précédentes pour déterminer le nombre de gènes uniques dans le fichier `Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3`  
 Le fichier est dans le répertoire `~/dubii/study_cases/Escherichia_coli/`  
 
+Indication : les noms de gènes se trouvent dans la 9ème colonne du fichier gff3
 
 >>
 >> **Solution :**     
