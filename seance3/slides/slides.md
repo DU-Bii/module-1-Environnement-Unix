@@ -62,11 +62,11 @@ class: center, middle
 class: left, top
 # rsync
 
-- Copie (synchronisation) de fichier
+- Synchronisation (copie) de fichier
 - Alternative plus puissante à `cp`
 - Copie seulement les fichiers plus récents
 - Capable d'exclure des fichiers
-- Capable de copie depuis/vers un serveur distant
+- Capable de synchroniser depuis/vers un serveur distant
 - ...
 
 ---
@@ -79,13 +79,13 @@ class: left, top
 - `-v, --verbose` mode verbeux  (afficher les éléments au fur et à mesure qu'il sont copiés)
 - `-P, --progress` montre l'avancement, fichier par fichier
 - `-h, --human-readable` montre les tailles au format humain (à utiliser avec `-P`)
-- `-x, --exclude <MOTIF>` exclut des éléments de la copie.
+- `-x, --exclude <MOTIF>` exclut des éléments de la synchronisation.
 
 ---
 
 class: left, top
 
-# rsync : copie simple
+# rsync : synchronisation simple (copie)
 
 **Question** : copier le répertoire `~/dubii/study-cases` dans le répertoire `/tmp`
 
@@ -107,7 +107,7 @@ study-cases/_config.yml
 
 class: left, top
 
-# rsync : copie depuis un serveur distant
+# rsync : synchronisation depuis/vers un serveur distant
 
 Syntaxe générale : 
 
@@ -160,6 +160,7 @@ class: left, top
 unique dans le fichier `~/dubii/study-cases/Escherichia_coli/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3`
 
 --
+<br/>
 
 **Solution** :
 
@@ -171,6 +172,7 @@ cut -f 9 ~/dubii/study-cases/Escherichia_coli/Escherichia_coli_str_k_12_substr_m
 ```
 
 --
+<br/>
 
 ## Éxécution du script
 
@@ -192,6 +194,7 @@ my_variable=42
 ```
 
 --
+<br/>
 
 ## Affichage
 
@@ -200,6 +203,7 @@ echo ${my_variable}
 ```
 
 --
+<br/>
 
 ```bash 
 # ou encore
@@ -217,6 +221,7 @@ le nom du fichier gff soit stocké dans une variable et que cette variable
 soit utilisée dans la suite du script.
 
 --
+<br/>
 
 **Solution** :
 
@@ -240,6 +245,7 @@ class: left, top
 **Syntaxe**: `$(<command> [arguments])`
 
 --
+<br/>
 
 **Exemple** : stocker le répertoire courant dans une variable
 
@@ -259,6 +265,7 @@ le nombre de gènes dans une variable et l'affiche sous la forme
 `Number of unique genes: 4497`
 
 --
+<br/>
 
 **Solution** :
 
@@ -292,6 +299,7 @@ done
 ```
 
 --
+<br/>
 
 **Exemple** :
 
