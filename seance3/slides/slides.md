@@ -313,9 +313,8 @@ class: left, top
 # Bash : les arguments de la ligne de commande
 
 ```bash
-bash unique-genes.bash <source>
+bash unique-genes.bash <arg1> <arg2> ...
 ```
-
 
 --
 
@@ -326,10 +325,10 @@ bash unique-genes.bash <source>
 - `$@` : tous les arguments
 
 
---
+---
+# Bash : les arguments de la ligne de commande
 
-
-**Exemple :**
+**Exemple : passer le fichier d'entrée en argument**
 
 ```bash
 input_gff=$1
