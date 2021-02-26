@@ -322,6 +322,23 @@ bash unique-genes.bash <source>
 - `$1`, `$2`, ... : premier argument, deuxième argument
 - `$@` : tous les arguments
 
+-- 
+
+**Exemple :**
+
+```bash
+input_gff=$1
+
+n=$(cut -f 9 ${input_gff} | cut -d ";" -f 1 | grep "ID=gene" | sort -u | wc -l)
+
+echo "Number of unique genes: ${n}"
+```
+
+```bash
+bash unique-genes.bash  ~/dubii/study-cases/Escherichia_coli/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3
+Number of unique genes: 4497
+```
+
 ---
 
 class: left, top
@@ -349,6 +366,9 @@ if [ $# -lt 1 ]; then
     echo "ERROR: This script requires at least 1 argument"
     exit 1
 fi
+
+# ...
+# actual code starts here
 ```
 
 --
