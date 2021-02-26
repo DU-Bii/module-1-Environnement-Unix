@@ -363,7 +363,7 @@ done
 --
 
 ```bash
-input_gff_list=${@}
+input_gff_list=$@
 
 for input_gff in ${input_gff_list}
 do
