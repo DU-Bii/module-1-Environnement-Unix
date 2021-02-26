@@ -389,7 +389,9 @@ else
 fi
 ```
 
---
+---
+
+# Bash : Tests
 
 **Exemple : test du nombre d'arguments passés au script**
 
