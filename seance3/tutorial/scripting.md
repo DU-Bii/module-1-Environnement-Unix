@@ -213,7 +213,7 @@ The script will display an error message if no input file is provided.
 > > ```bash
 > > #!/bin/bash
 > > 
-> > # The -ge operator stands for "greater or equal"
+> > # The -gt operator stands for "greater than"
 > > if [ $# -gt 1 ]; then
 > >     filenames=$*
 > >     for input_gff in ${filenames}

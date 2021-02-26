@@ -394,7 +394,7 @@ fi
 **Exemple : test du nombre d'arguments passés au script**
 
 ```bash
-# The -eq operator stands for less than
+# The -lt operator stands for less than
 if [ $# -lt 1 ]; then
     echo "ERROR: This script requires at least 1 argument"
     exit 1
