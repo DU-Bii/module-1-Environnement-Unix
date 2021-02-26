@@ -31,7 +31,9 @@ d'économiser un temps précieux lors de la copie de fichiers volumineux.
 ## Copie simple
 
 ```bash
-$ rsync -av study-cases /data/
+$ cd ~/dubii
+$ mkdir ~/tmp
+$ rsync -av study-cases ~/tmp
 building file list ... done
 study-cases/
 study-cases/.gitignore
@@ -54,7 +56,7 @@ fichier est copié :
 $ # Modifying README.md
 $ echo "modifying README" >> study-cases/study-cases.md
 $ # Making the copy again
-$ rsync -av study-cases /data/
+$ rsync -av study-cases ~/tmp
 sending incremental file list
 study-cases/study-cases.md
 
