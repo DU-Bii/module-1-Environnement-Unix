@@ -34,7 +34,7 @@ Ouvrez un  **terminal** sur votre poste de travail local Linux et connectez-vous
 > > ```
 {:.answer}
 
-## Transfert - copie de fichiers - avec `scp
+## Transfert - copie de fichiers - avec `scp`
 Pour copier un fichier à partir d'un ordinateur sur un autre vous devrez utiliser la commande `scp`. 
 La syntaxe est la suivante :
 
@@ -44,7 +44,7 @@ La syntaxe est la suivante :
 
 **Exercice 2**  
 - Ouvrez un deuxième **terminal** sur votre poste de travail local Linux 
-- Créez un répertoire `test` sur votre ordinanteur local 
+- Créez un répertoire `test` sur votre poste de travail local 
 - Se déplacer dans le répertoire `test` et créer un fichier sur votre poste de travail local `motif_adn.fna` au format fasta (une première ligne avec d'entête content `>motif` et une deuxième ligne avec la séquence nucleotidique `ATCGGGCATAGGGAGGGCATATATATAAGCACACC`. Vous pourrez par exemple utiliser pour cela l'éditeur de texte `nano`. 
 - Copier ce fichier `motif_adn.fna` sur le serveur distant core cluster de l'IFB dans le répertoire `~/dubii/` de votre répertoire utilisateur ("*home directory*") :
 > **Solution :**:
