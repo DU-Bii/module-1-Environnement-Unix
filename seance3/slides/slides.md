@@ -318,6 +318,8 @@ bash unique-genes.bash <source>
 
 --
 
+**Variables spéciales :**
+
 - `$#` : nombre d'arguments passés au script
 - `$1`, `$2`, ... : premier argument, deuxième argument
 - `$@` : tous les arguments
