@@ -186,8 +186,8 @@ fichier `outfile` on utilise `> outfile` ou `>> outfile`
 Pour modifier l'erreur standard d'une commande et écrire les messages d'erreurs
 dans un fichier `errfile` on utilise : `2> errfile`.
 
-En résumé tout programme Linux peut s'écrire
-`$program < infile > outfile 2> errfile`
+En résumé toute commande Linux peut s'écrire
+`$cmd < infile > outfile 2> errfile`
 
 **Question 7**: rediriger le résultat de la commande `cat` sur le fichier
 `ChIP-seq/FNR1_vs_input1_cutadapt_bowtie2_homer.bed` dans le fichier `test.txt`.
