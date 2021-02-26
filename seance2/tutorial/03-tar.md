@@ -32,7 +32,7 @@ pour tous les disques du système.
 Comme vu précédemment, la commande pour connaître la taille des fichiers présents
 dans un dossier est `ls -lh`.
 
-**Question**: Rendez-vous dans le dossier `study-cases/Arabidopsis_thaliana/transcripto_proteo_metabo_Liang_2016`.
+**Question**: Rendez-vous dans le dossier `~/dubii/study-cases/Arabidopsis_thaliana/transcripto_proteo_metabo_Liang_2016`.
 Quelle est la quantité d'espace disque occupée par chacun des fichiers présents
 dans ce répertoire ? Trier les fichiers du plus volumineux au moins volumineux.
 
@@ -71,13 +71,13 @@ dans ce répertoire ? Trier les fichiers du plus volumineux au moins volumineux.
 Pour connaître la quantité d'espace disque occupée par un dossier, utiliser
 la commande `du`, encore une fois avec l'option `-h`.
 
-**Question**: Afficher la taille des sous-dossiers du dossier `study-cases`.
+**Question**: Afficher la taille des sous-dossiers du dossier `~/dubii/study-cases`.
 Comment faire pour ne pas tenir compte du dossier `.git` ?
 
 > **Solution**:
 > > ```
 > > # Taille des sous-dossiers du dossier study-cases
-> > $ du -h
+> > $ du -h ~/dubii/study-cases
 > > 8.0K    ./img
 > > 756K    ./Homo_sapiens/TCGA_study-case
 > > 760K    ./Homo_sapiens
@@ -112,7 +112,7 @@ Comment faire pour ne pas tenir compte du dossier `.git` ?
 > > 49M
 > >
 > > # Ne pas tenir compte du dossier .git
-> > $ du -h --exclude .git
+> > $ du -h --exclude .git ~/dubii/studi-cases
 > > 8.0K    ./img
 > > 756K    ./Homo_sapiens/TCGA_study-case
 > > 760K    ./Homo_sapiens
