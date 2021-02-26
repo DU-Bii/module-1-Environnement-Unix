@@ -398,8 +398,8 @@ documentation et des options.
 > > ```text
 > > $ man less
 > > [...]
-> >   -n  -N  ....  --line-numbers  --LINE-NUMBERS
-> >                   Don't use line numbers.
+> >  -N or --LINE-NUMBERS
+> >                   Causes a line number to be displayed at the beginning of each line in the display.
 > > [...]
 > > ```
 > L'aide nous apprend que l'option `-N` affiche les numéros de lignes à gauche de chaque ligne.
