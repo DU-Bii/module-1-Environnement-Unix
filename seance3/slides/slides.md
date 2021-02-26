@@ -316,6 +316,7 @@ class: left, top
 bash unique-genes.bash <source>
 ```
 
+
 --
 
 **Variables spéciales :**
@@ -324,7 +325,9 @@ bash unique-genes.bash <source>
 - `$1`, `$2`, ... : premier argument, deuxième argument
 - `$@` : tous les arguments
 
--- 
+
+--
+
 
 **Exemple :**
 
