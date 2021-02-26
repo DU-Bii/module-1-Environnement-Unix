@@ -64,7 +64,7 @@ class: left, top
 
 - Synchronisation (copie) de fichier
 - Alternative plus puissante à `cp`
-- Copie seulement les fichiers plus récents
+- Copie seulement les fichiers qui ont été modifiés / ajoutés
 - Capable d'exclure des fichiers
 - Capable de synchroniser depuis/vers un serveur distant
 - ...
