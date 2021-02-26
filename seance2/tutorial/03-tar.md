@@ -112,7 +112,7 @@ Comment faire pour ne pas tenir compte du dossier `.git` ?
 > > 49M
 > >
 > > # Ne pas tenir compte du dossier .git
-> > $ du -h --exclude .git ~/dubii/studi-cases
+> > $ du -h --exclude .git ~/dubii/study-cases
 > > 8.0K    ./img
 > > 756K    ./Homo_sapiens/TCGA_study-case
 > > 760K    ./Homo_sapiens
@@ -279,7 +279,7 @@ qu'il faudra décompresser l'archive.
 
 ```bash
 # Extraction d'une archive compressée en mode verbeux (verbose)
-$ tar xvzf ../Arabidopsis_thaliana.tar.gz
+$ tar xvzf Arabidopsis_thaliana.tar.gz
 Arabidopsis_thaliana/
 Arabidopsis_thaliana/metabo_proteo_Strehmel_2017/
 Arabidopsis_thaliana/metabo_proteo_Strehmel_2017/Strehmel revised suppl tables/
