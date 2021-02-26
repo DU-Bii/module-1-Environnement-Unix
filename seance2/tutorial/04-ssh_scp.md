@@ -2,8 +2,8 @@
 
 ## Connexion à un serveur distant
 
-Jusqu'à maintenant vous travailliez à distance sur l'infrastructure IFB en utilisant un logiciel dédié pour vous connecter : **JupyterHub**
-Ce logiciel n'est pas disponible sur toutes les plateformes bioinformatiques. Nous vous proposons doncde vous familiariser avec la commande `ssh` qui vous permettra d'accéder à un **serveur Unix distant depuis un *terminal* de votre ordinateur local**
+Jusqu'à maintenant vous travailliez à distance sur l'infrastructure IFB en utilisant un logiciel dédié pour vous connecter : **JupyterHub**. 
+Ce logiciel n'est pas disponible sur toutes les plateformes bioinformatiques. Nous vous proposons donc de vous familiariser avec la commande `ssh` qui vous permettra d'accéder à un **serveur Unix distant depuis un *terminal* de votre ordinateur local**.
 
 Sous Unix, la commande `ssh` permet ainsi d' établir une communication sécurisée, 
 sur un réseau informatique (Intranet ou Internet) entre une machine locale (le client) et une machine distante (le serveur).
