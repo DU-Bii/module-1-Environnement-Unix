@@ -155,24 +155,25 @@ Il s'agit de compresser un fichier.
 Plusieurs outils de compression existent, le plus courant sous unix étant `gzip`
 et l'outil de décompression associé `gunzip`.
 
-**Question**: Quelle est la taille du fichier `./Arabidopsis_thaliana/transcripto_proteo_metabo_Liang_2016/12870_2016_726_MOESM1_ESM.tsv` ?
+**Question**: Quelle est la taille du fichier `~/dubii/study-cases/Arabidopsis_thaliana/transcripto_proteo_metabo_Liang_2016/12870_2016_726_MOESM1_ESM.tsv` ?
 Le compresser avec `gzip`. Quelle est la taille du fichier compressé ?
 
 > **Solution** :
 > > ```
-> > $ # Taille du fichier ./Arabidopsis_thaliana/transcripto_proteo_metabo_Liang_2016/12870_2016_726_MOESM1_ESM.tsv
-> > $ ls -lh ./Arabidopsis_thaliana/transcripto_proteo_metabo_Liang_2016/12870_2016_726_MOESM1_ESM.tsv
-> > -rw-rw-r-- 1 laurent laurent 13M Feb  1 10:44 ./Arabidopsis_thaliana/transcripto_proteo_metabo_Liang_2016/12870_2016_726_MOESM1_ESM.tsv
+> > $ cd ~/dubii/study-cases/Arabidopsis_thaliana/transcripto_proteo_metabo_Liang_2016/
+> > $ # Taille du fichier 12870_2016_726_MOESM1_ESM.tsv
+> > $ ls -lh 12870_2016_726_MOESM1_ESM.tsv
+> > -rw-rw-r-- 1 laurent laurent 13M Feb  1 10:44 12870_2016_726_MOESM1_ESM.tsv
 > > $ # Le fichier fait 13M.
 > >
 > > $ # Compression du fichier.
 > > $ # Attention : par défaut, gzip compresse directement le fichier sans créer de copie
 > > $ # On utilise l'option -c pour écrire la sortie sur la sortie standard et > pour rédiriger la sortie standard dans un fichier.
-> > $ gzip -c ./Arabidopsis_thaliana/transcripto_proteo_metabo_Liang_2016/12870_2016_726_MOESM1_ESM.tsv > ./Arabidopsis_thaliana/transcripto_proteo_metabo_Liang_2016/12870_2016_726_MOESM1_ESM.tsv.gz
+> > $ gzip -c 12870_2016_726_MOESM1_ESM.tsv > 12870_2016_726_MOESM1_ESM.tsv.gz
 > >
 > > $ # Taille du fichier compressé
-> > $ ls -lh ./Arabidopsis_thaliana/transcripto_proteo_metabo_Liang_2016/12870_2016_726_MOESM1_ESM.tsv.gz
-> > -rw-rw-r-- 1 laurent laurent 2.5M Feb  1 15:44 ./Arabidopsis_thaliana/transcripto_proteo_metabo_Liang_2016/12870_2016_726_MOESM1_ESM.tsv.gz
+> > $ ls -lh 12870_2016_726_MOESM1_ESM.tsv.gz
+> > -rw-rw-r-- 1 laurent laurent 2.5M Feb  1 15:44 12870_2016_726_MOESM1_ESM.tsv.gz
 > > $ # Le fichier fait 2.5M, soit un taux de compression de 80%.
 > > ```
 {:.answer}
