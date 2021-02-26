@@ -9,7 +9,8 @@ Hélène Chiapello<br/>
 Benoist Laurent
 
 Pierre Poulain<br/>
-Sandra Dérozier
+Paulette Lieby<br/>
+Thomas Denecker
 
 
 .footer[
