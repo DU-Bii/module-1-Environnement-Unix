@@ -13,7 +13,7 @@ La syntaxe de la commande est la suivante :
 
 
 **Exercice 1** 
-Connectez-vous au serveur **core.cluster.france-bioinformatique.fr** depuis un **terminal** de votre poste de travail local Linux en utilisant la commande `ssh`.
+Ouvrez un  **terminal** sur votre poste de travail local Linux et connectez-vous au serveur **core.cluster.france-bioinformatique.fr** depuis ce **terminal** en utilisant la commande `ssh`.
 
 > **Solution :**:
 > > ```bash
@@ -30,7 +30,8 @@ La syntaxe est la suivante :
 `scp monfichier.txt <nom_utilisateur>@<nom_serveur_distant>:<répertoire_destination>`
 
 **Exercice 2**  
-- Créer un répertoire `test` sur votre ordinanteur local 
+- Ouvrez un deuxième **terminal** sur votre poste de travail local Linux 
+- Créez un répertoire `test` sur votre ordinanteur local 
 - Se déplacer dans le répertoire `test` et créer un fichier sur votre poste de travail local `motif_adn.fna` au format fasta (une première ligne avec d'entête content `>motif` et une deuxième ligne avec la séquence nucleotidique `ATCGGGCATAGGGAGGGCATATATATAAGCACACC`. Vous pourrez par exemple utiliser pour cela l'éditeur de texte `nano`. 
 - Copier ce fichier `motif_adn.fna` sur le serveur distant core cluster de l'IFB dans le répertoire `~/dubii/` de votre répertoire utilisateur ("*home directory*") :
 > **Solution :**:
@@ -48,7 +49,7 @@ La syntaxe est la suivante :
 
 
 **Exercice 3**
-- Remplacer toutes les occurences de `T` par `U` dans le fichier `motif_adn.fna` en utilisant la commande `sed` et rediriger le résultat dans un fichier nommé `motif_arn.fna`
+- **Sur votre terminal local**, remplacer toutes les occurences de `T` par `U` dans le fichier `motif_adn.fna` en utilisant la commande `sed` et rediriger le résultat dans un fichier nommé `motif_arn.fna`
 - Copier le répertoire `test` et son contenu sur le serveur distant core cluster de l'IFB dans le répertoire `~/dubii/` de votre répertoire utilisateur ("*home directory*") :
 
 > **Solution :**:
