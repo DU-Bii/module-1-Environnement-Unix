@@ -308,6 +308,64 @@ done
 
 ---
 
+class: left, top
+
+# Bash : les arguments de la ligne de commande
+
+```bash
+bash unique-genes.bash <source>
+```
+
+--
+
+- `$#` : nombre d'arguments passés au script
+- `$1`, `$2`, ... : premier argument, deuxième argument
+- `$@` : tous les arguments
+
+---
+
+class: left, top
+
+# Bash : Tests
+
+**Syntaxe :**
+```bash
+if [ <condition> ]; then
+    <BLOCK>
+elif
+    <BLOCK>
+else
+    <BLOCK>
+fi
+```
+
+--
+
+**Exemple : test du nombre d'arguments passés au script**
+
+```bash
+# The -eq operator stands for less than
+if [ $# -lt 1 ]; then
+    echo "ERROR: This script requires at least 1 argument"
+    exit 1
+fi
+```
+
+--
+
+**Exemple : test si un fichier existe**
+
+```bash
+input_file=$1
+
+if [ ! -e ${input_file} ]; then
+    echo "ERROR: Input file '${input_file}' does not exist"
+    exit 1
+fi
+```
+
+---
+
 class: middle, center
 
 [https://devhints.io/bash](https://devhints.io/bash)

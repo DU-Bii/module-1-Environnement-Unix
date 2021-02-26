@@ -277,3 +277,7 @@ executed, drastically reducing the performances.
 So, sometimes, it may be critical to reinvent the wheel and code e.g. a Python
 script that will not use already written tools allowing it to deal with data
 on-the-fly (meaning in memory).
+
+## A great cheatsheet
+
+https://devhints.io/bash
