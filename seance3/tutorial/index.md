@@ -19,4 +19,4 @@ Thomas Denecker
 # Accéder aux tutoriels
 - [rsync](rsync.md)
 - [Programmation bash](scripting.md)
-- [Scripts NGS](scripts_ngs.md)
+- [Scripts NGS](scripting_ngs.md)
