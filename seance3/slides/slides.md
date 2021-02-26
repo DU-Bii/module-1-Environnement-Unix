@@ -338,9 +338,38 @@ n=$(cut -f 9 ${input_gff} | cut -d ";" -f 1 | grep "ID=gene" | sort -u | wc -l)
 echo "Number of unique genes: ${n}"
 ```
 
+--
+
 ```bash
-bash unique-genes.bash  ~/dubii/study-cases/Escherichia_coli/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3
+$ bash unique-genes.bash  ~/dubii/study-cases/Escherichia_coli/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3
 Number of unique genes: 4497
+```
+
+---
+# Bash : les arguments de la ligne de commande
+
+**Exemple : passer plusieurs fichiers d'entrée en argument**
+
+```bash
+input_gff_list=*.gff
+
+for input_gff in ${input_gff_list}
+do
+    n=$(cut -f 9 ${input_gff} | cut -d ";" -f 1 | grep "ID=gene" | sort -u | wc -l)
+    echo "${input_gff}: ${n}"
+done
+```
+
+--
+
+```bash
+input_gff_list=${@}
+
+for input_gff in ${input_gff_list}
+do
+    n=$(cut -f 9 ${input_gff} | cut -d ";" -f 1 | grep "ID=gene" | sort -u | wc -l)
+    echo "${input_gff}: ${n}"
+done
 ```
 
 ---
