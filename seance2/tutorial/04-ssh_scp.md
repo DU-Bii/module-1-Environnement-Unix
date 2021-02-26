@@ -2,13 +2,17 @@
 
 ## Connexion à un serveur distant
 
-Sous Unix, on utilise la commande `ssh` pour établir une communication sécurisée, 
+Jusqu'à maintenant vous travailliez à distance sur l'infrastructure IFB en utilisant un logiciel dédié pour vous connecter : **JupyterHub**
+Ce logiciel n'est pas disponible sur toutes les plateformes bioinformatiques. Nous vous proposons doncde vous familiariser avec la commande `ssh` qui vous permettra d'accéder à un **serveur Unix distant depuis un *terminal* de votre ordinateur local**
+
+Sous Unix, la commande `ssh` permet ainsi d' établir une communication sécurisée, 
 sur un réseau informatique (Intranet ou Internet) entre une machine locale (le client) et une machine distante (le serveur).
 La syntaxe de la commande est la suivante :
 
 `ssh <nom_utilisateur>@<nom_serveur_distant>`
 
-Exercice : Connectez-vous au serveur **core.cluster.france-bioinformatique.fr** en utilisant la commande `ssh`.
+
+Exercice : Connectez-vous au serveur **core.cluster.france-bioinformatique.fr** depuis un **terminal** de votre poste de travail local Linux en utilisant la commande `ssh`.
 
 > **Solution :**:
 > > ```bash
