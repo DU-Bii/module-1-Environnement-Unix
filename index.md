@@ -44,7 +44,7 @@ Helpers : Pierre Poulain, Paulette Lieby & Thomas Denecker
 
 Jeudi 04/03/2020 matin  
 Instructeurs : Benoist Laurent & Hélène Chiapello  
-Helper : Pierre Poulain, , Paulette Lieby & Thomas Denecker  
+Helper : Pierre Poulain, Paulette Lieby & Thomas Denecker  
 
 - [Présentation](seance3/slides/index.html) <br />
 - [Support](seance3/tutorial/index.md)
