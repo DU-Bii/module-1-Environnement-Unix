@@ -20,7 +20,7 @@ L'objectif de ce module est de vous familiariser avec l'environnement Unix, les 
 
 Lundi 01/03/2021 après-midi   
 Instructeurs : Hélène Chiapello & Pierre Poulain  
-Helpers : Benoist Laurent  
+Helpers : Benoist Laurent, Paulette Lieby & Thomas Denecker  
 
 [Introduction](seance1/slides_intro/Unix_seance1_introduction_methodes.pdf) - [Tutoriel](seance1/tutorial/README.md) - [Bonnes pratiques](seance1/slides_good_practices/Unix_seance1_bonnes_pratiques_bioinfo.pdf)
 
@@ -37,7 +37,7 @@ Bibliographie / webographie
 
 Mardi 02/03/2021 après-midi  
 Instructeurs : Hélène Chiapello & Benoist Laurent  
-Helpers : Pierre Poulain
+Helpers : Pierre Poulain, Paulette Lieby & Thomas Denecker  
 
 
 - [Présentation](seance2/slides/index.html) <br />
@@ -52,7 +52,7 @@ Helpers : Pierre Poulain
 
 Jeudi 04/03/2020 matin  
 Instructeurs : Benoist Laurent & Hélène Chiapello  
-Helper : Pierre Poulain
+Helper : Pierre Poulain, , Paulette Lieby & Thomas Denecker  
 
 - [Présentation](seance3/slides/index.html) <br />
 - [Support](seance3/tutorial/index.md)
@@ -64,7 +64,7 @@ Helper : Pierre Poulain
 
 Jeudi 09/03/2020 matin  
 Instructeurs : Julien Seiler & Pierre Poulain  
-Helpers : Hélène Chiapello, Benoist Laurent
+Helpers : Hélène Chiapello, Benoist Laurent, Paulette Lieby & Thomas Denecker  
 
 - [Présentation](seance4/slides/index.html)
 - [Learn SLURM in 5 minutes](https://asciinema.org/a/275233)
