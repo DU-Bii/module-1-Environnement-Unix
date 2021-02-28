@@ -10,10 +10,12 @@ L'objectif de ce module est de vous familiariser avec l'environnement Unix, les 
 
 ## Intervenants
 
-- Hélène Chiapello, INRAE, `helene.chiapello@inrae.fr`, [@HeleneChiapello](https://twitter.com/HeleneChiapello)
-- Pierre Poulain, Université de Paris, `pierre.poulain@univ-paris-diderot.fr`, [@pierrepo](https://twitter.com/pierrepo)
-- Benoist Laurent, CNRS, `benoist.laurent@ibpc.fr`
-- Julien Seiler, IGBMC, `seilerj@igbmc.fr`
+- Hélène Chiapello, INRAE, <helene.chiapello@inrae.fr> (co-responsable)
+- Pierre Poulain, Université de Paris, <pierre.poulain@univ-paris-diderot.fr> (co-responsable)
+- Benoist Laurent, CNRS, <benoist.laurent@ibpc.fr>
+- Julien Seiler, IGBMC, <seilerj@igbmc.fr>
+- Thomas Denecker, IFB, <Thomas.denecker@france-bioinformatique.fr>
+- Paulette Lieby, IFB, <paulette.lieby@france-bioinformatique.fr>
 
 
 ## Séance 1 - Premiers pas
