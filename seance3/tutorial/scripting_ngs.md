@@ -1,4 +1,4 @@
-# Mise en pratique : exemple de scripts Bash pour l'analyse de données NGS  
+# Mise en pratique : exemple de scripts Bash pour l'analyse de données NGS
 
 ## Connnection au cluster NNCR IFB
 

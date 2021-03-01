@@ -1,6 +1,14 @@
 
 # rsync
 
+## Objectif
+
+- Comprendre l'intérêt de `rsync` par rapport à d'autres outils
+- Savoir effectuer les opérations de base avec `rsync`
+
+
+## Intérêt
+
 **Syntax**: `rsync [options] <SOURCE> <DESTINATION>`
 
 `rsync` est un outil très puissant servant à faire notamment de la copie et 

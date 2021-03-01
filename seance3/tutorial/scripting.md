@@ -1,6 +1,16 @@
 
 # Automatisation: script writing
 
+## Goals
+
+- Understanding the basic concepts of scripting
+- Writing a simple script
+- Using loops
+- Using tests
+- Reading command-line arguments
+- Executing a script
+
+
 ## Writing a script
 
 Writing a proper script is an essential part of doing analyses on a computer.
