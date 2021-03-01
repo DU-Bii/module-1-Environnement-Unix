@@ -39,13 +39,7 @@ Mardi 02/03/2021 après-midi
 Instructeurs : Hélène Chiapello & Benoist Laurent  
 Helpers : Pierre Poulain
 
-
-- [Présentation](seance2/slides/index.html) <br />
-- [Support](seance2/tutorial/index.md)
-    - [Extraction et flux de données](seance2/tutorial/01-flux.md)
-    - [Expressions régulières](seance2/tutorial/02-regex.md)
-    - [Compression et archivage](seance2/tutorial/03-tar.md)
-    - [Travail à distance (ssh & scp)](seance2/tutorial/04-ssh_scp.md)
+[Présentation](seance2/slides/index.html) - [Tutoriel](seance2/tutorial/index.md): [Extraction et flux de données](seance2/tutorial/01-flux.md) , [Expressions régulières](seance2/tutorial/02-regex.md), [Compression et archivage](seance2/tutorial/03-tar.md), [Travail à distance (ssh & scp)](seance2/tutorial/04-ssh_scp.md)
 
 
 ## Séance 3 - Automatisation
