@@ -1,5 +1,11 @@
 # Partie 2.1 : Recherche de fichiers ou de contenus
 
+## Objectifs
+
+- Recherche de fichiers avec `find`
+- Extraction de contenus de fichiers (`grep`, `cut`, `head`, `sort`, `uniq`, `wc`)
+- Enchainement de commandes avec `|`
+
 ## Recherche de fichier : find
  
 La commande `find` permet de rechercher des fichiers de manière récursive dans

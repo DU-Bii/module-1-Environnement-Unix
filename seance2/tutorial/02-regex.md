@@ -1,5 +1,10 @@
 # Partie 2.2 : Notions sur les expressions régulières
 
+## Objectifs
+
+- Notions de base sur les expressions régulières
+- Initiation à `sed`
+
 ## Les expressions de bases  
 
 Une expression régulière (en anglais *Regular Expression*) 

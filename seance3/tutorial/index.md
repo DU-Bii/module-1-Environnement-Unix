@@ -7,14 +7,6 @@
 - **Programmation bash** : écriture de scripts en bash
 - **Ecriture de scripts NGS** : tutoriel pour mettre en pratique le scripting bash sur des données NGS
 
-# Instructeurs
-Benoist Laurent<br/>
-Hélène Chiapello
-
-# Helpers
-Pierre Poulain<br/>
-Paulette Lieby<br/>
-Thomas Denecker
 
 # Accéder aux tutoriels
 - [rsync](rsync.md)

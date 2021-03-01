@@ -33,7 +33,7 @@ Mardi 02/03/2021 après-midi
 Instructeurs : Hélène Chiapello & Benoist Laurent  
 Helpers : Pierre Poulain, Paulette Lieby & Thomas Denecker  
 
-[Présentation](seance2/slides/index.html) - [Tutoriel](seance2/tutorial/index.md): [Extraction et flux de données](seance2/tutorial/01-flux.md) , [Expressions régulières](seance2/tutorial/02-regex.md), [Compression et archivage](seance2/tutorial/03-tar.md), [Travail à distance (ssh & scp)](seance2/tutorial/04-ssh_scp.md)
+[Présentation](seance2/slides/index.html) - Tutoriel : [Extraction et flux de données](seance2/tutorial/01-flux.md) , [Expressions régulières](seance2/tutorial/02-regex.md), [Compression et archivage](seance2/tutorial/03-tar.md), [Travail à distance (ssh & scp)](seance2/tutorial/04-ssh_scp.md)
 
 
 ## Séance 3 - Automatisation
@@ -42,11 +42,8 @@ Jeudi 04/03/2020 matin
 Instructeurs : Benoist Laurent & Hélène Chiapello  
 Helper : Pierre Poulain, Paulette Lieby & Thomas Denecker  
 
-- [Présentation](seance3/slides/index.html) <br />
-- [Support](seance3/tutorial/index.md)
-    - [rsync](seance3/tutorial/rsync.md)
-    - [Scripting](seance3/tutorial/scripting.md)
-    - [Scripts NGS](seance3/tutorial/scripts_ngs.md)
+[Présentation](seance3/slides/index.html) - [Tutoriel](seance3/tutorial/index.md)
+
   
 ## Séance 4 - Utilisation d'un cluster de calcul
 

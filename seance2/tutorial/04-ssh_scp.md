@@ -1,5 +1,10 @@
 # Partie 2.4 : connexion à un serveur distant, transfert de fichier
 
+## Objectifs
+
+- Apprendre à se connecter à une machine distante
+- Apprendre à transférer des données vers/depuis une machine distante
+
 ## Connexion à un serveur distant avec `ssh`
 
 Jusqu'à maintenant vous travailliez à distance sur les serveurs de l'infrastructure IFB en utilisant un logiciel dédié dans un navigateur web pour vous connecter : **JupyterHub**. 

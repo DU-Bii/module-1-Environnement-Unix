@@ -5,13 +5,13 @@ Il est important d'être conscient des capacités de stockage de sa machine d'un
 et du fait qu'un trop grand nombre de fichiers sur une machine peut engendrer
 un crash pur et simple du système.
 
-Ainsi, dans ce chapitre nous allons apprendre
+## Objectifs
 
-- comment savoir si un disque est plein,
-- comment connaître la quantité d'espace disque occupé par un fichier/dossier,
-- comment trouver les fichiers volumineux sur un disque,
-- comment réduire la quantité d'espace disque occupé,
-- comment réduire le nombre de fichiers présents sur un disque.
+- comment savoir si un disque est plein (`df`),
+- comment connaître la quantité d'espace disque occupé par un fichier/dossier (`du`),
+- comment trouver les fichiers volumineux sur un disque (`find`),
+- comment réduire la quantité d'espace disque occupé (`gzip`),
+- comment réduire le nombre de fichiers présents sur un disque (`tar`).
 
 
 ## Connaître la quantité d'espace disque occupée et disponible sur un disque
