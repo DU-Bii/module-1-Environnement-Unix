@@ -1,4 +1,4 @@
-## Installation d'un *shell* Linux
+## Installation d'un *shell* Linux
 
 ### Linux et Mac OS X
 

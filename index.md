@@ -10,34 +10,28 @@ L'objectif de ce module est de vous familiariser avec l'environnement Unix, les 
 
 ## Intervenants
 
-- Hélène Chiapello, INRAE, `helene.chiapello@inrae.fr`, [@HeleneChiapello](https://twitter.com/HeleneChiapello)
-- Pierre Poulain, Université de Paris, `pierre.poulain@univ-paris-diderot.fr`, [@pierrepo](https://twitter.com/pierrepo)
-- Benoist Laurent, CNRS, `benoist.laurent@ibpc.fr`
-- Julien Seiler, IGBMC, `seilerj@igbmc.fr`
+- Hélène Chiapello, INRAE, `<helene.chiapello@inrae.fr>` (co-responsable)
+- Pierre Poulain, Université de Paris, `<pierre.poulain@univ-paris-diderot.fr>` (co-responsable)
+- Benoist Laurent, CNRS, `<benoist.laurent@ibpc.fr>`
+- Julien Seiler, IGBMC, `<seilerj@igbmc.fr>`
+- Thomas Denecker, IFB, `<thomas.denecker@france-bioinformatique.fr>`
+- Paulette Lieby, IFB, `<paulette.lieby@france-bioinformatique.fr>`
 
 
 ## Séance 1 - Premiers pas
 
 Lundi 01/03/2021 après-midi   
 Instructeurs : Hélène Chiapello & Pierre Poulain  
-Helpers : Benoist Laurent  
+Helpers : Benoist Laurent, Paulette Lieby & Thomas Denecker  
 
-[Introduction](seance1/slides_intro/Unix_seance1_introduction_methodes.pdf) - [Tutoriel](seance1/tutorial/README.md) - [Bonnes pratiques](seance1/slides_good_practices/Unix_seance1_bonnes_pratiques_bioinfo.pdf)
+Introduction - [Tutoriel](seance1/tutorial/README.md) - Bonnes pratiques
 
-Bibliographie / webographie
-
-- Livre : [Bioinformatics Data Skills](http://shop.oreilly.com/product/0636920030157.do), Vince Buffalo, O'Reilly Media, 2015.
-- Article : [A Quick Guide to Organizing Computational Biology Projects](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000424), Noble, PLOS Comput Biol, 2009.
-- Article : [Good enough practices in scientific computing](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510), Wilson et al., PLOS Comput Biol, 2017.
-- Mémo : [A Critical Guide to Unix](https://f1000research.com/documents/7-1436), Attwood, F1000 Research, 2018.
-- Site internet : [The UNIX Shell](http://swcarpentry.github.io/shell-novice/), cours en ligne de *Software Carpentry*.
-- Site internet : [Unix Fondamentals](https://edu.sib.swiss/pluginfile.php/2878/mod_resource/content/4/couselab-html/content.html), du *Swiss Institute of Bioinformatics*.
 
 ## Séance 2 - Gestion de flux et extraction de données
 
 Mardi 02/03/2021 après-midi  
 Instructeurs : Hélène Chiapello & Benoist Laurent  
-Helpers : Pierre Poulain
+Helpers : Pierre Poulain, Paulette Lieby & Thomas Denecker  
 
 [Présentation](seance2/slides/index.html) - [Tutoriel](seance2/tutorial/index.md): [Extraction et flux de données](seance2/tutorial/01-flux.md) , [Expressions régulières](seance2/tutorial/02-regex.md), [Compression et archivage](seance2/tutorial/03-tar.md), [Travail à distance (ssh & scp)](seance2/tutorial/04-ssh_scp.md)
 
@@ -46,7 +40,7 @@ Helpers : Pierre Poulain
 
 Jeudi 04/03/2020 matin  
 Instructeurs : Benoist Laurent & Hélène Chiapello  
-Helper : Pierre Poulain
+Helper : Pierre Poulain, Paulette Lieby & Thomas Denecker  
 
 - [Présentation](seance3/slides/index.html) <br />
 - [Support](seance3/tutorial/index.md)
@@ -58,7 +52,7 @@ Helper : Pierre Poulain
 
 Jeudi 09/03/2020 matin  
 Instructeurs : Julien Seiler & Pierre Poulain  
-Helpers : Hélène Chiapello, Benoist Laurent
+Helpers : Hélène Chiapello, Benoist Laurent, Paulette Lieby & Thomas Denecker  
 
 - [Présentation](seance4/slides/index.html)
 - [Learn SLURM in 5 minutes](https://asciinema.org/a/275233)
@@ -66,9 +60,9 @@ Helpers : Hélène Chiapello, Benoist Laurent
 
 ## Ressources complémentaires
 
-[Installer un *shell* Linux sur sa machine](installation_shell.md)
+[Bibliographie / webographie](biblio_webographie.md)
 
-[Se connecter au cluster de calcul de l'IFB et transférer des fichiers](connexion_cluster.md) (sans utiliser le Jupyter Hub)
+[Installer un *shell* Linux sur sa machine](installation_shell.md)
 
 ## Licence
 
