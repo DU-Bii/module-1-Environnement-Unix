@@ -24,7 +24,7 @@ Lundi 01/03/2021 après-midi
 Instructeurs : Hélène Chiapello & Pierre Poulain  
 Helpers : Benoist Laurent, Paulette Lieby & Thomas Denecker  
 
-Introduction - [Tutoriel](seance1/tutorial/README.md) - Bonnes pratiques
+[Introduction](seance1/Unix_seance1_introduction.pdf) - [Tutoriel](seance1/tutorial/README.md) - [Bonnes pratiques](seance1/Unix_seance1_bonnes_pratiques_bioinfo.pdf)
 
 
 ## Séance 2 - Gestion de flux et extraction de données
