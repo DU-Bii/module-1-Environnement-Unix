@@ -18,7 +18,7 @@ nom ou une partie du nom du fichier recherché
 
 **Question 1** : Aller dans le répertoire `study-cases` (situé dans le 
 répertoire `~/dubii`) et rechercher tous les
-fichiers au format bed (i.e. dont l'extension est `.bed`)**
+fichiers au format bed (i.e. dont l'extension est `.bed`)
 
 > **Solution :**: 
 > > ```bash
