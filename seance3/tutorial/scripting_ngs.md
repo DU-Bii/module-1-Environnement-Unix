@@ -65,10 +65,6 @@ wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR826/006/SRR8265756/SRR8265756_1.fastq
 
 Cette commande doit être dupliquée pour chaque fichier que vous souhaitez télécharger.
 
-Plusieurs pistes d'amélioration peuvent être envisagées :
-
-- Utiliser un fichier contenant toutes les adresses et réaliser une boucle `for` pour lancer le `wget`. Ainsi, le script ne changera plus et c'est uniquement un fichier de paramètre qui changera ;
-- Vérifier l'intégrité des fichiers téléchargés avec par exemple la commande `md5sum`.
 
 #### Script final
 
@@ -135,47 +131,55 @@ $ tree
 └── script1.sh
 ```
 
+**Pour aller plus loin :**
+
+- Donner le fichier contenant les données à télécharger en argument de la ligne de commande du script
+- Vérifier l'intégrité des fichiers téléchargés avec par exemple la commande `md5sum`.
+
+
 ### Script 2 - Exploration
 
-Nous souhaitons à présent explorer ces fichiers. Pour réaliser cette exploration, nous allons utiliser une boucle `for` qui va itérer sur tous les fichiers présents dans le dossier `FASTQ` et qui termine par `.fastq.gz`.
+Nous souhaitons à présent explorer ces fichiers. Pour réaliser cette exploration, nous allons utiliser une boucle `for` qui va itérer sur tous les fichiers présents dans le dossier `COVID_FASTQ` et qui termine par `.fastq.gz`.
 
 #### Stratégie 1
 
 Nous allons compter le nombre de lignes et diviser cette valeur par 4 (sachant qu’un reads c’est 4 lignes). Pour le vérifier, nous avons par exemple la page [wikipedia](https://fr.wikipedia.org/wiki/FASTQ) ou encore une documentation proposée par [Illumina](https://emea.support.illumina.com/bulletins/2016/04/fastq-files-explained.html)
 
-``` bash
-#!/bin/bash
-
-##------------------------------------------------------------------------------
-## Objectifs du script :  
-##     - Explorer les fichiers fastq.gz d'intérêt
-## Auteurs: Hélène Chiapello & Thomas Denecker
-## Affiliation: IFB
-## Organisme : SARS-CoV-2
-## Date: Mars 2021
-## Étapes :
-## 1- Compter le nombre de reads et alerter si le nombre est trop faible
-##------------------------------------------------------------------------------
-
-limit=2000000
-
-for i in FASTQ/*.fastq.gz
-do
-    count=$(gunzip -c $i | echo $((`wc -l`/4)))
-
-    echo "============================================================="
-    echo "$i"
-    echo "============================================================="
-    
-    echo "Nombre de reads du fichier :" "$count"
-
-    if [ "$count" -lt "$limit" ]
-    then
-        echo "/!\\ Il y a moins de 2000000 de reads dans le fichier"
-    fi
-
-done
-```
+> ** Solution :**
+> > ``` bash
+> > #!/bin/bash
+> > 
+> > ##------------------------------------------------------------------------------
+> > ## Objectifs du script :  
+> > ##     - Explorer les fichiers fastq.gz d'intérêt
+> > ## Auteurs: Hélène Chiapello & Thomas Denecker
+> > ## Affiliation: IFB
+> > ## Organisme : SARS-CoV-2
+> > ## Date: Mars 2021
+> > ## Étapes :
+> > ## 1- Compter le nombre de reads et alerter si le nombre est trop faible
+> > ##------------------------------------------------------------------------------
+> > 
+> > limit=2000000
+> > 
+> > for i in COVID_FASTQ/*.fastq.gz
+> > do
+> >    count=$(gunzip -c $i | echo $((`wc -l`/4)))
+> > 
+> >     echo "============================================================="
+> >     echo "$i"
+> >     echo "============================================================="
+> >     
+> >     echo "Nombre de reads du fichier :" "$count"
+> > 
+> >     if [ "$count" -lt "$limit" ]
+> >     then
+> >         echo "/!\\ Il y a moins de 2000000 de reads dans le fichier"
+> >     fi
+> > 
+> > done
+> > ```
+{:.answer}
 
 #### Stratégie 2
 
@@ -183,39 +187,41 @@ Nous allons compter cette fois le nombre de lignes qui ne contiennent que + . D'
 
 Nous allons donc utiser grep pour rechercher toutes les lignes commençant (`^`) par la signe `\+` (le \ permet d'échapper le signe + qui est un caractère spécial) et qui termine par un plus `$`. 
 
-``` bash
-#!/bin/bash
-
-##------------------------------------------------------------------------------
-## Objectifs du script :  
-##     - Explorer les fichiers fastq.gz d'intérêt
-## Auteurs: Hélène Chiapello & Thomas Denecker
-## Affiliation: IFB
-## Organisme : SARS-CoV-2
-## Date: Mars 2021
-## Étapes :
-## 1- Compter le nombre de reads et alerter si le nombre est trop faible
-##------------------------------------------------------------------------------
-
-limit=2000000
-
-for i in FASTQ/*.fastq.gz
-do
-    count=$(gunzip -c $i | echo $((`grep -i "^\+$" | wc -l` )))
-
-    echo "============================================================="
-    echo "$i"
-    echo "============================================================="
-    
-    echo "Nombre de reads du fichier :" "$count"
-
-    if [ "$count" -lt "$limit" ]
-    then
-        echo "/!\\ Il y a moins de 2000000 de reads dans le fichier"
-    fi
-
-done
-```
+> ** Solution**
+> > ``` bash
+> > #!/bin/bash
+> > 
+> > ##------------------------------------------------------------------------------
+> > ## Objectifs du script :  
+> > ##     - Explorer les fichiers fastq.gz d'intérêt
+> > ## Auteurs: Hélène Chiapello & Thomas Denecker
+> > ## Affiliation: IFB
+> > ## Organisme : SARS-CoV-2
+> > ## Date: Mars 2021
+> > ## Étapes :
+> > ## 1- Compter le nombre de reads et alerter si le nombre est trop faible
+> > ##------------------------------------------------------------------------------
+> > 
+> > limit=2000000
+> > 
+> > for i in COVID_FASTQ/*.fastq.gz
+> > do
+> >     count=$(gunzip -c $i | echo $((`grep -i "^\+$" | wc -l` )))
+> > 
+> >     echo "============================================================="
+> >     echo "$i"
+> >     echo "============================================================="
+> >     
+> >     echo "Nombre de reads du fichier :" "$count"
+> > 
+> >     if [ "$count" -lt "$limit" ]
+> >     then
+> >         echo "/!\\ Il y a moins de 2000000 de reads dans le fichier"
+> >     fi
+> > 
+> > done
+> > ```
+{:.answer}
 
 **Pour aller plus loin**
 
