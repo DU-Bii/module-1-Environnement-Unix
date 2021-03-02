@@ -74,18 +74,18 @@ Note : N'oublier pas de faire un `chmod +x NOM_SCRIPT` pour rendre votre script 
 > > ``` bash
 > > #!/bin/bash
 > > 
-> > ##------------------------------------------------------------------------------
-> > ## Objectifs du script :  
-> > ##     - Télécharger un ensemble de 5-6 fichier de reads de l’ENA 
-> > ##     - Les stocker dans un répertoire dédié.
-> > ## Auteurs: Hélène Chiapello & Thomas Denecker
-> > ## Affiliation: IFB
-> > ## Organisme : SARS-CoV-2
-> > ## Date: Mars 2021
-> > ## Étapes :
-> > ## 1- Creation des dossiers de reception
-> > ## 2- Téléchagement des fichiers
-> > ##------------------------------------------------------------------------------
+> > #------------------------------------------------------------------------------
+> > # Objectifs du script :  
+> > #     - Télécharger un ensemble de 5-6 fichier de reads de l’ENA 
+> > #     - Les stocker dans un répertoire dédié.
+> > # Auteurs: Hélène Chiapello & Thomas Denecker
+> > # Affiliation: IFB
+> > # Organisme : SARS-CoV-2
+> > # Date: Mars 2021
+> > # Étapes :
+> > # 1- Creation des dossiers de reception
+> > # 2- Téléchagement des fichiers
+> > #------------------------------------------------------------------------------
 > > 
 > > echo "=============================================================="
 > > echo "Creation des dossiers"
@@ -149,16 +149,16 @@ Nous allons compter le nombre de lignes et diviser cette valeur par 4 (sachant q
 > > ``` bash
 > > #!/bin/bash
 > > 
-> > ##------------------------------------------------------------------------------
-> > ## Objectifs du script :  
-> > ##     - Explorer les fichiers fastq.gz d'intérêt
-> > ## Auteurs: Hélène Chiapello & Thomas Denecker
-> > ## Affiliation: IFB
-> > ## Organisme : SARS-CoV-2
-> > ## Date: Mars 2021
-> > ## Étapes :
-> > ## 1- Compter le nombre de reads et alerter si le nombre est trop faible
-> > ##------------------------------------------------------------------------------
+> > #------------------------------------------------------------------------------
+> > # Objectifs du script :  
+> > #     - Explorer les fichiers fastq.gz d'intérêt
+> > # Auteurs: Hélène Chiapello & Thomas Denecker
+> > # Affiliation: IFB
+> > # Organisme : SARS-CoV-2
+> > # Date: Mars 2021
+> > # Étapes :
+> > # 1- Compter le nombre de reads et alerter si le nombre est trop faible
+> > #------------------------------------------------------------------------------
 > > 
 > > limit=2000000
 > > 
@@ -191,16 +191,15 @@ Nous allons donc utiser grep pour rechercher toutes les lignes commençant (`^`)
 > > ``` bash
 > > #!/bin/bash
 > > 
-> > ##------------------------------------------------------------------------------
-> > ## Objectifs du script :  
-> > ##     - Explorer les fichiers fastq.gz d'intérêt
-> > ## Auteurs: Hélène Chiapello & Thomas Denecker
-> > ## Affiliation: IFB
-> > ## Organisme : SARS-CoV-2
-> > ## Date: Mars 2021
-> > ## Étapes :
-> > ## 1- Compter le nombre de reads et alerter si le nombre est trop faible
-> > ##------------------------------------------------------------------------------
+> > #------------------------------------------------------------------------------
+> > # Objectifs du script :  
+> > #     - Explorer les fichiers fastq.gz d'intérêt
+> > # Auteurs: Hélène Chiapello & Thomas Denecker
+> > # Affiliation: IFB
+> > # Organisme : SARS-CoV-2
+> > # Date: Mars 2021
+> > # Compter le nombre de reads et alerter si le nombre est trop faible afficher un message d'alerte
+> > #------------------------------------------------------------------------------
 > > 
 > > limit=2000000
 > > 
