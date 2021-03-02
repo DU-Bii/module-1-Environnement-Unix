@@ -1,10 +1,11 @@
 # Exploration de données COVID-19 avec bash
+T. Denecker et H. Chiapello
 
 ## Informations générales
 
 ### Objectif
 
-L'objectif de ce TP est d'explorer quelques fichiers de séquences de la COVID-19 à l'aide de bash. Les fichiers proviennent de l'European National Archive ou ENA qui est une plateforme ouverte et soutenue pour la gestion, le partage, l’intégration, l’archivage et la diffusion de données de séquences [Pour en savoir plus](https://www.ebi.ac.uk/ena/browser/about).
+L'objectif de ce TP est de télécharger et vérifier quelques fichiers de séquences de la COVID-19 à l'aide de scripts bash. Les fichiers proviennent de l'European National Archive (ENA) qui est la plateforme européenne chargée de la gestion, du partage, de l’intégration, de l’archivage et de la diffusion des données de séquences [Pour en savoir plus](https://www.ebi.ac.uk/ena/browser/about).
 
 Une page de documention est proposée par l'ENA pour télécharger les séquences qui y sont hébergées : [ici](https://ena-docs.readthedocs.io/en/latest/retrieval/file-download.html).
 
@@ -24,21 +25,10 @@ Pour compter le nombre de reads, il y aura 2 stratégies :
 
 ### La commande `wget`
 
-> Wget est un programme en ligne de commande non interactif de téléchargement de fichiers depuis le Web. Il supporte les protocoles HTTP, HTTPS et FTP ainsi que le téléchargement au travers des proxies HTTP.
+> Wget est un programme en ligne de commande non interactif de téléchargement de fichiers depuis le Web. Il supporte les protocoles HTTP, HTTPS et FTP ainsi que le téléchargement au travers des proxies HTTP. Il est disponible sur presque tous les environnements Unix.
 
 Pour en savoir plus : [ici](https://doc.ubuntu-fr.org/wget)
 
-**Note : Pour les utilisateurs de Mac**
-
-La commande n'est plus installée par défaut dans le terminal mac. Nous vous conseillons de l'installer à l'aide de [Homebrew](https://brew.sh/index_fr) :
-
-``` bash
-# Installation de Homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-# Installation de wget 
-brew install wget
-```
 
 ### Les données
 
@@ -55,9 +45,7 @@ Nous pouvons y télécharger le fichier de métadonnées suivant :
 
 ## Mise en pratique
 
-### Script 1 - Création d'un dossier de téléchagement et téléchargement
-
-Nous réalisons cette étapes séparement pour ne pas retélécharger à chaque fois tous les fichiers lors de l'exploration.
+### Script 1 - Téléchargement des données
 
 #### Création d'un dossier de téléchagement
 
@@ -67,7 +55,7 @@ Création d'un dossier à l'aide de la commande `mkdir` ([documentation](http://
 mkdir FASTQ
 ```
 
-#### Téléchargment des fichiers à l'aide de la commande `wget`
+#### Téléchargement des fichiers à l'aide de la commande `wget`
 
 Un paramètre intéressant de la commande wget est la possibilité de rediriger le fichier téléchargé dans un dossier spécifié : `-P DOSSIER/DESTINATION`
 
@@ -75,14 +63,14 @@ Un paramètre intéressant de la commande wget est la possibilité de rediriger 
 wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR826/006/SRR8265756/SRR8265756_1.fastq.gz -P FASTQ
 ```
 
-Cette commande doit être duppliquée pour chaque fichier que vous souhaitez télécharger.
+Cette commande doit être dupliquée pour chaque fichier que vous souhaitez télécharger.
 
 Plusieurs pistes d'amélioration peuvent être envisagées :
 
 - Utiliser un fichier contenant toutes les adresses et réaliser une boucle `for` pour lancer le `wget`. Ainsi, le script ne changera plus et c'est uniquement un fichier de paramètre qui changera ;
 - Vérifier l'intégrité des fichiers téléchargés avec par exemple la commande `md5sum`.
 
-#### Scritp final
+#### Script final
 
 Note : N'oublier pas de faire un `chmod +x NOM_SCRIPT` pour rendre votre script executable.
 
@@ -238,6 +226,21 @@ do
 done
 ```
 
-**Piste d'amélioration**
+**Pour aller plus loin**
 
-Nous pourrions par exemple écrire un fichier avec ces résultats pour garder une trace. 
+Nous vous proposons 
+- de mettre en paramètre du script sur la ligne de commande le seuil (nombre de reads minimal) à obtenir par fichier
+- d'écrire les résultats de cette analyse (seuil utilisé, puis avec 1 ligne par fichier : le nom du fichier fastq, nombre de lectures totales dans le fichier et warning si le seuil minimum n'est pas atteind dans ce fichier de sortie)
+
+**Note : Pour les utilisateurs de Mac qui ne disposent pas de wget**
+
+La commande n'est plus installée par défaut dans le terminal mac. Nous vous conseillons de l'installer à l'aide de [Homebrew](https://brew.sh/index_fr) :
+
+``` bash
+# Installation de Homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Installation de wget 
+brew install wget
+```
+
