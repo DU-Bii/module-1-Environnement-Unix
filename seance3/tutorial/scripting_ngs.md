@@ -52,7 +52,7 @@ Nous pouvons y télécharger le fichier de métadonnées suivant :
 Création d'un dossier à l'aide de la commande `mkdir` ([documentation](http://manpages.ubuntu.com/manpages/bionic/fr/man1/mkdir.1.html))
 
 ``` bash
-mkdir FASTQ
+mkdir COVID19_FASTQ
 ```
 
 #### Téléchargement des fichiers à l'aide de la commande `wget`
@@ -74,60 +74,51 @@ Plusieurs pistes d'amélioration peuvent être envisagées :
 
 Note : N'oublier pas de faire un `chmod +x NOM_SCRIPT` pour rendre votre script executable.
 
-``` bash
-#!/bin/bash
+> **Solution :**:
+> > ``` bash
+> > #!/bin/bash
+> > 
+> > ##------------------------------------------------------------------------------
+> > ## Objectifs du script :  
+> > ##     - Télécharger un ensemble de 5-6 fichier de reads de l’ENA 
+> > ##     - Les stocker dans un répertoire dédié.
+> > ## Auteurs: Hélène Chiapello & Thomas Denecker
+> > ## Affiliation: IFB
+> > ## Organisme : SARS-CoV-2
+> > ## Date: Mars 2021
+> > ## Étapes :
+> > ## 1- Creation des dossiers de reception
+> > ## 2- Téléchagement des fichiers
+> > ##------------------------------------------------------------------------------
+> > 
+> > echo "=============================================================="
+> > echo "Creation des dossiers"
+> > echo "=============================================================="
+> > 
+> > mkdir COVID_META 
+> > mkdir COVID_FASTQ
+> > 
+> > echo "--------------------------------------------------------------"
+> > echo "Experiment: SRX5082690"
+> > echo "Illumina MiSeq paired end sequencing;"
+> > echo "OC43 PR2 amplicon sequencing"
+> > echo "--------------------------------------------------------------"
+> > 
+> > for j in $(tail -n +1 sra-experiment-covid19-idlist.txt)
+> > do
+> >     id=$( echo "$j" |cut -f1 )
+> >     echo "--------------------------------------------------------------"
+> >     echo ${id}
+> >     echo "--------------------------------------------------------------"
+> >     wget "https://www.ebi.ac.uk/ena/portal/api/filereport?accession=${id}&result=read_run&fields=study_accession,sample_accession,experiment_accession,run_accession,tax_id,scientific_name,fastq_ftp,submitted_ftp,sra_ftp&format=tsv&download=true" -O COVID_META/"${id}".tsv
+> >    adress=$(head -n 2 COVID_META/${id}.tsv |cut -f7)
+> >     arrIN=(${adress//;/ })
+> >     wget ${arrIN[1]} -P COVID_FASTQ
+> >     wget ${arrIN[2]} -P COVID_FASTQ
+> > done
 
-##------------------------------------------------------------------------------
-## Objectifs du script :  
-##     - Télécharger un ensemble de 5-6 fichier de reads de l’ENA 
-##     - Les stocker dans un répertoire dédié.
-## Auteurs: Hélène Chiapello & Thomas Denecker
-## Affiliation: IFB
-## Organisme : SARS-CoV-2
-## Date: Mars 2021
-## Étapes :
-## 1- Creation du dossier de reception
-## 2- Téléchagement des fichiers
-##------------------------------------------------------------------------------
-
-echo "=============================================================="
-echo "Cration du dossier"
-echo "=============================================================="
-
-mkdir FASTQ
-
-echo "=============================================================="
-echo "Téléchargement des fichiers à partir de l'ENA avec Wget"
-echo "=============================================================="
-
-echo "--------------------------------------------------------------"
-echo "Experiment: SRX5082690"
-echo "Illumina MiSeq paired end sequencing;"
-echo "OC43 PR2 amplicon sequencing"
-echo "--------------------------------------------------------------"
-
-wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR826/006/SRR8265756/SRR8265756_1.fastq.gz -P FASTQ
-wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR826/006/SRR8265756/SRR8265756_2.fastq.gz -P FASTQ
-
-"--------------------------------------------------------------"
-echo "Experiment: SRX5082692"
-echo "Illumina MiSeq paired end sequencing;"
-echo "OC43 MDS15 amplicon sequencing"
-"--------------------------------------------------------------"
-
-wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR826/004/SRR8265754/SRR8265754_1.fastq.gz -P FASTQ
-wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR826/004/SRR8265754/SRR8265754_2.fastq.gz -P FASTQ
-
-"--------------------------------------------------------------"
-echo "Experiment: SRX5082692"
-echo "Illumina MiSeq paired end sequencing;"
-echo "OC43 MDS15 amplicon sequencing"
-"--------------------------------------------------------------"
-
-wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR826/002/SRR8265752/SRR8265752_1.fastq.gz -P FASTQ
-wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR826/002/SRR8265752/SRR8265752_2.fastq.gz -P FASTQ
-
-```
+> > ```
+{:.answer}
 
 #### Architecture du projet
 
