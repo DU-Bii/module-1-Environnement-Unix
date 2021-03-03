@@ -37,7 +37,7 @@ https://www.ebi.ac.uk/ena/browser/view/PRJNA507154.
 A partir de ce lien nous avons téléchargé le fichier de metadonnées suivant :
 
 ``` bash
-$ cat filereport_read_run_PRJNA507154.tsv
+$ cat /shared/projects/dubii2021/trainers/module1/filereport_read_run_PRJNA507154.tsv
 run_accession   sample_accession        tax_id  scientific_name instrument_platform     library_source  center_name     fastq_md5       fastq_ftp       sample_title
 SRR8265746      SAMN10485239    31631   Human coronavirus OC43  ILLUMINA        VIRAL RNA       SUB4830588      2571ab5bc76da9605c4cfe6467d7b6b2;28806c5c96fecc5ce7be29953df0d3dc       ftp.sra.ebi.ac.uk/vol1/fastq/SRR826/006/SRR8265746/SRR8265746_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/SRR826/006/SRR8265746/SRR8265746_2.fastq.gz        Human coronavirus OC43 - MDS6
 SRR8265747      SAMN10485240    31631   Human coronavirus OC43  ILLUMINA        VIRAL RNA       SUB4830588      d767d7d7cbcc6487c1bd73b04a798e93;a568e39ebacd4e9f163bf92257925a26       ftp.sra.ebi.ac.uk/vol1/fastq/SRR826/007/SRR8265747/SRR8265747_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/SRR826/007/SRR8265747/SRR8265747_2.fastq.gz        Human coronavirus OC43 - MDS11
@@ -101,8 +101,8 @@ Cette commande doit être à chaque fichier que vous souhaitez télécharger.
 > > echo "Téléchargement des séquences brutes du BioProjet PRJNA507154"
 > > echo "--------------------------------------------------------------"
 > >
-> > ftp_url=($(tail -n +2 filereport_read_run_PRJNA507154.tsv | cut -f 9 | cut -d ';' -f 1))
-> > ftp_url+=($(tail -n +2 filereport_read_run_PRJNA507154.tsv | cut -f 9 | cut -d ';' -f 2))
+> > ftp_url=($(tail -n +2 /shared/projects/dubii2021/trainers/module1/filereport_read_run_PRJNA507154.tsv | cut -f 9 | cut -d ';' -f 1))
+> > ftp_url+=($(tail -n +2 /shared/projects/dubii2021/trainers/module1/filereport_read_run_PRJNA507154.tsv | cut -f 9 | cut -d ';' -f 2))
 > > 
 > > for my_url in ${ftp_url[@]}
 > > do
@@ -117,17 +117,36 @@ Cette commande doit être à chaque fichier que vous souhaitez télécharger.
 #### Architecture du projet
 
 ``` bash
-$ tree 
-.
-├── FASTQ
-│   ├── SRR8265752_1.fastq.gz
-│   ├── SRR8265752_2.fastq.gz
-│   ├── SRR8265754_1.fastq.gz
-│   ├── SRR8265754_2.fastq.gz
-│   ├── SRR8265756_1.fastq.gz
-│   └── SRR8265756_2.fastq.gz
-└── script1.sh
+$ tree .
+├── COVID_FASTQ
+│   ├── SRR8265746_1.fastq.gz
+│   ├── SRR8265746_2.fastq.gz
+│   ├── SRR8265747_1.fastq.gz
+│   ├── SRR8265747_2.fastq.gz
+│   ├── SRR8265748_1.fastq.gz
+│   ├── SRR8265748_2.fastq.gz
+│   ├── SRR8265749_1.fastq.gz
+│   ├── SRR8265749_2.fastq.gz
+│   ├── SRR8265750_1.fastq.gz
+│   ├── SRR8265750_2.fastq.gz
+│   ├── SRR8265751_1.fastq.gz
+│   ├── SRR8265751_2.fastq.gz
+│   ├── SRR8265752_1.fastq.gz
+│   ├── SRR8265752_2.fastq.gz
+│   ├── SRR8265753_1.fastq.gz
+│   ├── SRR8265753_2.fastq.gz
+│   ├── SRR8265754_1.fastq.gz
+│   ├── SRR8265754_2.fastq.gz
+│   ├── SRR8265755_1.fastq.gz
+│   ├── SRR8265755_2.fastq.gz
+│   ├── SRR8265756_1.fastq.gz
+│   └── SRR8265756_2.fastq.gz
+├── script1.bash
 ```
+
+**Important**
+Le serveur de l'ENA présente parfois des problèmes d'accès lors de téléchargement de jeux de données. 
+Pour plus de sureté, si votre script est correct, nous vous proposons d'aller directement copier les données depuis le répertoire /shared/projects/dubii2021/trainers/module1/COVID_FASTQ/
 
 **Pour aller plus loin :**
 
@@ -137,7 +156,7 @@ $ tree
 
 ### Script 2 - Exploration
 
-Nous souhaitons à présent explorer ces fichiers. Pour réaliser cette exploration, nous allons utiliser une boucle `for` qui va itérer sur tous les fichiers présents dans le dossier `COVID_FASTQ` et qui termine par `.fastq.gz`.
+Nous souhaitons à présent compter le nombre de lecture dans ces fichiers et vérifier qu'il y en au moins 200000 dans tous les fichiers. Pour réaliser cette opération, nous allons utiliser une boucle `for` qui va itérer sur tous les fichiers présents dans le dossier `COVID_FASTQ` et qui termine par `.fastq.gz`.
 
 #### Stratégie 1
 
@@ -176,7 +195,7 @@ Nous allons compter le nombre de lignes et diviser cette valeur par 4 (sachant q
 
 Nous allons compter cette fois le nombre de lignes qui ne contiennent que + . D'apèrs la documentation, la 3e ligne pour des reads récents séquencés par illumina ne contient que le signe `+`.
 
-Nous allons donc utiser grep pour rechercher toutes les lignes commençant (`^`) par la signe `\+` (le \ permet d'échapper le signe + qui est un caractère spécial) et qui termine par un plus `$`. 
+Nous allons donc utiser grep pour rechercher toutes les lignes commençant (`^`) par la signe `\+` (le \ permet d'échapper le signe + qui est un caractère spécial) et qui termine aussi par un signe `\+`\ grace au symbole `$`. 
 
 > ** Solution**
 > > ``` bash
@@ -210,8 +229,8 @@ Nous allons donc utiser grep pour rechercher toutes les lignes commençant (`^`)
 
 **Pour aller plus loin**
 
-Nous vous proposons 
-- de mettre en paramètre du script sur la ligne de commande le seuil (nombre de reads minimal) à obtenir par fichier
+Nous vous proposons si vous en avez le temps et l'envie :
+- de mettre en paramètre de ce script (sur la ligne de commande) la valeur du seuil (nombre de reads minimal) à obtenir par fichier
 - d'écrire les résultats de cette analyse (seuil utilisé, puis avec 1 ligne par fichier : le nom du fichier fastq, nombre de lectures totales dans le fichier et warning si le seuil minimum n'est pas atteind dans ce fichier de sortie)
 
 **Note : Pour les utilisateurs de Mac qui ne disposent pas de wget**
