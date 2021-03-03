@@ -80,9 +80,8 @@ Cette commande doit être à chaque fichier que vous souhaitez télécharger.
 > **Solution :**:
 > > ``` bash
 > > #!/bin/bash
-
+> > 
 > > #------------------------------------------------------------------------------
-> > # Objectifs du script :
 > > #     - Télécharger un ensemble de fichiers de lectures de l’ENA
 > > #     - Les stocker dans un répertoire dédié.
 > > # Auteurs: Hélène Chiapello & Thomas Denecker
