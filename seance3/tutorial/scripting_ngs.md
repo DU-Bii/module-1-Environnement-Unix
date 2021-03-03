@@ -106,7 +106,7 @@ Cette commande doit être à chaque fichier que vous souhaitez télécharger.
 > > 
 > > for my_url in ${ftp_url[@]}
 > > do
-> >        echo "wget ${my_url} -P COVID_FASTQ\n"
+> >        echo "wget ${my_url} -P COVID_FASTQ"
 > >        wget ${my_url} -P COVID_FASTQ
 > > done
 > > 
