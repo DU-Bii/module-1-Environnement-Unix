@@ -13,14 +13,14 @@ Une page de documention est proposée par l'ENA pour télécharger les séquence
 
 Plusieurs étapes seront réalisées lors de ce TP :
 
-1) Créer un dossier pour organiser les fichiers télécharges
-2) Téléchargement des fichiers de séquenecs brutes fastq avec la commande `wget`
+1) Créer un dossier pour organiser les fichiers téléchargés
+2) Téléchargement des fichiers de séquences brutes fastq avec la commande `wget`
 3) Exploration des fichiers : pour chaque fichier fastq, nous allons compter le nombre de séquences. Si le nombre de séquences est en dessous d’une certaine valeur, nous allons afficher un message (dans le cas par exemple où on voudrait un nombre minimal de reads par fichiers).
 
 Pour compter le nombre de reads, il y aura 2 stratégies :
 
 - Soit compter le nombre de lignes et diviser cette valeur par 4 (sachant qu’un read c’est 4 lignes dans un fichier fastq)
-- Soit compter le nombre de lignes qui ne contiennent que + (la 3e ligne pour des reads récents séquencés par Illumina).
+- Soit compter le nombre de lignes commencent par le caractère "+" (la 3e ligne pour des reads récents séquencés par Illumina) et peut optionnelement être suivie d'autres infos. Voir https://en.wikipedia.org/wiki/FASTQ_format
 
 ### La commande `wget`
 
@@ -34,7 +34,7 @@ Pour en savoir plus : [ici](https://doc.ubuntu-fr.org/wget)
 Les données utilisées ont été sélectionnées sur le site [COVID-19 Data Portal](https://www.covid19dataportal.org/sequences?db=embl-covid19).
 Nous vous demandons de télécharger les fichiers de lectures des 11 échantillons des données de séquençage du Projet ENA : PRJNA07154, voir
 https://www.ebi.ac.uk/ena/browser/view/PRJNA507154. 
-A partir de ce lien nous avons téléchargé le fichier de metadonnées suivant:
+A partir de ce lien nous avons téléchargé le fichier de metadonnées suivant :
 
 ``` bash
 $ cat filereport_read_run_PRJNA507154.tsv
@@ -54,14 +54,14 @@ SRR8265756      SAMN10485245    31631   Human coronavirus OC43  ILLUMINA        
 
 ## Mise en pratique
 
-Démarrer un serveur via JupyterHub (https://jupyterhub.cluster.france-bioinformatique.fr) en choisissant la configuration **medium** (4 cpu, 10 GB de RAM). Lancer ensuite un terminal.
+Démarrer un serveur via JupyterHub (https://jupyterhub.cluster.france-bioinformatique.fr) en choisissant la configuration **medium** (4 cpu, 10 GB de RAM). Lancer ensuite un terminal pour lancer vos scripts et un terimnal por éditer votre script avec nano.
 
 ### Script 1 - Téléchargement des données
 
 Nous vous demandons d'écrire un script bash qui va réaliser les étapes suivantes :
-- Création d'un dossier *COVID_FASTQ* pour stocker les fichiers de données FASTQ et d'un dossier *COVID19_META* pour stocker les métadonnées associées
-- Extraire dans un tableau les URL de téléchargement contenues dans le fichier *filereport_read_run_PRJNA507154.tsv* 
-- Téléchargement des deux fichiers de lectures à l'aide de la commande `wget`
+- Création d'un dossier *COVID_FASTQ* pour stocker les fichiers de données FASTQ pour stocker les métadonnées associées
+- Extraction dans un tableau les liens FTP de téléchargement contenus dans le fichier *filereport_read_run_PRJNA507154.tsv* 
+- Téléchargement des deux fichiers de lectures de chaque échantillon à l'aide de la commande `wget`
 Un paramètre intéressant de la commande wget est la possibilité de rediriger le fichier téléchargé dans un dossier spécifié : `-P DOSSIER_DESTINATION` :
 
 ``` bash
@@ -71,7 +71,8 @@ wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR826/006/SRR8265756/SRR8265756_1.fastq
 Cette commande doit être à chaque fichier que vous souhaitez télécharger.
 
 ** Conseils**
-- Utiliser la cheatsheet Bash: https://devhints.io/bash
+- Entrainez vous d'abord à extraire en ligne de commande les lients FTP à utiliser
+- Nous vous conseillons de vous aider de la cheatsheet Bash: https://devhints.io/bash
 - N'oublier pas de faire un `chmod +x NOM_SCRIPT` pour rendre votre script executable
 - Une option de la commande tail permet d'afficher un fichier à partir de la kieme ligne, voir `tail --help`
 
