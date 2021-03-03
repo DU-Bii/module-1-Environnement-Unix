@@ -80,7 +80,7 @@ Cette commande doit être à chaque fichier que vous souhaitez télécharger.
 > **Solution :**:
 > > ``` bash
 > > #!/bin/bash
-
+> >
 > > #------------------------------------------------------------------------------
 > > # Objectifs du script :
 > > #     - Télécharger un ensemble de fichiers de lectures de l’ENA
@@ -89,30 +89,27 @@ Cette commande doit être à chaque fichier que vous souhaitez télécharger.
 > > # Affiliation: IFB
 > > # Organisme : SARS-CoV-2
 > > # Date: Mars 2021
-> > # Étapes :
-> > # 1- Creation des dossiers de reception
-> > # 2- Téléchagement des fichiers
 > > #------------------------------------------------------------------------------
-
+> >
 > > echo "=============================================================="
 > > echo "Creation du dossier COVID_FASTQ"
 > > echo "=============================================================="
- 
+> >
 > > mkdir -p COVID_FASTQ
- 
+> >
 > > echo "--------------------------------------------------------------"
 > > echo "Téléchargement des séquences brutes du BioProjet PRJNA507154"
 > > echo "--------------------------------------------------------------"
-
+> >
 > > ftp_url=($(tail -n +2 filereport_read_run_PRJNA507154.tsv | cut -f 9 | cut -d ';' -f 1))
 > > ftp_url+=($(tail -n +2 filereport_read_run_PRJNA507154.tsv | cut -f 9 | cut -d ';' -f 2))
-
+> > 
 > > for my_url in ${ftp_url[@]}
 > > do
 > >        echo "wget ${my_url} -P COVID_FASTQ\n"
 > >        wget ${my_url} -P COVID_FASTQ
 > > done
-
+> > 
 > > ```
 {:.answer}
 
