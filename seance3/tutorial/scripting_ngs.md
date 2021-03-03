@@ -99,9 +99,9 @@ Cette commande doit être à chaque fichier que vous souhaitez télécharger.
  
 > > mkdir -p COVID_FASTQ
  
-> > echo "--------------------------------------------------------------"
-> > echo "Téléchargement des séquences brutes du BioProjet PRJNA507154"
-> > echo "--------------------------------------------------------------"
+> > echo "--------------------------------------------------------------" 
+> > echo "Téléchargement des séquences brutes du BioProjet PRJNA507154" 
+> > echo "--------------------------------------------------------------" 
 
 > > ftp_url=($(tail -n +2 filereport_read_run_PRJNA507154.tsv | cut -f 9 | cut -d ';' -f 1))
 > > ftp_url+=($(tail -n +2 filereport_read_run_PRJNA507154.tsv | cut -f 9 | cut -d ';' -f 2))
