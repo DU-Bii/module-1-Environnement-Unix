@@ -60,68 +60,62 @@ Démarrer un serveur via JupyterHub (https://jupyterhub.cluster.france-bioinform
 ### Script 1 - Téléchargement des données
 
 Nous vous demandons d'écrire un script bash qui va réaliser les étapes suivantes :
-- Création d'un dossier *COVID19_FASTQ* pour stocker les fichiers de données FASTQ et d'un dossier *COVID19_META* pour stocker les métadonnées associées
-- Lecture du fichier de metadonnées *filereport_read_run_PRJNA507154.tsv* et pour chaque échantillon (i.e. ligne), utiliser une boucle pour : 
--- extraire les colonnes run_accession, sample_title et fastq_md5 dans un fichier du répertoire *COVID19_META*
--- téléchargement des deux fichiers de lectures à l'aide de la commande `wget`
+- Création d'un dossier *COVID_FASTQ* pour stocker les fichiers de données FASTQ et d'un dossier *COVID19_META* pour stocker les métadonnées associées
+- Extraire dans un tableau les URL de téléchargement contenues dans le fichier *filereport_read_run_PRJNA507154.tsv* 
+   
+    + téléchargement des deux fichiers de lectures à l'aide de la commande `wget`
 Un paramètre intéressant de la commande wget est la possibilité de rediriger le fichier téléchargé dans un dossier spécifié : `-P DOSSIER_DESTINATION` :
 
 ``` bash
-wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR826/006/SRR8265756/SRR8265756_1.fastq.gz -P COVID_19FASTQ
+wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR826/006/SRR8265756/SRR8265756_1.fastq.gz -P COVID19_FASTQ
 ```
 
 Cette commande doit être à chaque fichier que vous souhaitez télécharger.
 
+** Conseils**
+- Utiliser la cheatsheet Bash: https://devhints.io/bash
+- N'oublier pas de faire un `chmod +x NOM_SCRIPT` pour rendre votre script executable.
 
-#### Script final
-
-Note : N'oublier pas de faire un `chmod +x NOM_SCRIPT` pour rendre votre script executable.
 
 > **Solution :**:
 > > ``` bash
 > > #!/bin/bash
-> > 
-> > #------------------------------------------------------------------------------
-> > # Objectifs du script :  
-> > #     - Télécharger un ensemble de 5-6 fichier de reads de l’ENA 
-> > #     - Les stocker dans un répertoire dédié.
-> > # Auteurs: Hélène Chiapello & Thomas Denecker
-> > # Affiliation: IFB
-> > # Organisme : SARS-CoV-2
-> > # Date: Mars 2021
-> > # Étapes :
-> > # 1- Creation des dossiers de reception
-> > # 2- Téléchagement des fichiers
-> > #------------------------------------------------------------------------------
-> > 
-> > echo "=============================================================="
-> > echo "Creation des dossiers"
-> > echo "=============================================================="
-> > 
-> > mkdir COVID_META 
-> > mkdir COVID_FASTQ
-> > 
-> > echo "--------------------------------------------------------------"
-> > echo "Experiment: SRX5082690"
-> > echo "Illumina MiSeq paired end sequencing;"
-> > echo "OC43 PR2 amplicon sequencing"
-> > echo "--------------------------------------------------------------"
-> > 
-> > for j in $(tail -n +1 sra-experiment-covid19-idlist.txt)
-> > do
-> >     id=$( echo "$j" |cut -f1 )
-> >     echo "--------------------------------------------------------------"
-> >     echo ${id}
-> >     echo "--------------------------------------------------------------"
-> >     wget "https://www.ebi.ac.uk/ena/portal/api/filereport?accession=${id}&result=read_run&fields=study_accession,sample_accession,experiment_accession,run_accession,tax_id,scientific_name,fastq_ftp,submitted_ftp,sra_ftp&format=tsv&download=true" -O COVID_META/"${id}".tsv
-> >    adress=$(head -n 2 COVID_META/${id}.tsv |cut -f7)
-> >     arrIN=(${adress//;/ })
-> >     wget ${arrIN[1]} -P COVID_FASTQ
-> >     wget ${arrIN[2]} -P COVID_FASTQ
-> > done
+
+> >#------------------------------------------------------------------------------
+> ># Objectifs du script :
+> >#     - Télécharger un ensemble de fichiers de lectures de l’ENA
+> >#     - Les stocker dans un répertoire dédié.
+> ># Auteurs: Hélène Chiapello & Thomas Denecker
+> ># Affiliation: IFB
+> ># Organisme : SARS-CoV-2
+> ># Date: Mars 2021
+> ># Étapes :
+> ># 1- Creation des dossiers de reception
+> ># 2- Téléchagement des fichiers
+> >#------------------------------------------------------------------------------
+
+> >echo "=============================================================="
+> >echo "Creation du dossier COVID_FASTQ"
+> >echo "=============================================================="
+ 
+> >mkdir -p COVID_FASTQ
+ 
+> >echo "--------------------------------------------------------------"
+> >echo "Téléchargement des séquences brutes du BioProjet PRJNA507154"
+> >echo "--------------------------------------------------------------"
+
+> >ftp_url=($(tail -n +2 filereport_read_run_PRJNA507154.tsv | cut -f 9 | cut -d ';' -f 1))
+> >ftp_url+=($(tail -n +2 filereport_read_run_PRJNA507154.tsv | cut -f 9 | cut -d ';' -f 2))
+
+> >for my_url in ${ftp_url[@]}
+> >do
+> >        echo "wget ${my_url} -P COVID_FASTQ\n"
+> >        wget ${my_url} -P COVID_FASTQ
+> >done
 
 > > ```
 {:.answer}
+
 
 #### Architecture du projet
 
