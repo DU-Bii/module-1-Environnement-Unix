@@ -80,8 +80,9 @@ Cette commande doit être à chaque fichier que vous souhaitez télécharger.
 > **Solution :**:
 > > ``` bash
 > > #!/bin/bash
-> > 
+
 > > #------------------------------------------------------------------------------
+> > # Objectifs du script :
 > > #     - Télécharger un ensemble de fichiers de lectures de l’ENA
 > > #     - Les stocker dans un répertoire dédié.
 > > # Auteurs: Hélène Chiapello & Thomas Denecker
@@ -92,20 +93,20 @@ Cette commande doit être à chaque fichier que vous souhaitez télécharger.
 > > # 1- Creation des dossiers de reception
 > > # 2- Téléchagement des fichiers
 > > #------------------------------------------------------------------------------
-> >
+
 > > echo "=============================================================="
 > > echo "Creation du dossier COVID_FASTQ"
 > > echo "=============================================================="
-> >
+ 
 > > mkdir -p COVID_FASTQ
-> >
-> > echo "--------------------------------------------------------------" 
-> > echo "Téléchargement des séquences brutes du BioProjet PRJNA507154" 
-> > echo "--------------------------------------------------------------" 
-> >
+ 
+> > echo "--------------------------------------------------------------"
+> > echo "Téléchargement des séquences brutes du BioProjet PRJNA507154"
+> > echo "--------------------------------------------------------------"
+
 > > ftp_url=($(tail -n +2 filereport_read_run_PRJNA507154.tsv | cut -f 9 | cut -d ';' -f 1))
 > > ftp_url+=($(tail -n +2 filereport_read_run_PRJNA507154.tsv | cut -f 9 | cut -d ';' -f 2))
-> >
+
 > > for my_url in ${ftp_url[@]}
 > > do
 > >        echo "wget ${my_url} -P COVID_FASTQ\n"
@@ -156,25 +157,18 @@ Nous allons compter le nombre de lignes et diviser cette valeur par 4 (sachant q
 > > # Affiliation: IFB
 > > # Organisme : SARS-CoV-2
 > > # Date: Mars 2021
-> > # Étapes :
-> > # 1- Compter le nombre de reads et alerter si le nombre est trop faible
+> > # Comptage du nombre de reads et alerter si le nombre est trop faible
 > > #------------------------------------------------------------------------------
 > > 
 > > limit=2000000
 > > 
-> > for i in COVID_FASTQ/*.fastq.gz
-> > do
-> >    count=$(gunzip -c $i | echo $((`wc -l`/4)))
-> > 
-> >     echo "============================================================="
-> >     echo "$i"
-> >     echo "============================================================="
-> >     
-> >     echo "Nombre de reads du fichier :" "$count"
+> > for fichier in COVID_FASTQ/*.fastq.gz ; do
+> >    count=$(gunzip -c $fichier | echo $((`wc -l`/4)))
+> >     echo "Nombre de reads du fichier $fichier:" "$count"
 > > 
 > >     if [ "$count" -lt "$limit" ]
 > >     then
-> >         echo "/!\\ Il y a moins de 2000000 de reads dans le fichier"
+> >         echo "/!\\ Il y a moins de $limit reads dans le fichier"
 > >     fi
 > > 
 > > done
@@ -203,19 +197,14 @@ Nous allons donc utiser grep pour rechercher toutes les lignes commençant (`^`)
 > > 
 > > limit=2000000
 > > 
-> > for i in COVID_FASTQ/*.fastq.gz
-> > do
-> >     count=$(gunzip -c $i | echo $((`grep -i "^\+$" | wc -l` )))
-> > 
-> >     echo "============================================================="
-> >     echo "$i"
-> >     echo "============================================================="
+> > for fichier in COVID_FASTQ/*.fastq.gz ; do
+> >     count=$(gunzip -c $fichier | echo $((`grep -fichier "^\+$" | wc -l` ))
 > >     
-> >     echo "Nombre de reads du fichier :" "$count"
+> >     echo "Nombre de reads du fichier $fichier:" "$count"
 > > 
 > >     if [ "$count" -lt "$limit" ]
 > >     then
-> >         echo "/!\\ Il y a moins de 2000000 de reads dans le fichier"
+> >         echo "/!\\ Il y a moins de $limit reads dans le fichier"
 > >     fi
 > > 
 > > done
