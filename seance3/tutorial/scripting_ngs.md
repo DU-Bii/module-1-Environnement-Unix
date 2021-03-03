@@ -5,7 +5,7 @@ T. Denecker et H. Chiapello
 
 ### Objectif
 
-L'objectif de ce TP est de télécharger et vérifier un ensembme de fichiers de données de séquençage du SARS-CoV-2 à l'aide de scripts bash. Les fichiers proviennent de l'European National Archive (ENA) qui est la plateforme européenne chargée de la gestion, du partage, de l’intégration, de l’archivage et de la diffusion des données de séquences [Pour en savoir plus](https://www.ebi.ac.uk/ena/browser/about).
+L'objectif de ce TP est de télécharger et vérifier un ensemble de fichiers de données de séquençage du SARS-CoV-2 à l'aide d'un script bash. Les fichiers proviennent de l'European National Archive (ENA) qui est la plateforme européenne chargée de la gestion, du partage, de l’intégration, de l’archivage et de la diffusion des données de séquences [Pour en savoir plus](https://www.ebi.ac.uk/ena/browser/about).
 
 Une page de documention est proposée par l'ENA pour télécharger les séquences qui y sont hébergées : [ici](https://ena-docs.readthedocs.io/en/latest/retrieval/file-download.html).
 
@@ -14,14 +14,13 @@ Une page de documention est proposée par l'ENA pour télécharger les séquence
 Plusieurs étapes seront réalisées lors de ce TP :
 
 1) Créer un dossier pour organiser les fichiers télécharges
-2) Téléchargement des fichiers avec la commande `wget`
-3) Exploration des fichiers :
-    - pour chaque fichier fastq, nous allons compter le nombre de séquences. Si le nombre de séquences est en dessous d’une certaine valeur, nous allons afficher un message (dans le cas par exemple où on voudrait un nombre minimal de reads par fichiers).
+2) Téléchargement des fichiers de séquenecs brutes fastq avec la commande `wget`
+3) Exploration des fichiers : pour chaque fichier fastq, nous allons compter le nombre de séquences. Si le nombre de séquences est en dessous d’une certaine valeur, nous allons afficher un message (dans le cas par exemple où on voudrait un nombre minimal de reads par fichiers).
 
 Pour compter le nombre de reads, il y aura 2 stratégies :
 
-- Soit compter le nombre de lignes et diviser cette valeur par 4 (sachant qu’un reads c’est 4 lignes);
-- Soit compter le nombre de lignes qui ne contiennent que + (la 3e ligne pour des reads récents séquencés par illumina).
+- Soit compter le nombre de lignes et diviser cette valeur par 4 (sachant qu’un reads c’est 4 lignes)
+- Soit compter le nombre de lignes qui ne contiennent que + (la 3e ligne pour des reads récents séquencés par Illumina).
 
 ### La commande `wget`
 
@@ -62,8 +61,7 @@ Démarrer un serveur via JupyterHub (https://jupyterhub.cluster.france-bioinform
 Nous vous demandons d'écrire un script bash qui va réaliser les étapes suivantes :
 - Création d'un dossier *COVID_FASTQ* pour stocker les fichiers de données FASTQ et d'un dossier *COVID19_META* pour stocker les métadonnées associées
 - Extraire dans un tableau les URL de téléchargement contenues dans le fichier *filereport_read_run_PRJNA507154.tsv* 
-   
-    + téléchargement des deux fichiers de lectures à l'aide de la commande `wget`
+- Téléchargement des deux fichiers de lectures à l'aide de la commande `wget`
 Un paramètre intéressant de la commande wget est la possibilité de rediriger le fichier téléchargé dans un dossier spécifié : `-P DOSSIER_DESTINATION` :
 
 ``` bash
@@ -74,7 +72,8 @@ Cette commande doit être à chaque fichier que vous souhaitez télécharger.
 
 ** Conseils**
 - Utiliser la cheatsheet Bash: https://devhints.io/bash
-- N'oublier pas de faire un `chmod +x NOM_SCRIPT` pour rendre votre script executable.
+- N'oublier pas de faire un `chmod +x NOM_SCRIPT` pour rendre votre script executable
+- Une option de la commande tail permet d'afficher un fichier à partir de la kieme ligne, voir `tail --help`
 
 
 > **Solution :**:
