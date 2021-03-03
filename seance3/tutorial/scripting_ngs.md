@@ -13,18 +13,20 @@ Une page de documention est proposée par l'ENA pour télécharger les séquence
 
 Plusieurs étapes seront réalisées lors de ce TP :
 
-1) Créer un dossier pour organiser les fichiers téléchargés
-2) Téléchargement des fichiers de séquences brutes fastq avec la commande `wget`
-3) Exploration des fichiers : pour chaque fichier fastq, nous allons compter le nombre de séquences. Si le nombre de séquences est en dessous d’une certaine valeur, nous allons afficher un message (dans le cas par exemple où on voudrait un nombre minimal de reads par fichiers).
+1) Création d'un dossier pour organiser les fichiers téléchargés
+2) Téléchargement des fichiers de séquences brutes *fastq* avec la commande `wget`
+3) Exploration des fichiers : pour chaque fichier *fastq*, nous allons compter le nombre de séquences. Si le nombre de séquences est en dessous d’une certaine valeur, nous allons afficher un message (dans le cas par exemple où on voudrait un nombre minimal de reads par fichiers).
+
+Vous trouverez une description succinte du format *fastq* dans la documentation proposée par [Illumina](https://emea.support.illumina.com/bulletins/2016/04/fastq-files-explained.html)
 
 Pour compter le nombre de reads, il y aura 2 stratégies :
 
 - Soit compter le nombre de lignes et diviser cette valeur par 4 (sachant qu’un read c’est 4 lignes dans un fichier fastq)
-- Soit compter le nombre de lignes commencent et contenant uniquement par le caractère "+" (la 3e ligne pour des reads récents séquencés par Illumina) 
+- Soit compter le nombre de lignes commençant par le caractère "+" et contenant uniquement ce caractère (la 3e ligne pour des reads récents séquencés par Illumina) 
 
 ### La commande `wget`
 
-> Wget est un programme en ligne de commande non interactif de téléchargement de fichiers depuis le Web. Il supporte les protocoles HTTP, HTTPS et FTP ainsi que le téléchargement au travers des proxies HTTP. Il est disponible sur presque tous les environnements Unix.
+`wget` est un programme en ligne de commande non interactif de téléchargement de fichiers depuis le Web. Il supporte les protocoles HTTP, HTTPS et FTP ainsi que le téléchargement au travers des proxies HTTP. Il est disponible sur presque tous les environnements Unix.
 
 Pour en savoir plus : [ici](https://doc.ubuntu-fr.org/wget)
 
@@ -32,7 +34,7 @@ Pour en savoir plus : [ici](https://doc.ubuntu-fr.org/wget)
 ### Les données
 
 Les données utilisées ont été sélectionnées sur le site [COVID-19 Data Portal](https://www.covid19dataportal.org/sequences?db=embl-covid19).
-Nous vous demandons de télécharger les fichiers de lectures des 11 échantillons des données de séquençage du Projet ENA : PRJNA07154, voir
+Nous vous demandons de télécharger les fichiers de lectures des 11 échantillons des données de séquençage du Projet ENA : **PRJNA07154**, voir
 https://www.ebi.ac.uk/ena/browser/view/PRJNA507154. 
 A partir de ce lien nous avons téléchargé le fichier de metadonnées suivant :
 
@@ -71,7 +73,7 @@ wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR826/006/SRR8265756/SRR8265756_1.fastq
 Cette commande doit être à chaque fichier que vous souhaitez télécharger.
 
 ** Conseils**
-- Entrainez vous d'abord à extraire en ligne de commande les lients FTP à utiliser
+- Entrainez vous d'abord à extraire en ligne de commande les liens FTP à utiliser
 - Nous vous conseillons de vous aider de la cheatsheet Bash: https://devhints.io/bash
 - N'oublier pas de faire un `chmod +x NOM_SCRIPT` pour rendre votre script executable
 - Une option de la commande tail permet d'afficher un fichier à partir de la kieme ligne, voir `tail --help`
@@ -146,7 +148,7 @@ $ tree .
 
 **Important**
 Le serveur de l'ENA présente parfois des problèmes d'accès lors de téléchargement de jeux de données. 
-Pour plus de sureté, si votre script est correct, nous vous proposons d'aller directement copier les données depuis le répertoire /shared/projects/dubii2021/trainers/module1/COVID_FASTQ/
+Pour plus de sureté, si votre script est correct, nous vous proposons d'aller directement copier les données dans votre répertoire COVID_FASTQ depuis le répertoire /shared/projects/dubii2021/trainers/module1/COVID_FASTQ/
 
 **Pour aller plus loin :**
 
@@ -160,7 +162,8 @@ Nous souhaitons à présent compter le nombre de lecture dans ces fichiers et v�
 
 #### Stratégie 1
 
-Nous allons compter le nombre de lignes et diviser cette valeur par 4 (sachant qu’un reads c’est 4 lignes). Pour le vérifier, nous avons par exemple la page [wikipedia](https://fr.wikipedia.org/wiki/FASTQ) ou encore une documentation proposée par [Illumina](https://emea.support.illumina.com/bulletins/2016/04/fastq-files-explained.html)
+Nous allons compter le nombre de lignes de chaque fichier et diviser cette valeur par 4 (sachant qu’une lecture correspond à 4 lignes dans un fichier fastq).  
+Attention, vous devez décompresser le fichier pour compter le nombre de lignes. 
 
 > ** Solution :**
 > > ``` bash
@@ -195,7 +198,7 @@ Nous allons compter le nombre de lignes et diviser cette valeur par 4 (sachant q
 
 Nous allons compter cette fois le nombre de lignes qui ne contiennent que + . D'apèrs la documentation, la 3e ligne pour des reads récents séquencés par Illumina ne contient que le signe `+`.
 
-Nous allons donc utiser grep pour rechercher toutes les lignes commençant (`^`) par la signe `\+` (le \ permet d'échapper le signe + qui est un caractère spécial) et qui termine aussi par un signe `\+`\ grace au symbole `$`. 
+Nous allons donc utiser `grep` pour rechercher toutes les lignes commençant (`^`) par le caractère `\+` (le \ permet d'échapper le caractère `+` qui est un caractère spécial dans une expression régulière) et qui termine aussi par un signe `\+`\ grace au symbole `$`. 
 
 > ** Solution**
 > > ``` bash
@@ -228,8 +231,10 @@ Nous allons donc utiser grep pour rechercher toutes les lignes commençant (`^`)
 {:.answer}
 
 **Question : parmi les 22 fichiers fastq, y'en a-t-il qui contiennent moin de 200000 lectures? Si oui combien et indiquez les noms de fichiers**
-> ** Solution**
-> Il y a deux fichiers qui contiennent moins de 200000 lectures : SRR8265752_1.fastq.gz et SRR8265752_2.fastq.gz (1962847 lectures)
+> **Solution**
+> > ```
+> > Il y a deux fichiers qui contiennent moins de 200000 lectures : SRR8265752_1.fastq.gz et SRR8265752_2.fastq.gz (1962847 lectures)
+> > ```
 {:.answer}
 
 **Pour aller plus loin**
