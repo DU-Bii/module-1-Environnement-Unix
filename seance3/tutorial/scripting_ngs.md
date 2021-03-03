@@ -182,12 +182,12 @@ Attention, vous devez décompresser le fichier pour compter le nombre de lignes.
 > > limit=2000000
 > > 
 > > for fichier in COVID_FASTQ/*.fastq.gz ; do
-> >    count=$(gunzip -c $fichier | echo $((`wc -l`/4)))
-> >     echo "Nombre de reads du fichier $fichier:" "$count"
+> >    count=$(gunzip -c ${fichier} | echo $((`wc -l`/4)))
+> >     echo "Nombre de reads du fichier ${fichier}:" "${count}"
 > > 
-> >     if [ "$count" -lt "$limit" ]
+> >     if [ "${count}" -lt "${limit}" ]
 > >     then
-> >         echo "/!\\ Il y a moins de $limit reads dans le fichier"
+> >         echo "/!\\ Il y a moins de ${limit} reads dans le fichier"
 > >     fi
 > > 
 > > done
@@ -217,13 +217,13 @@ Nous allons donc utiser `grep` pour rechercher toutes les lignes commençant (`^
 > > limit=2000000
 > > 
 > > for fichier in COVID_FASTQ/*.fastq.gz ; do
-> >     count=$(gunzip -c $fichier | echo $((`grep -c "^\+$"` ))
+> >     count=$(gunzip -c ${fichier} | echo $((`grep -c "^\+$"` ))
 > >     
-> >     echo "Nombre de reads du fichier $fichier:" "$count"
+> >     echo "Nombre de reads du fichier ${fichier}:" "${count}"
 > > 
-> >     if [ "$count" -lt "$limit" ]
+> >     if [ "${count}" -lt "${limit}" ]
 > >     then
-> >         echo "/!\\ Il y a moins de $limit reads dans le fichier"
+> >         echo "/!\\ Il y a moins de ${limit} reads dans le fichier"
 > >     fi
 > > 
 > > done
