@@ -20,7 +20,7 @@ Plusieurs étapes seront réalisées lors de ce TP :
 Pour compter le nombre de reads, il y aura 2 stratégies :
 
 - Soit compter le nombre de lignes et diviser cette valeur par 4 (sachant qu’un read c’est 4 lignes dans un fichier fastq)
-- Soit compter le nombre de lignes commencent par le caractère "+" (la 3e ligne pour des reads récents séquencés par Illumina) et peut optionnelement être suivie d'autres infos. Voir https://en.wikipedia.org/wiki/FASTQ_format
+- Soit compter le nombre de lignes commencent et contenant uniquement par le caractère "+" (la 3e ligne pour des reads récents séquencés par Illumina) 
 
 ### La commande `wget`
 
@@ -193,7 +193,7 @@ Nous allons compter le nombre de lignes et diviser cette valeur par 4 (sachant q
 
 #### Stratégie 2
 
-Nous allons compter cette fois le nombre de lignes qui ne contiennent que + . D'apèrs la documentation, la 3e ligne pour des reads récents séquencés par illumina ne contient que le signe `+`.
+Nous allons compter cette fois le nombre de lignes qui ne contiennent que + . D'apèrs la documentation, la 3e ligne pour des reads récents séquencés par Illumina ne contient que le signe `+`.
 
 Nous allons donc utiser grep pour rechercher toutes les lignes commençant (`^`) par la signe `\+` (le \ permet d'échapper le signe + qui est un caractère spécial) et qui termine aussi par un signe `\+`\ grace au symbole `$`. 
 
@@ -225,6 +225,11 @@ Nous allons donc utiser grep pour rechercher toutes les lignes commençant (`^`)
 > > 
 > > done
 > > ```
+{:.answer}
+
+**Question : parmi les 22 fichiers fastq, y'en a-t-il qui contiennent moin de 200000 lectures? Si oui combien et indiquez les noms de fichiers**
+> ** Solution**
+> Il y a deux fichiers qui contiennent moins de 200000 lectures : SRR8265752_1.fastq.gz et SRR8265752_2.fastq.gz (1962847 lectures)
 {:.answer}
 
 **Pour aller plus loin**
