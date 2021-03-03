@@ -162,8 +162,12 @@ Nous souhaitons à présent compter le nombre de lecture dans ces fichiers et v�
 
 #### Stratégie 1
 
-Nous allons compter le nombre de lignes de chaque fichier et diviser cette valeur par 4 (sachant qu’une lecture correspond à 4 lignes dans un fichier fastq).  
-Attention, vous devez décompresser le fichier pour compter le nombre de lignes. 
+Nous allons compter le nombre de lignes de chaque fichier et diviser cette valeur par 4 (sachant qu’une lecture correspond à 4 lignes dans un fichier fastq).
+Pour effectuer une opération numérique sur une variable, par exemple ajouter 200 à la variable $a, la syntaxe est la suivante :
+``` bash
+$((a + 200))
+```
+Attention, vous devez d'abord décompresser le fichier pour compter le nombre de lignes. 
 
 > **Solution :**
 > > ``` bash
@@ -176,18 +180,19 @@ Attention, vous devez décompresser le fichier pour compter le nombre de lignes.
 > > # Affiliation: IFB
 > > # Organisme : SARS-CoV-2
 > > # Date: Mars 2021
-> > # Comptage du nombre de reads et alerter si le nombre est trop faible
+> > # Comptage du nombre de reads et alerter si le nombre est inférieur à un seuil (limit)
 > > #------------------------------------------------------------------------------
 > > 
 > > limit=2000000
 > > 
 > > for fichier in COVID_FASTQ/*.fastq.gz ; do
-> >    count=$(gunzip -c ${fichier} | echo $((`wc -l`/4)))
-> >     echo "Nombre de reads du fichier ${fichier}:" "${count}"
+> >     lines=$(gunzip -c $fichier | wc -l)
+> >     reads=$((lines/4))
+> >     echo "Nombre de reads du fichier ${fichier}: ${reads}"
 > > 
-> >     if [ "${count}" -lt "${limit}" ]
+> >     if [ "${reads}" -lt "${limit}" ]
 > >     then
-> >         echo "/!\\ Il y a moins de ${limit} reads dans le fichier"
+> >         echo "/!\\ Il y a moins de ${limit} lectures dans le fichier"
 > >     fi
 > > 
 > > done
@@ -217,9 +222,9 @@ Nous allons donc utiser `grep` pour rechercher toutes les lignes commençant (`^
 > > limit=2000000
 > > 
 > > for fichier in COVID_FASTQ/*.fastq.gz ; do
-> >     count=$(gunzip -c ${fichier} | echo $((`grep -c "^\+$"` ))
+> >     count=$(gunzip -c ${fichier} | grep -c "^\+$")
 > >     
-> >     echo "Nombre de reads du fichier ${fichier}:" "${count}"
+> >     echo "Nombre de reads du fichier ${fichier}: ${count}"
 > > 
 > >     if [ "${count}" -lt "${limit}" ]
 > >     then
@@ -230,7 +235,7 @@ Nous allons donc utiser `grep` pour rechercher toutes les lignes commençant (`^
 > > ```
 {:.answer}
 
-**Question : parmi les 22 fichiers fastq, y'en a-t-il qui contiennent moin de 200000 lectures? Si oui combien et indiquez les noms de fichiers**
+**Question : parmi les 22 fichiers fastq analysés, y'en a-t-il qui contiennent moins de 2 millions de lectures? Si oui combien et indiquez les noms de fichiers**
 > **Solution :**
 > > ``` bash
 > > Il y a deux fichiers qui contiennent moins de 200000 lectures : SRR8265752_1.fastq.gz et SRR8265752_2.fastq.gz (1962847 lectures)
