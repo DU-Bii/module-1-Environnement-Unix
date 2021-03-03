@@ -92,20 +92,20 @@ Cette commande doit être à chaque fichier que vous souhaitez télécharger.
 > > # 1- Creation des dossiers de reception
 > > # 2- Téléchagement des fichiers
 > > #------------------------------------------------------------------------------
-
+> >
 > > echo "=============================================================="
 > > echo "Creation du dossier COVID_FASTQ"
 > > echo "=============================================================="
- 
+> >
 > > mkdir -p COVID_FASTQ
- 
+> >
 > > echo "--------------------------------------------------------------" 
 > > echo "Téléchargement des séquences brutes du BioProjet PRJNA507154" 
 > > echo "--------------------------------------------------------------" 
-
+> >
 > > ftp_url=($(tail -n +2 filereport_read_run_PRJNA507154.tsv | cut -f 9 | cut -d ';' -f 1))
 > > ftp_url+=($(tail -n +2 filereport_read_run_PRJNA507154.tsv | cut -f 9 | cut -d ';' -f 2))
-
+> >
 > > for my_url in ${ftp_url[@]}
 > > do
 > >        echo "wget ${my_url} -P COVID_FASTQ\n"
