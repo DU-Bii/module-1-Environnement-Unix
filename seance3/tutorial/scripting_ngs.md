@@ -19,7 +19,7 @@ Plusieurs étapes seront réalisées lors de ce TP :
 
 Pour compter le nombre de reads, il y aura 2 stratégies :
 
-- Soit compter le nombre de lignes et diviser cette valeur par 4 (sachant qu’un reads c’est 4 lignes)
+- Soit compter le nombre de lignes et diviser cette valeur par 4 (sachant qu’un read c’est 4 lignes dans un fichier fastq)
 - Soit compter le nombre de lignes qui ne contiennent que + (la 3e ligne pour des reads récents séquencés par Illumina).
 
 ### La commande `wget`
