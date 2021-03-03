@@ -81,18 +81,18 @@ Cette commande doit être à chaque fichier que vous souhaitez télécharger.
 > > ``` bash
 > > #!/bin/bash
 
-> >#------------------------------------------------------------------------------
-> ># Objectifs du script :
-> >#     - Télécharger un ensemble de fichiers de lectures de l’ENA
-> >#     - Les stocker dans un répertoire dédié.
-> ># Auteurs: Hélène Chiapello & Thomas Denecker
-> ># Affiliation: IFB
-> ># Organisme : SARS-CoV-2
-> ># Date: Mars 2021
-> ># Étapes :
-> ># 1- Creation des dossiers de reception
-> ># 2- Téléchagement des fichiers
-> >#------------------------------------------------------------------------------
+> > #------------------------------------------------------------------------------
+> > # Objectifs du script :
+> > #     - Télécharger un ensemble de fichiers de lectures de l’ENA
+> > #     - Les stocker dans un répertoire dédié.
+> > # Auteurs: Hélène Chiapello & Thomas Denecker
+> > # Affiliation: IFB
+> > # Organisme : SARS-CoV-2
+> > # Date: Mars 2021
+> > # Étapes :
+> > # 1- Creation des dossiers de reception
+> > # 2- Téléchagement des fichiers
+> > #------------------------------------------------------------------------------
 
 > >echo "=============================================================="
 > >echo "Creation du dossier COVID_FASTQ"
