@@ -232,13 +232,12 @@ Le fichier est dans le répertoire `~/dubii/study_cases/Escherichia_coli/`
 
 Indication : les noms de gènes se trouvent dans la 9ème colonne du fichier gff3
 
+> **Solution :**     
 >>
->> **Solution :**     
->>
->> > ```bash
->> > $ cut -f 9 ~/dubii/study-cases/Escherichia_coli/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3 | cut -d ";" -f 1 | grep "ID=gene" | sort -u | wc -l
->> > 4497
->> > ```   
+>> ```bash
+>> $ cut -f 9 ~/dubii/study-cases/Escherichia_coli/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3 | cut -d ";" -f 1 | grep "ID=gene" | sort -u | wc -l
+>>  4497
+>>  ```   
 {:.answer}
 
 
