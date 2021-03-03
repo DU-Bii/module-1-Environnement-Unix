@@ -79,7 +79,7 @@ Cette commande doit être à chaque fichier que vous souhaitez télécharger.
 - Une option de la commande tail permet d'afficher un fichier à partir de la kieme ligne, voir `tail --help`
 
 
-> **Solution :**:
+> **Solution :**
 > > ``` bash
 > > #!/bin/bash
 > >
@@ -165,7 +165,7 @@ Nous souhaitons à présent compter le nombre de lecture dans ces fichiers et v�
 Nous allons compter le nombre de lignes de chaque fichier et diviser cette valeur par 4 (sachant qu’une lecture correspond à 4 lignes dans un fichier fastq).  
 Attention, vous devez décompresser le fichier pour compter le nombre de lignes. 
 
-> ** Solution :**
+> **Solution :**
 > > ``` bash
 > > #!/bin/bash
 > > 
@@ -200,7 +200,7 @@ Nous allons compter cette fois le nombre de lignes qui ne contiennent que + . D'
 
 Nous allons donc utiser `grep` pour rechercher toutes les lignes commençant (`^`) par le caractère `\+` (le \ permet d'échapper le caractère `+` qui est un caractère spécial dans une expression régulière) et qui termine aussi par un signe `\+`\ grace au symbole `$`. 
 
-> ** Solution**
+> **Solution**
 > > ``` bash
 > > #!/bin/bash
 > > 
@@ -231,8 +231,8 @@ Nous allons donc utiser `grep` pour rechercher toutes les lignes commençant (`^
 {:.answer}
 
 **Question : parmi les 22 fichiers fastq, y'en a-t-il qui contiennent moin de 200000 lectures? Si oui combien et indiquez les noms de fichiers**
-> **Solution**
-> > ```
+> **Solution :**
+> > ``` bash
 > > Il y a deux fichiers qui contiennent moins de 200000 lectures : SRR8265752_1.fastq.gz et SRR8265752_2.fastq.gz (1962847 lectures)
 > > ```
 {:.answer}
