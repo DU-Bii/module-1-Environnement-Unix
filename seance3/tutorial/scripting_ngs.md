@@ -72,7 +72,7 @@ wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR826/006/SRR8265756/SRR8265756_1.fastq
 
 Cette commande doit être à chaque fichier que vous souhaitez télécharger.
 
-** Conseils**
+**Conseils**
 - Entrainez vous d'abord à extraire en ligne de commande les liens FTP à utiliser
 - Nous vous conseillons de vous aider de la cheatsheet Bash: https://devhints.io/bash
 - N'oublier pas de faire un `chmod +x NOM_SCRIPT` pour rendre votre script executable
