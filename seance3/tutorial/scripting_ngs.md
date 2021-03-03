@@ -194,7 +194,7 @@ Nous allons donc utiser grep pour rechercher toutes les lignes commençant (`^`)
 > > limit=2000000
 > > 
 > > for fichier in COVID_FASTQ/*.fastq.gz ; do
-> >     count=$(gunzip -c $fichier | echo $((`grep -fichier "^\+$" | wc -l` ))
+> >     count=$(gunzip -c $fichier | echo $((`grep -c "^\+$"` ))
 > >     
 > >     echo "Nombre de reads du fichier $fichier:" "$count"
 > > 
