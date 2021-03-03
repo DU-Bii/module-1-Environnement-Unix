@@ -70,7 +70,7 @@ Un paramètre intéressant de la commande wget est la possibilité de rediriger 
 wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR826/006/SRR8265756/SRR8265756_1.fastq.gz -P COVID19_FASTQ
 ```
 
-Cette commande doit être à chaque fichier que vous souhaitez télécharger.
+Cette commande doit être effectuée à chaque fichier que vous souhaitez télécharger.
 
 **Conseils**
 - Entrainez vous d'abord à extraire en ligne de commande les liens FTP à utiliser
