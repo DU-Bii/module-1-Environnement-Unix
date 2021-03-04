@@ -38,7 +38,7 @@ Nous vous demandons de télécharger les fichiers de lectures des 11 échantillo
 
 À partir de ce lien nous avons téléchargé le fichier de metadonnées suivant :
 
-``` bash
+```bash
 $ cat /shared/projects/dubii2021/trainers/module1/filereport_read_run_PRJNA507154.tsv
 run_accession   sample_accession        tax_id  scientific_name instrument_platform     library_source  center_name     fastq_md5       fastq_ftp       sample_title
 SRR8265746      SAMN10485239    31631   Human coronavirus OC43  ILLUMINA        VIRAL RNA       SUB4830588      2571ab5bc76da9605c4cfe6467d7b6b2;28806c5c96fecc5ce7be29953df0d3dc       ftp.sra.ebi.ac.uk/vol1/fastq/SRR826/006/SRR8265746/SRR8265746_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/SRR826/006/SRR8265746/SRR8265746_2.fastq.gz        Human coronavirus OC43 - MDS6
@@ -81,7 +81,7 @@ Cette commande doit être effectuée à chaque fichier que vous souhaitez télé
 
 
 > **Solution :**
-> > ``` bash
+> > ```bash
 > > #!/bin/bash
 > >
 > > #------------------------------------------------------------------------------
@@ -119,7 +119,7 @@ Cette commande doit être effectuée à chaque fichier que vous souhaitez télé
 
 #### Architecture du projet
 
-``` bash
+```bash
 $ tree .
 ├── COVID_FASTQ
 │   ├── SRR8265746_1.fastq.gz
@@ -174,7 +174,7 @@ Utilisez la commande `zcat` pour afficher le contenu d'un fichier `.fastq.gz` po
 
 
 > **Solution :**
-> > ``` bash
+> > ```bash
 > > #!/bin/bash
 > > 
 > > #------------------------------------------------------------------------------
@@ -215,7 +215,7 @@ Puisque nous allons travailler sur des fichiers compressés (`.fastq.gz`), nous 
 
 
 > **Solution**
-> > ``` bash
+> > ```bash
 > > #!/bin/bash
 > > 
 > > #------------------------------------------------------------------------------
@@ -265,7 +265,7 @@ Nous vous proposons si vous en avez le temps et l'envie :
 
 La commande n'est plus installée par défaut dans le terminal mac. Nous vous conseillons de l'installer à l'aide de [Homebrew](https://brew.sh/index_fr) :
 
-``` bash
+```bash
 # Installation de Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
