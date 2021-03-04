@@ -56,7 +56,7 @@ Helpers : Hélène Chiapello, Benoist Laurent, Paulette Lieby & Thomas Denecker
 - [Learn SLURM in 5 minutes](https://asciinema.org/a/275233)
 
 
-## Évaluation
+## Évaluations
 
 [QCM #1](https://forms.gle/G6jpPn8Qd9L8vUMK9). Pour le vendredi 5 mars 18h00.
 
