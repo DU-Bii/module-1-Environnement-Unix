@@ -34,9 +34,9 @@ Pour en savoir plus : [ici](https://doc.ubuntu-fr.org/wget)
 ### Les données
 
 Les données utilisées ont été sélectionnées sur le site [COVID-19 Data Portal](https://www.covid19dataportal.org/sequences?db=embl-covid19).
-Nous vous demandons de télécharger les fichiers de lectures des 11 échantillons des données de séquençage du Projet ENA : **PRJNA07154**, voir
-https://www.ebi.ac.uk/ena/browser/view/PRJNA507154. 
-A partir de ce lien nous avons téléchargé le fichier de metadonnées suivant :
+Nous vous demandons de télécharger les fichiers de lectures des 11 échantillons des données de séquençage du projet ENA : **PRJNA07154** (disponible à l'adresse <https://www.ebi.ac.uk/ena/browser/view/PRJNA507154>). 
+
+À partir de ce lien nous avons téléchargé le fichier de metadonnées suivant :
 
 ``` bash
 $ cat /shared/projects/dubii2021/trainers/module1/filereport_read_run_PRJNA507154.tsv
@@ -56,7 +56,7 @@ SRR8265756      SAMN10485245    31631   Human coronavirus OC43  ILLUMINA        
 
 ## Mise en pratique
 
-Démarrer un serveur via JupyterHub (https://jupyterhub.cluster.france-bioinformatique.fr) en choisissant la configuration **medium** (4 cpu, 10 GB de RAM). Lancer ensuite un terminal pour lancer vos scripts et un terimnal por éditer votre script avec nano.
+Démarrer un serveur via JupyterHub (https://jupyterhub.cluster.france-bioinformatique.fr) en choisissant la configuration **medium** (4 cpu, 10 GB de RAM). Lancer ensuite un terminal pour lancer vos scripts et un terminal pour éditer votre script avec nano.
 
 ### Script 1 - Téléchargement des données
 
@@ -72,11 +72,12 @@ wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR826/006/SRR8265756/SRR8265756_1.fastq
 
 Cette commande doit être effectuée à chaque fichier que vous souhaitez télécharger.
 
-**Conseils**
+**Conseils :**
+
 - Entrainez vous d'abord à extraire en ligne de commande les liens FTP à utiliser
 - Nous vous conseillons de vous aider de la cheatsheet Bash: https://devhints.io/bash
 - N'oublier pas de faire un `chmod +x NOM_SCRIPT` pour rendre votre script executable
-- Une option de la commande tail permet d'afficher un fichier à partir de la kieme ligne, voir `tail --help`
+- Une option de la commande `tail` permet d'afficher un fichier à partir de la kieme ligne, voir `tail --help`
 
 
 > **Solution :**
@@ -146,9 +147,10 @@ $ tree .
 ├── script1.bash
 ```
 
-**Important**
+**Important :**   
 Le serveur de l'ENA présente parfois des problèmes d'accès lors de téléchargement de jeux de données. 
-Pour plus de sureté, si votre script est correct, nous vous proposons d'aller directement copier les données dans votre répertoire COVID_FASTQ depuis le répertoire /shared/projects/dubii2021/trainers/module1/COVID_FASTQ/
+Pour plus de sureté, si votre script est correct, nous vous proposons d'aller directement copier les données dans votre répertoire COVID_FASTQ depuis le répertoire `/shared/projects/dubii2021/trainers/module1/COVID_FASTQ/`
+
 
 **Pour aller plus loin :**
 
