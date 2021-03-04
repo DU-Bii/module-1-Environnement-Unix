@@ -103,10 +103,10 @@ Cette commande doit être effectuée à chaque fichier que vous souhaitez télé
 > > echo "Téléchargement des séquences brutes du BioProjet PRJNA507154"
 > > echo "--------------------------------------------------------------"
 > >
-> > ftp_url=($(tail -n +2 /shared/projects/dubii2021/trainers/module1/filereport_read_run_PRJNA507154.tsv | cut -f 9 | cut -d ';' -f 1))
-> > ftp_url+=($(tail -n +2 /shared/projects/dubii2021/trainers/module1/filereport_read_run_PRJNA507154.tsv | cut -f 9 | cut -d ';' -f 2))
+> > ftp_url=$(tail -n +2 /shared/projects/dubii2021/trainers/module1/filereport_read_run_PRJNA507154.tsv | cut -f 9 | cut -d ';' -f 1)
+> > ftp_url+=$(tail -n +2 /shared/projects/dubii2021/trainers/module1/filereport_read_run_PRJNA507154.tsv | cut -f 9 | cut -d ';' -f 2)
 > > 
-> > for my_url in ${ftp_url[@]}
+> > for my_url in ${ftp_url}
 > > do
 > >        echo "wget ${my_url} -P COVID_FASTQ"
 > >        wget ${my_url} -P COVID_FASTQ
