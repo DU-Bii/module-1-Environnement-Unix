@@ -26,7 +26,7 @@ Pour compter le nombre de reads, il y aura 2 stratégies :
 
 ### La commande `wget`
 
-`wget` est un programme en ligne de commande non interactif de téléchargement de fichiers depuis le Web. Il supporte les protocoles HTTP, HTTPS et FTP ainsi que le téléchargement au travers des proxies HTTP. Il est disponible sur presque tous les environnements Unix.
+`wget` est un programme en ligne de commande non interactif de téléchargement de fichiers depuis le Web. Il supporte les protocoles HTTP, HTTPS et FTP ainsi que le téléchargement au travers de proxies. Il est disponible sur presque tous les environnements Unix.
 
 Pour en savoir plus : [ici](https://doc.ubuntu-fr.org/wget)
 
@@ -54,29 +54,32 @@ SRR8265755      SAMN10485244    31631   Human coronavirus OC43  ILLUMINA        
 SRR8265756      SAMN10485245    31631   Human coronavirus OC43  ILLUMINA        VIRAL RNA       SUB4830588      002d6244e103d6c7732e42a05e80a8e9;89c6697b47c84eb2db23dd2db30bb194       ftp.sra.ebi.ac.uk/vol1/fastq/SRR826/006/SRR8265756/SRR8265756_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/SRR826/006/SRR8265756/SRR8265756_2.fastq.gz        Human coronavirus OC43 - PR2
 ```
 
+Notez que deux fichiers fastq compressés (*.fastq.gz*) sont associés à chaque échantillon.
+
+
 ## Mise en pratique
 
-Démarrer un serveur via JupyterHub (https://jupyterhub.cluster.france-bioinformatique.fr) en choisissant la configuration **medium** (4 cpu, 10 GB de RAM). Lancer ensuite un terminal pour lancer vos scripts et un terminal pour éditer votre script avec nano.
+Démarrez un serveur via JupyterHub (https://jupyterhub.cluster.france-bioinformatique.fr) en choisissant la configuration **medium** (4 cpu, 10 GB de RAM). Ouvrez ensuite un terminal pour lancer vos scripts et un autre terminal pour éditer votre script avec nano.
 
 ### Script 1 - Téléchargement des données
 
-Nous vous demandons d'écrire un script bash qui va réaliser les étapes suivantes :
-- Création d'un dossier *COVID_FASTQ* pour stocker les fichiers de données FASTQ pour stocker les métadonnées associées
-- Extraction dans un tableau les liens FTP de téléchargement contenus dans le fichier *filereport_read_run_PRJNA507154.tsv* 
-- Téléchargement des deux fichiers de lectures de chaque échantillon à l'aide de la commande `wget`
-Un paramètre intéressant de la commande wget est la possibilité de rediriger le fichier téléchargé dans un dossier spécifié : `-P DOSSIER_DESTINATION` :
+Écrivez un script bash qui réalise les étapes suivantes :
+- Création d'un répertoire `COVID_FASTQ` pour stocker les fichiers de données FASTQ.
+- Extraction dans une variable bash des liens FTP de téléchargement contenus dans le fichier *filereport_read_run_PRJNA507154.tsv* 
+- Téléchargement des deux fichiers de lectures de chaque échantillon à l'aide de la commande `wget`. Un paramètre intéressant de la commande `wget` est la possibilité de rediriger le fichier téléchargé dans un dossier spécifié : `-P DOSSIER_DESTINATION` :
 
+Voici un exemple de commande pour télécharger un seul fichier de données :
 ```bash
 wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR826/006/SRR8265756/SRR8265756_1.fastq.gz -P COVID19_FASTQ
 ```
 
-Cette commande doit être effectuée à chaque fichier que vous souhaitez télécharger.
+Cette commande doit être effectuée pour chaque fichier que vous souhaitez télécharger.
 
 **Conseils :**
 
-- Entrainez-vous d'abord à extraire en ligne de commande les liens FTP à utiliser
-- Nous vous conseillons de vous aider de la cheatsheet Bash: https://devhints.io/bash
-- N'oublier pas de faire un `chmod +x NOM_SCRIPT` pour rendre votre script executable
+- Entrainez-vous d'abord à extraire en ligne de commande les liens FTP à utiliser.
+- Nous vous conseillons de vous aider de la *cheatsheet* Bash: https://devhints.io/bash
+- N'oublier pas de faire un `chmod +x NOM_SCRIPT` pour rendre votre script executable.
 - Une option de la commande `tail` permet d'afficher un fichier à partir de la kieme ligne, voir `tail --help`
 
 
@@ -94,9 +97,9 @@ Cette commande doit être effectuée à chaque fichier que vous souhaitez télé
 > > # Date: Mars 2021
 > > #------------------------------------------------------------------------------
 > >
-> > echo "=============================================================="
+> > echo "--------------------------------------------------------------"
 > > echo "Creation du dossier COVID_FASTQ"
-> > echo "=============================================================="
+> > echo "--------------------------------------------------------------"
 > >
 > > mkdir -p COVID_FASTQ
 > >
@@ -147,20 +150,21 @@ $ tree .
 ├── script1.bash
 ```
 
-**Important :**   
-Le serveur de l'ENA présente parfois des problèmes d'accès lors de téléchargement de jeux de données. 
-Pour plus de sureté, si votre script est correct, nous vous proposons d'aller directement copier les données dans votre répertoire COVID_FASTQ depuis le répertoire `/shared/projects/dubii2021/trainers/module1/COVID_FASTQ/`
+**Remarques :**
+
+- Le serveur de l'ENA présente parfois des problèmes d'accès lors de téléchargement de jeux de données.
+- Testez votre script mais si vous constatez que le téléchargement est trop lent ou plante, nous vous proposons d'aller directement copier les données dans votre répertoire `COVID_FASTQ` depuis le répertoire `/shared/projects/dubii2021/trainers/module1/COVID_FASTQ/`
 
 
 **Pour aller plus loin :**
 
-- Donner le fichier contenant les données à télécharger en argument de la ligne de commande du script
-- Vérifier l'intégrité des fichiers téléchargés avec par exemple la commande `md5sum`.
+- Donnez le fichier contenant les données à télécharger en argument de la ligne de commande du script
+- Vérifiez l'intégrité des fichiers téléchargés avec par exemple la commande `md5sum`.
 
 
 ### Script 2 - Exploration
 
-Nous souhaitons à présent compter le nombre de lecture dans ces fichiers et vérifier qu'il y en au moins 200000 dans tous les fichiers. Pour réaliser cette opération, nous allons utiliser une boucle `for` qui va itérer sur tous les fichiers présents dans le dossier `COVID_FASTQ` et qui termine par `.fastq.gz`.
+Nous souhaitons à présent compter le nombre de lecture dans ces fichiers et vérifier qu'il y en au moins 2000000 dans chaque fichier. Pour réaliser cette opération, nous allons utiliser une boucle `for` qui va itérer sur tous les fichiers présents dans le dossier `COVID_FASTQ` et qui termine par `.fastq.gz`.
 
 #### Stratégie 1
 
@@ -205,7 +209,7 @@ Utilisez la commande `zcat` pour afficher le contenu d'un fichier `.fastq.gz` po
 
 #### Stratégie 2
 
-Nous allons compter cette fois le nombre de lignes qui ne contiennent que le symbole `+` . Pour des reads récents séquencés par la technologie Illumina, la 3e ligne ne contient que le signe `+`.
+Nous allons compter cette fois le nombre de lignes qui ne contiennent que le symbole `+` . Pour des lectures récemment séquencés par la technologie Illumina, la 3e ligne ne contient que le signe `+`.
 
 Nous allons donc utiser `grep` pour rechercher toutes les lignes commençant (`^`) par le caractère `\+` (le \ permet d'échapper le caractère `+` qui est un caractère spécial dans une expression régulière) et qui termine aussi par un signe `\+`\ grace au symbole `$`.  
 
@@ -237,14 +241,15 @@ Puisque nous allons travailler sur des fichiers compressés (`.fastq.gz`), nous 
 > > 
 > >     if [ "${reads}" -lt "${limit}" ]
 > >     then
-> >         echo "/!\\ Il y a moins de ${limit} reads dans le fichier"
+> >         echo "/!\\ Il y a moins de ${limit} lectures dans le fichier"
 > >     fi
 > > 
 > > done
 > > ```
 {:.answer}
 
-**Question :** Parmi les 22 fichiers fastq analysés, y'en a-t-il qui contiennent moins de 2 millions de lectures ? Si oui combien et pour quels fichiers ?
+**Question :** Parmi les 22 fichiers fastq analysés, y en a-t-il qui contiennent moins de 2 millions de lectures ? Si oui combien et pour quels fichiers ?
+
 > **Solution :**
 > > ```bash
 > > Il y a deux fichiers qui contiennent moins de 2000000 lectures : 
@@ -255,7 +260,7 @@ Puisque nous allons travailler sur des fichiers compressés (`.fastq.gz`), nous 
 
 **Pour aller plus loin**
 
-Nous vous proposons si vous en avez le temps et l'envie :
+Si vous en avez le temps et l'envie, nous vous proposons  :
 - De mettre en paramètre de ce script (sur la ligne de commande) la valeur du seuil (nombre de lectures minimum) à obtenir par fichier.
 - D'écrire les résultats de cette analyse (seuil utilisé, puis avec 1 ligne par fichier : le nom du fichier fastq, nombre de lectures totales dans le fichier et warning si le seuil minimum n'est pas atteint dans ce fichier de sortie).
 
