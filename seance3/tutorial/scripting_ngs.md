@@ -13,9 +13,9 @@ Une page de documention est proposée par l'ENA pour télécharger les séquence
 
 Plusieurs étapes seront réalisées lors de ce TP :
 
-1) Création d'un dossier pour organiser les fichiers téléchargés
-2) Téléchargement des fichiers de séquences brutes *fastq* avec la commande `wget`
-3) Exploration des fichiers : pour chaque fichier *fastq*, nous allons compter le nombre de séquences. Si le nombre de séquences est en dessous d’une certaine valeur, nous allons afficher un message (dans le cas par exemple où on voudrait un nombre minimal de reads par fichiers).
+1. Création d'un dossier pour organiser les fichiers téléchargés
+2. Téléchargement des fichiers de séquences brutes *fastq* avec la commande `wget`
+3. Exploration des fichiers : pour chaque fichier *fastq*, nous allons compter le nombre de lectures. Si le nombre de lectures est en dessous d’une certaine valeur, nous afficherons un message d'avertissement.
 
 Vous trouverez une description succinte du format *fastq* dans la documentation proposée par [Illumina](https://emea.support.illumina.com/bulletins/2016/04/fastq-files-explained.html)
 
