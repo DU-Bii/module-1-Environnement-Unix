@@ -3,7 +3,7 @@ class: center, middle
 
 # Unix 2
 
-## DU-Bii 2020
+## DU-Bii 2021
 
 Hélène Chiapello<br/>
 Benoist Laurent

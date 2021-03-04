@@ -1,13 +1,15 @@
 
 class: center, middle
 
-# Unix 4
+# Unix 3
 
-## DU-Bii 2020
+## DU-Bii 2021
 
 Hélène Chiapello<br/>
 Benoist Laurent<br/>
-Pierre Poulain
+
+Pierre Poulain <br/>
+Thomas Denecker
 
 
 .footer[
@@ -23,26 +25,12 @@ https://du-bii.github.io/module-1-Environnement-Unix/
 class: center, middle
 # Révisions & corrections des exercices
 
----
-
-class: left, top
-
-# Question 1
-
-Utiliser le `|` et les commandes précédentes pour déterminer le nombre de gènes uniques dans le fichier `Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3`  
-
---
-
-```bash
-$ cut -f 9 ~/dubii/study-cases/Escherichia_coli/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3 | cut -d ";" -f 1 | grep "ID=gene" | sort -u | wc -l
-4497
-```
 
 ---
 
 class: left, top
 
-# Question 2
+# Question
 
 Créer une archive du dossier `study-cases` ne contenant pas le répertoire `.git`
 
@@ -138,9 +126,6 @@ class: center, middle
 # Bash
 
 - Un langage interprété
-
---
-
 - Possède toutes les caractéristiques d'un langage de programmation
     - variables
     - fonctions
