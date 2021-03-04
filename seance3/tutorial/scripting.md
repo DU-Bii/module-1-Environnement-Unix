@@ -147,7 +147,7 @@ arguments (e.g. `${1}` is the first argument, `${10}` the tenth argument, etc).
 
 `$#` contains the number of arguments passed to the script.
 
-`$*` represents all the arguments passed to the script.
+`$@` represents all the arguments passed to the script.
 
 **Question**: adapt the `./unique-genes.bash` so that it takes the gff path
 from the command-line. Then run the script:
@@ -182,8 +182,8 @@ script becomes:
 ```bash
 #!/bin/bash
 
-# Store file names into a variable: $* represents all command-line arguments.
-filenames=$*
+# Store file names into a variable: $@ represents all command-line arguments.
+filenames=$@
 
 for input_gff in ${filenames}
 do
@@ -225,7 +225,7 @@ The script will display an error message if no input file is provided.
 > > 
 > > # The -gt operator stands for "greater than"
 > > if [ $# -gt 1 ]; then
-> >     filenames=$*
+> >     filenames=$@
 > >     for input_gff in ${filenames}
 > >     do
 > >         n=$(cut -f 9 ${input_gff} | cut -d';' -f 1 | grep 'ID=gene' | sort -u | wc -l)
