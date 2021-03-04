@@ -24,7 +24,7 @@ Lundi 01/03/2021 après-midi
 Instructeurs : Hélène Chiapello & Pierre Poulain  
 Helpers : Benoist Laurent, Paulette Lieby & Thomas Denecker  
 
-Introduction - [Tutoriel](seance1/tutorial/README.md) - Bonnes pratiques
+[Introduction](seance1/Unix_seance1_introduction.pdf) - [Tutoriel](seance1/tutorial/README.md) - [Bonnes pratiques](seance1/Unix_seance1_bonnes_pratiques_bioinfo.pdf)
 
 
 ## Séance 2 - Gestion de flux et extraction de données
@@ -38,9 +38,9 @@ Helpers : Pierre Poulain, Paulette Lieby & Thomas Denecker
 
 ## Séance 3 - Automatisation
 
-Jeudi 04/03/2020 matin  
+Jeudi 04/03/2021 matin  
 Instructeurs : Benoist Laurent & Hélène Chiapello  
-Helper : Pierre Poulain, Paulette Lieby & Thomas Denecker  
+Helper : Pierre Poulain & Thomas Denecker  
 
 [Présentation](seance3/slides/index.html) - Tutoriel : [rsync](seance3/tutorial/rsync.md),
 [scripting](seance3/tutorial/scripting.md), [Scripts NGS](seance3/tutorial/scripting_ngs.md)
@@ -48,12 +48,19 @@ Helper : Pierre Poulain, Paulette Lieby & Thomas Denecker
   
 ## Séance 4 - Utilisation d'un cluster de calcul
 
-Jeudi 09/03/2020 matin  
+Mardi 09/03/2021 matin  
 Instructeurs : Julien Seiler & Pierre Poulain  
-Helpers : Hélène Chiapello, Benoist Laurent, Paulette Lieby & Thomas Denecker  
+Helpers : Hélène Chiapello, Benoist Laurent, Olivier Sand & Thomas Denecker  
 
 - [Présentation](seance4/slides/index.html)
 - [Learn SLURM in 5 minutes](https://asciinema.org/a/275233)
+
+
+## Évaluations
+
+[QCM #1](https://forms.gle/G6jpPn8Qd9L8vUMK9). Pour le vendredi 5 mars 18h00.
+
+QCM #2. Pour le vendredi 12 mars 18h00.
 
 
 ## Ressources complémentaires

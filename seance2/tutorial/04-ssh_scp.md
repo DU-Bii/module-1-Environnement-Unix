@@ -23,17 +23,16 @@ Si vous souhaitez simplement un logiciel sous Windows pour vous connecter au clu
 
 ### Syntaxe de la commande ssh
 
-Sous Unix, la commande `ssh` permet ainsi d'établir une communication sécurisée, 
-sur un réseau informatique (Intranet ou Internet) entre une machine locale (le client) et une machine distante (le serveur).
+Sous Unix, la commande `ssh` permet d'établir une communication sécurisée entre une machine locale (le client) et une machine distante (le serveur).
 La syntaxe de la commande est la suivante :
 
 `ssh <nom_utilisateur>@<nom_serveur_distant>`
 
 
-**Exercice 1** 
+**Exercice 1**  
 Ouvrez un  **terminal** sur votre poste de travail local Linux et connectez-vous au serveur **core.cluster.france-bioinformatique.fr** depuis ce **terminal** en utilisant la commande `ssh`.
 
-> **Solution :**:
+> **Solution :**
 > > ```bash
 > > $ ssh hchiapello@core.cluster.france-bioinformatique.fr 
 > > ```
@@ -70,7 +69,7 @@ La syntaxe est la suivante :
 - **Sur votre terminal local**, remplacer toutes les occurences de `T` par `U` dans le fichier `motif_adn.fna` en utilisant la commande `sed` et rediriger le résultat dans un fichier nommé `motif_arn.fna`
 - Copier le répertoire `test` et son contenu sur le serveur distant core cluster de l'IFB dans le répertoire `~/dubii/` de votre répertoire utilisateur ("*home directory*") :
 
-> **Solution :**:
+> **Solution :**
 > > ```bash
 > > $ sed 's/T/U/g' motif_adn.fna > motif_arn.fna
 > > $ cd ..
