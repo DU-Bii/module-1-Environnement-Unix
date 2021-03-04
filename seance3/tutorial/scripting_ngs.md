@@ -178,7 +178,7 @@ Utilisez la commande `zcat` pour afficher le contenu d'un fichier `.fastq.gz` po
 > > #------------------------------------------------------------------------------
 > > # Objectifs du script :  
 > > #     - Explorer les fichiers fastq.gz d'intérêt
-> > # Auteurs: Hélène Chiapello & Thomas Denecker
+> > # Auteurs: Hélène Chiapello, Pierre Poulain & Thomas Denecker
 > > # Affiliation: IFB
 > > # Organisme : SARS-CoV-2
 > > # Date: Mars 2021
@@ -188,7 +188,7 @@ Utilisez la commande `zcat` pour afficher le contenu d'un fichier `.fastq.gz` po
 > > limit=2000000
 > > 
 > > for fichier in COVID_FASTQ/*.fastq.gz ; do
-> >     lines=$(gunzip -c $fichier | wc -l)
+> >     lines=$(zcat $fichier | wc -l)
 > >     reads=$((lines/4))
 > >     echo "Nombre de reads du fichier ${fichier}: ${reads}"
 > > 
@@ -205,7 +205,12 @@ Utilisez la commande `zcat` pour afficher le contenu d'un fichier `.fastq.gz` po
 
 Nous allons compter cette fois le nombre de lignes qui ne contiennent que + . D'apèrs la documentation, la 3e ligne pour des reads récents séquencés par Illumina ne contient que le signe `+`.
 
-Nous allons donc utiser `grep` pour rechercher toutes les lignes commençant (`^`) par le caractère `\+` (le \ permet d'échapper le caractère `+` qui est un caractère spécial dans une expression régulière) et qui termine aussi par un signe `\+`\ grace au symbole `$`. 
+Nous allons donc utiser `grep` pour rechercher toutes les lignes commençant (`^`) par le caractère `\+` (le \ permet d'échapper le caractère `+` qui est un caractère spécial dans une expression régulière) et qui termine aussi par un signe `\+`\ grace au symbole `$`.  
+
+L'option `-c` de `grep` permet de compter le nombre de lignes.
+
+Puisque nous allons travailler sur des fichiers compressés, nous allons utiliser la commande `zgrep` à la place de `grep`. La commande `zgrep` s'utilise de la même façon que `grep`.
+
 
 > **Solution**
 > > ``` bash
@@ -214,7 +219,7 @@ Nous allons donc utiser `grep` pour rechercher toutes les lignes commençant (`^
 > > #------------------------------------------------------------------------------
 > > # Objectifs du script :  
 > > #     - Explorer les fichiers fastq.gz d'intérêt
-> > # Auteurs: Hélène Chiapello & Thomas Denecker
+> > # Auteurs: Hélène Chiapello, Pierre Poulain & Thomas Denecker
 > > # Affiliation: IFB
 > > # Organisme : SARS-CoV-2
 > > # Date: Mars 2021
@@ -224,7 +229,7 @@ Nous allons donc utiser `grep` pour rechercher toutes les lignes commençant (`^
 > > limit=2000000
 > > 
 > > for fichier in COVID_FASTQ/*.fastq.gz ; do
-> >     count=$(gunzip -c ${fichier} | grep -c "^\+$")
+> >     count=$(zgrep -c "^\+$" ${fichier})
 > >     
 > >     echo "Nombre de reads du fichier ${fichier}: ${count}"
 > > 
