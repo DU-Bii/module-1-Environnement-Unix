@@ -163,11 +163,13 @@ Nous souhaitons à présent compter le nombre de lecture dans ces fichiers et v�
 #### Stratégie 1
 
 Nous allons compter le nombre de lignes de chaque fichier et diviser cette valeur par 4 (sachant qu’une lecture correspond à 4 lignes dans un fichier fastq).
-Pour effectuer une opération numérique sur une variable, par exemple ajouter 200 à la variable $a, la syntaxe est la suivante :
+Pour effectuer une opération numérique sur une variable, par exemple ajouter 200 à la variable `$a`, la syntaxe est la suivante :
 ``` bash
 $((a + 200))
 ```
-Attention, vous devez d'abord décompresser le fichier pour compter le nombre de lignes. 
+
+Utilisez la commande `zcat` pour afficher le contenu d'un fichier `.fastq.gz` pour ensuite le rédiriger vers la commande `wc` qui comptera le nombre de lignes.
+
 
 > **Solution :**
 > > ``` bash
