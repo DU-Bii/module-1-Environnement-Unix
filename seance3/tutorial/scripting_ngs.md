@@ -190,7 +190,7 @@ Attention, vous devez d'abord décompresser le fichier pour compter le nombre de
 > >     reads=$((lines/4))
 > >     echo "Nombre de reads du fichier ${fichier}: ${reads}"
 > > 
-> >     if [ "${reads}" -lt "${limit}" ]
+> >     if [ "${reads}" -lt "${limit}" ];
 > >     then
 > >         echo "/!\\ Il y a moins de ${limit} lectures dans le fichier"
 > >     fi
@@ -226,7 +226,7 @@ Nous allons donc utiser `grep` pour rechercher toutes les lignes commençant (`^
 > >     
 > >     echo "Nombre de reads du fichier ${fichier}: ${count}"
 > > 
-> >     if [ "${count}" -lt "${limit}" ]
+> >     if [ "${count}" -lt "${limit}" ];
 > >     then
 > >         echo "/!\\ Il y a moins de ${limit} reads dans le fichier"
 > >     fi
