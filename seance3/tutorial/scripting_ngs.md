@@ -5,7 +5,7 @@ T. Denecker et H. Chiapello
 
 ### Objectif
 
-L'objectif de ce TP est de télécharger et vérifier un ensemble de fichiers de données de séquençage du SARS-CoV-2 à l'aide d'un script bash. Les fichiers proviennent de l'European National Archive (ENA) qui est la plateforme européenne chargée de la gestion, du partage, de l’intégration, de l’archivage et de la diffusion des données de séquences [Pour en savoir plus](https://www.ebi.ac.uk/ena/browser/about).
+L'objectif de ce TP est de télécharger et vérifier un ensemble de fichiers de données de séquençage du SARS-CoV-2 à l'aide d'un script bash. Les fichiers proviennent de l'*European National Archive* (ENA) qui est la plateforme européenne chargée de la gestion, du partage, de l’intégration, de l’archivage et de la diffusion des données de séquences [Pour en savoir plus](https://www.ebi.ac.uk/ena/browser/about).
 
 Une page de documention est proposée par l'ENA pour télécharger les séquences qui y sont hébergées : [ici](https://ena-docs.readthedocs.io/en/latest/retrieval/file-download.html).
 
@@ -21,8 +21,8 @@ Vous trouverez une description succinte du format *fastq* dans la documentation 
 
 Pour compter le nombre de reads, il y aura 2 stratégies :
 
-- Soit compter le nombre de lignes et diviser cette valeur par 4 (sachant qu’un read c’est 4 lignes dans un fichier fastq)
-- Soit compter le nombre de lignes commençant par le caractère "+" et contenant uniquement ce caractère (la 3e ligne pour des reads récents séquencés par Illumina) 
+- Soit compter le nombre de lignes et diviser cette valeur par 4 (sachant qu’une lecture est composée de 4 lignes dans un fichier fastq)
+- Soit compter le nombre de lignes commençant par le caractère "+" et contenant uniquement ce caractère (la 3e ligne pour des lectures récents séquencées par Illumina) 
 
 ### La commande `wget`
 
@@ -66,7 +66,7 @@ Nous vous demandons d'écrire un script bash qui va réaliser les étapes suivan
 - Téléchargement des deux fichiers de lectures de chaque échantillon à l'aide de la commande `wget`
 Un paramètre intéressant de la commande wget est la possibilité de rediriger le fichier téléchargé dans un dossier spécifié : `-P DOSSIER_DESTINATION` :
 
-``` bash
+```bash
 wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR826/006/SRR8265756/SRR8265756_1.fastq.gz -P COVID19_FASTQ
 ```
 
@@ -74,7 +74,7 @@ Cette commande doit être effectuée à chaque fichier que vous souhaitez télé
 
 **Conseils :**
 
-- Entrainez vous d'abord à extraire en ligne de commande les liens FTP à utiliser
+- Entrainez-vous d'abord à extraire en ligne de commande les liens FTP à utiliser
 - Nous vous conseillons de vous aider de la cheatsheet Bash: https://devhints.io/bash
 - N'oublier pas de faire un `chmod +x NOM_SCRIPT` pour rendre votre script executable
 - Une option de la commande `tail` permet d'afficher un fichier à partir de la kieme ligne, voir `tail --help`
@@ -233,7 +233,6 @@ Puisque nous allons travailler sur des fichiers compressés (`.fastq.gz`), nous 
 > > for fichier in COVID_FASTQ/*.fastq.gz
 > > do
 > >     reads=$(zgrep -c "^\+$" ${fichier})
-> >     
 > >     echo "Nombre de reads du fichier ${fichier} : ${reads}"
 > > 
 > >     if [ "${reads}" -lt "${limit}" ]
@@ -245,9 +244,9 @@ Puisque nous allons travailler sur des fichiers compressés (`.fastq.gz`), nous 
 > > ```
 {:.answer}
 
-**Question :** Parmi les 22 fichiers fastq analysés, y'en a-t-il qui contiennent moins de 2 millions de lectures? Si oui combien et indiquez les noms de fichiers ?
+**Question :** Parmi les 22 fichiers fastq analysés, y'en a-t-il qui contiennent moins de 2 millions de lectures ? Si oui combien et pour quels fichiers ?
 > **Solution :**
-> > ``` bash
+> > ```bash
 > > Il y a deux fichiers qui contiennent moins de 2000000 lectures : 
 > > SRR8265752_1.fastq.gz et SRR8265752_2.fastq.gz (1962847 lectures)
 > > ```
@@ -257,7 +256,7 @@ Puisque nous allons travailler sur des fichiers compressés (`.fastq.gz`), nous 
 **Pour aller plus loin**
 
 Nous vous proposons si vous en avez le temps et l'envie :
-- De mettre en paramètre de ce script (sur la ligne de commande) la valeur du seuil (nombre de lecture minimal) à obtenir par fichier.
+- De mettre en paramètre de ce script (sur la ligne de commande) la valeur du seuil (nombre de lectures minimum) à obtenir par fichier.
 - D'écrire les résultats de cette analyse (seuil utilisé, puis avec 1 ligne par fichier : le nom du fichier fastq, nombre de lectures totales dans le fichier et warning si le seuil minimum n'est pas atteint dans ce fichier de sortie).
 
 
