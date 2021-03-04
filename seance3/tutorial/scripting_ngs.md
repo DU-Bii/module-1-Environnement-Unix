@@ -187,29 +187,29 @@ Utilisez la commande `zcat` pour afficher le contenu d'un fichier `.fastq.gz` po
 > > 
 > > limit=2000000
 > > 
-> > for fichier in COVID_FASTQ/*.fastq.gz ; do
-> >     lines=$(zcat $fichier | wc -l)
+> > for fichier in COVID_FASTQ/*.fastq.gz
+> > do
+> >     lines=$(zcat ${fichier} | wc -l)
 > >     reads=$((lines/4))
-> >     echo "Nombre de reads du fichier ${fichier}: ${reads}"
+> >     echo "Nombre de reads du fichier ${fichier} : ${reads}"
 > > 
-> >     if [ "${reads}" -lt "${limit}" ];
+> >     if [ "${reads}" -lt "${limit}" ]
 > >     then
 > >         echo "/!\\ Il y a moins de ${limit} lectures dans le fichier"
 > >     fi
-> > 
 > > done
 > > ```
 {:.answer}
 
 #### Stratégie 2
 
-Nous allons compter cette fois le nombre de lignes qui ne contiennent que + . D'apèrs la documentation, la 3e ligne pour des reads récents séquencés par Illumina ne contient que le signe `+`.
+Nous allons compter cette fois le nombre de lignes qui ne contiennent que le symbole `+` . Pour des reads récents séquencés par la technologie Illumina, la 3e ligne ne contient que le signe `+`.
 
 Nous allons donc utiser `grep` pour rechercher toutes les lignes commençant (`^`) par le caractère `\+` (le \ permet d'échapper le caractère `+` qui est un caractère spécial dans une expression régulière) et qui termine aussi par un signe `\+`\ grace au symbole `$`.  
 
 L'option `-c` de `grep` permet de compter le nombre de lignes.
 
-Puisque nous allons travailler sur des fichiers compressés, nous allons utiliser la commande `zgrep` à la place de `grep`. La commande `zgrep` s'utilise de la même façon que `grep`.
+Puisque nous allons travailler sur des fichiers compressés (`.fastq.gz`), nous allons utiliser la commande `zgrep` à la place de `grep`. La commande `zgrep` s'utilise de la même façon que `grep`.
 
 
 > **Solution**
@@ -228,12 +228,13 @@ Puisque nous allons travailler sur des fichiers compressés, nous allons utilise
 > > 
 > > limit=2000000
 > > 
-> > for fichier in COVID_FASTQ/*.fastq.gz ; do
-> >     count=$(zgrep -c "^\+$" ${fichier})
+> > for fichier in COVID_FASTQ/*.fastq.gz
+> > do
+> >     reads=$(zgrep -c "^\+$" ${fichier})
 > >     
-> >     echo "Nombre de reads du fichier ${fichier}: ${count}"
+> >     echo "Nombre de reads du fichier ${fichier} : ${reads}"
 > > 
-> >     if [ "${count}" -lt "${limit}" ];
+> >     if [ "${reads}" -lt "${limit}" ]
 > >     then
 > >         echo "/!\\ Il y a moins de ${limit} reads dans le fichier"
 > >     fi
@@ -242,18 +243,21 @@ Puisque nous allons travailler sur des fichiers compressés, nous allons utilise
 > > ```
 {:.answer}
 
-**Question : parmi les 22 fichiers fastq analysés, y'en a-t-il qui contiennent moins de 2 millions de lectures? Si oui combien et indiquez les noms de fichiers**
+**Question :** Parmi les 22 fichiers fastq analysés, y'en a-t-il qui contiennent moins de 2 millions de lectures? Si oui combien et indiquez les noms de fichiers ?
 > **Solution :**
 > > ``` bash
-> > Il y a deux fichiers qui contiennent moins de 200000 lectures : SRR8265752_1.fastq.gz et SRR8265752_2.fastq.gz (1962847 lectures)
+> > Il y a deux fichiers qui contiennent moins de 2000000 lectures : 
+> > SRR8265752_1.fastq.gz et SRR8265752_2.fastq.gz (1962847 lectures)
 > > ```
 {:.answer}
+
 
 **Pour aller plus loin**
 
 Nous vous proposons si vous en avez le temps et l'envie :
-- de mettre en paramètre de ce script (sur la ligne de commande) la valeur du seuil (nombre de reads minimal) à obtenir par fichier
-- d'écrire les résultats de cette analyse (seuil utilisé, puis avec 1 ligne par fichier : le nom du fichier fastq, nombre de lectures totales dans le fichier et warning si le seuil minimum n'est pas atteind dans ce fichier de sortie)
+- De mettre en paramètre de ce script (sur la ligne de commande) la valeur du seuil (nombre de lecture minimal) à obtenir par fichier.
+- D'écrire les résultats de cette analyse (seuil utilisé, puis avec 1 ligne par fichier : le nom du fichier fastq, nombre de lectures totales dans le fichier et warning si le seuil minimum n'est pas atteint dans ce fichier de sortie).
+
 
 **Note : Pour les utilisateurs de Mac qui ne disposent pas de wget**
 
