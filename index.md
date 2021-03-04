@@ -38,9 +38,9 @@ Helpers : Pierre Poulain, Paulette Lieby & Thomas Denecker
 
 ## Séance 3 - Automatisation
 
-Jeudi 04/03/2020 matin  
+Jeudi 04/03/2021 matin  
 Instructeurs : Benoist Laurent & Hélène Chiapello  
-Helper : Pierre Poulain, Paulette Lieby & Thomas Denecker  
+Helper : Pierre Poulain & Thomas Denecker  
 
 [Présentation](seance3/slides/index.html) - Tutoriel : [rsync](seance3/tutorial/rsync.md),
 [scripting](seance3/tutorial/scripting.md), [Scripts NGS](seance3/tutorial/scripting_ngs.md)
@@ -48,9 +48,9 @@ Helper : Pierre Poulain, Paulette Lieby & Thomas Denecker
   
 ## Séance 4 - Utilisation d'un cluster de calcul
 
-Jeudi 09/03/2020 matin  
+Mardi 09/03/2021 matin  
 Instructeurs : Julien Seiler & Pierre Poulain  
-Helpers : Hélène Chiapello, Benoist Laurent, Paulette Lieby & Thomas Denecker  
+Helpers : Hélène Chiapello, Benoist Laurent, Olivier Sand & Thomas Denecker  
 
 - [Présentation](seance4/slides/index.html)
 - [Learn SLURM in 5 minutes](https://asciinema.org/a/275233)
