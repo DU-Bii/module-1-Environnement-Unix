@@ -91,10 +91,10 @@ Cette commande doit être effectuée pour chaque fichier que vous souhaitez tél
 > > # Objectifs du script :
 > > #     - Télécharger un ensemble de fichiers de lectures de l’ENA
 > > #     - Les stocker dans un répertoire dédié.
-> > # Auteurs: Hélène Chiapello & Thomas Denecker
+> > # Auteurs : Hélène Chiapello, Pierre Poulain & Thomas Denecker
 > > # Affiliation: IFB
 > > # Organisme : SARS-CoV-2
-> > # Date: Mars 2021
+> > # Date : Mars 2021
 > > #------------------------------------------------------------------------------
 > >
 > > echo "--------------------------------------------------------------"
@@ -113,7 +113,7 @@ Cette commande doit être effectuée pour chaque fichier que vous souhaitez tél
 > > for my_url in ${ftp_url}
 > > do
 > >        echo "wget ${my_url} -P COVID_FASTQ"
-> >        wget ${my_url} -P COVID_FASTQ
+> >        wget "${my_url}" -P COVID_FASTQ
 > > done
 > > 
 > > ```
@@ -184,10 +184,10 @@ Utilisez la commande `zcat` pour afficher le contenu d'un fichier `.fastq.gz` po
 > > #------------------------------------------------------------------------------
 > > # Objectifs du script :  
 > > #     - Explorer les fichiers fastq.gz d'intérêt
-> > # Auteurs: Hélène Chiapello, Pierre Poulain & Thomas Denecker
+> > # Auteurs : Hélène Chiapello, Pierre Poulain & Thomas Denecker
 > > # Affiliation: IFB
 > > # Organisme : SARS-CoV-2
-> > # Date: Mars 2021
+> > # Date : Mars 2021
 > > # Comptage du nombre de reads et alerter si le nombre est inférieur à un seuil (limit)
 > > #------------------------------------------------------------------------------
 > > 
@@ -225,10 +225,10 @@ Puisque nous allons travailler sur des fichiers compressés (`.fastq.gz`), nous 
 > > #------------------------------------------------------------------------------
 > > # Objectifs du script :  
 > > #     - Explorer les fichiers fastq.gz d'intérêt
-> > # Auteurs: Hélène Chiapello, Pierre Poulain & Thomas Denecker
-> > # Affiliation: IFB
+> > # Auteurs : Hélène Chiapello, Pierre Poulain & Thomas Denecker
+> > # Affiliation : IFB
 > > # Organisme : SARS-CoV-2
-> > # Date: Mars 2021
+> > # Date : Mars 2021
 > > # Compter le nombre de reads et alerter si le nombre est trop faible afficher un message d'alerte
 > > #------------------------------------------------------------------------------
 > > 
