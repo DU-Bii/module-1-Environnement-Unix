@@ -195,7 +195,7 @@ Utilisez la commande `zcat` pour afficher le contenu d'un fichier `.fastq.gz` po
 > > 
 > > for fichier in COVID_FASTQ/*.fastq.gz
 > > do
-> >     lines=$(zcat ${fichier} | wc -l)
+> >     lines=$(zcat "${fichier}" | wc -l)
 > >     reads=$((lines/4))
 > >     echo "Nombre de reads du fichier ${fichier} : ${reads}"
 > > 
@@ -236,7 +236,7 @@ Puisque nous allons travailler sur des fichiers compressés (`.fastq.gz`), nous 
 > > 
 > > for fichier in COVID_FASTQ/*.fastq.gz
 > > do
-> >     reads=$(zgrep -c "^\+$" ${fichier})
+> >     reads=$(zgrep -c "^\+$" "${fichier}")
 > >     echo "Nombre de reads du fichier ${fichier} : ${reads}"
 > > 
 > >     if [ "${reads}" -lt "${limit}" ]
