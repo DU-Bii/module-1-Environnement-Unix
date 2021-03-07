@@ -78,8 +78,8 @@ Cette commande doit être effectuée pour chaque fichier que vous souhaitez tél
 **Conseils :**
 
 - Entrainez-vous d'abord à extraire en ligne de commande les liens FTP à utiliser.
-- Nous vous conseillons de vous aider de la *cheatsheet* Bash: https://devhints.io/bash
-- N'oublier pas de faire un `chmod +x NOM_SCRIPT` pour rendre votre script executable.
+- Nous vous conseillons de vous aider de la *cheatsheet* Bash : <https://devhints.io/bash>
+- N'oubliez pas de faire un `chmod +x NOM_SCRIPT` pour rendre votre script executable.
 - Une option de la commande `tail` permet d'afficher un fichier à partir de la kieme ligne, voir `tail --help`
 
 
