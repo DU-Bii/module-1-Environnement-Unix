@@ -205,10 +205,10 @@ passed to the script:
 
 ```bash
 # The -gt operator stands for "greater than"
-if [ $# -gt 1 ]; then
+if [[ $# -gt 1 ]]; then
     echo "There are more than 1 command-line arguments ($# to be precise)"
 # The -eq operator checks for equality
-elif [ $# -eq 1 ]; then
+elif [[ $# -eq 1 ]]; then
     echo "There is 1 command-line argument"
 else
     echo "There are no command-line argument"
@@ -224,14 +224,14 @@ The script will display an error message if no input file is provided.
 > > #!/bin/bash
 > > 
 > > # The -gt operator stands for "greater than"
-> > if [ $# -gt 1 ]; then
+> > if [[ $# -gt 1 ]]; then
 > >     filenames=$@
 > >     for input_gff in ${filenames}
 > >     do
 > >         n=$(cut -f 9 ${input_gff} | cut -d';' -f 1 | grep 'ID=gene' | sort -u | wc -l)
 > >         echo "${input_gff}: ${n}"
 > >     done
-> > elif [ $# -eq 1 ]; then
+> > elif [[ $# -eq 1 ]]; then
 > >     input_gff=$1
 > >     n=$(cut -f 9 ${input_gff} | cut -d';' -f 1 | grep 'ID=gene' | sort -u | wc -l)
 > >     echo "Number of unique genes: ${n}"

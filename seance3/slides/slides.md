@@ -365,9 +365,9 @@ class: left, top
 
 **Syntaxe :**
 ```bash
-if [ <condition> ]; then
+if [[ <condition> ]]; then
     <BLOCK>
-elif [ <condition> ]; then
+elif [[ <condition> ]]; then
     <BLOCK>
 else
     <BLOCK>
@@ -382,7 +382,7 @@ fi
 
 ```bash
 # The -lt operator stands for less than
-if [ $# -lt 1 ]; then
+if [[ $# -lt 1 ]]; then
     echo "ERROR: This script requires at least 1 argument"
     exit 1
 fi
@@ -398,7 +398,7 @@ fi
 ```bash
 input_file=$1
 
-if [ ! -e ${input_file} ]; then
+if [[ ! -e ${input_file} ]]; then
     echo "ERROR: Input file '${input_file}' does not exist"
     exit 1
 fi
