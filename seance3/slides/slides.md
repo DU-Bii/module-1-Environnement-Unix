@@ -167,6 +167,26 @@ $ bash unique-genes.bash
 
 ---
 
+## Bonnes pratiques : vérifications systématiques
+
+```bash
+set -o nounset    # abort if variable is not defined
+set -o errexit    # abort if command fails
+set -o pipefail   # abort if pipe fails
+```
+
+--
+
+```bash
+set -o nounset    # abort if variable is not defined
+set -o errexit    # abort if command fails
+set -o pipefail   # abort if pipe fails
+
+cut -f 9 ~/dubii/study-cases/Escherichia_coli/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3 | cut -d ";" -f 1 | grep "ID=gene" | sort -u | wc -l
+```
+
+---
+
 class: left, top
 
 # Bash : les variables

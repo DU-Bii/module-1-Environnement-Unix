@@ -100,6 +100,10 @@ Let's say we want to write a script that does that for us.
 Let's create `unique-genes.bash` with a text editor and write those lines:
 
 ```bash
+set -o nounset    # abort if variable is not defined
+set -o errexit    # abort if command fails
+set -o pipefail   # abort if pipe fails
+
 input_gff=~/dubii/study-cases/Escherichia_coli/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.37.chromosome.Chromosome.gff3
 
 n=$(cut -f 9 ${input_gff} | cut -d ";" -f 1 | grep "ID=gene" | sort -u | wc -l)
@@ -161,6 +165,10 @@ Number of unique genes: 4497
 > > ```bash
 > > #!/bin/bash
 > > 
+> > set -o nounset    # abort if variable is not defined
+> > set -o errexit    # abort if command fails
+> > set -o pipefail   # abort if pipe fails
+> > 
 > > input_gff=$1
 > > 
 > > n=$(cut -f 9 ${input_gff} | cut -d';' -f 1 | grep 'ID=gene' | sort -u | wc -l)
@@ -181,6 +189,10 @@ script becomes:
 
 ```bash
 #!/bin/bash
+
+set -o nounset    # abort if variable is not defined
+set -o errexit    # abort if command fails
+set -o pipefail   # abort if pipe fails
 
 # Store file names into a variable: $@ represents all command-line arguments.
 filenames=$@
@@ -222,6 +234,10 @@ The script will display an error message if no input file is provided.
 > **Solution**:
 > > ```bash
 > > #!/bin/bash
+> > 
+> > set -o nounset    # abort if variable is not defined
+> > set -o errexit    # abort if command fails
+> > set -o pipefail   # abort if pipe fails
 > > 
 > > # The -gt operator stands for "greater than"
 > > if [[ $# -gt 1 ]]; then
