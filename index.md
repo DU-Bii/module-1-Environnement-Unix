@@ -20,39 +20,39 @@ L'objectif de ce module est de vous familiariser avec l'environnement Unix, les 
 
 ## Séance 1 - Premiers pas
 
-Lundi 01/03/2021 après-midi   
-Instructeurs : Hélène Chiapello & Pierre Poulain  
-Helpers : Benoist Laurent, Paulette Lieby & Thomas Denecker  
+Lundi 01/03/2021 après-midi
+Instructeurs : Hélène Chiapello & Pierre Poulain
+Helpers : Benoist Laurent, Paulette Lieby & Thomas Denecker
 
 [Introduction](seance1/Unix_seance1_introduction.pdf) - [Tutoriel](seance1/tutorial/README.md) - [Bonnes pratiques](seance1/Unix_seance1_bonnes_pratiques_bioinfo.pdf)
 
 
 ## Séance 2 - Gestion de flux et extraction de données
 
-Mardi 02/03/2021 après-midi  
-Instructeurs : Hélène Chiapello & Benoist Laurent  
-Helpers : Pierre Poulain, Paulette Lieby & Thomas Denecker  
+Mardi 02/03/2021 après-midi
+Instructeurs : Hélène Chiapello & Benoist Laurent
+Helpers : Pierre Poulain, Paulette Lieby & Thomas Denecker
 
 [Présentation](seance2/slides/index.html) - Tutoriels : [Extraction et flux de données](seance2/tutorial/01-flux.md), [Expressions régulières](seance2/tutorial/02-regex.md), [Compression et archivage](seance2/tutorial/03-tar.md), [Travail à distance (ssh & scp)](seance2/tutorial/04-ssh_scp.md)
 
 
 ## Séance 3 - Automatisation
 
-Jeudi 04/03/2021 matin  
-Instructeurs : Benoist Laurent & Hélène Chiapello  
-Helper : Pierre Poulain & Thomas Denecker  
+Jeudi 04/03/2021 matin
+Instructeurs : Benoist Laurent & Hélène Chiapello
+Helper : Pierre Poulain & Thomas Denecker
 
 [Présentation](seance3/slides/index.html) - Tutoriel : [rsync](seance3/tutorial/rsync.md),
 [scripting](seance3/tutorial/scripting.md), [Scripts NGS](seance3/tutorial/scripting_ngs.md)
 
-  
+
 ## Séance 4 - Utilisation d'un cluster de calcul
 
-Mardi 09/03/2021 matin  
-Instructeurs : Julien Seiler & Pierre Poulain  
-Helpers : Hélène Chiapello, Benoist Laurent, Olivier Sand & Thomas Denecker  
+Mardi 09/03/2021 matin
+Instructeurs : Julien Seiler & Pierre Poulain
+Helpers : Hélène Chiapello, Benoist Laurent, Olivier Sand & Thomas Denecker
 
-- [Présentation](seance4/slides/index.html)
+- [Présentation](seance4/Unix_seance4_cluster.pdf)
 - [Learn SLURM in 5 minutes](https://asciinema.org/a/275233)
 
 
