@@ -199,7 +199,7 @@ Utilisez la commande `zcat` pour afficher le contenu d'un fichier `.fastq.gz` po
 > >     reads=$((lines/4))
 > >     echo "Nombre de reads du fichier ${fichier} : ${reads}"
 > > 
-> >     if [ "${reads}" -lt "${limit}" ]
+> >     if [[ "${reads}" -lt "${limit}" ]]
 > >     then
 > >         echo "/!\\ Il y a moins de ${limit} lectures dans le fichier"
 > >     fi
@@ -239,7 +239,7 @@ Puisque nous allons travailler sur des fichiers compressés (`.fastq.gz`), nous 
 > >     reads=$(zgrep -c "^\+$" "${fichier}")
 > >     echo "Nombre de reads du fichier ${fichier} : ${reads}"
 > > 
-> >     if [ "${reads}" -lt "${limit}" ]
+> >     if [[ "${reads}" -lt "${limit}" ]]
 > >     then
 > >         echo "/!\\ Il y a moins de ${limit} lectures dans le fichier"
 > >     fi
