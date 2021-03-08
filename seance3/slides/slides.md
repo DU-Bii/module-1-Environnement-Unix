@@ -367,7 +367,7 @@ class: left, top
 ```bash
 if [ <condition> ]; then
     <BLOCK>
-elif
+elif [ <condition> ]; then
     <BLOCK>
 else
     <BLOCK>
