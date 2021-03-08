@@ -78,8 +78,8 @@ Cette commande doit être effectuée pour chaque fichier que vous souhaitez tél
 **Conseils :**
 
 - Entrainez-vous d'abord à extraire en ligne de commande les liens FTP à utiliser.
-- Nous vous conseillons de vous aider de la *cheatsheet* Bash: https://devhints.io/bash
-- N'oublier pas de faire un `chmod +x NOM_SCRIPT` pour rendre votre script executable.
+- Nous vous conseillons de vous aider de la *cheatsheet* Bash : <https://devhints.io/bash>
+- N'oubliez pas de faire un `chmod +x NOM_SCRIPT` pour rendre votre script executable.
 - Une option de la commande `tail` permet d'afficher un fichier à partir de la kieme ligne, voir `tail --help`
 
 
@@ -91,10 +91,10 @@ Cette commande doit être effectuée pour chaque fichier que vous souhaitez tél
 > > # Objectifs du script :
 > > #     - Télécharger un ensemble de fichiers de lectures de l’ENA
 > > #     - Les stocker dans un répertoire dédié.
-> > # Auteurs: Hélène Chiapello & Thomas Denecker
+> > # Auteurs : Hélène Chiapello, Pierre Poulain & Thomas Denecker
 > > # Affiliation: IFB
 > > # Organisme : SARS-CoV-2
-> > # Date: Mars 2021
+> > # Date : Mars 2021
 > > #------------------------------------------------------------------------------
 > >
 > > echo "--------------------------------------------------------------"
@@ -113,7 +113,7 @@ Cette commande doit être effectuée pour chaque fichier que vous souhaitez tél
 > > for my_url in ${ftp_url}
 > > do
 > >        echo "wget ${my_url} -P COVID_FASTQ"
-> >        wget ${my_url} -P COVID_FASTQ
+> >        wget "${my_url}" -P COVID_FASTQ
 > > done
 > > 
 > > ```
@@ -184,10 +184,10 @@ Utilisez la commande `zcat` pour afficher le contenu d'un fichier `.fastq.gz` po
 > > #------------------------------------------------------------------------------
 > > # Objectifs du script :  
 > > #     - Explorer les fichiers fastq.gz d'intérêt
-> > # Auteurs: Hélène Chiapello, Pierre Poulain & Thomas Denecker
+> > # Auteurs : Hélène Chiapello, Pierre Poulain & Thomas Denecker
 > > # Affiliation: IFB
 > > # Organisme : SARS-CoV-2
-> > # Date: Mars 2021
+> > # Date : Mars 2021
 > > # Comptage du nombre de reads et alerter si le nombre est inférieur à un seuil (limit)
 > > #------------------------------------------------------------------------------
 > > 
@@ -195,7 +195,7 @@ Utilisez la commande `zcat` pour afficher le contenu d'un fichier `.fastq.gz` po
 > > 
 > > for fichier in COVID_FASTQ/*.fastq.gz
 > > do
-> >     lines=$(zcat ${fichier} | wc -l)
+> >     lines=$(zcat "${fichier}" | wc -l)
 > >     reads=$((lines/4))
 > >     echo "Nombre de reads du fichier ${fichier} : ${reads}"
 > > 
@@ -225,10 +225,10 @@ Puisque nous allons travailler sur des fichiers compressés (`.fastq.gz`), nous 
 > > #------------------------------------------------------------------------------
 > > # Objectifs du script :  
 > > #     - Explorer les fichiers fastq.gz d'intérêt
-> > # Auteurs: Hélène Chiapello, Pierre Poulain & Thomas Denecker
-> > # Affiliation: IFB
+> > # Auteurs : Hélène Chiapello, Pierre Poulain & Thomas Denecker
+> > # Affiliation : IFB
 > > # Organisme : SARS-CoV-2
-> > # Date: Mars 2021
+> > # Date : Mars 2021
 > > # Compter le nombre de reads et alerter si le nombre est trop faible afficher un message d'alerte
 > > #------------------------------------------------------------------------------
 > > 
@@ -236,7 +236,7 @@ Puisque nous allons travailler sur des fichiers compressés (`.fastq.gz`), nous 
 > > 
 > > for fichier in COVID_FASTQ/*.fastq.gz
 > > do
-> >     reads=$(zgrep -c "^\+$" ${fichier})
+> >     reads=$(zgrep -c "^\+$" "${fichier}")
 > >     echo "Nombre de reads du fichier ${fichier} : ${reads}"
 > > 
 > >     if [ "${reads}" -lt "${limit}" ]

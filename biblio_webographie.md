@@ -6,4 +6,4 @@
 - Mémo : [A Critical Guide to Unix](https://f1000research.com/documents/7-1436), Attwood, F1000 Research, 2018.
 - Site internet : [The UNIX Shell](http://swcarpentry.github.io/shell-novice/), cours en ligne de *Software Carpentry*.
 - Site internet : [Unix Fondamentals](https://edu.sib.swiss/pluginfile.php/2878/mod_resource/content/4/couselab-html/content.html), du *Swiss Institute of Bioinformatics*.
-
+- Site internet : [ShellCheck](https://www.shellcheck.net/), pour détecter les éventuels problèmes de syntaxe dans vos scripts.
