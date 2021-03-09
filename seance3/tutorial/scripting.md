@@ -83,7 +83,7 @@ Example:
 workdir=$(pwd)
 
 # Prints the current working directory.
-echo "The current working directory is ${workdir}.
+echo "The current working directory is ${workdir}"
 ```
 
 
