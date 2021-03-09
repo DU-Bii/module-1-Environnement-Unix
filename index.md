@@ -42,7 +42,7 @@ Jeudi 04/03/2021 matin
 Instructeurs : Benoist Laurent & Hélène Chiapello  
 Helper : Pierre Poulain & Thomas Denecker
 
-[Présentation](seance3/slides/index.html) - Tutoriel : [rsync](seance3/tutorial/rsync.md),
+[Présentation](seance3/slides/index.html) - Tutoriels : [rsync](seance3/tutorial/rsync.md),
 [scripts Bash](seance3/tutorial/scripting.md), [scripts Bash NGS](seance3/tutorial/scripting_ngs.md)
 
 
