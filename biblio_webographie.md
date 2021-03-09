@@ -1,5 +1,6 @@
 ## Bibliographie / webographie
 
+- Article : [Five reasons why researchers should learn to love the command line](https://www.nature.com/articles/d41586-021-00263-0), Jeffrey Perkel, Nature (Technology feature), 2021. Le [dépôt GitHub associé](https://github.com/jperkel/nature_bash) avec des exemples de scripts.
 - Livre : [Bioinformatics Data Skills](http://shop.oreilly.com/product/0636920030157.do), Vince Buffalo, O'Reilly Media, 2015.
 - Article : [A Quick Guide to Organizing Computational Biology Projects](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000424), Noble, PLOS Comput Biol, 2009.
 - Article : [Good enough practices in scientific computing](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510), Wilson et al., PLOS Comput Biol, 2017.
