@@ -8,4 +8,4 @@
 - Site internet : [The UNIX Shell](http://swcarpentry.github.io/shell-novice/), cours en ligne de *Software Carpentry*.
 - Site internet : [Unix Fondamentals](https://edu.sib.swiss/pluginfile.php/2878/mod_resource/content/4/couselab-html/content.html), du *Swiss Institute of Bioinformatics*.
 - Site internet : [ShellCheck](https://www.shellcheck.net/), pour détecter les éventuels problèmes de syntaxe dans vos scripts.
-- Site internet : [Rosetta Stone of Workload Managers](https://slurm.schedmd.com/rosetta.html)
+- Site internet : [Rosetta Stone of Workload Managers](https://slurm.schedmd.com/rosetta.html). Équivalences entre les commandes des différents gestionnaires de cluster (Slurm, PBS, SGE...).
