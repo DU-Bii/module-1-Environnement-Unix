@@ -4,11 +4,11 @@ Pour ce projet Unix, vous allez aligner des *reads* de séquences du Sars-Cov-2 
 
 *Nous vous conseillons de noter les réponses aux questions posées dans un fichier texte. Vous reporterez ensuite ces réponses dans un formulaire Google Form.*
 
-## Présentation des données
+## Présentation des données 🧐
 
 Les fichiers de données au format `.fastq.gz` proviennent du projet [PRJNA673096](https://www.ncbi.nlm.nih.gov/sra/?term=PRJNA673096) sur SRA. Elles ont été produites par la technologie Illumina MiniSeq.
 
-Les fichiers se trouvent sur le cluster dans le répertoire 
+Les fichiers se trouvent sur le cluster de l'IFB dans le répertoire 
 ```
 /shared/projects/dubii2021/trainers/module1/project/fastq
 ```
@@ -51,7 +51,7 @@ Indice : Vous utiliserez pour cela la commande `ls` combinée avec la commande `
 **Question 2** : Quel est le volume de données total (en Go) des fichiers `.fastq.gz` que vous allez analyser ?
 
 
-## Préparation du répertoire de travail
+## Préparation du répertoire de travail 📦
 
 Dans votre répertoire projet `/shared/projects/dubii2021/<login>` créez le répertoire `dubii-unix-project` puis déplacez-vous dans ce répertoire.
 
@@ -61,7 +61,7 @@ Rappel : dans le chemin précédent, remplacez `<login>` par votre login sur le 
 **Question 3** : Quel est le chemin absolu de votre répertoire courant ?
 
 
-## Particularité des données proposées
+## Particularité des données proposées 🧬
 
 Les données que vous allez analyser sont *paired-end*, c'est-à-dire que les *reads* vont par paires, un sur chaque brin. Ces *reads* doivent donc être alignés ensemble. Concrètement, pour chaque échantillon, on a deux fichiers `.fastq.gz`, par exemple :
 ```
@@ -77,7 +77,7 @@ Ici, l'échantillon `SRR13764654` est associé aux fichiers `SRR13764654_1.fastq
 La bonne nouvelle est que logiciel `bowtie2` est capable d'aligner des *reads* *paired-end*. Il faut par contre lui fournir dans la même commande les deux fichiers `.fastq.gz` concernés.
 
 
-## Stratégie pour le *paired-end*
+## Stratégie pour le *paired-end* 🧠
 
 Comme l'a expliqué Julien, la bonne stratégie pour distribuer des analyses sur un cluster est celle du job array. Mais si le répertoire de données contient 30 fichiers `.fastq.gz` il ne faudra pas créer un job array de 30 jobs car en *paired-end*, les fichiers `.fastq.gz` sont associés deux à deux.
 
@@ -173,10 +173,10 @@ Pour la suite, faites un peu de ménage avec la commande :
 rm -f SRR*.bam slurm*out
 ```
 
-Attention, pas de retour arrière posible avec `rm` !
+⚠️ Attention, pas de retour arrière posible avec `rm` !
 
 
-## Faisons chauffer du CPU encore une fois
+## Faisons chauffer du CPU encore une fois 🤯 🥳
 
 Toujours depuis votre répertoire `/shared/projects/dubii2021/<login>/dubii-unix-project`, copiez le script `map_reads.sh` en `map_reads_2.sh`.
 
@@ -194,7 +194,7 @@ Conseil : si vous devez relancer plusieurs fois votre script, pensez à faire du
 rm -f SRR*.bam slurm*.out
 ```
 
-Une fois que vous avez un job avec toutes les tasks `COMPLETED` : félicitation !
+Une fois que vous avez un job avec toutes les tasks `COMPLETED` : félicitation 🎉
 
 
 **Question XX** : Quel est le job id de votre job (lancé avec le script `map_reads_2.sh`) ?
