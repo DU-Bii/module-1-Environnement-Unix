@@ -147,7 +147,7 @@ srun -J "${file_id} bowtie2" bowtie2 --threads=${SLURM_CPUS_PER_TASK} -x "${refe
 
 Si ce n'est pas déjà fait, déplacez vous dans votre répertoire `/shared/projects/dubii2021/<login>/dubii-unix-project`.
 
-Créez dans ce répertoire le script `map_reads.sh` avec un éditeur de texte (nano ou l'éditeur de texte de Jupyter Lab). Faites attention lors du copier/coller car certaines lignes sont trsè longues.
+Créez dans ce répertoire le script `map_reads.sh` avec un éditeur de texte (nano ou l'éditeur de texte de Jupyter Lab). Faites attention lors du copier/coller car certaines lignes sont très longues.
 
 Ne modifiez pas le script et lancez-le tel quel avec la commande :
 ```
@@ -200,5 +200,5 @@ Une fois que vous avez un job avec toutes les tasks `COMPLETED` : félicitation 
 **Question XX** : Quel est le job id de votre job (lancé avec le script `map_reads_2.sh`) ?
 
 
-**Question XX** : Quel est le volume de données total (en Go) des fichiers `.bam` que vous avez généré ?
+**Question XX** : Quel est le volume de données total (en Go) des fichiers `.bam` que vous avez générés ?
 
