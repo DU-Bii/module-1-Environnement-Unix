@@ -213,3 +213,5 @@ Vérifiez que ce nombre est cohérent avec le nombre de fichiers `.fast.gz` que 
 
 
 **Question 9** : Quel autre usage du job array aurait permis de ne sélectionner qu'un fichier `.fastq.gz `sur deux ?
+
+*N'oubliez pas de reporter toutes vos réponses dans le formulaire indiqué tout en haut de ce document.* ⏫
