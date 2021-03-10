@@ -4,7 +4,7 @@ Pour ce projet Unix, vous allez aligner des *reads* de séquences du Sars-Cov-2 
 
 ---
 
-➡️ *Nous vous conseillons de noter les réponses aux questions posées dans un fichier texte. Vous reporterez ensuite ces réponses dans ce [formulaire](https://forms.gle/5HBmrmhYBXjpmc7D6).*
+📘 *Nous vous conseillons de noter les réponses aux questions posées dans un fichier texte. Vous reporterez ensuite ces réponses dans ce [formulaire](https://forms.gle/5HBmrmhYBXjpmc7D6).*
 
 ---
 
