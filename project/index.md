@@ -38,27 +38,27 @@ Vous disposez chacun d'un jeu de fichiers différents à analyser :
 | 18 | Fabienne |
 | 19 | Lucie |
 
-Remarque : dans chaque répertoire, le nombre de fichiers à analyser varie entre 30 et 60.
+Remarque : dans chaque répertoire, le nombre de fichiers à analyser varie entre 30 et 60 fichiers.
 
 Depuis le Jupyter Hub, ouvrez un terminal Bash.
 
 
-**Question 1** Quel est le nombre exact de fichiers `.fastq.gz` que vous allez analyser ?
+**Question 1** : Quel est le nombre exact de fichiers `.fastq.gz` que vous allez analyser ?
 
 Indice : Vous utiliserez pour cela la commande `ls` combinée avec la commande `wc -l`.
 
 
-**Question 2** Quel est le volume de données total (en Go) des fichiers `.fastq.gz` que vous allez analyser ?
+**Question 2** : Quel est le volume de données total (en Go) des fichiers `.fastq.gz` que vous allez analyser ?
 
 
 ## Préparation du répertoire de travail
 
-Dans votre répertoire projet `/shared/projects/dubii2021/<login>` créez le répertoire `dubii-unix-project` puis dirigez-vous dans ce répertoire.
+Dans votre répertoire projet `/shared/projects/dubii2021/<login>` créez le répertoire `dubii-unix-project` puis déplacez-vous dans ce répertoire.
 
 Rappel : dans le chemin précédent, remplacez `<login>` par votre login sur le cluster.
 
 
-**Question 3** Quel est le chemin absolu de votre répertoire courant ?
+**Question 3** : Quel est le chemin absolu de votre répertoire courant ?
 
 
 ## Particularité des données proposées
@@ -90,7 +90,7 @@ SRR13764655_2.fastq.gz
 SRR13764656_1.fastq.gz
 SRR13764656_2.fastq.gz
 ```
-Il faudra un premier job pour traiter les fichiers `SRR13764654_1.fastq.gz` et `SRR13764654_2.fastq.gz`, un deuxième pour les fichiers `SRR13764655_1.fastq.gz` et `SRR13764655_2.fastq.gz` et un troisième pour les fichiers `SRR13764656_1.fastq.gz` et `SRR13764656_2.fastq.gz`.
+Il faudra un premier job pour traiter ensemble les fichiers `SRR13764654_1.fastq.gz` et `SRR13764654_2.fastq.gz`, un deuxième pour les fichiers `SRR13764655_1.fastq.gz` et `SRR13764655_2.fastq.gz` et un troisième pour les fichiers `SRR13764656_1.fastq.gz` et `SRR13764656_2.fastq.gz`.
 
 Heureusement, les fichiers ont été nommés intelligemment et on retrouve facilement les deux fichiers associés au même échantillon en ajoutant les extensions `_1.fastq.gz` et `_2.fastq.gz` au numéro d'échantillon.
 
@@ -126,32 +126,35 @@ srun -J "${file_id} sort" samtools sort -o "${file_id}.bam" "${file_id}.filtered
 rm -f "${file_id}.sam" "${file_id}.filtered.bam"
 ```
 
-Le répertoire `/shared/projects/dubii2021/trainers/module1/project/fastq/00` contient 30 fichiers `.fastq.gz`, mais le job array n'est lancé que pour 15 jobs :
+Le répertoire `/shared/projects/dubii2021/trainers/module1/project/fastq/00` contient 30 fichiers `.fastq.gz`, mais le job array n'est lancé que pour 15 jobs avec pour index 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 et 14 :
 ```
 #SBATCH --array=0-14
 ```
 
-On ne récupère que les fichiers `_1.fastq.gz` pour ensuite extraite le `file_id` du fichier :
+On ne récupère que les fichiers `_1.fastq.gz` pour ensuite extraire le `file_id` du fichier :
 ```
 file_list=(${file_path}/*_1.fastq.gz)
 file_id=$(basename -s _1.fastq.gz "${file_list[$SLURM_ARRAY_TASK_ID]}")
 ```
 
-Enfin, on remplace l'option `-U` de `bowtie2` utilisée pour réaliser des alignements en *single end* par les options `-1` et `-2` pour réaliser cette fois des alignements en *paired end*.
+Enfin, on remplace l'option `-U` de `bowtie2` utilisée pour réaliser des alignements en *single end* par les options `-1` et `-2` pour réaliser cette fois des alignements en *paired end* :
+```
+srun -J "${file_id} bowtie2" bowtie2 --threads=${SLURM_CPUS_PER_TASK} -x "${reference_index}" -1 "${file_path}/${file_id}_1.fastq.gz" -2 "${file_path}/${file_id}_2.fastq.gz" -S "${file_id}.sam"
+```
 
 
 ## Chauffons du CPU
 
 Si ce n'est pas déjà fait, déplacez vous dans votre répertoire `/shared/projects/dubii2021/<login>/dubii-unix-project`.
 
-Créez dans ce répertoire le script `map_reads.sh`.
+Créez dans ce répertoire le script `map_reads.sh` avec un éditeur de texte (nano ou l'éditeur de texte de Jupyter Lab). Faites attention lors du copier/coller car certaines lignes sont trsè longues.
 
-Ne le modifiez pas et lancez-le tel quel avec la commande 
+Ne modifiez pas le script et lancez-le tel quel avec la commande :
 ```
 sbatch map_reads.sh
 ```
 
-**Question XX** Quel est le job id de votre job ?
+**Question XX** : Quel est le job id de votre job ?
 
 
 Suivez l'évolution du calcul avec la commande
@@ -162,7 +165,7 @@ où bien sûr vous remplacez `<votre-job-id>` par votre job id.
 
 Vérifiez que toutes les tasks ont progressivement le status `COMPLETED`.
 
-**Question XX** Sur quel noeud du cluster s'est exécuté le premier job de votre job array (première ligne renvoyée par la commande `sacct` contenant `map_reads.sh`) ?
+**Question XX** : Sur quel noeud du cluster s'est exécuté le premier job de votre job array (première ligne renvoyée par la commande `sacct` contenant `map_reads.sh`) ?
 
 
 Pour la suite, faites un peu de ménage avec la commande :
@@ -194,8 +197,8 @@ rm -f SRR*.bam slurm*.out
 Une fois que vous avez un job avec toutes les tasks `COMPLETED` : félicitation !
 
 
-**Question X** Quel est le job id de votre job (lancé avec le script `map_reads_2.sh`) ?
+**Question XX** : Quel est le job id de votre job (lancé avec le script `map_reads_2.sh`) ?
 
 
-**Question X** Quel est le volume de données total (en Go) des fichiers `.bam` que vous avez généré ?
+**Question XX** : Quel est le volume de données total (en Go) des fichiers `.bam` que vous avez généré ?
 
