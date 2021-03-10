@@ -6,7 +6,7 @@ Pour ce projet Unix, vous allez aligner des *reads* de séquences du Sars-Cov-2 
 
 ## Présentation des données 🧐
 
-Les fichiers de données au format `.fastq.gz` proviennent du projet [PRJNA673096](https://www.ncbi.nlm.nih.gov/sra/?term=PRJNA673096) sur SRA. Elles ont été produites par la technologie Illumina MiniSeq.
+Les fichiers de données au format `.fastq.gz` proviennent du projet [PRJNA673096](https://www.ncbi.nlm.nih.gov/sra/?term=PRJNA673096) sur SRA. Ces données ont été produites par la technologie Illumina MiniSeq.
 
 Les fichiers se trouvent sur le cluster de l'IFB dans le répertoire 
 ```
@@ -48,7 +48,7 @@ Depuis le Jupyter Hub, ouvrez un terminal Bash.
 Indice : Vous utiliserez pour cela la commande `ls` combinée avec la commande `wc -l`.
 
 
-**Question 2** : Quel est le volume de données total (en Go) des fichiers `.fastq.gz` que vous allez analyser ?
+**Question 2** : Quel est le volume de données total (en Mo) des fichiers `.fastq.gz` que vous allez analyser ?
 
 
 ## Préparation du répertoire de travail 📦
@@ -165,7 +165,7 @@ où bien sûr vous remplacez `<votre-job-id>` par votre job id.
 
 Vérifiez que toutes les job steps ont progressivement le status `COMPLETED`.
 
-**Question 5** : Sur quel noeud du cluster s'est exécutée le premier job step de votre job (première ligne renvoyée par la commande `sacct` contenant `map_reads.sh`) ?
+**Question 5** : Sur quel noeud du cluster s'est exécuté le premier job step de votre job (première ligne renvoyée par la commande `sacct` contenant `map_reads.sh`) ?
 
 
 Pour la suite, faites un peu de ménage avec la commande :
@@ -197,15 +197,15 @@ rm -f SRR*.bam slurm*.out
 Une fois que vous avez un job avec tous les job steps `COMPLETED` : félicitation 🎉
 
 
-**Question 6** : Quel est le job id de votre job (lancé avec le script `map_reads_2.sh`) ?
+**Question 6** : Quel est le job id de votre job (lancé avec le script `map_reads_2.sh` et qui a fonctionné) ?
 
 
-**Question 7** : Combien de fichiers `.bam` avez-vous générés ?
+**Question 7** : Combien de fichiers `.bam` avez-vous générés avec le script `map_reads_2.sh` ?
 
 Vérifiez que ce nombre est cohérent avec le nombre de fichiers `.fast.gz` que vous avez à analyser.
 
 
-**Question 8** : Quel est le volume de données total (en Go) des fichiers `.bam` que vous avez générés ?
+**Question 8** : Quel est le volume de données total (en Mo) des fichiers `.bam` que vous avez générés avec le script `map_reads_2.sh` ?
 
 
-**Question 9 (bonus)** : Quel autre usage du job array aurait permis de ne sélectionner qu'un fichier `.fastq.gz `sur deux ?
+**Question 9** : Quel autre usage du job array aurait permis de ne sélectionner qu'un fichier `.fastq.gz `sur deux ?
