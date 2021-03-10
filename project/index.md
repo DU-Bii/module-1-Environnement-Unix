@@ -143,7 +143,7 @@ srun -J "${file_id} bowtie2" bowtie2 --threads=${SLURM_CPUS_PER_TASK} -x "${refe
 ```
 
 
-## Chauffons du CPU
+## Faisons chauffer du CPU 🚀
 
 Si ce n'est pas déjà fait, déplacez vous dans votre répertoire `/shared/projects/dubii2021/<login>/dubii-unix-project`.
 
@@ -176,7 +176,7 @@ rm -f SRR*.bam slurm*out
 Attention, pas de retour arrière posible avec `rm` !
 
 
-## Chauffons du CPU encore une fois
+## Faisons chauffer du CPU encore une fois
 
 Toujours depuis votre répertoire `/shared/projects/dubii2021/<login>/dubii-unix-project`, copiez le script `map_reads.sh` en `map_reads_2.sh`.
 
@@ -200,5 +200,11 @@ Une fois que vous avez un job avec toutes les tasks `COMPLETED` : félicitation 
 **Question XX** : Quel est le job id de votre job (lancé avec le script `map_reads_2.sh`) ?
 
 
+**Question XX** : Combien de fichiers `.bam` avez-vous générés ?
+
+Vérifiez que ce nombre est cohérent avec le nombre de fichiers `.fast.gz` que vous avez à analyser.
+
+
 **Question XX** : Quel est le volume de données total (en Go) des fichiers `.bam` que vous avez générés ?
+
 
