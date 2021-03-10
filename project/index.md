@@ -17,7 +17,7 @@ Vous disposez chacun d'un jeu de fichiers différents à analyser :
 
 | Nom du répertoire | stagiaire  |
 |:-----------------:|:----------:|
-| 00 | démo |
+| 00 | *démo* |
 | 01 | Harry |
 | 02 | Marianne |
 | 03 | Gaël |
@@ -154,7 +154,7 @@ Ne modifiez pas le script et lancez-le tel quel avec la commande :
 sbatch map_reads.sh
 ```
 
-**Question XX** : Quel est le job id de votre job ?
+**Question 4** : Quel est le job id de votre job ?
 
 
 Suivez l'évolution du calcul avec la commande
@@ -163,9 +163,9 @@ sacct --format=JobID%20,JobName%20,State,Start,Elapsed,CPUTime,NodeList -j <votr
 ```
 où bien sûr vous remplacez `<votre-job-id>` par votre job id.
 
-Vérifiez que toutes les tasks ont progressivement le status `COMPLETED`.
+Vérifiez que toutes les job steps ont progressivement le status `COMPLETED`.
 
-**Question XX** : Sur quel noeud du cluster s'est exécuté le premier job de votre job array (première ligne renvoyée par la commande `sacct` contenant `map_reads.sh`) ?
+**Question 5** : Sur quel noeud du cluster s'est exécutée le premier job step de votre job (première ligne renvoyée par la commande `sacct` contenant `map_reads.sh`) ?
 
 
 Pour la suite, faites un peu de ménage avec la commande :
@@ -173,7 +173,7 @@ Pour la suite, faites un peu de ménage avec la commande :
 rm -f SRR*.bam slurm*out
 ```
 
-⚠️ Attention, pas de retour arrière posible avec `rm` !
+⚠️ Attention, pas de retour arrière possible avec `rm` !
 
 
 ## Faisons chauffer du CPU encore une fois 🤯 🥳
@@ -194,17 +194,18 @@ Conseil : si vous devez relancer plusieurs fois votre script, pensez à faire du
 rm -f SRR*.bam slurm*.out
 ```
 
-Une fois que vous avez un job avec toutes les tasks `COMPLETED` : félicitation 🎉
+Une fois que vous avez un job avec tous les job steps `COMPLETED` : félicitation 🎉
 
 
-**Question XX** : Quel est le job id de votre job (lancé avec le script `map_reads_2.sh`) ?
+**Question 6** : Quel est le job id de votre job (lancé avec le script `map_reads_2.sh`) ?
 
 
-**Question XX** : Combien de fichiers `.bam` avez-vous générés ?
+**Question 7** : Combien de fichiers `.bam` avez-vous générés ?
 
 Vérifiez que ce nombre est cohérent avec le nombre de fichiers `.fast.gz` que vous avez à analyser.
 
 
-**Question XX** : Quel est le volume de données total (en Go) des fichiers `.bam` que vous avez générés ?
+**Question 8** : Quel est le volume de données total (en Go) des fichiers `.bam` que vous avez générés ?
 
 
+**Question 9 (bonus)** : Quel autre usage du job array aurait permis de ne sélectionner qu'un fichier `.fastq.gz `sur deux ?

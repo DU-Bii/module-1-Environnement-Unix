@@ -60,7 +60,9 @@ Helpers : Hélène Chiapello, Benoist Laurent, Olivier Sand & Thomas Denecker
 
 [QCM #1](https://forms.gle/G6jpPn8Qd9L8vUMK9). Pour le vendredi 5 mars 18h00.
 
-QCM #2. Pour le vendredi 12 mars 18h00.
+[QCM #2](https://forms.gle/UKindgb7Hz4rXRqN7). Pour le vendredi 12 mars 18h00.
+
+[Mini-projet](project/index.md). Pour le vendredi 19 mars 18h00.
 
 
 ## Ressources complémentaires
