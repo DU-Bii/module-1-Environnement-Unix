@@ -2,7 +2,7 @@
 
 Pour ce projet Unix, vous allez aligner des *reads* de séquences du Sars-Cov-2 d'échantillons de patients sur le génome de réference de Sars-Cov-2.
 
-*Nous vous conseillons de noter les réponses aux questions posées dans un fichier texte. Vous reporterez ensuite ces réponses dans un formulaire Google Form.*
+*Nous vous conseillons de noter les réponses aux questions posées dans un fichier texte. Vous reporterez ensuite ces réponses dans ce [formulaire]().*
 
 ## Présentation des données 🧐
 
@@ -53,7 +53,7 @@ Indice : Vous utiliserez pour cela la commande `ls` combinée avec la commande `
 
 ## Préparation du répertoire de travail 📦
 
-Dans votre répertoire projet `/shared/projects/dubii2021/<login>` créez le répertoire `dubii-unix-project` puis déplacez-vous dans ce répertoire.
+Dans votre répertoire projet `/shared/projects/dubii2021/<login>` créez le répertoire `unix-project` puis déplacez-vous dans ce répertoire.
 
 Rappel : dans le chemin précédent, remplacez `<login>` par votre login sur le cluster.
 
@@ -145,7 +145,7 @@ srun -J "${file_id} bowtie2" bowtie2 --threads=${SLURM_CPUS_PER_TASK} -x "${refe
 
 ## Faisons chauffer du CPU 🚀
 
-Si ce n'est pas déjà fait, déplacez vous dans votre répertoire `/shared/projects/dubii2021/<login>/dubii-unix-project`.
+Si ce n'est pas déjà fait, déplacez vous dans votre répertoire `/shared/projects/dubii2021/<login>/unix-project`.
 
 Créez dans ce répertoire le script `map_reads.sh` avec un éditeur de texte (nano ou l'éditeur de texte de Jupyter Lab). Faites attention lors du copier/coller car certaines lignes sont très longues.
 
@@ -178,7 +178,7 @@ rm -f SRR*.bam slurm*out
 
 ## Faisons chauffer du CPU encore une fois 🤯 🥳
 
-Toujours depuis votre répertoire `/shared/projects/dubii2021/<login>/dubii-unix-project`, copiez le script `map_reads.sh` en `map_reads_2.sh`.
+Toujours depuis votre répertoire `/shared/projects/dubii2021/<login>/unix-project`, copiez le script `map_reads.sh` en `map_reads_2.sh`.
 
 Ouvrez le script `map_reads_2.sh` avec un éditeur de texte (nano ou l'éditeur de texte de Jupyter Lab). Modifiez ce script pour l'adapter aux données qui vous ont été attribuées. Vous ne devez a priori modifier que deux lignes dans le script.
 
