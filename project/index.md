@@ -4,7 +4,7 @@ Pour ce projet Unix, vous allez aligner des *reads* de séquences du Sars-Cov-2 
 
 ---
 
-📘 *Nous vous conseillons de noter les réponses aux questions posées dans un fichier texte. Vous reporterez ensuite ces réponses dans ce [formulaire](https://forms.gle/5HBmrmhYBXjpmc7D6).*
+📘 *Nous vous conseillons de noter les réponses aux questions posées dans un fichier texte. Vous reporterez ensuite vos réponses dans ce [formulaire](https://forms.gle/5HBmrmhYBXjpmc7D6).*
 
 ---
 
@@ -12,7 +12,7 @@ Pour ce projet Unix, vous allez aligner des *reads* de séquences du Sars-Cov-2 
 
 Les fichiers de données au format `.fastq.gz` proviennent du projet [PRJNA673096](https://www.ncbi.nlm.nih.gov/sra/?term=PRJNA673096) sur SRA. Ces données ont été produites par la technologie Illumina MiniSeq.
 
-Les fichiers se trouvent sur le cluster de l'IFB dans le répertoire 
+Les fichiers se trouvent sur le cluster de l'IFB dans le répertoire :
 ```
 /shared/projects/dubii2021/trainers/module1/project/fastq
 ```
@@ -28,7 +28,7 @@ Vous disposez chacun d'un jeu de fichiers différents à analyser :
 | 04 | Sophie |
 | 05 | Nicolas |
 | 06 | Camille |
-| 07 | Elodie |
+| 07 | Élodie |
 | 08 | Emmanuelle |
 | 09 | Alexandre |
 | 10 | Domitille |
@@ -49,7 +49,7 @@ Depuis le Jupyter Hub, ouvrez un terminal Bash.
 
 **Question 1** : Quel est le nombre exact de fichiers `.fastq.gz` que vous allez analyser ?
 
-Indice : Vous utiliserez pour cela la commande `ls` combinée avec la commande `wc -l`.
+Indice : Utilisez pour cela la commande `ls` combinée avec la commande `wc -l`.
 
 
 **Question 2** : Quel est le volume de données total (en Mo) des fichiers `.fastq.gz` que vous allez analyser ?
@@ -169,7 +169,7 @@ où bien sûr vous remplacez `<votre-job-id>` par votre job id.
 
 Vérifiez que toutes les job steps ont progressivement le status `COMPLETED`.
 
-**Question 5** : Sur quel noeud du cluster s'est exécuté le premier job step de votre job (première ligne renvoyée par la commande `sacct` contenant `map_reads.sh`) ?
+**Question 5** : Sur quel noeud du cluster s'est exécuté le premier job step de votre job (première ligne renvoyée par la commande `sacct` et contenant `map_reads.sh`) ?
 
 
 Pour la suite, faites un peu de ménage avec la commande :
@@ -186,7 +186,7 @@ Toujours depuis votre répertoire `/shared/projects/dubii2021/<login>/unix-proje
 
 Ouvrez le script `map_reads_2.sh` avec un éditeur de texte (nano ou l'éditeur de texte de Jupyter Lab). Modifiez ce script pour l'adapter aux données qui vous ont été attribuées. Vous ne devez a priori modifier que deux lignes dans le script.
 
-Lancez ensuite votre script :
+Lancez ensuite votre script `map_reads_2.sh` :
 ```
 sbatch map_reads_2.sh
 ```
@@ -206,7 +206,7 @@ Une fois que vous avez un job avec tous les job steps `COMPLETED` : félicitatio
 
 **Question 7** : Combien de fichiers `.bam` avez-vous générés avec le script `map_reads_2.sh` ?
 
-Vérifiez que ce nombre est cohérent avec le nombre de fichiers `.fast.gz` que vous avez à analyser.
+Vérifiez que ce nombre est cohérent avec le nombre de fichiers `.fastq.gz` que vous avez à analyser.
 
 
 **Question 8** : Quel est le volume de données total (en Mo) des fichiers `.bam` que vous avez générés avec le script `map_reads_2.sh` ?
