@@ -161,6 +161,60 @@ $ tree .
 - Donnez le fichier contenant les données à télécharger en argument de la ligne de commande du script
 - Vérifiez l'intégrité des fichiers téléchargés avec par exemple la commande `md5sum`.
 
+> **Solution :**
+> > ```bash
+> > #!/bin/bash
+> > #------------------------------------------------------------------------------
+> > # Objectifs du script :
+> > #     - Télécharger un ensemble de fichiers de lectures de l’ENA à partir d'un
+> > #       fichier de metadonnées donné en argument du programme sur la ligne de commande
+> > #     - Les stocker dans un répertoire dédié
+> > #     - Vérifier que le checksum du fichier téléchargé est identique à celui du fichier de métadonnées
+> > # Auteurs : Paulette Lieby & Hélène Chiapello
+> > # Affiliation: IFB
+> > # Organisme : SARS-CoV-2
+> > # Date : Mars 2021
+> > #------------------------------------------------------------------------------
+> > if [ $# -ne 1 ]
+> > then
+> >     echo "Donnez le fichier contenant les données à télécharger en argument de ce script"
+> >     exit 1
+> > fi
+> > fichier=$1
+> > echo "--------------------------------------------------------------"
+> > echo "Creation du dossier COVID_FASTQ"
+> > echo "--------------------------------------------------------------"
+> > dir=COVID_FASTQ
+> > mkdir -p ${dir}
+> > echo "--------------------------------------------------------------"
+> > echo "Téléchargement des séquences brutes du BioProjet PRJNA507154"
+> > echo "--------------------------------------------------------------"
+> > ftp_url=$(tail -n +2 ${fichier} | cut -f 9 | cut -d ';' -f 1)
+> > ftp_url+=" "$(tail -n +2 ${fichier} | cut -f 9 | cut -d ';' -f 2)
+> > checksums=$(tail -n +2 ${fichier} | cut -f 8 | cut -d ';' -f 1)
+> > checksums+=" "$(tail -n +2 ${fichier} | cut -f 8 | cut -d ';' -f 2)
+> > 
+> > n=1
+> > for my_url in ${ftp_url}
+> > do
+> >        echo "wget ${my_url} -P ${dir}"
+> >        wget "${my_url}" -P ${dir}
+> >        given_checksum=$(echo ${checksums} | cut -d " " -f ${n})
+> >        downloaded_file=${dir}/$(basename ${my_url})
+> >        downloaded_file_checksum=$(md5sum ${downloaded_file} | cut -d" " -f 1)
+> >         echo "downloaded_file_checksum: ${downloaded_file_checksum}"
+> >         echo "metadata_checksum: ${given_checksum}"  
+> >        if [[ ${downloaded_file_checksum} != ${given_checksum} ]] ;
+> >        then
+> >            echo "ATTENTION : les checksums ne sont pas identiques pas pour le fichier ${downloaded_file}"
+> >        else
+> >            echo "OK : les checksums sont identiques pour le fichier ${downloaded_file}"
+> >       fi
+> >        n=$((n + 1))
+> > done
+> > 
+> > ```
+{:.answer}
 
 ### Script 2 - Exploration
 
