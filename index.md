@@ -52,8 +52,7 @@ Mardi 09/03/2021 matin
 Instructeurs : Julien Seiler & Pierre Poulain  
 Helpers : Hélène Chiapello, Benoist Laurent, Olivier Sand & Thomas Denecker
 
-- [Présentation](seance4/Unix_seance4_cluster.pdf)
-- [Learn SLURM in 5 minutes](https://asciinema.org/a/275233)
+[Présentation](seance4/Unix_seance4_cluster.pdf) - [Learn SLURM in 5 minutes](https://asciinema.org/a/275233)
 
 
 ## Évaluations
